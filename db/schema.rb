@@ -10,19 +10,73 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503023429) do
+ActiveRecord::Schema.define(version: 20170525154540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "notes", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
+    t.string   "category_name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "discount_days", force: :cascade do |t|
+    t.date     "from_day"
+    t.date     "to_day"
+    t.text     "discount_item"
+    t.string   "name"
+    t.string   "image"
+    t.float    "discount_rate"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "dishes", force: :cascade do |t|
+    t.string   "description"
+    t.string   "dish_name"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_dishes_on_category_id", using: :btree
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.float    "mark_boundary"
+    t.float    "discount_rate"
+    t.string   "level"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "order_details", force: :cascade do |t|
+    t.decimal  "price",                precision: 20, scale: 2
+    t.float    "discount_rate_by_day"
+    t.integer  "quantity"
+    t.integer  "order_id"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.integer  "dishes_id"
+    t.index ["dishes_id"], name: "index_order_details_on_dishes_id", using: :btree
+    t.index ["order_id"], name: "index_order_details_on_order_id", using: :btree
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal  "total",                       precision: 20, scale: 2
+    t.string   "discount_date_by_membership"
     t.integer  "user_id"
-    t.string   "title"
-    t.text     "body"
-    t.integer  "status",     default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.index ["user_id"], name: "index_notes_on_user_id", using: :btree
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
+  end
+
+  create_table "price_change_histories", force: :cascade do |t|
+    t.integer  "dishes_id"
+    t.decimal  "price",      precision: 20, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["dishes_id"], name: "index_price_change_histories_on_dishes_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
@@ -31,43 +85,56 @@ ActiveRecord::Schema.define(version: 20170503023429) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tables", force: :cascade do |t|
+    t.integer  "table_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "provider",               default: "email", null: false
-    t.string   "uid",                    default: "",      null: false
-    t.string   "encrypted_password",     default: "",      null: false
+    t.string   "provider",               default: "email",           null: false
+    t.string   "uid",                    default: "",                null: false
+    t.string   "encrypted_password",     default: "",                null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,       null: false
+    t.integer  "sign_in_count",          default: 0,                 null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
+    t.string   "current_sign_in_ipd"
     t.string   "last_sign_in_ip"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,       null: false
+    t.integer  "failed_attempts",        default: 0,                 null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "full_name"
     t.string   "avatar"
-    t.string   "email"
+    t.string   "email",                  default: "email@gmail.com"
+    t.string   "username"
     t.string   "access_token"
+    t.string   "birthdate"
+    t.float    "mark",                   default: 0.0
+    t.string   "phone"
     t.json     "tokens"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
     t.integer  "role_id"
-    t.string   "phone",                  default: ""
-    t.string   "address",                default: ""
-    t.index ["email"], name: "index_users_on_email", using: :btree
+    t.integer  "membership_id"
+    t.index ["membership_id"], name: "index_users_on_membership_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["role_id"], name: "index_users_on_role_id", using: :btree
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
+    t.index ["username"], name: "index_users_on_username", using: :btree
   end
 
-  add_foreign_key "notes", "users"
+  add_foreign_key "dishes", "categories"
+  add_foreign_key "order_details", "dishes", column: "dishes_id"
+  add_foreign_key "orders", "users"
+  add_foreign_key "price_change_histories", "dishes", column: "dishes_id"
+  add_foreign_key "users", "memberships"
   add_foreign_key "users", "roles"
 end

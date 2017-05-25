@@ -12,7 +12,7 @@
 #  sign_in_count          :integer          default("0"), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string
+#  current_sign_in_ipd    :string
 #  last_sign_in_ip        :string
 #  confirmation_token     :string
 #  confirmed_at           :datetime
@@ -21,25 +21,28 @@
 #  failed_attempts        :integer          default("0"), not null
 #  unlock_token           :string
 #  locked_at              :datetime
-#  first_name             :string
-#  last_name              :string
+#  full_name              :string
 #  avatar                 :string
-#  email                  :string
+#  email                  :string           default("email@gmail.com")
+#  username               :string
 #  access_token           :string
+#  birthdate              :string
+#  mark                   :float            default("0.0")
+#  phone                  :string
 #  tokens                 :json
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  role_id                :integer
-#  phone                  :string           default("")
-#  address                :string           default("")
+#  membership_id          :integer
 #
 # Indexes
 #
-#  index_users_on_email                 (email)
+#  index_users_on_membership_id         (membership_id)
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_role_id               (role_id)
 #  index_users_on_uid_and_provider      (uid,provider) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
+#  index_users_on_username              (username)
 #
 
 require 'rails_helper'
