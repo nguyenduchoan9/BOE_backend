@@ -11327,3 +11327,750 @@ Migrating to CreateDiscountDays (20170525154540)
   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "email@gmail.com"]]
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (113.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MobileApi_development"[0m
+  [1m[35m (110.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MobileApi_test"[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1035318227908834590);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseTokenAuthCreateUsers (20170426144706)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ipd" character varying, "last_sign_in_ip" character varying, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" character varying, "locked_at" timestamp, "full_name" character varying, "avatar" character varying, "email" character varying DEFAULT 'email@gmail.com', "username" character varying, "access_token" character varying, "birthdate" character varying, "mark" float DEFAULT 0.0, "phone" character varying, "tokens" json, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_uid_and_provider" ON "users"  ("uid", "provider")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_unlock_token" ON "users"  ("unlock_token")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170426144706"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRoles (20170426160953)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "roles" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170426160953"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRoleIdToUser (20170426163331)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "role_id" integer[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_role_id" ON "users"  ("role_id")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_642f17018b"
+FOREIGN KEY ("role_id")
+  REFERENCES "roles" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170426163331"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMemberships (20170525152550)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "memberships" ("id" serial primary key, "mark_boundary" float, "discount_rate" float, "level" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525152550"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddMembershipIdToUser (20170525152901)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "membership_id" integer[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_membership_id" ON "users"  ("membership_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_294fd8243b"
+FOREIGN KEY ("membership_id")
+  REFERENCES "memberships" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525152901"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20170525153131)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "orders" ("id" serial primary key, "total" decimal(20,2), "discount_date_by_membership" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_orders_on_user_id" ON "orders"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525153131"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrderDetails (20170525153337)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "order_details" ("id" serial primary key, "price" decimal(20,2), "discount_rate_by_day" float, "quantity" integer, "order_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_order_details_on_order_id" ON "order_details"  ("order_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525153337"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDishes (20170525153604)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "dishes" ("id" serial primary key, "description" character varying, "dish_name" character varying, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525153604"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20170525153827)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "category_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525153827"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCategoryIdToDish (20170525153901)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dishes" ADD "category_id" integer[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_dishes_on_category_id" ON "dishes"  ("category_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "dishes" ADD CONSTRAINT "fk_rails_07f79d0f12"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525153901"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePriceChangeHistories (20170525154055)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "price_change_histories" ("id" serial primary key, "dishes_id" integer, "price" decimal(20,2), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_fae15f85d1"
+FOREIGN KEY ("dishes_id")
+  REFERENCES "dishes" ("id")
+)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_price_change_histories_on_dishes_id" ON "price_change_histories"  ("dishes_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525154055"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDishIdToOrderDetail (20170525154132)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "order_details" ADD "dishes_id" integer[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_order_details_on_dishes_id" ON "order_details"  ("dishes_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "order_details" ADD CONSTRAINT "fk_rails_13f6fa4d3f"
+FOREIGN KEY ("dishes_id")
+  REFERENCES "dishes" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525154132"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTables (20170525154225)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "tables" ("id" serial primary key, "table_number" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525154225"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDiscountDays (20170525154540)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "discount_days" ("id" serial primary key, "from_day" date, "to_day" date, "discount_item" text, "name" character varying, "image" character varying, "discount_rate" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525154540"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-05-26 03:15:54 UTC], ["updated_at", 2017-05-26 03:15:54 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1035318227908834590)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "diner"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "diner"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "diner"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "manager"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "manager"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "manager"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "admin"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "chef"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "chef"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "chef"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "waiter"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "waiter"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "waiter"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMembership Load (0.2ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."level" = $1 AND "memberships"."mark_boundary" = $2 AND "memberships"."discount_rate" = $3 LIMIT $4[0m  [["level", "primium"], ["mark_boundary", 5.0], ["discount_rate", 2.0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMembership Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "memberships" WHERE "memberships"."level" = $1 LIMIT $2[0m  [["level", "primium"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "memberships" ("mark_boundary", "discount_rate", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["mark_boundary", 5.0], ["discount_rate", 2.0], ["level", "primium"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMembership Load (0.2ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."level" = $1 AND "memberships"."mark_boundary" = $2 AND "memberships"."discount_rate" = $3 LIMIT $4[0m  [["level", "silver"], ["mark_boundary", 8.0], ["discount_rate", 4.0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMembership Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "memberships" WHERE "memberships"."level" = $1 LIMIT $2[0m  [["level", "silver"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "memberships" ("mark_boundary", "discount_rate", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["mark_boundary", 8.0], ["discount_rate", 4.0], ["level", "silver"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMembership Load (0.2ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."level" = $1 AND "memberships"."mark_boundary" = $2 AND "memberships"."discount_rate" = $3 LIMIT $4[0m  [["level", "gold"], ["mark_boundary", 10.0], ["discount_rate", 6.0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMembership Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "memberships" WHERE "memberships"."level" = $1 LIMIT $2[0m  [["level", "gold"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "memberships" ("mark_boundary", "discount_rate", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["mark_boundary", 10.0], ["discount_rate", 6.0], ["level", "gold"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMembership Load (0.2ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."level" = $1 AND "memberships"."mark_boundary" = $2 AND "memberships"."discount_rate" = $3 LIMIT $4[0m  [["level", "diamond"], ["mark_boundary", 15.0], ["discount_rate", 8.0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMembership Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "memberships" WHERE "memberships"."level" = $1 LIMIT $2[0m  [["level", "diamond"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "memberships" ("mark_boundary", "discount_rate", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["mark_boundary", 15.0], ["discount_rate", 8.0], ["level", "diamond"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMembership Load (0.2ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."level" = $1 AND "memberships"."mark_boundary" = $2 AND "memberships"."discount_rate" = $3 LIMIT $4[0m  [["level", "ruby"], ["mark_boundary", 20.0], ["discount_rate", 10.0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMembership Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "memberships" WHERE "memberships"."level" = $1 LIMIT $2[0m  [["level", "ruby"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "memberships" ("mark_boundary", "discount_rate", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["mark_boundary", 20.0], ["discount_rate", 10.0], ["level", "ruby"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "dinner"], ["LIMIT", 1]]
+  [1m[36mMembership Load (0.2ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."level" = $1 LIMIT $2[0m  [["level", "diamond"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "email@gmail.com"]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "linhnk"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "full_name", "username", "tokens", "created_at", "updated_at", "membership_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["uid", "email@gmail.com"], ["encrypted_password", "$2a$10$axsz0xV37rREsyRZgGsvKepMzSFRtCHKtk8wJYTzHAwbjt4rS.Sam"], ["full_name", "Nguyen Khanh Linh"], ["username", "linhnk"], ["tokens", "{}"], ["created_at", 2017-05-26 03:16:01 UTC], ["updated_at", 2017-05-26 03:16:01 UTC], ["membership_id", 4]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "dinner"], ["LIMIT", 1]]
+  [1m[36mMembership Load (0.2ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."level" = $1 LIMIT $2[0m  [["level", "ruby"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "email@gmail.com"]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "phongld"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "dinner"], ["LIMIT", 1]]
+  [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."level" = $1 LIMIT $2[0m  [["level", "ruby"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "email@gmail.com"]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "nampd"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "email@gmail.com"]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "manager"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "email@gmail.com"]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "manager"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "waiter"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "email@gmail.com"]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "waiter"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 1], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 2], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 3], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 4], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 5], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 6], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 7], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 8], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 9], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 10], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 11], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tables" ("table_number", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["table_number", 12], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Appertize"], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Desert"], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Main Course"], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "First Course"], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Side Dish"], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Vegetarian"], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Cheap"], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Pizza"], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dishes" ("description", "dish_name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", ""], ["dish_name", ""], ["image", ""], ["created_at", 2017-05-26 03:16:02 UTC], ["updated_at", 2017-05-26 03:16:02 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m

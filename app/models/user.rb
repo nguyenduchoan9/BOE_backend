@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   belongs_to :role, optional: true
   belongs_to :membership, optional: true
 
-  # validates :email, uniqueness: {message: 'taken'}
+  validates :username, uniqueness: {message: 'taken'}
   # validates :first_name, presence: true
   validates :password, confirmation: true
 end

@@ -14,5 +14,5 @@
 #
 
 class PriceChangeHistory < ApplicationRecord
-  belongs_to :dishes
+  belongs_to :dish, optional: true
 end
