@@ -2,11 +2,11 @@ module Api
     module V1
         class SessionsController < ApplicationController
             before_action :execute
-
-            def create
+            
+            def index
             end
 
-            def destroy
+            def show
             end
         end
     end
