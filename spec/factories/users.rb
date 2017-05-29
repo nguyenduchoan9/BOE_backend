@@ -23,7 +23,7 @@
 #  locked_at              :datetime
 #  full_name              :string
 #  avatar                 :string
-#  email                  :string           default("email@gmail.com")
+#  email                  :string
 #  username               :string
 #  access_token           :string
 #  birthdate              :string

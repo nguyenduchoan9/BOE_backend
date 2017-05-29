@@ -5,7 +5,15 @@ Rails.application.routes.draw do
             get 'home', to: 'home#index'
             resources :users, only: [:show,:create, :update]
             resources :sessions, only: [:create, :destroy]
-            resources :dishes, only: [:index, :show, :update, :destroy]
+            resources :dishes, only: [:index, :show, :update, :destroy] do
+                member do
+                    get :cutlery
+                    get :drinking
+                end
+                collection do
+                    get :by_category
+                end
+            end
         end
     end
 end

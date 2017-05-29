@@ -1,3 +1,3 @@
 15.times do |v|
-    Table.create(table_number: v)
+    Table.find_or_create_by!(table_number: v)
 end

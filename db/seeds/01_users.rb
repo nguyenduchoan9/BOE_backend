@@ -14,43 +14,61 @@ end
                                 discount_rate: discount_rate)
 end
 
-
-User.create(username: 'linhnk',
+User.create(username: 'phongluuduc1',
             password: '123123123',
-            role: Role.find_by(name: 'dinner'),
-            avatar: '',
-            phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Nguyen Khanh Linh',
-            membership: Membership.find_by(level: 'diamond'))
-User.create(username: 'phongld',
-            password: '123123123',
-            role: Role.find_by(name: 'dinner'),
+            email: 'phong@gmail.com',
+            role: Role.find_by(name: 'diner'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
             full_name: 'Luu Duc Phong',
             membership: Membership.find_by(level: 'ruby'))
-User.create(username: 'nampd',
+
+User.create(username: 'khanhlinh',
             password: '123123123',
-            role: Role.find_by(name: 'dinner'),
+            email: 'linhnk@gmail.com',
+            role: Role.find_by(name: 'diner'),
+            avatar: '',
+            phone: Faker::PhoneNumber.phone_number,
+            full_name: 'Nguyen Khanh Linh',
+            membership: Membership.find_by(level: 'diamond'))
+
+User.create(username: 'namphan',
+            password: '123123123',
+            email: 'namdp@gmail.com',
+            role: Role.find_by(name: 'diner'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
             full_name: 'Phan Dang Nam',
             membership: Membership.find_by(level: 'ruby'))
-User.create(username: 'admin',
+
+User.create(username: 'hoangnguyen',
             password: '123123123',
+            email: 'hoangnd@gmail.com',
+            role: Role.find_by(name: 'diner'),
+            avatar: '',
+            phone: Faker::PhoneNumber.phone_number,
+            full_name: 'Nguyen Duc Hoang',
+            membership: Membership.find_by(level: 'gold'))
+
+User.create(username: 'adminadmin',
+            password: '123123123',
+            email: 'admin@gmail.com',
             role: Role.find_by(name: 'admin'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Admin', membership: nil)
-User.create(username: 'manager',
+            full_name: 'Admin', 
+            membership: nil)
+User.create(username: 'managermanager',
             password: '123123123',
+            email: 'manager@gmail.com',
             role: Role.find_by(name: 'manager'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
             full_name: 'Manger',
             membership: nil)
-User.create(username: 'waiter',
+User.create(username: 'waiterwaiter',
             password: '123123123',
+            email: 'waiter@gmail.com',
             role: Role.find_by(name: 'waiter'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
@@ -61,8 +79,9 @@ Role.all.each { |r|
     10.times do |i|
         User.create(username: r.name + i.to_s,
                     password: '123123123',
+                    email: r.name + i.to_s + '@gmail.com',
                     role: r,
-                    full_name: Faker::Name,
+                    full_name: Faker::Name.name,
                     membership: membership)
     end
 }

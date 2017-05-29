@@ -15,5 +15,5 @@ class Membership < ApplicationRecord
     validates :level, uniqueness: true
     validates :level, :mark_boundary, :discount_rate, presence: true
 
-    has_many :user
+    has_many :users
 end

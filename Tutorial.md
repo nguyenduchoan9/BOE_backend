@@ -4,6 +4,10 @@ rails db:create db:migrate db:seed
 
 * Reset Database *
 
-rails db:drop db:create db:migrate db:seed
+rails db:migrate:resetss
+
+* Open host for mobile *
+
+rails s -b [your-host]
 
  

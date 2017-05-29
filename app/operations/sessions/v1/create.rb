@@ -1,19 +1,19 @@
 module Sessions
   module V1
     class Create < Sessions::Base
-      class InvalidEmailOrPassword < ValidateError
+      class InvalidUsernameOrPassword < ValidateError
         def code
-          'INVALID_EMAIL_PASSWORD'
+          'INVALID_USERNAME_PASSWORD'
         end
       end
 
       private
       def find_user
-        user = User.find_by(:uid => uid, :provider => provider)
+        user = User.find_by(:username => username, :provider => provider)
         if user && user.valid_password?(password)
         	user
         else
-        	raise InvalidEmailOrPassword
+        	raise InvalidUsernameOrPassword
         end
       end
 
@@ -21,8 +21,8 @@ module Sessions
         'email'
       end
 
-      def uid
-        params[:email]
+      def username
+        params[:username]
       end
 
       def password
