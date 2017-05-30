@@ -8,7 +8,7 @@ module Dishes
                     dishes = cate.dishes.all.limit(20).map{ |d| Dishes::Serializer.new(d) }
                     menu << {'category': Categories::Serializer.new(cate), 'dishes': dishes}
                 }
-                menu
+                menu.shuffle
             end
 
             private
