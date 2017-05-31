@@ -7,12 +7,14 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
-gem 'bcrypt', '~> 3.1.7'
-
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+gem 'materialize-sass'
 gem 'active_model_serializers', '~> 0.10.0' # json response as collection
 gem 'faker' # fake data
 gem 'activerecord-import' # bulk insert record
@@ -25,7 +27,7 @@ gem 'omniauth-facebook' # authen fb/github/..
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0' # File Uploader
 gem 'mini_magick' # resize picture
 gem 'fog' # aws
-
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'kaminari' # paginate model view
 # gem 'geocoder' # longtitue, ip address , city, hometown
 gem 'rack-cors', :require => 'rack/cors' # cross origin region

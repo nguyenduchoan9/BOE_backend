@@ -12,9 +12,9 @@ end
 end
 
 
-User.create(username: 'linhnk', password: '123123123', role: Role.find_by(name: 'dinner'), full_name: 'Nguyen Khanh Linh', membership: Membership.find_by(level: 'diamond'))
-User.create(username: 'phongld', password: '123123123', role: Role.find_by(name: 'dinner'), full_name: 'Luu Duc Phong', membership: Membership.find_by(level: 'ruby'))
-User.create(username: 'nampd', password: '123123123', role: Role.find_by(name: 'dinner'), full_name: 'Phan Dang Nam', membership: Membership.find_by(level: 'ruby'))
+User.create(username: 'linhnk', password: '123123123', role: Role.find_by(name: 'diner'), full_name: 'Nguyen Khanh Linh', membership: Membership.find_by(level: 'diamond'))
+User.create(username: 'phongld', password: '123123123', role: Role.find_by(name: 'diner'), full_name: 'Luu Duc Phong', membership: Membership.find_by(level: 'ruby'))
+User.create(username: 'nampd', password: '123123123', role: Role.find_by(name: 'diner'), full_name: 'Phan Dang Nam', membership: Membership.find_by(level: 'ruby'))
 User.create(username: 'admin', password: '123123123', role: Role.find_by(name: 'admin'), full_name: 'Admin', membership: nil)
 User.create(username: 'manager', password: '123123123', role: Role.find_by(name: 'manager'), full_name: 'Manger', membership: nil)
 User.create(username: 'waiter', password: '123123123', role: Role.find_by(name: 'waiter'), full_name: 'Waiter', membership: nil)
