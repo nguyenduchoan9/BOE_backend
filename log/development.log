@@ -17595,3 +17595,1368 @@ Processing by StatisticController#index as HTML
 Completed 200 OK in 269ms (Views: 239.0ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:28:44 +0700
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:28:44 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (57.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (57.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StatisticController#index as HTML
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (287.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (289.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (132.6ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (132.6ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (531.8ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (565.8ms)
+Completed 500 Internal Server Error in 3756ms (ActiveRecord: 459.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     5:   <%= csrf_meta_tags %>
+     6:   <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+     7:   <%= javascript_include_tag "chartkick" %>
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: </head>
+    11: 
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___578694688_53364468'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+Completed 200 OK in 5705ms (Views: 5202.5ms | ActiveRecord: 456.0ms)
+
+
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23950.1ms)
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:34:21 +0700
+DEPRECATION WARNING: Passing string to define callback is deprecated and will be removed in Rails 5.1 without replacement. (called from <class:StatisticController> at C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb:2)
+Processing by StatisticController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as "authen_user" rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-06-01 15:34:31 +0700
+DEPRECATION WARNING: Passing string to define callback is deprecated and will be removed in Rails 5.1 without replacement. (called from <class:SessionController> at C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb:2)
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1925.4ms)
+Completed 200 OK in 2280ms (Views: 2255.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-06-01 15:34:55 +0700
+DEPRECATION WARNING: Passing string to define callback is deprecated and will be removed in Rails 5.1 without replacement. (called from <class:SessionController> at C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb:2)
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/oH979zux7dwLUR3xxSehYa2AAwxGsuppxdTYIwQASTkfI+KLiqSJFiHrGWOoL2ETs6gighT06M6ZxEfjqEO7A==", "session"=>{"username"=>"linhnk", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (229.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "linhnk"], ["LIMIT", 1]]
+  [1m[36mRole Load (1737.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5056ms (ActiveRecord: 2960.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:35:00 +0700
+DEPRECATION WARNING: Passing string to define callback is deprecated and will be removed in Rails 5.1 without replacement. (called from <class:StatisticController> at C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb:2)
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 309ms (Views: 283.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:35:45 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 274ms (Views: 244.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:35:57 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 292ms (Views: 251.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:36:00 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 253ms (Views: 232.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 15:36:01 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 325ms (Views: 311.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:36:02 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 262ms (Views: 252.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:36:58 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 269ms (Views: 238.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:37:19 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 264ms (Views: 244.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:37:50 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 283ms (Views: 247.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:39:02 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 286ms (Views: 248.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:39:11 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 284ms (Views: 254.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:39:21 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 275ms (Views: 254.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:39:26 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 266ms (Views: 248.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:40:08 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 299ms (Views: 264.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:40:20 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 269ms (Views: 244.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:40:41 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 292ms (Views: 274.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:40:48 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 280ms (Views: 254.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 15:40:51 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 329ms (Views: 309.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:40:52 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 266ms (Views: 254.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:42:42 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 288ms (Views: 257.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:44:29 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 271ms (Views: 252.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:45:06 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 285ms (Views: 249.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:45:26 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 272ms (Views: 243.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:45:31 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 253ms (Views: 245.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 15:45:33 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 358ms (Views: 335.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:45:34 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 289ms (Views: 270.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 15:50:17 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 285ms (Views: 257.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 15:50:19 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 337ms (Views: 320.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:50:20 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (42.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (63.2ms)
+Completed 200 OK in 467ms (Views: 387.8ms | ActiveRecord: 47.3ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:50:35 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (36.0ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `fullname' for #<User:0xc6deeb8>
+Did you mean?  full_name
+               full_name?
+               full_name=):
+     7:       </div>
+     8:       <div class="input-field">
+     9:         <%= f.label :full_name, "Fullname" %>
+    10:         <%= f.text_field :full_name, value: @user.fullname %>
+    11:       </div>
+    12:       <div class="input-field">
+    13:         <%= f.label :email, "Email" %>
+  
+app/views/users/edit.html.erb:10:in `block in _app_views_users_edit_html_erb__718069087_104262468'
+app/views/users/edit.html.erb:2:in `_app_views_users_edit_html_erb__718069087_104262468'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1066.7ms)
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:50:47 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 361ms (Views: 324.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:52:00 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 353ms (Views: 330.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:52:35 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (34.8ms)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (C:/Users/PHONG/BOE_backend/app/views/users/edit.html.erb:13: syntax error, unexpected ')'
+...d=( f.label :email, "Email",  );@output_buffer.safe_append='
+...                               ^
+C:/Users/PHONG/BOE_backend/app/views/users/edit.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+C:/Users/PHONG/BOE_backend/app/views/users/edit.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+C:/Users/PHONG/BOE_backend/app/views/users/edit.html.erb:30: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/users/edit.html.erb:13: syntax error, unexpected ')'
+app/views/users/edit.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+app/views/users/edit.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/users/edit.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1148.8ms)
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:52:46 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 388ms (Views: 369.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:53:40 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 347ms (Views: 329.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:55:38 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (90.1ms)
+Completed 200 OK in 454ms (Views: 430.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:56:26 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (265.2ms)
+Completed 500 Internal Server Error in 486ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `date' for #<ActionView::Helpers::FormBuilder:0xeace8c8>):
+    15:       </div>
+    16:       <div class="input-field">
+    17:         <%= f.label :birthdate, "Email" %>
+    18:         <%= f.date :birthdate, value: @user.birthdate, class: "datepicker" %>
+    19:       </div>
+    20:       <div class="input-field">
+    21:         <%= collection_select :user, :role_id, Role.all, :id, :name, prompt: true %>
+  
+app/views/users/edit.html.erb:18:in `block in _app_views_users_edit_html_erb__718069087_122964504'
+app/views/users/edit.html.erb:2:in `_app_views_users_edit_html_erb__718069087_122964504'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1175.2ms)
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:57:23 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 408ms (Views: 376.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:57:37 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 363ms (Views: 344.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:59:00 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 433ms (Views: 405.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 15:59:46 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 398ms (Views: 363.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 16:06:51 +0700
+Processing by StatisticController#index as HTML
+  Rendering statistic/index.html.erb within layouts/application
+  [1m[35m (15.6ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at) ORDER BY DATE(created_at)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level" ORDER BY sum(discount_rate)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("memberships"."discount_rate") AS sum_discount_rate, "memberships"."level" AS memberships_level FROM "memberships" GROUP BY "memberships"."level"[0m
+  Rendered statistic/index.html.erb within layouts/application (15.6ms)
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:06:51 +0700
+Completed 200 OK in 261ms (Views: 229.0ms | ActiveRecord: 15.6ms)
+
+
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 335ms (Views: 319.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:06:54 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 325ms (Views: 319.1ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:07:33 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZttMHY3tgts8p2Waem6fmg5Z2pWctGkzM0VfhgHWCcXcYtxU0EW7FEQmAe0wvkh0P1ANl7bSeMT26nrCeV8ZWg==", "user"=>{"id"=>"1", "username"=>"linhnk", "full_name"=>"Nguyen Khanh Linh", "email"=>"email@gmail.com", "birthdate"=>"1 June, 2017", "phone"=>"", "role_id"=>"3", "membership_id"=>"4"}, "commit"=>"update"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'fullname' for User.):
+  
+app/controllers/users_controller.rb:17:in `update'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1103.7ms)
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:09:17 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (20.0ms)
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `day' for "2015-05-03":String):
+    19:       <!--</div>-->
+    20:       <div class="input-field">
+    21:         <%= f.label :birthdate, "Birthday" %>
+    22:         <%= f.date_select :birthdate, value: @user.birthdate%>
+    23:       </div>
+    24:       <div class="input-field">
+    25:         <%= f.label :phone, "Phone" %>
+  
+app/views/users/edit.html.erb:22:in `block in _app_views_users_edit_html_erb__718069087_68195532'
+app/views/users/edit.html.erb:2:in `_app_views_users_edit_html_erb__718069087_68195532'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1076.5ms)
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:09:39 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (19.7ms)
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `day' for "2015-05-03":String):
+    19:       <!--</div>-->
+    20:       <div class="input-field">
+    21:         <%= f.label :birthdate, "Birthday" %>
+    22:         <%= f.date_select :birthdate, value: @user.birthdate%>
+    23:       </div>
+    24:       <div class="input-field">
+    25:         <%= f.label :phone, "Phone" %>
+  
+app/views/users/edit.html.erb:22:in `block in _app_views_users_edit_html_erb__718069087_123949320'
+app/views/users/edit.html.erb:2:in `_app_views_users_edit_html_erb__718069087_123949320'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1091.8ms)
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:10:05 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (229.2ms)
+Completed 500 Internal Server Error in 463ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `date' for #<ActionView::Helpers::FormBuilder:0xc2f4e88>):
+    19:       <!--</div>-->
+    20:       <div class="input-field">
+    21:         <%= f.label :birthdate, "Birthday" %>
+    22:         <%= f.date :birthdate, value: @user.birthdate, class: "datepicker" %>
+    23:       </div>
+    24:       <div class="input-field">
+    25:         <%= f.label :phone, "Phone" %>
+  
+app/views/users/edit.html.erb:22:in `block in _app_views_users_edit_html_erb__718069087_102714768'
+app/views/users/edit.html.erb:2:in `_app_views_users_edit_html_erb__718069087_102714768'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1085.7ms)
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:10:19 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `day' for "2015-05-03":String):
+    19:       <!--</div>-->
+    20:       <div class="input-field">
+    21:         <%= f.label :birthdate, "Birthday" %>
+    22:         <%= f.date_select :birthdate, value: @user.birthdate, class: "datepicker" %>
+    23:       </div>
+    24:       <div class="input-field">
+    25:         <%= f.label :phone, "Phone" %>
+  
+app/views/users/edit.html.erb:22:in `block in _app_views_users_edit_html_erb__718069087_46475016'
+app/views/users/edit.html.erb:2:in `_app_views_users_edit_html_erb__718069087_46475016'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1109.7ms)
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:10:31 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 392ms (Views: 370.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:11:16 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 364ms (Views: 325.6ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:11:26 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2cljOZMfskVM2O0WJ8URM9JOXxdd8aLgd4Wb2f6WJbjDNBFcYdvn1mRyBQRucTIyGjb/kWS4uurq9dmm/CcqcA==", "user"=>{"id"=>"1", "username"=>"linhnk", "full_name"=>"Nguyen Khanh Linh", "email"=>"email@gmail.com", "birthdate"=>"2015-05-21", "phone"=>"", "role_id"=>"3", "membership_id"=>"4"}, "commit"=>"update"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'fullname' for User.):
+  
+app/controllers/users_controller.rb:17:in `update'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1088.7ms)
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:11:52 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 368ms (Views: 330.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:12:24 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 387ms (Views: 344.8ms | ActiveRecord: 5.0ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:12:28 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZikpGDMJ3LdYNikvFAZl6VDcmnKQvgvNwDlQHMtQcrN81Ft9wc2JJHCcwT1dskbomKQ69Kn3E8ddSRJjyeF9ew==", "user"=>{"id"=>"1", "username"=>"linhnk", "full_name"=>"Nguyen Khanh Linh", "email"=>"email@gmail.com", "birthdate"=>"2015-05-03", "phone"=>"", "role_id"=>"3", "membership_id"=>"4"}, "commit"=>"update"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Role(#69952704) expected, got String(#20036040)):
+  
+app/controllers/users_controller.rb:17:in `update'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1075.1ms)
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:14:31 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZikpGDMJ3LdYNikvFAZl6VDcmnKQvgvNwDlQHMtQcrN81Ft9wc2JJHCcwT1dskbomKQ69Kn3E8ddSRJjyeF9ew==", "user"=>{"id"=>"1", "username"=>"linhnk", "full_name"=>"Nguyen Khanh Linh", "email"=>"email@gmail.com", "birthdate"=>"2015-05-03", "phone"=>"", "role_id"=>"3", "membership_id"=>"4"}, "commit"=>"update"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Role(#69952704) expected, got String(#20036040)):
+  
+app/controllers/users_controller.rb:17:in `update'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1090.7ms)
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:15:14 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZikpGDMJ3LdYNikvFAZl6VDcmnKQvgvNwDlQHMtQcrN81Ft9wc2JJHCcwT1dskbomKQ69Kn3E8ddSRJjyeF9ew==", "user"=>{"id"=>"1", "username"=>"linhnk", "full_name"=>"Nguyen Khanh Linh", "email"=>"email@gmail.com", "birthdate"=>"2015-05-03", "phone"=>"", "role_id"=>"3", "membership_id"=>"4"}, "commit"=>"update"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Role(#69952704) expected, got String(#20036040)):
+  
+app/controllers/users_controller.rb:17:in `update'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1083.7ms)
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:15:46 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZikpGDMJ3LdYNikvFAZl6VDcmnKQvgvNwDlQHMtQcrN81Ft9wc2JJHCcwT1dskbomKQ69Kn3E8ddSRJjyeF9ew==", "user"=>{"id"=>"1", "username"=>"linhnk", "full_name"=>"Nguyen Khanh Linh", "email"=>"email@gmail.com", "birthdate"=>"2015-05-03", "phone"=>"", "role_id"=>"3", "membership_id"=>"4"}, "commit"=>"update"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 47ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:15:46 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 355ms (Views: 337.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit?id=1" for 127.0.0.1 at 2017-06-01 16:17:10 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 373ms (Views: 338.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:17:15 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 334ms (Views: 317.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:17:16 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 357ms (Views: 339.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:17:29 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"optcAEFC15uCvoqOCD2QArbJsW5G/ARzHH82FaUvrg4YIsxJHOruVPo/7vlC7Ufsh8BmbGyaFYTZ0BNR3aa+kQ==", "user"=>{"id"=>"2", "username"=>"phongld", "full_name"=>"Phongld", "email"=>"phone@gmail.com", "birthdate"=>"", "phone"=>"", "role_id"=>"4", "membership_id"=>"2"}, "commit"=>"update"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMembership Load (51.1ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (315.1ms)[0m  [1m[33mUPDATE "users" SET "full_name" = $1, "role_id" = $2, "membership_id" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["full_name", "Phongld"], ["role_id", 4], ["membership_id", 2], ["updated_at", "2017-06-01 09:17:29.734961"], ["id", 2]]
+  [1m[35m (47.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 430ms (ActiveRecord: 415.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:17:30 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 364ms (Views: 330.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:17:34 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 315ms (Views: 309.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:18:05 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 415ms (Views: 343.6ms | ActiveRecord: 17.6ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:18:07 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q2O6wQT6LHlWNaYXDU1kk1AB+6X9fwzAWIa7uJgx05MR2iqIWVIVti60wmBHnbN9YQgsp9cZHTedKZ784LjDDA==", "user"=>{"id"=>"2", "username"=>"phongld", "full_name"=>"Phongld", "email"=>"mail@gmail.com", "birthdate"=>"", "phone"=>"", "role_id"=>"4", "membership_id"=>"2"}, "commit"=>"update"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "mail@gmail.com"], ["updated_at", "2017-06-01 09:18:07.920436"], ["id", 2]]
+  [1m[35m (270.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 287ms (ActiveRecord: 273.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:18:08 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 360ms (Views: 336.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:18:09 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 362ms (Views: 344.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:18:17 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8YI9M1Heu/tZksKk+ufg6TERuIJptHzn6PmtkUSQFABLO616DHaCNCETptOwNzcHABhvgEPSbRAtVojVPBkEnw==", "user"=>{"id"=>"2", "username"=>"phongld", "full_name"=>"Phongld fullname", "email"=>"mail@gmail.com", "birthdate"=>"", "phone"=>"", "role_id"=>"4", "membership_id"=>"2"}, "commit"=>"update"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "full_name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["full_name", "Phongld fullname"], ["updated_at", "2017-06-01 09:18:17.521431"], ["id", 2]]
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 29ms (ActiveRecord: 17.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:18:17 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 357ms (Views: 324.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:18:20 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 359ms (Views: 335.5ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:18:58 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CcplUBzvapKgKfkJkfuRGvveN/cQXZ7AC8N0oyKp7SSzc/UZQUdTXdionX7bK0b0ytfg9To7jzfObFHnWiD9uw==", "user"=>{"id"=>"2", "username"=>"phongld", "full_name"=>"Phongld fullname", "email"=>"mail@gmail.com", "birthdate"=>"", "phone"=>"01255553393", "role_id"=>"4", "membership_id"=>"2"}, "commit"=>"update"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "users" SET "phone" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["phone", "01255553393"], ["updated_at", "2017-06-01 09:18:58.778693"], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 50ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:18:58 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 342ms (Views: 325.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:19:01 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 351ms (Views: 328.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:20:24 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 406ms (Views: 363.3ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:20:31 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6GAdET1OGnywuM2rKRWPpS89qooqjqHXk1bdbjCdY+PynW90z4pP75gSJblgoayk50UKDBPHud0OJp8RMixsKw==", "user"=>{"id"=>"2", "username"=>"phongld", "full_name"=>"Phongld fullname", "email"=>"mail@gmail.com", "birthdate"=>"12 June, 2017", "phone"=>"01255553393", "role_id"=>"4", "membership_id"=>"2"}, "commit"=>"update"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "birthdate" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["birthdate", "2017-06-12"], ["updated_at", "2017-06-01 09:20:31.978752"], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:20:31 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 356ms (Views: 340.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:20:34 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 358ms (Views: 336.3ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:20:41 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lzgoKlgd/+qumljh9Qe65mkFTMNgb/n683kK04X4oZctgbhjBbXGJdYbPJa/120IWAybwUoJ6A021i+X/XGxCA==", "user"=>{"id"=>"2", "username"=>"phongld", "full_name"=>"Phongld fullname", "email"=>"mail@gmail.com", "birthdate"=>"1 June, 2017", "phone"=>"01255553393", "role_id"=>"4", "membership_id"=>"2"}, "commit"=>"update"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "birthdate" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["birthdate", "2017-06-01"], ["updated_at", "2017-06-01 09:20:41.960116"], ["id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 9ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:20:41 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 359ms (Views: 337.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:20:44 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 337ms (Views: 319.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:21:04 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 361ms (Views: 341.2ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2017-06-01 16:21:16 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X086K8K9iyrFASi6CNGW9xj4yJylAXmaaEwNV/8yUOnl9qpinxWy5b2ATM1CAUEZKfEfno9naG2t4ygTh7tAdg==", "user"=>{"id"=>"2", "username"=>"phongld", "full_name"=>"Phongld fullname", "email"=>"mail@gmail.com", "birthdate"=>"2017-06-01", "phone"=>"01255553393", "role_id"=>"4", "membership_id"=>"1"}, "commit"=>"update"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "users" SET "membership_id" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["membership_id", 1], ["updated_at", "2017-06-01 09:21:16.161788"], ["id", 2]]
+  [1m[35m (76.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 87ms (ActiveRecord: 79.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:21:16 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 355ms (Views: 332.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/edit?id=2" for 127.0.0.1 at 2017-06-01 16:21:18 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 355ms (Views: 334.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:21:22 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 338ms (Views: 326.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-06-01 16:21:24 +0700
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for UsersController):
+  
+actionpack (5.0.3) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.3) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.3) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.3) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.3) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.3) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.3) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.3) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.3) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.3) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.3) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.0ms)
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:22:33 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 383ms (Views: 365.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-06-01 16:22:35 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 363ms (Views: 342.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-06-01 16:22:52 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 363ms (Views: 340.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-06-01 16:23:21 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 356ms (Views: 323.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-06-01 16:23:33 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 354ms (Views: 335.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-06-01 16:23:52 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 344ms (Views: 326.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-06-01 16:23:53 +0700
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 342ms (Views: 317.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-06-01 16:23:57 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  [1m[36mMembership Load (0.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 336ms (Views: 322.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-06-01 16:24:44 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BhBQsMIPHqMSpQGf1mxhiM7BEiixfh+VhqRXyizUINYcMwLFw6aLoVotTg/zkWqtbXJcgzDO2FUFXeyT8up4FA==", "user"=>{"username"=>"phong insert", "full_name"=>"phong insert fullname", "email"=>"emailinsert@gmail.com", "birthdate"=>"21 June, 2017", "phone"=>"01255553333", "role_id"=>"3", "membership_id"=>"1"}, "commit"=>"submit"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 6380ms (ActiveRecord: 0.0ms)
+
+

@@ -1,5 +1,6 @@
 class StatisticController < ApplicationController
-  def index
+  before_action 'authen_user'
 
+  def index
   end
 end

@@ -21,7 +21,7 @@ class SessionController < WebApplcationController
 
       if user.role.name == 'admin'
         session[:user_id] = user.id
-        redirect_to users_path
+        redirect_to root_path
       else
         redirect_to login_path
       end

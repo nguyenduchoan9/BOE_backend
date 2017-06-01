@@ -41,7 +41,8 @@
 <% else %>
     <div class="row">
       <ul class="side-nav fixed col s2" style="z-index: 0; padding-top: 5%">
-        <li class="no-padding"><%= link_to "Manage User", controller: 'users', action: 'show' %></li>
+        <li class="no-padding"><%= link_to "DASHBOARD", root_path %></li>
+        <li class="no-padding"><%= link_to "MANAGE USERS", controller: 'users', action: 'show' %></li>
       </ul>
       <div class="col s10 offset-s2">
         <%= yield %>
