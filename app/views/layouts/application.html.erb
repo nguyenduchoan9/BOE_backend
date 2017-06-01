@@ -3,7 +3,8 @@
 <head>
   <title>MobileApi</title>
   <%= csrf_meta_tags %>
-
+  <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+  <%= javascript_include_tag "chartkick" %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -17,7 +18,7 @@
       <a href="#" class="brand-logo"><img src="http://demo.geekslabs.com/materialize-v1.0/images/materialize-logo.png"></a>
 
       <ul class="right">
-        <% if session[:userid].nil? %>
+        <% if session[:user_id].nil? %>
         <% else %>
             <li>
               <%= link_to logout_path, method: :delete do %>
@@ -31,7 +32,7 @@
   </nav>
 </div>
 
-<% if session[:userid].nil? %>
+<% if session[:user_id].nil? %>
     <div class="row">
       <div class="col s8 offset-s2">
         <%= yield %>
@@ -41,16 +42,6 @@
     <div class="row">
       <ul class="side-nav fixed col s2" style="z-index: 0; padding-top: 5%">
         <li class="no-padding"><%= link_to "Manage User", controller: 'users', action: 'show' %></li>
-        <li class="no-padding"><%= link_to "Manage Table", controller: 'tables', action: 'show' %></li>
-        <li>
-          <a class="dropdown-button" href="#" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
-        </li>
-        <ul id='dropdown1' class='dropdown-content'>
-          <li><a href="#!">First</a></li>
-          <li><a href="#!">Second</a></li>
-          <li><a href="#!">Third</a></li>
-          <li><a href="#!">Fourth</a></li>
-        </ul>
       </ul>
       <div class="col s10 offset-s2">
         <%= yield %>

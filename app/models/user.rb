@@ -48,8 +48,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules.
   devise :database_authenticatable, :registerable, :recoverable,
-    :rememberable, :validatable, :omniauthable
-    # :confirmable, , :token_authenticatable
+         :rememberable, :validatable, :omniauthable
+  # :confirmable, , :token_authenticatable
 
   include DeviseTokenAuth::Concerns::User
 
@@ -59,4 +59,13 @@ class User < ActiveRecord::Base
   # validates :email, uniqueness: {message: 'taken'}
   # validates :first_name, presence: true
   validates :password, confirmation: true
+
+
+  def self.search(term)
+    if term
+      where('lower(full_name) LIKE ?', "%#{term.downcase}%")
+    else
+      all
+    end
+  end
 end

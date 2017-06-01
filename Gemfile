@@ -15,11 +15,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'materialize-sass'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-materialize', '0.1.2'
 gem 'active_model_serializers', '~> 0.10.0' # json response as collection
 gem 'faker' # fake data
 gem 'activerecord-import' # bulk insert record
 gem 'annotate' # annotate model
-
+gem "chartkick" #chart
 gem 'devise_token_auth', '~> 0.1.39' # authen-token
 gem 'devise', '~> 4.2.0' # authen
 gem 'omniauth-facebook' # authen fb/github/..
