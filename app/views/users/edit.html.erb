@@ -1,0 +1,41 @@
+<div style="padding: 5%;">
+  <%= form_for @user, url: {controller: 'users', action: 'update'} do |f| %>
+      <%= f.hidden_field :id %>
+      <div class="input-field">
+        <%= f.label :username, "Username" %>
+        <%= f.text_field :username, value: @user.username %>
+      </div>
+      <div class="input-field">
+        <%= f.label :full_name, "Fullname" %>
+        <%= f.text_field :full_name, value: @user.full_name %>
+      </div>
+      <div class="input-field">
+        <%= f.label :email, "Email" %>
+        <%= f.email_field :email, value: @user.email, class: "validate" %>
+      </div>
+      <div class="input-field">
+        <%= f.label :birthdate, "Birthday" %>
+        <%= f.date_field :birthdate, value: @user.birthdate, class: "datepicker" %>
+      </div>
+      <div class="input-field">
+        <%= f.label :phone, "Phone" %>
+        <%= f.phone_field :phone, value: @user.phone %>
+      </div>
+      <div class="input-field">
+        <%= collection_select :user, :role_id, Role.all, :id, :name, prompt: true %>
+        <label>User Role</label>
+      </div>
+      <div class="input-field">
+        <%= collection_select :user, :membership_id, Membership.all, :id, :level, prompt: true %>
+        <label>User Membership</label>
+      </div>
+      <%= f.submit value: 'update', class: 'btn' %>
+      <%= link_to 'Back', :back, class: "btn" %>
+  <% end %>
+</div>
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+</script>

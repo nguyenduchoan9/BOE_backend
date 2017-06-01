@@ -1,0 +1,11 @@
+<nav style="background-color: white; margin-bottom: 1%;">
+  <div class="nav-wrapper left-align">
+
+  </div>
+</nav>
+<div class="container">
+  <%= line_chart User.group("DATE(created_at)").order("DATE(created_at)").count %>
+  <%= pie_chart Membership.group(:level).order("sum(discount_rate)").sum(:discount_rate) %>
+  <%= column_chart Membership.group(:level).order("sum(discount_rate)").sum(:discount_rate) %>
+  <%= area_chart Membership.group(:level).sum(:discount_rate) %>
+</div>

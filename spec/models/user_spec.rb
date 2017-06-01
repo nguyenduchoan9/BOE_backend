@@ -9,7 +9,7 @@
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  sign_in_count          :integer          default("0"), not null
+#  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
 #  current_sign_in_ipd    :string
@@ -18,7 +18,7 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
-#  failed_attempts        :integer          default("0"), not null
+#  failed_attempts        :integer          default(0), not null
 #  unlock_token           :string
 #  locked_at              :datetime
 #  full_name              :string
@@ -27,7 +27,7 @@
 #  username               :string
 #  access_token           :string
 #  birthdate              :string
-#  mark                   :float            default("0.0")
+#  mark                   :float            default(0.0)
 #  phone                  :string
 #  tokens                 :json
 #  created_at             :datetime         not null

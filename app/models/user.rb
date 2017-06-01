@@ -9,7 +9,7 @@
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  sign_in_count          :integer          default("0"), not null
+#  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
 #  current_sign_in_ipd    :string
@@ -18,7 +18,7 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
-#  failed_attempts        :integer          default("0"), not null
+#  failed_attempts        :integer          default(0), not null
 #  unlock_token           :string
 #  locked_at              :datetime
 #  full_name              :string
@@ -27,7 +27,7 @@
 #  username               :string
 #  access_token           :string
 #  birthdate              :string
-#  mark                   :float            default("0.0")
+#  mark                   :float            default(0.0)
 #  phone                  :string
 #  tokens                 :json
 #  created_at             :datetime         not null
@@ -48,8 +48,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules.
   devise :database_authenticatable, :registerable, :recoverable,
-    :rememberable, :trackable, :validatable, :omniauthable
-    # :confirmable, , :token_authenticatable
+         :rememberable, :validatable, :omniauthable
+  # :confirmable, , :token_authenticatable
 
   include DeviseTokenAuth::Concerns::User
 
@@ -61,4 +61,15 @@ class User < ActiveRecord::Base
   belongs_to :membership, optional: true
 
   has_many :orders
+  # validates :email, uniqueness: {message: 'taken'}
+  # validates :first_name, presence: true
+
+
+  def self.search(term)
+    if term
+      where('lower(full_name) LIKE ?', "%#{term.downcase}%")
+    else
+      all
+    end
+  end
 end

@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MobileApi</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>MobileApi</title>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+  <%= javascript_include_tag "chartkick" %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<body>
 
-  <body>
-    <%= yield %>
-  </body>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper" style="background-color: #26a69a">
+
+      <a href="#" class="brand-logo"><img src="http://demo.geekslabs.com/materialize-v1.0/images/materialize-logo.png"></a>
+
+      <ul class="right">
+        <% if session[:user_id].nil? %>
+        <% else %>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                  <i class="small material-icons">input</i>
+              <% end %>
+            </li>
+        <% end %>
+
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<% if session[:user_id].nil? %>
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <%= yield %>
+      </div>
+    </div>
+<% else %>
+    <div class="row">
+      <ul class="side-nav fixed col s2" style="z-index: 0; padding-top: 5%">
+        <li class="no-padding"><%= link_to "DASHBOARD", root_path %></li>
+        <li class="no-padding"><%= link_to "MANAGE USERS", controller: 'users', action: 'show' %></li>
+      </ul>
+      <div class="col s10 offset-s2">
+        <%= yield %>
+      </div>
+    </div>
+
+<% end %>
+
+
+</body>
 </html>
+<script>
+    $(document).ready(function () {
+        $('select').material_select();
+    });
+    $(document).ready(function () {
+        Materialize.updateTextFields();
+    });
+</script>

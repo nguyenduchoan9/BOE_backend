@@ -32,7 +32,7 @@ User.create(username: 'khanhlinh',
             full_name: 'Nguyen Khanh Linh',
             membership: Membership.find_by(level: 'diamond'))
 
-User.create(username: 'namphan',
+User.create(username: 'namphandang',
             password: '123123123',
             email: 'namdp@gmail.com',
             role: Role.find_by(name: 'diner'),

@@ -1,0 +1,10 @@
+@import "materialize";
+@import url("http://fonts.googleapis.com/icon?family=Material+Icons");
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.pagination a li.active {
+    color: #fff;
+}
