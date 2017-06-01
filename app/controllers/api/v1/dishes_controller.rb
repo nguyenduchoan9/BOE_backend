@@ -1,6 +1,6 @@
 module Api
     module V1
-        class DishesController < ApplicationController
+        class DishesController < ApiController
             before_action :execute
 
             def index

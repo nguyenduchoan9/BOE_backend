@@ -1,6 +1,6 @@
 module Api
     module V1
-        class SessionsController < ApplicationController
+        class SessionsController < ApiController
             before_action :execute
 
             def create

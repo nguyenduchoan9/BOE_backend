@@ -1,6 +1,6 @@
 module Api
     module V1
-        class NotesController < ApplicationController
+        class NotesController < ApiController
             before_action :execute
 
             def index
