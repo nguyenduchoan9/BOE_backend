@@ -12,6 +12,7 @@ Rails.application.routes.draw do
                 end
                 collection do
                     get :by_category
+                    get :as_cart
                 end
             end
         end

@@ -72,12 +72,12 @@ ActiveRecord::Schema.define(version: 20170525154540) do
   end
 
   create_table "price_change_histories", force: :cascade do |t|
-    t.integer  "dishes_id"
+    t.integer  "dish_id"
     t.decimal  "price",      precision: 20, scale: 2
-    t.datetime "from_date",                           default: '2017-05-28 08:08:16'
+    t.datetime "from_date",                           default: '2017-06-01 02:58:00'
     t.datetime "created_at",                                                          null: false
     t.datetime "updated_at",                                                          null: false
-    t.index ["dishes_id"], name: "index_price_change_histories_on_dishes_id", using: :btree
+    t.index ["dish_id"], name: "index_price_change_histories_on_dish_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 20170525154540) do
   add_foreign_key "dishes", "categories"
   add_foreign_key "order_details", "dishes"
   add_foreign_key "orders", "users"
-  add_foreign_key "price_change_histories", "dishes", column: "dishes_id"
+  add_foreign_key "price_change_histories", "dishes"
   add_foreign_key "users", "memberships"
   add_foreign_key "users", "roles"
 end

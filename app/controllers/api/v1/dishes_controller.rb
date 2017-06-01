@@ -17,6 +17,9 @@ module Api
 
             def drinking
             end
+
+            def as_cart
+            end
         end
     end
 end
