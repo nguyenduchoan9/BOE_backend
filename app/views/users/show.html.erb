@@ -28,6 +28,7 @@
     <thead>
     <th>USERNAME</th>
     <th>FULLNAME</th>
+    <th>EMAIL</th>
     <th>ROLE</th>
     <th></th>
     </thead>
@@ -36,9 +37,10 @@
         <tr>
           <td><%= user.username %></td>
           <td><%= user.full_name %></td>
+          <td><%= user.email %></td>
           <td><%= user.role.name %></td>
           <td>
-            <a class="btn-floating btn-large red" href="users/edit?id=<%= user.id %>">
+            <a class="btn-floating red" href="users/edit?id=<%= user.id %>">
               <i class="large material-icons">mode_edit</i>
             </a>
           </td>

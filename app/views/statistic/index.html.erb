@@ -1,11 +1,34 @@
-<nav style="background-color: white; margin-bottom: 1%;">
-  <div class="nav-wrapper left-align">
-
+<div class="row valign-wrapper">
+  <div class="col s3 input-field">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">User</option>
+      <option value="2">Order</option>
+      <option value="3">Dish</option>
+    </select>
+    <label>TYPE</label>
   </div>
-</nav>
+  <div class="col s2 input-field">
+    <input type="date" class="datepicker">
+    <label>From day:</label>
+  </div>
+  <div class="col s2 input-field">
+    <input type="date" class="datepicker" id="to-date">
+    <label>To day:</label>
+  </div>
+  <div class="col s2">
+    <button class="btn">MAKE</button>
+  </div>
+</div>
 <div class="container">
   <%= line_chart User.group("DATE(created_at)").order("DATE(created_at)").count %>
   <%= pie_chart Membership.group(:level).order("sum(discount_rate)").sum(:discount_rate) %>
   <%= column_chart Membership.group(:level).order("sum(discount_rate)").sum(:discount_rate) %>
   <%= area_chart Membership.group(:level).sum(:discount_rate) %>
 </div>
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+</script>
