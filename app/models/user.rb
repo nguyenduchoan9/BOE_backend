@@ -64,7 +64,6 @@ class User < ActiveRecord::Base
   # validates :email, uniqueness: {message: 'taken'}
   # validates :first_name, presence: true
 
-
   def self.search(term)
     if term
       where('lower(full_name) LIKE ?', "%#{term.downcase}%")

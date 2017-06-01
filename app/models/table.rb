@@ -9,4 +9,12 @@
 #
 
 class Table < ApplicationRecord
+
+  def self.search(term)
+    if term
+      where('table_number = ?', "#{term.downcase}")
+    else
+      all
+    end
+  end
 end
