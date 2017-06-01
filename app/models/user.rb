@@ -23,7 +23,7 @@
 #  locked_at              :datetime
 #  full_name              :string
 #  avatar                 :string
-#  email                  :string           default("email@gmail.com")
+#  email                  :string
 #  username               :string
 #  access_token           :string
 #  birthdate              :string
@@ -53,12 +53,16 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
 
+  validates :username, uniqueness: {message: 'taken'}
+  # validates :first_name, presence: true
+  validates :password, confirmation: true
+
   belongs_to :role, optional: true
   belongs_to :membership, optional: true
 
+  has_many :orders
   # validates :email, uniqueness: {message: 'taken'}
   # validates :first_name, presence: true
-  validates :password, confirmation: true
 
 
   def self.search(term)

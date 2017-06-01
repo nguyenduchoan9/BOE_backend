@@ -9,13 +9,15 @@
 #  order_id             :integer
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
-#  dishes_id            :integer
+#  dish_id              :integer
 #
 # Indexes
 #
-#  index_order_details_on_dishes_id  (dishes_id)
-#  index_order_details_on_order_id   (order_id)
+#  index_order_details_on_dish_id   (dish_id)
+#  index_order_details_on_order_id  (order_id)
 #
 
 class OrderDetail < ApplicationRecord
+	belongs_to :dish, optional: true
+	belongs_to :order, optional: true
 end

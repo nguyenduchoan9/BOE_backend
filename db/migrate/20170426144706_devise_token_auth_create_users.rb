@@ -36,7 +36,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.0]
       ## User Info
       t.string :full_name
       t.string :avatar
-      t.string :email, default: 'email@gmail.com'
+      t.string :email
       t.string :username
       t.string :access_token
       t.string :birthdate

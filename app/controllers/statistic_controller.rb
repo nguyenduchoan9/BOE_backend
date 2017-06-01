@@ -1,4 +1,4 @@
-class StatisticController < ApplicationController
+class StatisticController < WebApplcationController
   before_action 'authen_user'
 
   def index

@@ -15,7 +15,7 @@ module Sessions
 
     private
     def find_user
-      User.where(:uid => uid, :provider => provider).first_or_initialize
+      User.where(:username => username, :provider => provider).first_or_initialize
     end
 
     def update_user(user)
@@ -24,7 +24,7 @@ module Sessions
       user
     end
 
-    def uid
+    def username
       raise NotImplementedError
     end
 

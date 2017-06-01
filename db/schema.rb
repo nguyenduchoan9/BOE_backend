@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.integer  "order_id"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.integer  "dishes_id"
-    t.index ["dishes_id"], name: "index_order_details_on_dishes_id", using: :btree
+    t.integer  "dish_id"
+    t.index ["dish_id"], name: "index_order_details_on_dish_id", using: :btree
     t.index ["order_id"], name: "index_order_details_on_order_id", using: :btree
   end
 
@@ -72,11 +72,12 @@ ActiveRecord::Schema.define(version: 20170525154540) do
   end
 
   create_table "price_change_histories", force: :cascade do |t|
-    t.integer  "dishes_id"
+    t.integer  "dish_id"
     t.decimal  "price",      precision: 20, scale: 2
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["dishes_id"], name: "index_price_change_histories_on_dishes_id", using: :btree
+    t.datetime "from_date",                           default: '2017-06-01 10:01:44'
+    t.datetime "created_at",                                                          null: false
+    t.datetime "updated_at",                                                          null: false
+    t.index ["dish_id"], name: "index_price_change_histories_on_dish_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
@@ -92,13 +93,13 @@ ActiveRecord::Schema.define(version: 20170525154540) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "provider",               default: "email",           null: false
-    t.string   "uid",                    default: "",                null: false
-    t.string   "encrypted_password",     default: "",                null: false
+    t.string   "provider",               default: "email", null: false
+    t.string   "uid",                    default: "",      null: false
+    t.string   "encrypted_password",     default: "",      null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,                 null: false
+    t.integer  "sign_in_count",          default: 0,       null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ipd"
@@ -107,20 +108,20 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,                 null: false
+    t.integer  "failed_attempts",        default: 0,       null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "full_name"
     t.string   "avatar"
-    t.string   "email",                  default: "email@gmail.com"
+    t.string   "email"
     t.string   "username"
     t.string   "access_token"
     t.string   "birthdate"
     t.float    "mark",                   default: 0.0
     t.string   "phone"
     t.json     "tokens"
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "role_id"
     t.integer  "membership_id"
     t.index ["membership_id"], name: "index_users_on_membership_id", using: :btree
@@ -132,9 +133,9 @@ ActiveRecord::Schema.define(version: 20170525154540) do
   end
 
   add_foreign_key "dishes", "categories"
-  add_foreign_key "order_details", "dishes", column: "dishes_id"
+  add_foreign_key "order_details", "dishes"
   add_foreign_key "orders", "users"
-  add_foreign_key "price_change_histories", "dishes", column: "dishes_id"
+  add_foreign_key "price_change_histories", "dishes"
   add_foreign_key "users", "memberships"
   add_foreign_key "users", "roles"
 end
