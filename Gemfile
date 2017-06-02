@@ -25,7 +25,7 @@ gem "chartkick" #chart
 gem 'devise_token_auth', '~> 0.1.39' # authen-token
 gem 'devise', '~> 4.2.0' # authen
 gem 'omniauth-facebook' # authen fb/github/..
-
+gem 'gcm'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0' # File Uploader
 gem 'mini_magick' # resize picture
 gem 'fog' # aws
@@ -34,7 +34,7 @@ gem 'kaminari' # paginate model view
 # gem 'geocoder' # longtitue, ip address , city, hometown
 gem 'rack-cors', :require => 'rack/cors' # cross origin region
 gem "figaro" # ENV
-
+gem "sidekiq"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
