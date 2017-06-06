@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     delete 'logout', to: 'session#destroy'
     resource 'users'
     resource 'tables'
+    get 'make_statistic', to: 'statistic#make_statistic'
     devise_for :users
-
     namespace :api do
         scope module: :v1, constraints: ApiConstraint.new(version: :v1) do
             get 'home', to: 'home#index'

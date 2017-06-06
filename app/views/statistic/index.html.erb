@@ -1,34 +1,70 @@
-<div class="row valign-wrapper">
+<div class="row valign-wrapper" id="test">
   <div class="col s3 input-field">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">User</option>
-      <option value="2">Order</option>
-      <option value="3">Dish</option>
+    <select id="type">
+      <option value="user" class="selected">User</option>
+      <option value="order">Order</option>
+      <option value="dish">Dish</option>
     </select>
     <label>TYPE</label>
   </div>
   <div class="col s2 input-field">
-    <input type="date" class="datepicker">
+    <input type="date" class="datepicker" id="from_date">
     <label>From day:</label>
   </div>
   <div class="col s2 input-field">
-    <input type="date" class="datepicker" id="to-date">
+    <input type="date" class="datepicker" id="to_date">
     <label>To day:</label>
   </div>
   <div class="col s2">
-    <button class="btn">MAKE</button>
+    <button class="btn" id="make" onclick="make_statistic()">MAKE</button>
   </div>
 </div>
-<div class="container">
-  <%= line_chart User.group(:role).count %>
-  <%= pie_chart Dish.group(:category).count %>
-  <%= column_chart Membership.group(:level).order("sum(discount_rate)").sum(:discount_rate) %>
-  <%= area_chart Membership.group(:level).sum(:discount_rate) %>
+<div class="row">
+  <div class="col s6">
+    <%= line_chart User.group('DATE(created_at)').count, id: "line_chart" %>
+  </div>
+  <div class="col s6">
+    <%= pie_chart User.group('DATE(created_at)').count, id: "pie_chart" %>
+  </div>
 </div>
+<div class="row">
+  <div class="col s6">
+    <%= column_chart User.group('DATE(created_at)').count, id: "column_chart" %>
+  </div>
+  <div class="col s6">
+    <%= area_chart User.group('DATE(created_at)').count, id: "area_chart" %>
+  </div>
+</div>
+
+
+
+
 <script>
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
+    function make_statistic() {
+        var type_select = document.getElementById('type');
+        var selected_type = type_select.options[type_select.selectedIndex];
+        $.ajax({
+            url: '/make_statistic.json',
+            dataType: 'json',
+            data: {
+                type: selected_type.value,
+                from_date: document.getElementById('from_date').value,
+                to_date: document.getElementById('to_date').value
+            },
+            success: function (data) {
+                var line_chart = Chartkick.charts["line_chart"];
+                line_chart.updateData(data);
+                var pie_chart = Chartkick.charts["pie_chart"];
+                pie_chart.updateData(data);
+                var column_chart = Chartkick.charts["column_chart"];
+                column_chart.updateData(data);
+                var area_chart = Chartkick.charts["area_chart"];
+                area_chart.updateData(data);
+            }
+        })
+    }
 </script>

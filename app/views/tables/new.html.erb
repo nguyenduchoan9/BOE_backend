@@ -1,0 +1,10 @@
+<%= form_for @table do |f| %>
+    <div class="row" style="padding-top: 5%">
+      <div class="input-field col s8 offset-s2">
+        <%= f.label :table_number, 'Table Number' %>
+        <%= f.text_field :table_number, id: 'number' %>
+        <%= f.submit value: 'ADD', class: 'btn' %>
+        <%= link_to 'Back', :back, class: "btn" %>
+      </div>
+    </div>
+<% end %>

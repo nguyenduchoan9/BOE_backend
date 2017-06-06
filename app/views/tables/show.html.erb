@@ -1,0 +1,56 @@
+<style>
+  button a:link, button a:visited {
+    color: white !important;
+  }
+
+  a li {
+    width: 20px;
+  }
+</style>
+<div>
+  <div class="row" style="margin-bottom: 0">
+    <div class="col s1" style="padding-top: 2%">
+      <%= link_to controller: 'tables', action: 'new' do %>
+          <button class="btn">
+            ADD
+          </button>
+      <% end %>
+    </div>
+    <%= form_tag(tables_path, method: :get) do %>
+        <div class="col s1" style="padding-top: 2%; margin-right: 3%">
+          <%= submit_tag 'Search', class: "btn" %>
+        </div>
+        <div class="col s3">
+          <div class="input-field">
+            <%= text_field_tag :term, params[:term], id: "search" %>
+            <label for="search">Table Number</label>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <table class="highlight responsive-table">
+    <thead>
+    <th>NUMBER</th>
+    <th>QRCode</th>
+    <th></th>
+    </thead>
+    <tbody>
+    <% @tables.each do |table| %>
+        <tr>
+          <td><%= table.table_number %></td>
+          <td><%= image_tag('table'+table.table_number.to_s, size: '150x150') %></td>
+          <td>
+            <a class="btn-floating red" href="tables/edit?id=<%= table.id%>">
+              <i class="large material-icons">mode_edit</i>
+            </a>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <div style="text-align: center">
+    <%= will_paginate @tables %>
+  </div>
+
+
+</div>
