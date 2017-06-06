@@ -1,4 +1,6 @@
 class TablesController < ApplicationController
+  before_action 'authen_user'
+
   def new
     @table = Table.new
   end

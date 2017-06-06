@@ -1,0 +1,42 @@
+<div style="padding: 5%;">
+  <%= form_for @discount_day, url: {controller: 'discount_days', action: 'update'} do |f| %>
+      <%= f.hidden_field :id %>
+      <div class="input-field">
+        <%= f.label :name, "Discount Name" %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="input-field">
+        <%= f.label :from_day, "From Day" %>
+        <%= f.date_field :from_day, class: "datepicker" %>
+      </div>
+      <div class="input-field">
+        <%= f.label :to_day, "To Day" %>
+        <%= f.date_field :to_day, class: "datepicker" %>
+      </div>
+      <div class="input-field">
+        <%= f.label :discount_item, "Discount Item" %>
+        <%= f.text_field :discount_item %>
+      </div>
+      <div class="input-field">
+        <%= f.label :discount_rate, "Discount Rate" %>
+        <%= f.text_field :discount_rate %>
+      </div>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Image</span>
+          <%= f.file_field :image %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+      <%= f.submit value: 'submit', class: 'btn' %>
+      <%= link_to 'Back', :back, class: "btn" %>
+  <% end %>
+</div>
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+</script>

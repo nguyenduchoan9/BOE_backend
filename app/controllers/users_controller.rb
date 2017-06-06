@@ -1,4 +1,5 @@
 class UsersController < WebApplcationController
+  before_action 'authen_user'
 
   def new
     @user = User.new
@@ -9,11 +10,6 @@ class UsersController < WebApplcationController
 
   def show
     @users = User.search(params[:term]).paginate(page: params[:page], per_page: 5)
-    # respond_to do |format|
-    #   format.json{render json: User.group('role_id').count.to_json}
-    #   format.html{}
-    # end
-
   end
 
   def edit

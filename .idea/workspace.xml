@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bf38130-4caf-4da8-9100-b4b4c2577af7" name="Default" comment="update">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/table15.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/_metadata_/metadata.values.at" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/statistic_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/statistic_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/tables_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/tables_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/statistic/index.html.erb" afterPath="$PROJECT_DIR$/app/views/statistic/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/discount_day.rb" afterPath="$PROJECT_DIR$/app/models/discount_day.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
@@ -27,15 +25,15 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/BOE_backend@db_migrate_reset__BOE_backend.coverage" NAME="db:migrate:reset: BOE_backend Coverage Results" MODIFIED="1496312825083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
     <SUITE FILE_PATH="coverage/BOE_backend@db_migrate__BOE_backend.coverage" NAME="db:migrate: BOE_backend Coverage Results" MODIFIED="1496312228209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
-    <SUITE FILE_PATH="coverage/BOE_backend@Rails_console__BOE_backend.coverage" NAME="Rails console: BOE_backend Coverage Results" MODIFIED="1496368069796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
+    <SUITE FILE_PATH="coverage/BOE_backend@Rails_console__BOE_backend.coverage" NAME="Rails console: BOE_backend Coverage Results" MODIFIED="1496719455115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
     <SUITE FILE_PATH="coverage/BOE_backend@schema.coverage" NAME="schema Coverage Results" MODIFIED="1495771952591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" MODULE_NAME="BOE_backend" />
     <SUITE FILE_PATH="coverage/BOE_backend@db_seed__BOE_backend.coverage" NAME="db:seed: BOE_backend Coverage Results" MODIFIED="1496312867632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
     <SUITE FILE_PATH="coverage/BOE_backend@db_create__BOE_backend.coverage" NAME="db:create: BOE_backend Coverage Results" MODIFIED="1496113292605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
     <SUITE FILE_PATH="coverage/BOE_backend@db_migrate__3_.coverage" NAME="db:migrate (3) Coverage Results" MODIFIED="1495771962765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
-    <SUITE FILE_PATH="coverage/BOE_backend@routes__BOE_backend.coverage" NAME="routes: BOE_backend Coverage Results" MODIFIED="1496623175567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
+    <SUITE FILE_PATH="coverage/BOE_backend@routes__BOE_backend.coverage" NAME="routes: BOE_backend Coverage Results" MODIFIED="1496721951294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
     <SUITE FILE_PATH="coverage/BOE_backend@db_migrate.coverage" NAME="db:migrate Coverage Results" MODIFIED="1495771565182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
     <SUITE FILE_PATH="coverage/BOE_backend@db_migrate__2_.coverage" NAME="db:migrate (2) Coverage Results" MODIFIED="1495771845520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
-    <SUITE FILE_PATH="coverage/BOE_backend@Development__BOE_backend.coverage" NAME="Development: BOE_backend Coverage Results" MODIFIED="1496623184613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
+    <SUITE FILE_PATH="coverage/BOE_backend@Development__BOE_backend.coverage" NAME="Development: BOE_backend Coverage Results" MODIFIED="1496720815246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -94,10 +92,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="users" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
     <PATH>
       <PATH_ELEMENT>
@@ -120,6 +114,10 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="discount_days" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -128,51 +126,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api_constraint.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/constraints/api_constraint.rb">
+      <file leaf-file-name="tables_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/tables_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tables_controller_spec.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/controllers/tables_controller_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sessions_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb">
+      <file leaf-file-name="discount_days_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/discount_days_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+            <state relative-caret-position="239">
+              <caret line="24" column="6" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="01_users.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/seeds/01_users.rb">
+      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/discount_days/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="session_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/session_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="set_user_by_token.rb" pinned="false" current-in-tab="false">
-        <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/devise_token_auth-0.1.42/app/controllers/devise_token_auth/concerns/set_user_by_token.rb">
+      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+            <state relative-caret-position="17">
+              <caret line="1" column="66" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template_error.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/discount_days/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="42" column="59" lean-forward="false" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -189,13 +239,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bc</find>
-      <find>gem 'sqlite3'</find>
-      <find>pg</find>
-      <find>bcryp</find>
-      <find>mat</find>
-      <find>m</find>
-      <find>turbo</find>
       <find>coffee-sc</find>
       <find>authen</find>
       <find>devi</find>
@@ -218,6 +261,14 @@
       <find>ima</find>
       <find>table</find>
       <find>bi</find>
+      <find>user</find>
+      <find>ma</find>
+      <find>to_da</find>
+      <find>discount_days</find>
+      <find>local</find>
+      <find>discount</find>
+      <find>discount_days_path</find>
+      <find>discou</find>
     </findStrings>
   </component>
   <component name="GeneratorOptions">
@@ -255,17 +306,26 @@
         <option value="$PROJECT_DIR$/app/views/api/tables/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/tables/new.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/controllers/tables_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/table.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/tables/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/tables/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/statistic/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/statistic_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/discount_day.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/discount_day_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/discount_day/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/discount_day/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/discount_day/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/discount_days/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/discount_days/show.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/tables_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/discount_days/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/discount_days_controller.rb" />
       </list>
     </option>
   </component>
@@ -327,11 +387,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="spec" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,43 +401,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="spec" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -400,58 +420,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -464,7 +432,7 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/rails" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="rout&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/routes.rb&#10;version&#9;ACTION&#9;ActivateVersionControlToolWindow&#10;user&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/db/seeds/01_users.rb&#10;apiconst&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/constraints/api_constraint.rb&#10;dish&#9;null&#9;null&#10;data&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/database.yml&#10;app&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;ed&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/users/edit.html.erb&#10;show&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/tables/show.html.erb&#10;stat&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb&#10;usercon&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/users_controller.rb&#10;js&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/assets/javascripts/application.js&#10;rou&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/routes.rb&#10;sta&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb&#10;index&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/statistic/index.html.erb&#10;edit&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/users/edit.html.erb&#10;table&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/models/table.rb&#10;gem&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;categor&#9;null&#9;null&#10;application&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/application_controller.rb&#10;inde&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/statistic/index.html.erb&#10;appli&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;ses&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb&#10;sessio&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb&#10;stati&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb&#10;route&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/routes.rb&#10;ht&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;sess&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb&#10;Us&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/models/user.rb&#10;session&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb&#10;User&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/models/user.rb&#10;new&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/session/new.html.erb&#10;bcr&#9;null&#9;null&#10;bcrypt&#9;null&#9;null&#10;application.js&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/assets/javascripts/application.js&#10;applicationht&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;ta&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/database.yml&#10;ge&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;mobile&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/MobileApi_development&#10;gemfil&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;databas&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/database.yml" />
+    <property name="SearchEverywhereHistoryKey" value="discountdaycontr&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/spec/controllers/discount_day_controller_spec.rb&#10;usercon&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/users_controller.rb&#10;edit&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/users/edit.html.erb&#10;show&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/discount_days/show.html.erb&#10;tablecon&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/tables_controller.rb&#10;user&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/users_controller.rb&#10;discount&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/discount_days_controller.rb&#10;appli&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;new&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/discount_day/new.html.erb&#10;rout&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/routes.rb&#10;applica&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;ap&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;rou&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/routes.rb&#10;discou&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/discount_days_controller.rb&#10;application&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;discountday&#9;null&#9;null&#10;usercontroll&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/users_controller.rb&#10;version&#9;ACTION&#9;ActivateVersionControlToolWindow&#10;apiconst&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/constraints/api_constraint.rb&#10;dish&#9;null&#9;null&#10;data&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/database.yml&#10;app&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;ed&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/users/edit.html.erb&#10;stat&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb&#10;js&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/assets/javascripts/application.js&#10;sta&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb&#10;index&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/statistic/index.html.erb&#10;table&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/models/table.rb&#10;gem&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;categor&#9;null&#9;null&#10;inde&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/statistic/index.html.erb&#10;ses&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb&#10;sessio&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb&#10;stati&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb&#10;route&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/routes.rb&#10;ht&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;sess&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb&#10;Us&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/models/user.rb&#10;session&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/session_controller.rb&#10;User&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/models/user.rb&#10;bcr&#9;null&#9;null&#10;bcrypt&#9;null&#9;null&#10;application.js&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/assets/javascripts/application.js&#10;applicationht&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;ta&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/database.yml&#10;ge&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;mobile&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/MobileApi_development&#10;gemfil&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;databas&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/database.yml" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL&#10;Sqlite (Xerial)" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
@@ -489,7 +457,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Rails.Development: BOE_backend">
+  <component name="RunManager" selected="Rake.routes: BOE_backend">
     <configuration default="false" name="db:migrate: BOE_backend" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="BOE_backend" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -883,12 +851,11 @@
       <item index="9" class="java.lang.String" itemvalue="Rake.db:migrate:reset: BOE_backend" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate:reset: BOE_backend" />
-        <item index="1" class="java.lang.String" itemvalue="Rake.routes: BOE_backend" />
-        <item index="2" class="java.lang.String" itemvalue="IRB console.Rails console: BOE_backend" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Rake.routes: BOE_backend" />
+        <item index="1" class="java.lang.String" itemvalue="IRB console.Rails console: BOE_backend" />
+        <item index="2" class="java.lang.String" itemvalue="Rake.db:migrate:reset: BOE_backend" />
         <item index="3" class="java.lang.String" itemvalue="Rake.db:seed: BOE_backend" />
-        <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate: BOE_backend" />
       </list>
     </recent_temporary>
   </component>
@@ -922,7 +889,7 @@
       <workItem from="1496372351708" duration="5734000" />
       <workItem from="1496381160075" duration="1325000" />
       <workItem from="1496621482052" duration="4167000" />
-      <workItem from="1496712338845" duration="690000" />
+      <workItem from="1496712338845" duration="7827000" />
     </task>
     <task id="LOCAL-00001" summary="commit update">
       <created>1496309285598</created>
@@ -952,11 +919,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496317657980</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1496715657390</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1496715657390</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69032000" />
+    <option name="totallyTimeSpent" value="76169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -972,14 +946,14 @@
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22692889" sideWeight="0.49476832" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.5030257" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.245142" sideWeight="0.53630865" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.18003026" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.48487142" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38714498" sideWeight="0.5438729" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3781764" sideWeight="0.5408472" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.245142" sideWeight="0.4667171" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.245142" sideWeight="0.46369138" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22919819" sideWeight="0.5052317" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1034,121 +1008,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/highcharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4417">
-          <caret line="394" column="78" lean-forward="false" selection-start-line="394" selection-start-column="78" selection-end-line="394" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/86d094e8/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/MobileApi_development.public.memberships">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/operations/users/v1/show.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/activerecord-5.0.3/lib/active_record/connection_adapters/connection_specification.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.3/lib/rails/application/configuration.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20170426144706_devise_token_auth_create_users.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/session_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/86d094e8/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/MobileApi_development.public.roles">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/serializers/categories/serializer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/activerecord-5.0.3/lib/active_record/querying.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/activerecord-5.0.3/lib/active_record/associations.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -1160,13 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="147" column="10" lean-forward="false" selection-start-line="147" selection-start-column="10" selection-end-line="147" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="72" column="5" lean-forward="false" selection-start-line="66" selection-start-column="2" selection-end-line="72" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1203,13 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tables_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="43" column="52" lean-forward="false" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1242,13 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="9" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="40" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1291,25 +1129,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="42" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/statistic_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1324,14 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
           <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="14" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1381,13 +1197,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/dishes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1400,6 +1209,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="142" column="8" lean-forward="false" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1418,10 +1228,195 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="72" column="5" lean-forward="false" selection-start-line="66" selection-start-column="2" selection-end-line="72" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="54" column="6" lean-forward="false" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/86d094e8/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/MobileApi_development.public.discount_days">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/discount_day.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/discount_day_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/discount_day/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="14" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="60" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/discount_day/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/discount_days/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="9" lean-forward="false" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/discount_day/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="41" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="46" column="80" lean-forward="false" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tables_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/discount_days/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="42" column="59" lean-forward="false" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="66" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/discount_days/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/session_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/discount_days_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="24" column="6" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/discount_day_controller_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/tables_controller_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

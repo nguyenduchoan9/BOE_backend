@@ -14,4 +14,11 @@
 #
 
 class DiscountDay < ApplicationRecord
+  def self.search(term)
+    if !term.nil? and term != ''
+      where('from_day <= ? AND ? <= to_day', "%#{term.to_date}%", "%#{term.to_date}%")
+    else
+      all
+    end
+  end
 end
