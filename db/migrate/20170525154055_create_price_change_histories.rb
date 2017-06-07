@@ -4,6 +4,7 @@ class CreatePriceChangeHistories < ActiveRecord::Migration[5.0]
       t.references :dish, foreign_key: true
       t.decimal :price, precision: 20, scale: 2
       t.datetime :from_date, default: DateTime.now
+      t.boolean :status
       t.timestamps
     end
   end

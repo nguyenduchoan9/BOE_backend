@@ -20,6 +20,12 @@ module Api
 
             def as_cart
             end
+
+            def search_cutlery
+            end
+
+            def search_drinking
+            end
         end
     end
 end

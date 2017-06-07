@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     get 'notification/index'
+    get 'notification/background_job'
 
     post 'notification/create'
 
@@ -24,8 +25,27 @@ Rails.application.routes.draw do
                 collection do
                     get :by_category
                     get :as_cart
+                    get :search_cutlery
+                    get :search_drinking
+                    post :register_reg_token
                 end
             end
+
+            resources :notifications do
+                collection do
+                    post :register_reg_token
+                end
+            end
+
+            resources :orders, only: [:create] do
+                collection do
+                    get :order_history
+                    post :dish_done # mon an duoc lam xong
+                    post :remove_dish # mon an remove khoi menu vi nhet nguyen lieu
+                    post :reject_order # order bi reject boi chef
+                    get :all_order # get toan bo order
+                end
+            end 
         end
     end
 end

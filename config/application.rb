@@ -22,6 +22,7 @@ module MobileApi
       g.helper = false
       g.decorator = false
     end
+    config.active_job.queue_adapter = :sidekiq
     config.middleware.use Rack::Cors do
       allow do
         origins '*'

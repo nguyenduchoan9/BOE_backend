@@ -5,6 +5,8 @@ class CreateOrderDetails < ActiveRecord::Migration[5.0]
       t.float :discount_rate_by_day
       t.integer :quantity
       t.references :order
+      t.integer :cooking_status, default: -1
+      t.boolean :status
 
       t.timestamps
     end

@@ -4,6 +4,7 @@ class CreateMemberships < ActiveRecord::Migration[5.0]
       t.float :mark_boundary
       t.float :discount_rate
       t.string :level
+      t.boolean :status
 
       t.timestamps
     end

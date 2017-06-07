@@ -9,8 +9,24 @@ class NotificationController < ApplicationController
         a.to_s
     end
 
+    def notification_chef
+    end
+
+    def notification_waiter
+    end
+
+    def notification_diner
+    end
+
     def create
-        
         redirect_to notifications_path
+    end
+
+    def background_job
+        HardWorker.perform_async("easy")
+        ""
+    end
+
+    def register_reg_token
     end
 end

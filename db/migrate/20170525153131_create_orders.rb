@@ -4,6 +4,9 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.decimal :total, precision: 20, scale: 2
       t.string :discount_date_by_membership
       t.references :user, foreign_key: true
+      t.integer :table_number
+      t.integer :cooking_status, default: -1
+      t.boolean :status
 
       t.timestamps
     end

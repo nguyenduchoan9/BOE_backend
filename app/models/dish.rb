@@ -20,4 +20,11 @@ class Dish < ApplicationRecord
     has_many :order_details
     has_many :price_change_histories
 
+    def self.search_cutlery(keysearch)
+        where('lower(dish_name) LIKE ?', "%#{keysearch}%")
+    end
+
+    def self.search_drinking(keysearch)
+        where('lower(dish_name) LIKE ?', "%#{keysearch}%")
+    end
 end
