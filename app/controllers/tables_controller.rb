@@ -7,15 +7,6 @@ class TablesController < ApplicationController
 
   def create
     @table = Table.new table_params
-    qrcode = RQRCode::QRCode.new('http://localhost:3000/table'+@table.table_number.to_s)
-    png = qrcode.as_png(resize_gte_to: false,
-                        resize_exactly_to: false,
-                        fill: 'white',
-                        color: 'black',
-                        size: 600,
-                        border_modules: 0,
-                        module_px_size: 0)
-    png.save('app/assets/images/table'+@table.table_number.to_s+'.png', interlace: true)
     @table.save
     redirect_to action: 'show'
   end
@@ -30,12 +21,7 @@ class TablesController < ApplicationController
 
   def edit
     @table = Table.find params[:id]
-  end
-
-  def update
-    @table = Table.find params[:table][:id]
-    @table.update_attributes(:table_number => params[:table][:table_number])
-    qrcode = RQRCode::QRCode.new('http://localhost:3000/table'+@table.table_number.to_s)
+    qrcode = RQRCode::QRCode.new(@table.table_number.to_s)
     png = qrcode.as_png(resize_gte_to: false,
                         resize_exactly_to: false,
                         fill: 'white',
@@ -43,7 +29,21 @@ class TablesController < ApplicationController
                         size: 600,
                         border_modules: 0,
                         module_px_size: 0)
-    png.save('app/assets/images/table'+@table.table_number.to_s+'.png', interlace: true)
+    respond_to do |format|
+      format.html {}
+      format.png {
+        send_data png, type: 'image/png'
+      }
+      format.json {
+        filename = "table"+@table.id.to_s + ".png"
+        send_data png.to_datastream, type: 'image/png', filename: filename
+      }
+    end
+  end
+
+  def update
+    @table = Table.find params[:table][:id]
+    @table.update_attributes(:table_number => params[:table][:table_number])
     redirect_to action: 'show'
   end
 
@@ -52,3 +52,13 @@ class TablesController < ApplicationController
     params.require(:table).permit :id, :table_number
   end
 end
+
+# qrcode = RQRCode::QRCode.new('http://localhost:3000/table'+@table.table_number.to_s)
+# png = qrcode.as_png(resize_gte_to: false,
+#                     resize_exactly_to: false,
+#                     fill: 'white',
+#                     color: 'black',
+#                     size: 600,
+#                     border_modules: 0,
+#                     module_px_size: 0)
+# png.save('app/assets/images/table'+@table.table_number.to_s+'.png', interlace: true)

@@ -31,16 +31,20 @@
   <table class="highlight responsive-table">
     <thead>
     <th>NUMBER</th>
-    <th>QRCode</th>
+    <th></th>
     <th></th>
     </thead>
     <tbody>
     <% @tables.each do |table| %>
         <tr>
           <td><%= table.table_number %></td>
-          <td><%= image_tag('table'+table.table_number.to_s, size: '150x150') %></td>
           <td>
-            <a class="btn-floating red" href="tables/edit?id=<%= table.id%>">
+            <a href="/tables/edit.json?id=<%= table.id %>" target="_blank">
+              <button class="btn">DOWNLOAD</button>
+            </a>
+          </td>
+          <td>
+            <a class="btn-floating red" href="tables/edit?id=<%= table.id %>">
               <i class="large material-icons">mode_edit</i>
             </a>
           </td>
@@ -51,6 +55,4 @@
   <div style="text-align: center">
     <%= will_paginate @tables %>
   </div>
-
-
 </div>

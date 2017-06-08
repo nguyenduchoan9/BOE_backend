@@ -1,19 +1,17 @@
-<div class="row valign-wrapper" id="test">
-  <div class="col s3 input-field">
+<div class="row" id="test">
+  <div class="input-field col s3">
     <select id="type">
       <option value="user" class="selected">User</option>
-      <option value="order">Order</option>
       <option value="dish">Dish</option>
     </select>
     <label>TYPE</label>
   </div>
-  <div class="col s2 input-field">
-    <input type="date" class="datepicker" id="from_date">
-    <label>From day:</label>
-  </div>
-  <div class="col s2 input-field">
-    <input type="date" class="datepicker" id="to_date">
-    <label>To day:</label>
+  <div class="col s3 input-field">
+    <select id="type">
+      <option value="" class="selected">User</option>
+      <option value="dish">Dish</option>
+    </select>
+    <label>TYPE</label>
   </div>
   <div class="col s2">
     <button class="btn" id="make" onclick="make_statistic()">MAKE</button>
@@ -52,8 +50,6 @@
             dataType: 'json',
             data: {
                 type: selected_type.value,
-                from_date: document.getElementById('from_date').value,
-                to_date: document.getElementById('to_date').value
             },
             success: function (data) {
                 var line_chart = Chartkick.charts["line_chart"];

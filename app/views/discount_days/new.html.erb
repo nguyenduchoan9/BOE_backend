@@ -12,9 +12,15 @@
         <%= f.label :to_day, "To Day" %>
         <%= f.date_field :to_day, class: "datepicker" %>
       </div>
+      <%= f.hidden_field :discount_item %>
       <div class="input-field">
-        <%= f.label :discount_item, "Discount Item" %>
-        <%= f.text_field :discount_item %>
+        <select multiple name="discount_item" id="discount_item" onchange="onSelected()" >
+          <option value="" disabled selected>Choose your option</option>
+          <%= Dish.all.each do |dish| %>
+              <option value="<%= dish.id %>"><%= dish.dish_name %></option>
+          <% end %>
+        </select>
+        <label>Discount Item</label>
       </div>
       <div class="input-field">
         <%= f.label :discount_rate, "Discount Rate" %>
@@ -38,4 +44,8 @@
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
+    function onSelected() {
+        var items = $('#discount_item').val();
+        $('#discount_day_discount_item').val(items);
+    }
 </script>

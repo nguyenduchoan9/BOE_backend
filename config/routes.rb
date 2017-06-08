@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'price_change_histories/show'
+
+  get 'price_change_histories/new'
+
+  get 'price_change_histories/create'
+
+  get 'price_change_histories/edit'
+
+  get 'price_change_histories/update'
+
     root 'statistic#index'
     get 'login', to: 'session#new'
     post 'login', to: 'session#create'

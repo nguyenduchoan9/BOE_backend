@@ -22,7 +22,6 @@ class StatisticController < WebApplcationController
             render json: Dish.group('category_id').count.to_json
           end
         end
-
       }
     end
   end
