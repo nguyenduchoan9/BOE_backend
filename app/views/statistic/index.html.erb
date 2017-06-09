@@ -21,24 +21,25 @@
 <div id="data">
   <div class="row">
     <div class="col s6">
-      <%= line_chart User.group('DATE(created_at)').count, id: "line_chart" %>
+      <%= line_chart User.includes(:role).group('roles.name').references(:roles).where('date_part(\'month\', users.created_at) = date_part(\'month\', current_date)').count, id: "line_chart" %>
     </div>
     <div class="col s6">
-      <%= pie_chart User.group('DATE(created_at)').count, id: "pie_chart" %>
+      <%= pie_chart User.includes(:role).group('roles.name').references(:roles).where('date_part(\'month\', users.created_at) = date_part(\'month\', current_date)').count, id: "pie_chart" %>
     </div>
   </div>
   <div class="row">
     <div class="col s6">
-      <%= column_chart User.group('DATE(created_at)').count, id: "column_chart" %>
+      <%= column_chart User.includes(:role).group('roles.name').references(:roles).where('date_part(\'month\', users.created_at) = date_part(\'month\', current_date)').count, id: "column_chart" %>
     </div>
     <div class="col s6">
-      <%= area_chart User.group('DATE(created_at)').count, id: "area_chart" %>
+      <%= area_chart User.includes(:role).group('roles.name').references(:roles).where('date_part(\'month\', users.created_at) = date_part(\'month\', current_date)').count, id: "area_chart" %>
     </div>
   </div>
 </div>
 
 
 <script>
+
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
@@ -67,4 +68,14 @@
             }
         })
     }
+//    $(document).ready(function () {
+//        var pie_chart = Chartkick.charts["pie_chart"];
+//        document.getElementById("pie_chart").onclick = function(evt)
+//        {
+//            var activePoints = pie_chart.getData(evt);
+//            alert(activePoints);
+//
+//        }
+//    });
+//
 </script>

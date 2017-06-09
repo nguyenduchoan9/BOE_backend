@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     delete 'logout', to: 'session#destroy'
     resource 'users'
     resource 'tables'
-
+    resource 'memberships'
     resource 'discount_days'
 
     get 'make_statistic', to: 'statistic#make_statistic'

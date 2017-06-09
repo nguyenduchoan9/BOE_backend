@@ -2,9 +2,13 @@
 @import url("http://fonts.googleapis.com/icon?family=Material+Icons");
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .pagination a li.active {
-    color: #fff;
+  color: #fff;
+}
+
+.side-nav li > a {
+  font-size: 13px;
 }
