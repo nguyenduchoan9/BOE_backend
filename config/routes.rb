@@ -49,6 +49,7 @@ Rails.application.routes.draw do
                     post :reject_order # order bi reject boi chef
                     get :all_order # get toan bo order
                     post :mark_order_accept
+                    post :mark_order_reject
                 end
             end
         end

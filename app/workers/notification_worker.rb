@@ -19,14 +19,14 @@ class NotificationWorker
                 send_message_to_chef body, chef_reg_tokens, 'order'
             else
                 order_detail_chef.each { |od|
-                    dish_name = Dish.find(od.dish_id).dish_name
-                    body = chef_dish_notify.new(od.id, od.dish_id, dish_name).as_json.to_s
+                    dish_local = Dish.find(od.dish_id).dish_name
+                    body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name), @id).as_json.to_s
                     send_message_to_chef body, chef_reg_tokens, 'dish'
                 }
             end
         elsif Constant::DINER ==role
-            body = {}
-            send_message_to_chef body, diner_reg_tokens
+            body = { :message => 'Your order has been rejected'}.as_json.to_s
+            send_message_to_diner body, diner_reg_tokens
         end
     end
 
@@ -78,17 +78,21 @@ class NotificationWorker
         result = []
         order_detail_chef.each do |od|
             dish = Dish.find(od.dish_id)
-            result << chef_result.new(dish.id, dish.dish_name, dish.image, od.quantity)
+            result << chef_result.new(dish_serializer.new(dish.id, dish.dish_name), od.quantity)
         end
         result
     end
 
     def chef_result
-        Struct.new(:dish_id, :dish_name, :dish_image, :quantity)
+        Struct.new(:dish, :quantity)
+    end
+
+    def dish_serializer
+        Struct.new(:dish_id, :dish_name)
     end
 
     def chef_dish_notify
-        Struct.new(:order_detail_id, :dish_id, :dish_name)
+        Struct.new(:dish, :order_id)
     end
 
     # END REGION CHEF

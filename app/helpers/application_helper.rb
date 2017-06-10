@@ -42,7 +42,7 @@ module ApplicationHelper
             :registration_ids => [reg_tokens],
             :data => {
                 :to => "chef",
-                :term => term
+                :term => term,
                 :body => body
             }
         }
@@ -59,7 +59,7 @@ module ApplicationHelper
             :registration_ids => [reg_tokens],
             :data => {
                 :to => "diner",
-                :body => "Phong stupid"
+                :body => body
             }
         }
 
