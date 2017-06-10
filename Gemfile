@@ -13,6 +13,7 @@ gem 'turbolinks', '~> 5'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
+gem 'chart-js-rails'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'materialize-sass'
 gem 'will_paginate', '~> 3.0'
@@ -25,7 +26,7 @@ gem "chartkick" #chart
 gem 'devise_token_auth', '~> 0.1.39' # authen-token
 gem 'devise', '~> 4.2.0' # authen
 gem 'omniauth-facebook' # authen fb/github/..
-
+gem 'groupdate'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0' # File Uploader
 gem 'mini_magick' # resize picture
 gem 'fog' # aws

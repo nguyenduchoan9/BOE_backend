@@ -9,7 +9,7 @@ class UsersController < WebApplcationController
   end
 
   def show
-    @users = User.search(params[:term]).paginate(page: params[:page], per_page: 5)
+    @users = User.search(params[:term]).paginate(page: params[:page], per_page: 10)
   end
 
   def edit

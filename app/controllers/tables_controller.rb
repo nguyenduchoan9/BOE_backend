@@ -12,7 +12,7 @@ class TablesController < ApplicationController
   end
 
   def show
-    @tables = Table.search(params[:term]).paginate(page: params[:page], per_page: 5)
+    @tables = Table.search(params[:term]).paginate(page: params[:page], per_page: 10)
     respond_to do |format|
       format.json {render json: @tables}
       format.html
@@ -52,13 +52,3 @@ class TablesController < ApplicationController
     params.require(:table).permit :id, :table_number
   end
 end
-
-# qrcode = RQRCode::QRCode.new('http://localhost:3000/table'+@table.table_number.to_s)
-# png = qrcode.as_png(resize_gte_to: false,
-#                     resize_exactly_to: false,
-#                     fill: 'white',
-#                     color: 'black',
-#                     size: 600,
-#                     border_modules: 0,
-#                     module_px_size: 0)
-# png.save('app/assets/images/table'+@table.table_number.to_s+'.png', interlace: true)

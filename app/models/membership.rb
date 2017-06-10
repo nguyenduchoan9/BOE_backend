@@ -11,17 +11,18 @@
 #
 
 class Membership < ApplicationRecord
-    validates :level, inclusion: { in: %w(primium silver gold diamond ruby) }
-    validates :level, uniqueness: true
-    validates :level, :mark_boundary, :discount_rate, presence: true
+  validates :level, inclusion: {in: %w(primium silver gold diamond ruby)}
+  validates :level, uniqueness: true
+  validates :level, :mark_boundary, :discount_rate, presence: true
 
-    has_many :users
-    def self.search(term)
-        if !term.nil?
-            where('lower(level) LIKE ?', "%#{term.downcase}%")
-        else
-            all
-        end
+  has_many :users
+
+  def self.search(term)
+    if !term.nil?
+      where('lower(level) LIKE ?', "%#{term.downcase}%")
+    else
+      all
     end
+  end
 
 end

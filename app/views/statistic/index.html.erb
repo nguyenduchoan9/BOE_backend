@@ -2,6 +2,7 @@
   <div class="input-field col s3">
     <select id="type">
       <option value="user" class="selected">User</option>
+      <option value="dish">Dish</option>
       <option value="order">Order</option>
     </select>
     <label>TYPE</label>
@@ -17,33 +18,14 @@
     <button class="btn" id="make" onclick="make_statistic()">MAKE</button>
   </div>
 </div>
+<div id="pie_data">
 
-<div id="data">
-  <div class="row">
-    <div class="col s6">
-      <%= line_chart User.includes(:role).group('roles.name').references(:roles).where('date_part(\'month\', users.created_at) = date_part(\'month\', current_date)').count, id: "line_chart" %>
-    </div>
-    <div class="col s6">
-      <%= pie_chart User.includes(:role).group('roles.name').references(:roles).where('date_part(\'month\', users.created_at) = date_part(\'month\', current_date)').count, id: "pie_chart" %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s6">
-      <%= column_chart User.includes(:role).group('roles.name').references(:roles).where('date_part(\'month\', users.created_at) = date_part(\'month\', current_date)').count, id: "column_chart" %>
-    </div>
-    <div class="col s6">
-      <%= area_chart User.includes(:role).group('roles.name').references(:roles).where('date_part(\'month\', users.created_at) = date_part(\'month\', current_date)').count, id: "area_chart" %>
-    </div>
-  </div>
 </div>
-
-
+<div id="data">
+  <%= column_chart Order.includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'column_chart' %>
+</div>
 <script>
 
-    $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
-    });
     function make_statistic() {
         var type_select = document.getElementById('type');
         var selected_type = type_select.options[type_select.selectedIndex];
@@ -57,25 +39,26 @@
                 duration: selected_duration.value
             },
             success: function (data) {
-                var line_chart = Chartkick.charts["line_chart"];
-                line_chart.updateData(data);
-                var pie_chart = Chartkick.charts["pie_chart"];
-                pie_chart.updateData(data);
                 var column_chart = Chartkick.charts["column_chart"];
                 column_chart.updateData(data);
-                var area_chart = Chartkick.charts["area_chart"];
-                area_chart.updateData(data);
+                if (selected_type.value == 'dish') {
+                    if (selected_duration == 'month'){
+                        $('#pie_data').html('<%= escape_javascript(pie_chart OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).where('date_part(\'month\', order_details.created_at) = date_part(\'month\', current_date)').sum(:quantity)) %>')
+                    } else {
+                        $('#pie_data').html('<%= escape_javascript(pie_chart OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).where('date_part(\'year\', order_details.created_at) = date_part(\'year\', current_date)').sum(:quantity)) %>')
+                    }
+
+                } else {
+                    $('#pie_data').html('')
+                }
+//                var line_chart = Chartkick.charts["line_chart"];
+//                line_chart.updateData(data);
+//                var pie_chart = Chartkick.charts["pie_chart"];
+//                pie_chart.updateData(data);
+//                var area_chart = Chartkick.charts["area_chart"];
+//                area_chart.updateData(data);
             }
         })
     }
-//    $(document).ready(function () {
-//        var pie_chart = Chartkick.charts["pie_chart"];
-//        document.getElementById("pie_chart").onclick = function(evt)
-//        {
-//            var activePoints = pie_chart.getData(evt);
-//            alert(activePoints);
-//
-//        }
-//    });
-//
+
 </script>
