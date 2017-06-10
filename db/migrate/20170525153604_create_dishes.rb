@@ -5,6 +5,7 @@ class CreateDishes < ActiveRecord::Migration[5.0]
       t.string :dish_name
       t.string :image
       t.boolean :status
+      t.boolean :is_available, default: true
 
       t.timestamps
     end

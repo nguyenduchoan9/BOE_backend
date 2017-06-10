@@ -9,6 +9,7 @@
 #  name          :string
 #  image         :string
 #  discount_rate :float
+#  status        :boolean
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #

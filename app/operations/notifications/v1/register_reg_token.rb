@@ -12,7 +12,7 @@ module Notifications
 
             private
             def token_params
-                params.permit[:reg_token]
+                params[:reg_token]
             end
         end
     end

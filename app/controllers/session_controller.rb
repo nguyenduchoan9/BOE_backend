@@ -8,23 +8,25 @@ class SessionController < WebApplcationController
     end
 
     def new
-        HardWorker.perform_async(:level => "easy")
-        HardWorker.perform_async(:level => "easy")
-        NotificationWorker.perform_async(:level => "easy")
-        NotificationWorker.perform_async(:level => "easy")
-        HardWorker.perform_async(:level => "easy")
-        HardWorker.perform_async(:level => "easy")
-        NotificationWorker.perform_async(:level => "easy")
-        NotificationWorker.perform_async(:level => "easy")
-        HardWorker.perform_async(:level => "easy")
-        NotificationWorker.perform_async(:level => "easy")
-        NotificationWorker.perform_async(:level => "easy")
-        HardWorker.perform_async(:level => "easy")
-        NotificationWorker.perform_async(:level => "easy")
-        NotificationWorker.perform_async(:level => "easy")
-        HardWorker.perform_async(:level => "easy")
-        NotificationWorker.perform_async(:level => "easy")
-        print "asdasd"
+        # byebug
+        # HardWorker.perform_async(:level => "easy")
+        NotificationWorker.perform_async Constant::WAITER, 1, 1
+        # HardWorker.perform_async(:level => "easy")
+        # NotificationWorker.perform_async(:level => "easy")
+        # NotificationWorker.perform_async(:level => "easy")
+        # HardWorker.perform_async(:level => "easy")
+        # HardWorker.perform_async(:level => "easy")
+        # NotificationWorker.perform_async(:level => "easy")
+        # NotificationWorker.perform_async(:level => "easy")
+        # HardWorker.perform_async(:level => "easy")
+        # NotificationWorker.perform_async(:level => "easy")
+        # NotificationWorker.perform_async(:level => "easy")
+        # HardWorker.perform_async(:level => "easy")
+        # NotificationWorker.perform_async(:level => "easy")
+        # NotificationWorker.perform_async(:level => "easy")
+        # HardWorker.perform_async(:level => "easy")
+        # NotificationWorker.perform_async(:level => "easy")
+        # print "asdasd"
     end
 
 

@@ -1,10 +1,13 @@
 module Orders
     module V1
         class MarkOrderAccept < Operation
+            require_authen!
 
             def process
                 do_transaction!
-                {}
+                # notifify each order detail to chef
+                NotificationWorker.perform_async(Constant::CHEF, order.id, user.id, 1)
+                { status: true }
             end
 
             private

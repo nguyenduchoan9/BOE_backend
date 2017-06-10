@@ -26,6 +26,9 @@ module Api
 
             def search_drinking
             end
+
+            def disable_dish
+            end
         end
     end
 end

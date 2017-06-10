@@ -6,6 +6,7 @@ module Sessions
             def process
                 client_id = headers['client']
                 user.tokens.delete(client_id)
+                user.reg_token = ''
                 user.save!
                 {success: true}
             end

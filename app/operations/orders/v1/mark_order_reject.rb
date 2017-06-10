@@ -1,10 +1,11 @@
 module Orders
     module V1
         class MarkOrderReject < Operation
+            require_authen!
 
             def process
                 do_transaction!
-                {}
+                { status: true}
             end
 
             private

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
     devise_for :users
 
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/side'
+        
     namespace :api do
         scope module: :v1, constraints: ApiConstraint.new(version: :v1) do
             get 'home', to: 'home#index'
@@ -28,6 +31,7 @@ Rails.application.routes.draw do
                     get :search_cutlery
                     get :search_drinking
                     post :register_reg_token
+                    post :disable_dish
                 end
             end
 
@@ -44,8 +48,9 @@ Rails.application.routes.draw do
                     post :remove_dish # mon an remove khoi menu vi nhet nguyen lieu
                     post :reject_order # order bi reject boi chef
                     get :all_order # get toan bo order
+                    post :mark_order_accept
                 end
-            end 
+            end
         end
     end
 end

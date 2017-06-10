@@ -6,6 +6,7 @@
 #  description :string
 #  dish_name   :string
 #  image       :string
+#  status      :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  category_id :integer

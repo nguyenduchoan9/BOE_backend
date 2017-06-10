@@ -3,21 +3,30 @@ class NotificationWorker
     include ApplicationHelper
     sidekiq_options :queue => :notification, :retry => false
 
-    def perform(role, id, user_id)
+    def perform(role, id, user_id, ver = 0)
         @role = role
         @id = id
         @user_id = user_id
         # Do something
         if Constant::WAITER == role
-            body = { 'table_number' : table_number, 'dish' : dish_by_order_detail }
+            body = { :table_number => table_number, :dish => dish_by_order_detail }.as_json.to_s
             order_is_done
-            send_messasge_to_waiter(body, waiter_reg_tokens)
-        else if Constant::CHEF == role
-            body = { 'order_id' : id, 'order_detail' : serial_order_detail}
-            send_message_to_chef(body, chef_reg_tokens)
-        else if Constant::DINER ==role
+
+            send_message_to_waiter body, waiter_reg_tokens
+        elsif Constant::CHEF == role
+            if ver = 0
+                body = { :order_id => id, :order_detail => serial_order_detail}.as_json.to_s
+                send_message_to_chef body, chef_reg_tokens, 'order'
+            else
+                order_detail_chef.each { |od|
+                    dish_name = Dish.find(od.dish_id).dish_name
+                    body = chef_dish_notify.new(od.id, od.dish_id, dish_name).as_json.to_s
+                    send_message_to_chef body, chef_reg_tokens, 'dish'
+                }
+            end
+        elsif Constant::DINER ==role
             body = {}
-            send_message_to_chef(body, diner_reg_tokens)
+            send_message_to_chef body, diner_reg_tokens
         end
     end
 
@@ -39,16 +48,21 @@ class NotificationWorker
     end
 
     def dish_by_order_detail
-        Dishes::Serializer.new(Dish.find(order_detail.dish_id))
+        dish_detail = Dish.find(order_detail.dish_id)
+        waiter_notify.new(dish_detai.id, dish_detail.dish_name)
+    end
+
+    def waiter_notify
+        Struct.new(:dish_id, :dish_name)
     end
     # END REGION WAITER
 
     def waiter_reg_tokens
-        Role.find_by(name: 'waiter').users.first.reg_token
+        User.find_by(:username => 'masterwaiter').reg_token
     end
 
     def chef_reg_tokens
-        Role.find_by(name: 'chef').users.first.reg_token
+        User.find_by(:username => 'masterchef').reg_token
     end
 
     def diner_reg_tokens
@@ -64,7 +78,7 @@ class NotificationWorker
         result = []
         order_detail_chef.each do |od|
             dish = Dish.find(od.dish_id)
-            result << chef_result(dish.id, dish.dish_name, dish.image, od.quantity)
+            result << chef_result.new(dish.id, dish.dish_name, dish.image, od.quantity)
         end
         result
     end
@@ -72,5 +86,14 @@ class NotificationWorker
     def chef_result
         Struct.new(:dish_id, :dish_name, :dish_image, :quantity)
     end
+
+    def chef_dish_notify
+        Struct.new(:order_detail_id, :dish_id, :dish_name)
+    end
+
     # END REGION CHEF
+
+    # REGION DINER
+
+    # END REGION DINER
 end

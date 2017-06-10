@@ -2,6 +2,8 @@ module Orders
     module V1
         class DishDone < Operation
 
+            require_authen!
+
             def process
                 do_transaction!
                 # HardWorker.perform_async(:level => "easy")
