@@ -27,51 +27,71 @@
     </div>
   </div>
 </div>
-<div class="row" id="test" style="padding-left: 20%">
-  <div class="input-field col s3">
-    <select id="type">
-      <option value="user" class="selected">User</option>
-      <option value="dish">Dish</option>
-      <option value="order">Order</option>
-    </select>
-    <label>TYPE</label>
+<div class="row">
+  <div class="col s12">
+    <div class="card darken-1">
+      <div class="card-content">
+        <div id="data" class="row">
+          <%= column_chart Order.includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'column_chart' %>
+        </div>
+      </div>
+      <div class="card-action ">
+        <div class="row" style="padding-left: 30%">
+          <div class="input-field col s3">
+            <select id="type" onchange="make_statistic()">
+              <option value="user" class="selected">User</option>
+              <option value="dish">Dish</option>
+              <option value="order">Order</option>
+            </select>
+            <label>TYPE</label>
+          </div>
+          <div class="input-field col s3">
+            <div class="switch" onchange="make_statistic()">
+              <label>
+                Month
+                <input type="checkbox" id="duration">
+                <span class="lever"></span>
+                Year
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col s3 input-field">
-    <select id="duration">
-      <option value="month" class="selected">Month</option>
-      <option value="year">Year</option>
-    </select>
-    <label>DURATION</label>
-  </div>
-  <div class="col s2" style="padding-top: 2%">
-    <button class="btn" id="make" onclick="make_statistic()">MAKE</button>
+</div>
+
+<div class="row" id="test">
+  <div class="col s3">
+
   </div>
 </div>
 <div id="pie_data">
 </div>
 <br>
-<div id="data">
-  <%= column_chart Order.includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'column_chart' %>
-</div>
+
 <script>
 
     function make_statistic() {
+        if ($('#duration').is(':checked')) {
+            duration = 'year';
+        } else {
+            duration = 'month';
+        }
         var type_select = document.getElementById('type');
         var selected_type = type_select.options[type_select.selectedIndex];
-        var duration_select = document.getElementById('duration');
-        var selected_duration = duration_select.options[duration_select.selectedIndex];
         $.ajax({
             url: '/make_statistic.json',
             dataType: 'json',
             data: {
                 type: selected_type.value,
-                duration: selected_duration.value
+                duration: duration
             },
             success: function (data) {
                 var column_chart = Chartkick.charts["column_chart"];
                 column_chart.updateData(data);
                 if (selected_type.value == 'dish') {
-                    if (selected_duration == 'month'){
+                    if (!$('#duration').is(':checked')) {
                         $('#pie_data').html('<%= escape_javascript(pie_chart OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).where('date_part(\'month\', order_details.created_at) = date_part(\'month\', current_date)').sum(:quantity)) %>')
                     } else {
                         $('#pie_data').html('<%= escape_javascript(pie_chart OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).where('date_part(\'year\', order_details.created_at) = date_part(\'year\', current_date)').sum(:quantity)) %>')
