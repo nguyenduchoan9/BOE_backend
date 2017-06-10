@@ -2,13 +2,18 @@ class StatisticController < WebApplcationController
   before_action 'authen_user'
 
   def index
+    @user = Order.includes(:user).group('users.username').select('users.username').references(:users).sum(:total).first
+    @dish = OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).sum(:quantity).first
+    @revenue = Order.sum(:total)
+    @visit = Order.count
   end
 
   def make_statistic
     @users = User.all
     respond_to do |format|
-      format.html
-      format.js {}
+      format.html {
+
+      }
       format.json {
         type = params[:type]
         duration = params[:duration]
