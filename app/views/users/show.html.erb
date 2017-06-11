@@ -4,21 +4,18 @@
   }
 </style>
 <div>
-
   <div class="row">
-    <div class="col s1" style="padding-top: 2%">
-      <%= link_to new_users_path do %>
-          <button class="btn">
-            ADD
-          </button>
+    <div class="fixed-action-btn">
+      <%= link_to new_users_path, class:'btn-floating red' do %>
+            <i class="large material-icons">add</i>
       <% end %>
     </div>
     <%= form_tag(users_path, method: :get) do %>
-        <div class="col s1" style="padding-top: 2%; margin-right: 3%">
-          <%= submit_tag 'Search', class: "btn" %>
-        </div>
         <div class="col s3">
           <div class="input-field">
+            <%= button_tag(style: 'background-color: white; border: none;', class: 'prefix') do %>
+                <i class="material-icons" style="margin-top: 10px">search</i>
+            <% end %>
             <%= text_field_tag :term, params[:term], id: "search" %>
             <label for="search">Full Name</label>
           </div>
@@ -41,8 +38,8 @@
           <td><%= user.email %></td>
           <td><%= user.role.name %></td>
           <td>
-            <a class="btn-floating red" href="users/edit?id=<%= user.id %>">
-              <i class="large material-icons">mode_edit</i>
+            <a href="users/edit?id=<%= user.id %>">
+              <i class="material-icons">mode_edit</i>
             </a>
           </td>
         </tr>

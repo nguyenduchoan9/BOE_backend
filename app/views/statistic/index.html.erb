@@ -27,85 +27,86 @@
     </div>
   </div>
 </div>
+<% @date = Date.today %>
 <div class="row">
   <div class="col s12">
-    <div class="card darken-1">
+    <div class="card">
       <div class="card-content">
+        <span class="card-title grey-text text-darken-4">Revenue
+            <span class="switch right" onchange="make_statistic('order', 'revenue_duration', 'revenue_chart')">
+              <label>
+                Month <%= @date.strftime("%B") %>
+                <input type="checkbox" id="revenue_duration">
+                <span class="lever"></span>
+                Year <%= @date.year %>
+              </label>
+            </span>
+        </span>
         <div id="data" class="row">
-          <%= column_chart Order.includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'column_chart' %>
+          <%= line_chart Order.where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').group_by_day_of_week(:created_at, format: "%a").sum(:total), id: 'revenue_chart' %>
         </div>
       </div>
-      <div class="card-action ">
-        <div class="row" style="padding-left: 30%">
-          <div class="input-field col s3">
-            <select id="type" onchange="make_statistic()">
-              <option value="user" class="selected">User</option>
-              <option value="dish">Dish</option>
-              <option value="order">Order</option>
-            </select>
-            <label>TYPE</label>
-          </div>
-          <div class="input-field col s3">
-            <div class="switch" onchange="make_statistic()">
+
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col s7">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title grey-text text-darken-4">Top 10 Diner
+            <span class="switch right" onchange="make_statistic('user', 'user_duration', 'user_chart')">
               <label>
-                Month
-                <input type="checkbox" id="duration">
+                Month <%= @date.strftime("%B") %>
+                <input type="checkbox" id="user_duration">
                 <span class="lever"></span>
-                Year
+                Year <%= @date.year %>
               </label>
-            </div>
-          </div>
+            </span>
+        </span>
+        <div id="data" class="row">
+          <%= column_chart Order.order('sum_total').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'user_chart' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s5">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title grey-text text-darken-4">Top 5 Dish
+            <span class="switch right" onchange="make_statistic('dish', 'dish_duration', 'dish_chart')">
+              <label>
+                Month <%= @date.strftime("%B") %>
+                <input type="checkbox" id="dish_duration">
+                <span class="lever"></span>
+                Year <%= @date.year %>
+              </label>
+            </span>
+        </span>
+        <div id="data" class="row">
+          <%= pie_chart OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).where('date_part(\'month\', order_details.created_at) = date_part(\'month\', current_date)').sum(:quantity).first(5), id: 'dish_chart' %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="row" id="test">
-  <div class="col s3">
-
-  </div>
-</div>
-<div id="pie_data">
-</div>
-<br>
-
 <script>
-
-    function make_statistic() {
-        if ($('#duration').is(':checked')) {
+    function make_statistic(type, duration_name, chart_name) {
+        if ($('#'+duration_name).is(':checked')) {
             duration = 'year';
         } else {
             duration = 'month';
         }
-        var type_select = document.getElementById('type');
-        var selected_type = type_select.options[type_select.selectedIndex];
         $.ajax({
             url: '/make_statistic.json',
             dataType: 'json',
             data: {
-                type: selected_type.value,
+                type: type,
                 duration: duration
             },
             success: function (data) {
-                var column_chart = Chartkick.charts["column_chart"];
-                column_chart.updateData(data);
-                if (selected_type.value == 'dish') {
-                    if (!$('#duration').is(':checked')) {
-                        $('#pie_data').html('<%= escape_javascript(pie_chart OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).where('date_part(\'month\', order_details.created_at) = date_part(\'month\', current_date)').sum(:quantity)) %>')
-                    } else {
-                        $('#pie_data').html('<%= escape_javascript(pie_chart OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).where('date_part(\'year\', order_details.created_at) = date_part(\'year\', current_date)').sum(:quantity)) %>')
-                    }
-
-                } else {
-                    $('#pie_data').html('')
-                }
-//                var line_chart = Chartkick.charts["line_chart"];
-//                line_chart.updateData(data);
-//                var pie_chart = Chartkick.charts["pie_chart"];
-//                pie_chart.updateData(data);
-//                var area_chart = Chartkick.charts["area_chart"];
-//                area_chart.updateData(data);
+                var chart = Chartkick.charts[chart_name];
+                chart.updateData(data);
             }
         })
     }

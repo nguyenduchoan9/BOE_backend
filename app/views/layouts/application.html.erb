@@ -22,11 +22,10 @@
         <% else %>
             <li>
               <%= link_to logout_path, method: :delete do %>
-                  <i class="small material-icons">input</i>
+                  <%= image_tag("logout.png", size: '30x30', style: 'margin-top: 15px;') %>
               <% end %>
             </li>
         <% end %>
-
       </ul>
     </div>
   </nav>
@@ -53,7 +52,6 @@
     </div>
 
 <% end %>
-
 
 </body>
 </html>

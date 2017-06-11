@@ -8,22 +8,21 @@
   }
 </style>
 <div>
-  <div class="row" style="margin-bottom: 0">
-    <div class="col s1" style="padding-top: 2%">
-      <%= link_to controller: 'tables', action: 'new' do %>
-          <button class="btn">
-            ADD
-          </button>
+
+  <div class="row">
+    <div class="fixed-action-btn">
+      <%= link_to new_tables_path, class:'btn-floating red' do %>
+          <i class="large material-icons">add</i>
       <% end %>
     </div>
     <%= form_tag(tables_path, method: :get) do %>
-        <div class="col s1" style="padding-top: 2%; margin-right: 3%">
-          <%= submit_tag 'Search', class: "btn" %>
-        </div>
         <div class="col s3">
           <div class="input-field">
+            <%= button_tag(style: 'background-color: white; border: none;', class: 'prefix') do %>
+                <i class="material-icons" style="margin-top: 10px">search</i>
+            <% end %>
             <%= text_field_tag :term, params[:term], id: "search" %>
-            <label for="search">Table Number</label>
+            <label for="search">Number</label>
           </div>
         </div>
     <% end %>
@@ -39,13 +38,13 @@
         <tr>
           <td><%= table.table_number %></td>
           <td>
-            <a href="/tables/edit.json?id=<%= table.id %>" target="_blank">
-              <button class="btn">DOWNLOAD</button>
+            <a href="/tables/edit.json?id=<%= table.id %>" target="_blank" class="waves-effect waves-light btn">
+              <i class="material-icons left">play_for_work</i>Download
             </a>
           </td>
           <td>
-            <a class="btn-floating red" href="tables/edit?id=<%= table.id %>">
-              <i class="large material-icons">mode_edit</i>
+            <a  href="tables/edit?id=<%= table.id %>">
+              <i class="material-icons">mode_edit</i>
             </a>
           </td>
         </tr>
