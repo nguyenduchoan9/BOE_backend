@@ -9,25 +9,13 @@
 </style>
 <div>
 
-  <div class="row">
-    <div class="fixed-action-btn">
-      <%= link_to new_tables_path, class:'btn-floating red' do %>
-          <i class="large material-icons">add</i>
-      <% end %>
-    </div>
-    <%= form_tag(tables_path, method: :get) do %>
-        <div class="col s3">
-          <div class="input-field">
-            <%= button_tag(style: 'background-color: white; border: none;', class: 'prefix') do %>
-                <i class="material-icons" style="margin-top: 10px">search</i>
-            <% end %>
-            <%= text_field_tag :term, params[:term], id: "search" %>
-            <label for="search">Number</label>
-          </div>
-        </div>
+  <div class="fixed-action-btn">
+    <%= link_to new_tables_path, class: 'btn-floating red' do %>
+        <i class="large material-icons">add</i>
     <% end %>
   </div>
-  <table class="highlight responsive-table">
+
+  <table class="highlight responsive-table" id="tables">
     <thead>
     <th>NUMBER</th>
     <th></th>
@@ -43,7 +31,7 @@
             </a>
           </td>
           <td>
-            <a  href="tables/edit?id=<%= table.id %>">
+            <a href="tables/edit?id=<%= table.id %>">
               <i class="material-icons">mode_edit</i>
             </a>
           </td>
@@ -51,7 +39,10 @@
     <% end %>
     </tbody>
   </table>
-  <div style="text-align: center">
-    <%= will_paginate @tables %>
-  </div>
 </div>
+<script>
+    $( document ).on('turbolinks:load', function() {
+        $('#tables').dataTable()
+        $('select').material_select();
+    });
+</script>

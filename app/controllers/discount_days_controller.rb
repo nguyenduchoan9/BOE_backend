@@ -6,7 +6,7 @@ class DiscountDaysController < ApplicationController
   end
 
   def show
-    @discount_days = DiscountDay.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    @discount_days = DiscountDay.all
   end
 
   def create

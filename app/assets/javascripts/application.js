@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require Chart.min
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require materialize
@@ -19,4 +18,5 @@
 //= require Chart.bundle
 //= require chartkick
 //= require highcharts
+//= require dataTables/jquery.dataTables
 //= require_tree .

@@ -4,25 +4,13 @@
   }
 </style>
 <div>
-  <div class="row">
-    <div class="fixed-action-btn">
-      <%= link_to new_users_path, class:'btn-floating red' do %>
-            <i class="large material-icons">add</i>
-      <% end %>
-    </div>
-    <%= form_tag(users_path, method: :get) do %>
-        <div class="col s3">
-          <div class="input-field">
-            <%= button_tag(style: 'background-color: white; border: none;', class: 'prefix') do %>
-                <i class="material-icons" style="margin-top: 10px">search</i>
-            <% end %>
-            <%= text_field_tag :term, params[:term], id: "search" %>
-            <label for="search">Full Name</label>
-          </div>
-        </div>
+  <div class="fixed-action-btn">
+    <%= link_to new_users_path, class: 'btn-floating red' do %>
+        <i class="large material-icons">add</i>
     <% end %>
   </div>
-  <table class="highlight responsive-table">
+
+  <table class="highlight responsive-table" id="users">
     <thead>
     <th>USERNAME</th>
     <th>FULLNAME</th>
@@ -46,8 +34,11 @@
     <% end %>
     </tbody>
   </table>
-  <div style="text-align: center">
-    <%= will_paginate @users %>
-  </div>
 
 </div>
+<script>
+    $( document ).on('turbolinks:load', function() {
+        $('#users').dataTable()
+        $('select').material_select();
+    })
+</script>

@@ -12,7 +12,7 @@ class TablesController < ApplicationController
   end
 
   def show
-    @tables = Table.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    @tables = Table.all
     respond_to do |format|
       format.json {render json: @tables}
       format.html

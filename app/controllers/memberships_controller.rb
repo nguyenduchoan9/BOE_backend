@@ -6,7 +6,7 @@ class MembershipsController < ApplicationController
   end
 
   def show
-    @memberships = Membership.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    @memberships = Membership.all
   end
 
   def create

@@ -4,25 +4,16 @@
   }
 </style>
 <div>
-  <div class="row">
+
     <div class="fixed-action-btn">
       <%= link_to new_discount_days_path, class:'btn-floating red' do %>
           <i class="large material-icons">add</i>
       <% end %>
     </div>
-    <%= form_tag(discount_days_path, method: :get) do %>
-        <div class="col s3">
-          <div class="input-field">
-            <%= button_tag(style: 'background-color: white; border: none;', class: 'prefix') do %>
-                <i class="material-icons" style="margin-top: 10px">search</i>
-            <% end %>
-            <%= date_field_tag :term, params[:term], id: "search", class: "datepicker" %>
-            <label for="search">Date</label>
-          </div>
-        </div>
-    <% end %>
+
+
   </div>
-  <table class="highlight responsive-table">
+  <table class="highlight responsive-table" id="discount_days">
     <thead>
     <th>FROM DAY</th>
     <th>TO DAY</th>
@@ -46,12 +37,13 @@
     <% end %>
     </tbody>
   </table>
-  <div style="text-align: center">
-    <%= will_paginate @discount_days %>
-  </div>
 
 </div>
 <script>
+    $( document ).on('turbolinks:load', function() {
+        $('#discount_days').dataTable()
+        $('select').material_select();
+    });
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 50, // Creates a dropdown of 15 years to control year
