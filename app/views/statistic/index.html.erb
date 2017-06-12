@@ -64,7 +64,7 @@
             </span>
         </span>
         <div id="data" class="row">
-          <%= bar_chart Order.order('sum_total').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'user_chart' %>
+          <%= bar_chart Order.order('sum_total desc').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'user_chart' %>
         </div>
       </div>
     </div>
