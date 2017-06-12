@@ -40,27 +40,12 @@
                 <span class="lever"></span>
                 Year <%= @date.year %>
               </label>
-              <a style="color: black !important;"><i class="material-icons right activator">more_vert</i></a>
             </span>
         </span>
         <div id="data" class="row">
           <%= line_chart Order.where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').group_by_day_of_week(:created_at, format: "%a").sum(:total), id: 'revenue_chart' %>
         </div>
       </div>
-
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Revenue by Month<i class="material-icons right">close</i></span>
-        <table class="responsive-table">
-          <thead>
-            <th>Month</th>
-            <th>Item Sold</th>
-            <th>Total Revenue</th>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-
     </div>
   </div>
 </div>
@@ -79,7 +64,7 @@
             </span>
         </span>
         <div id="data" class="row">
-          <%= column_chart Order.order('sum_total').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'user_chart' %>
+          <%= bar_chart Order.order('sum_total').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'user_chart' %>
         </div>
       </div>
     </div>

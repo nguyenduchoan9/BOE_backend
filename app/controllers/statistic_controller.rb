@@ -2,8 +2,8 @@ class StatisticController < WebApplcationController
   before_action 'authen_user'
 
   def index
-    @user = Order.includes(:user).group('users.username').select('users.username').references(:users).sum(:total).first
-    @dish = OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).sum(:quantity).first
+    @user = Order.order('sum_total desc').includes(:user).group('users.username').select('users.username').references(:users).sum(:total).first
+    @dish = OrderDetail.order('sum_quantity desc').includes(:dish).group('dishes.dish_name').references(:dishes).sum(:quantity).first
     @revenue = Order.sum(:total)
     @visit = Order.count
   end
