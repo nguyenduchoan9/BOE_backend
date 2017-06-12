@@ -1,0 +1,41 @@
+<style>
+  a li {
+    width: 20px;
+  }
+</style>
+<div>
+
+  <div class="fixed-action-btn">
+    <%= link_to new_dishes_path, class: 'btn-floating red' do %>
+        <i class="large material-icons">add</i>
+    <% end %>
+  </div>
+  <table class="highlight responsive-table" id="dishes">
+    <thead>
+    <th>DISH NAME</th>
+    <th>DESCRIPTION</th>
+    <th>CATEGORY</th>
+    <th></th>
+    </thead>
+    <tbody>
+    <% @dishes.each do |dish| %>
+        <tr>
+          <td><%= dish.dish_name %></td>
+          <td><%= dish.description %></td>
+          <td><%= dish.category.category_name %></td>
+          <td>
+            <a class="" href="dishes/edit?id=<%= dish.id %>">
+              <i class="material-icons">mode_edit</i>
+            </a>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<script>
+    $( document ).on('turbolinks:load', function() {
+        $('#dishes').dataTable()
+        $('select').material_select();
+    });
+</script>

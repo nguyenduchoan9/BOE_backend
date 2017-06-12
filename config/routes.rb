@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resource 'tables'
     resource 'memberships'
     resource 'discount_days'
-
+    resource 'dishes'
     get 'make_statistic', to: 'statistic#make_statistic'
 
     devise_for :users
