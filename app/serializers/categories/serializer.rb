@@ -1,6 +1,10 @@
 module Categories
-  class Serializer < BaseSerializer
-    attributes :id, :category_name
+    class Serializer < BaseSerializer
+        cache key: 'Categoris', expires_in: 1.hours
 
-  end
+
+        attributes :id, :category_name
+
+        
+    end
 end

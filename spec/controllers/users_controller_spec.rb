@@ -26,6 +26,7 @@
 #  email                  :string
 #  username               :string
 #  access_token           :string
+#  reg_token              :string
 #  birthdate              :string
 #  mark                   :float            default(0.0)
 #  phone                  :string

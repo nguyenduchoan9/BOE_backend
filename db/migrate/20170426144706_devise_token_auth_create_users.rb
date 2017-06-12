@@ -39,6 +39,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.0]
       t.string :email
       t.string :username
       t.string :access_token
+      t.string :reg_token
       t.string :birthdate
       t.float :mark, default: 0
       t.string :phone

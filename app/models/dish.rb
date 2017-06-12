@@ -2,13 +2,15 @@
 #
 # Table name: dishes
 #
-#  id          :integer          not null, primary key
-#  description :string
-#  dish_name   :string
-#  image       :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  category_id :integer
+#  id           :integer          not null, primary key
+#  description  :string
+#  dish_name    :string
+#  image        :string
+#  status       :boolean
+#  is_available :boolean          default(TRUE)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  category_id  :integer
 #
 # Indexes
 #
@@ -22,4 +24,11 @@ class Dish < ApplicationRecord
     has_many :order_details
     has_many :price_change_histories
 
+    def self.search_cutlery(keysearch)
+        where('lower(dish_name) LIKE ?', "%#{keysearch}%")
+    end
+
+    def self.search_drinking(keysearch)
+        where('lower(dish_name) LIKE ?', "%#{keysearch}%")
+    end
 end

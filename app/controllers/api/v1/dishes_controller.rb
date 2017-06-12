@@ -20,6 +20,15 @@ module Api
 
             def as_cart
             end
+
+            def search_cutlery
+            end
+
+            def search_drinking
+            end
+
+            def disable_dish
+            end
         end
     end
 end

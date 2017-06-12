@@ -3,7 +3,7 @@ module Dishes
         class ByCategory < Operation
 
             def process
-                dish_by_category
+                category_dish_seach_key
                 # Category.all
             end
 
@@ -12,12 +12,19 @@ module Dishes
                 params[:id]
             end
 
+            def search_key_params
+                params[:search_key]
+            end
             def category
-                Category.find_by(id: category_params)
+                @category ||= Category.find_by(id: category_params)
             end
 
             def dish_by_category
                 category.dishes.all.limit(120).map{ |d| Dishes::Serializer.new(d) }
+            end
+
+            def category_dish_seach_key
+                category.dishes.search_cutlery(search_key_params).all.limit(120).map{ |d| Dishes::Serializer.new(d) }
             end
 
         end

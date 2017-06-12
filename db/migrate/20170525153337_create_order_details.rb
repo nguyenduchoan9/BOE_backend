@@ -5,6 +5,7 @@ class CreateOrderDetails < ActiveRecord::Migration[5.0]
       t.float :discount_rate_by_day
       t.integer :quantity
       t.references :order
+      t.boolean :status
 
       t.timestamps
     end

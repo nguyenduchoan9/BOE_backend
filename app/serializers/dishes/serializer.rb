@@ -1,5 +1,7 @@
 module Dishes
     class Serializer < BaseSerializer
+        cache key: 'Dishes', expires_in: 1.hours
+
         attributes :id, :description, :dish_name, :image, :price
 
         # has_many :price_change_histories, serializer: PriceChangeHistories::Serializer

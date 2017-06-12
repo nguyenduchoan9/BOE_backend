@@ -2,13 +2,15 @@
 #
 # Table name: dishes
 #
-#  id          :integer          not null, primary key
-#  description :string
-#  dish_name   :string
-#  image       :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  category_id :integer
+#  id           :integer          not null, primary key
+#  description  :string
+#  dish_name    :string
+#  image        :string
+#  status       :boolean
+#  is_available :boolean          default(TRUE)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  category_id  :integer
 #
 # Indexes
 #
