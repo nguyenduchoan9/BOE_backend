@@ -20,4 +20,7 @@ https://stackoverflow.com/questions/9346211/how-to-kill-a-process-on-a-port-on-u
 * kill sidekiq*
 ps ax|grep sidekiq
  kill -TTIN 5938
+
+ * fix db error - no schema find*
+ DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=test bundle exec rake db:drop db:create db:migrate
  

@@ -15,11 +15,15 @@ module Orders
                 params[:order]
             end
 
+            def table_number
+                params[:table_number]
+            end
+
             def do_transaction!
                 begin
                     ActiveRecord::Base.transaction do
                         OrderDetail.import(build_order_details)
-                        order.update!(total: total)
+                        order.update!(total: total, table_number: table_number)
                     end
                 rescue StandardError => error
                     raise ValidateError.new(error)

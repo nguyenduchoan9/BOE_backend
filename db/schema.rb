@@ -39,8 +39,9 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.string   "dish_name"
     t.string   "image"
     t.boolean  "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "is_available", default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "category_id"
     t.index ["category_id"], name: "index_dishes_on_category_id", using: :btree
   end
@@ -59,10 +60,9 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.float    "discount_rate_by_day"
     t.integer  "quantity"
     t.integer  "order_id"
-    t.integer  "cooking_status",                                default: -1
     t.boolean  "status"
-    t.datetime "created_at",                                                 null: false
-    t.datetime "updated_at",                                                 null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.integer  "dish_id"
     t.index ["dish_id"], name: "index_order_details_on_dish_id", using: :btree
     t.index ["order_id"], name: "index_order_details_on_order_id", using: :btree
@@ -73,17 +73,16 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.string   "discount_date_by_membership"
     t.integer  "user_id"
     t.integer  "table_number"
-    t.integer  "cooking_status",                                       default: -1
     t.boolean  "status"
-    t.datetime "created_at",                                                        null: false
-    t.datetime "updated_at",                                                        null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
   create_table "price_change_histories", force: :cascade do |t|
     t.integer  "dish_id"
     t.decimal  "price",      precision: 20, scale: 2
-    t.datetime "from_date",                           default: '2017-06-08 16:03:39'
+    t.datetime "from_date",                           default: '2017-06-12 01:24:59'
     t.boolean  "status"
     t.datetime "created_at",                                                          null: false
     t.datetime "updated_at",                                                          null: false

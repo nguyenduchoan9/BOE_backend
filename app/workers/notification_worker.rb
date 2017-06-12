@@ -36,8 +36,8 @@ class NotificationWorker
     end
 
     def table_number
-        # order_detail.order.table_number
-        1
+        order_detail.order.table_number
+        # 1
     end
 
     def order_is_done

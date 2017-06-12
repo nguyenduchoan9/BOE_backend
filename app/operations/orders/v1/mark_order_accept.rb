@@ -18,7 +18,7 @@ module Orders
             def do_transaction!
                 begin
                     ActiveRecord::Base.transaction do
-                        mark_accept
+                        # mark_accept
                     end
                 rescue StandardError => error
                     raise ValidateError.new(error)

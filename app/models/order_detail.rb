@@ -7,7 +7,6 @@
 #  discount_rate_by_day :float
 #  quantity             :integer
 #  order_id             :integer
-#  cooking_status       :integer          default(-1)
 #  status               :boolean
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
