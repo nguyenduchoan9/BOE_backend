@@ -3,31 +3,18 @@
     width: 20px;
   }
 </style>
-<div>
-  <div class="row">
-    <div class="col s1" style="padding-top: 2%">
-      <%= link_to controller: 'users', action: 'new' do %>
-          <button class="btn">
-            ADD
-          </button>
-      <% end %>
-    </div>
-    <%= form_tag(users_path, method: :get) do %>
-        <div class="col s1" style="padding-top: 2%; margin-right: 3%">
-          <%= submit_tag 'Search', class: "btn" %>
-        </div>
-        <div class="col s3">
-          <div class="input-field">
-            <%= text_field_tag :term, params[:term], id: "search" %>
-            <label for="search">Full Name</label>
-          </div>
-        </div>
+<div class="container">
+  <div class="fixed-action-btn">
+    <%= link_to new_users_path, class: 'btn-floating red' do %>
+        <i class="large material-icons">add</i>
     <% end %>
   </div>
-  <table class="highlight responsive-table">
+
+  <table class="highlight responsive-table" id="users">
     <thead>
     <th>USERNAME</th>
     <th>FULLNAME</th>
+    <th>EMAIL</th>
     <th>ROLE</th>
     <th></th>
     </thead>
@@ -36,18 +23,22 @@
         <tr>
           <td><%= user.username %></td>
           <td><%= user.full_name %></td>
+          <td><%= user.email %></td>
           <td><%= user.role.name %></td>
           <td>
-            <a class="btn-floating btn-large red" href="users/edit?id=<%= user.id %>">
-              <i class="large material-icons">mode_edit</i>
+            <a href="users/edit?id=<%= user.id %>">
+              <i class="material-icons">mode_edit</i>
             </a>
           </td>
         </tr>
     <% end %>
     </tbody>
   </table>
-  <div style="text-align: center">
-    <%= will_paginate @users %>
-  </div>
 
 </div>
+<script>
+    $( document ).on('turbolinks:load', function() {
+        $('#users').dataTable();
+        $('select').material_select();
+    })
+</script>

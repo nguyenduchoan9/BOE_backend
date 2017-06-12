@@ -1,11 +1,113 @@
-<nav style="background-color: white; margin-bottom: 1%;">
-  <div class="nav-wrapper left-align">
-
+<div class="row">
+  <div class="col s4">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text center-align">
+        <span class="card-title">TOP USER</span>
+        <p><%= @user[0] %></p>
+        <p>Total: <%= @user[1] %>VND</p>
+      </div>
+    </div>
   </div>
-</nav>
-<div class="container">
-  <%= line_chart User.group("DATE(created_at)").order("DATE(created_at)").count %>
-  <%= pie_chart Membership.group(:level).order("sum(discount_rate)").sum(:discount_rate) %>
-  <%= column_chart Membership.group(:level).order("sum(discount_rate)").sum(:discount_rate) %>
-  <%= area_chart Membership.group(:level).sum(:discount_rate) %>
+  <div class="col s4">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text center-align">
+        <span class="card-title">TOP DISH</span>
+        <p><%= @dish[0] %></p>
+        <p>Total quantity: <%= @dish[1] %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col s4">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text center-align">
+        <span class="card-title">Revenue</span>
+        <p>Total order: <%= @visit %></p>
+        <p>Total income: <%= @revenue %></p>
+      </div>
+    </div>
+  </div>
 </div>
+<% @date = Date.today %>
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title grey-text text-darken-4">Revenue
+            <span class="switch right" onchange="make_statistic('order', 'revenue_duration', 'revenue_chart')">
+              <label>
+                Month <%= @date.strftime("%B") %>
+                <input type="checkbox" id="revenue_duration">
+                <span class="lever"></span>
+                Year <%= @date.year %>
+              </label>
+            </span>
+        </span>
+        <div id="data" class="row">
+          <%= line_chart Order.where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').group_by_day_of_week(:created_at, format: "%a").sum(:total), id: 'revenue_chart' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col s7">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title grey-text text-darken-4">Top 10 Diner
+            <span class="switch right" onchange="make_statistic('user', 'user_duration', 'user_chart')">
+              <label>
+                Month <%= @date.strftime("%B") %>
+                <input type="checkbox" id="user_duration">
+                <span class="lever"></span>
+                Year <%= @date.year %>
+              </label>
+            </span>
+        </span>
+        <div id="data" class="row">
+          <%= bar_chart Order.order('sum_total desc').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10), id: 'user_chart' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s5">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title grey-text text-darken-4">Top 5 Dish
+            <span class="switch right" onchange="make_statistic('dish', 'dish_duration', 'dish_chart')">
+              <label>
+                Month <%= @date.strftime("%B") %>
+                <input type="checkbox" id="dish_duration">
+                <span class="lever"></span>
+                Year <%= @date.year %>
+              </label>
+            </span>
+        </span>
+        <div id="data" class="row">
+          <%= pie_chart OrderDetail.includes(:dish).group('dishes.dish_name').references(:dishes).where('date_part(\'month\', order_details.created_at) = date_part(\'month\', current_date)').sum(:quantity).first(5), id: 'dish_chart' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    function make_statistic(type, duration_name, chart_name) {
+        if ($('#'+duration_name).is(':checked')) {
+            duration = 'year';
+        } else {
+            duration = 'month';
+        }
+        $.ajax({
+            url: '/make_statistic.json',
+            dataType: 'json',
+            data: {
+                type: type,
+                duration: duration
+            },
+            success: function (data) {
+                var chart = Chartkick.charts[chart_name];
+                chart.updateData(data);
+            }
+        })
+    }
+
+</script>

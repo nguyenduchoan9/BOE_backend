@@ -17,4 +17,12 @@ class Membership < ApplicationRecord
     validates :level, :mark_boundary, :discount_rate, presence: true
 
     has_many :users
+
+    def self.search(term)
+        if !term.nil?
+            where('lower(level) LIKE ?', "%#{term.downcase}%")
+        else
+            all
+        end
+    end
 end

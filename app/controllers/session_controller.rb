@@ -10,7 +10,6 @@ class SessionController < WebApplcationController
     def new
     end
 
-
     def create
         user_password = params[:session][:password]
         user_username = params[:session][:username]

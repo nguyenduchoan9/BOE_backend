@@ -3,18 +3,32 @@ Rails.application.routes.draw do
     get 'notification/background_job'
 
     post 'notification/create'
+    get 'price_change_histories/show'
+
+    get 'price_change_histories/new'
+
+    get 'price_change_histories/create'
+
+    get 'price_change_histories/edit'
+
+    get 'price_change_histories/update'
 
     root 'statistic#index'
     get 'login', to: 'session#new'
     post 'login', to: 'session#create'
     delete 'logout', to: 'session#destroy'
     resource 'users'
+    resource 'tables'
+    resource 'memberships'
+    resource 'discount_days'
+    resource 'dishes'
+    get 'make_statistic', to: 'statistic#make_statistic'
 
     devise_for :users
 
     require 'sidekiq/web'
     mount Sidekiq::Web => '/side'
-        
+
     namespace :api do
         scope module: :v1, constraints: ApiConstraint.new(version: :v1) do
             get 'home', to: 'home#index'

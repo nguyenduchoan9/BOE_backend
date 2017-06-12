@@ -1,0 +1,103 @@
+<style>
+  a li {
+    width: 20px;
+  }
+</style>
+<div class="container">
+
+  <div class="fixed-action-btn">
+    <a data-target="modal1" class="btn-floating red">
+      <i class="large material-icons">add</i>
+    </a>
+  </div>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 style="text-align: center">New Discount Day</h4>
+      <%= form_for(:discount_day, remote: true) do |f| %>
+          <div class="input-field">
+            <%= f.label :name, "Discount Name" %>
+            <%= f.text_field :name %>
+          </div>
+          <div class="input-field">
+            <%= f.label :from_day, "From Day" %>
+            <%= f.date_field :from_day, class: "datepicker" %>
+          </div>
+          <div class="input-field">
+            <%= f.label :to_day, "To Day" %>
+            <%= f.date_field :to_day, class: "datepicker" %>
+          </div>
+          <%= f.hidden_field :discount_item %>
+          <div class="input-field">
+            <select multiple name="discount_item" id="discount_item" onchange="onSelected()" >
+              <option value="" disabled selected>Choose your option</option>
+              <%= Dish.all.each do |dish| %>
+                  <option value="<%= dish.id %>"><%= dish.dish_name %></option>
+              <% end %>
+            </select>
+            <label>Discount Item</label>
+          </div>
+          <div class="input-field">
+            <%= f.label :discount_rate, "Discount Rate" %>
+            <%= f.text_field :discount_rate %>
+          </div>
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Image</span>
+              <%= f.file_field :image %>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+          <%= f.submit value: 'submit', class: 'btn' %>
+          <%= link_to 'Back', :back, class: "btn" %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <table class="highlight responsive-table" id="discount_days">
+    <thead>
+    <th>FROM DAY</th>
+    <th>TO DAY</th>
+    <th>DISCOUNT ITEM</th>
+    <th>DISCOUNT RATE</th>
+    <th></th>
+    </thead>
+    <tbody>
+    <% @discount_days.each do |discount_day| %>
+        <tr>
+          <td><%= discount_day.from_day %></td>
+          <td><%= discount_day.to_day %></td>
+          <td><%= discount_day.discount_item %></td>
+          <td><%= discount_day.discount_rate %></td>
+          <td>
+            <a href="discount_days/edit?id=<%= discount_day.id %>">
+              <i class="material-icons">mode_edit</i>
+            </a>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>
+<script>
+    $(document).on('turbolinks:load', function () {
+        $('#discount_days').dataTable()
+        $('select').material_select();
+    });
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 50, // Creates a dropdown of 15 years to control year
+    });
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+    function onSelected() {
+        var items = $('#discount_item').val();
+        $('#discount_day_discount_item').val(items);
+    }
+</script>
