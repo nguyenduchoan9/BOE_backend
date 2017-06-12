@@ -4,6 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  category_name :string
+#  status        :boolean
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #

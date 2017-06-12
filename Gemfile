@@ -24,6 +24,7 @@ gem "chartkick" #chart
 gem 'devise_token_auth', '~> 0.1.39' # authen-token
 gem 'devise', '~> 4.2.0' # authen
 gem 'omniauth-facebook' # authen fb/github/..
+gem 'gcm'
 gem 'groupdate'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0' # File Uploader
 gem 'mini_magick' # resize picture
@@ -33,6 +34,7 @@ gem 'kaminari' # paginate model view
 # gem 'geocoder' # longtitue, ip address , city, hometown
 gem 'rack-cors', :require => 'rack/cors' # cross origin region
 gem "figaro" # ENV
+gem "sidekiq"
 
 gem 'rqrcode', '~> 0.10.1' #qr code
 gem 'chunky_png' #save image

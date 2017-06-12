@@ -20,8 +20,6 @@
 # development:
 #   <<: *default
 #   database: MobileApi_development
-
- ############
 default: &default
   adapter: postgresql
   encoding: unicode

@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
-  get 'price_change_histories/show'
+    get 'notification/index'
+    get 'notification/background_job'
 
-  get 'price_change_histories/new'
+    post 'notification/create'
+    get 'price_change_histories/show'
 
-  get 'price_change_histories/create'
+    get 'price_change_histories/new'
 
-  get 'price_change_histories/edit'
+    get 'price_change_histories/create'
 
-  get 'price_change_histories/update'
+    get 'price_change_histories/edit'
+
+    get 'price_change_histories/update'
 
     root 'statistic#index'
     get 'login', to: 'session#new'
@@ -21,6 +25,10 @@ Rails.application.routes.draw do
     get 'make_statistic', to: 'statistic#make_statistic'
 
     devise_for :users
+
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/side'
+
     namespace :api do
         scope module: :v1, constraints: ApiConstraint.new(version: :v1) do
             get 'home', to: 'home#index'
@@ -34,6 +42,28 @@ Rails.application.routes.draw do
                 collection do
                     get :by_category
                     get :as_cart
+                    get :search_cutlery
+                    get :search_drinking
+                    post :register_reg_token
+                    post :disable_dish
+                end
+            end
+
+            resources :notifications do
+                collection do
+                    post :register_reg_token
+                end
+            end
+
+            resources :orders, only: [:create] do
+                collection do
+                    get :order_history
+                    post :dish_done # mon an duoc lam xong
+                    post :remove_dish # mon an remove khoi menu vi nhet nguyen lieu
+                    post :reject_order # order bi reject boi chef
+                    get :all_order # get toan bo order
+                    post :mark_order_accept
+                    post :mark_order_reject
                 end
             end
         end

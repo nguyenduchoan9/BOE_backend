@@ -1,15 +1,17 @@
 module Notes
-  class Serializer < BaseSerializer
-    attributes :id, :title, :body, :created_at, :updated_at, :status
+    class Serializer < BaseSerializer
+        cache key: 'Notes', expires_in: 1.hours
 
-    belongs_to :user
-    
-    def created_at
-      DateUtils.format_date(object.created_at)
-    end
+        attributes :id, :title, :body, :created_at, :updated_at, :status
 
-    def updated_at
-      DateUtils.format_date(object.updated_at)
+        belongs_to :user
+
+        def created_at
+            DateUtils.format_date(object.created_at)
+        end
+
+        def updated_at
+            DateUtils.format_date(object.updated_at)
+        end
     end
-  end
 end

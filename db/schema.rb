@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170525154540) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
+    t.boolean  "status"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.string   "name"
     t.string   "image"
     t.float    "discount_rate"
+    t.boolean  "status"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -36,8 +38,10 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.string   "description"
     t.string   "dish_name"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "status"
+    t.boolean  "is_available", default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "category_id"
     t.index ["category_id"], name: "index_dishes_on_category_id", using: :btree
   end
@@ -46,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.float    "mark_boundary"
     t.float    "discount_rate"
     t.string   "level"
+    t.boolean  "status"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -55,6 +60,7 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.float    "discount_rate_by_day"
     t.integer  "quantity"
     t.integer  "order_id"
+    t.boolean  "status"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
     t.integer  "dish_id"
@@ -66,6 +72,8 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.decimal  "total",                       precision: 20, scale: 2
     t.string   "discount_date_by_membership"
     t.integer  "user_id"
+    t.integer  "table_number"
+    t.boolean  "status"
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
@@ -74,20 +82,23 @@ ActiveRecord::Schema.define(version: 20170525154540) do
   create_table "price_change_histories", force: :cascade do |t|
     t.integer  "dish_id"
     t.decimal  "price",      precision: 20, scale: 2
-    t.datetime "from_date",                           default: '2017-06-01 10:27:35'
-    t.datetime "created_at",                                                          null: false
-    t.datetime "updated_at",                                                          null: false
+    t.datetime "from_date"
+    t.boolean  "status"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.index ["dish_id"], name: "index_price_change_histories_on_dish_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
+    t.boolean  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "tables", force: :cascade do |t|
     t.integer  "table_number"
+    t.boolean  "status"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -116,6 +127,7 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.string   "email"
     t.string   "username"
     t.string   "access_token"
+    t.string   "reg_token"
     t.string   "birthdate"
     t.float    "mark",                   default: 0.0
     t.string   "phone"

@@ -5,7 +5,8 @@
 #  id         :integer          not null, primary key
 #  dish_id    :integer
 #  price      :decimal(20, 2)
-#  from_date  :datetime         default(Thu, 01 Jun 2017 10:27:35 UTC +00:00)
+#  from_date  :datetime
+#  status     :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

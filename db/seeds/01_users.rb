@@ -66,22 +66,30 @@ User.create(username: 'managermanager',
             phone: Faker::PhoneNumber.phone_number,
             full_name: 'Manger',
             membership: nil)
-User.create(username: 'waiterwaiter',
-            password: '123123123',
-            email: 'waiter@gmail.com',
+User.create(username: 'masterwaiter',
+            password: '12345678',
+            email: 'masterwaiter@gmail.com',
             role: Role.find_by(name: 'waiter'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
             full_name: 'Waiter',
             membership: nil)
-Role.all.each { |r|
-    membership = Membership.first if r.name.include?('diner')
-    10.times do |i|
-        User.create(username: r.name + i.to_s,
-                    password: '123123123',
-                    email: r.name + i.to_s + '@gmail.com',
-                    role: r,
-                    full_name: Faker::Name.name,
-                    membership: membership)
-    end
-}
+User.create(username: 'masterchef',
+            password: '12345678',
+            email: 'masterchef@gmail.com',
+            role: Role.find_by(name: 'chef'),
+            avatar: '',
+            phone: Faker::PhoneNumber.phone_number,
+            full_name: 'Chef',
+            membership: nil)
+# Role.all.each { |r|
+#     membership = Membership.first if r.name.include?('diner')
+#     10.times do |i|
+#         User.create(username: r.name + i.to_s,
+#                     password: '123123123',
+#                     email: r.name + i.to_s + '@gmail.com',
+#                     role: r,
+#                     full_name: Faker::Name.name,
+#                     membership: membership)
+#     end
+# }

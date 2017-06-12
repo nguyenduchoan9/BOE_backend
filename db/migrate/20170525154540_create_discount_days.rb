@@ -7,6 +7,7 @@ class CreateDiscountDays < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :image
       t.float :discount_rate
+      t.boolean :status
 
       t.timestamps
     end
