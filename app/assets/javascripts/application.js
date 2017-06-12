@@ -18,4 +18,5 @@
 //= require Chart.bundle
 //= require chartkick
 //= require highcharts
+//= require dataTables/jquery.dataTables
 //= require_tree .

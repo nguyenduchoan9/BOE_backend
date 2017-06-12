@@ -1,5 +1,8 @@
-<div style="padding: 5%;">
+<div class="container">
   <%= form_for @user, url: {controller: 'users', action: 'update'} do |f| %>
+      <div class="center">
+        <%= image_tag @user.avatar, size: '400x400' %>
+      </div>
       <%= f.hidden_field :id %>
       <div class="input-field">
         <%= f.label :username, "Username" %>
@@ -29,6 +32,15 @@
         <%= collection_select :user, :membership_id, Membership.all, :id, :level, prompt: true %>
         <label>User Membership</label>
       </div>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Avatar</span>
+          <%= f.file_field :image %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
       <%= f.submit value: 'update', class: 'btn' %>
       <%= link_to 'Back', :back, class: "btn" %>
   <% end %>
@@ -36,6 +48,6 @@
 <script>
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
+        selectYears: 50, // Creates a dropdown of 15 years to control year
     });
 </script>

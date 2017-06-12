@@ -18,7 +18,6 @@ class SessionController < WebApplcationController
     user = user_username.present? && User.find_by(username: user_username)
     if user.valid_password? user_password
       sign_in user, store: false
-
       if user.role.name == 'admin'
         session[:user_id] = user.id
         redirect_to root_path

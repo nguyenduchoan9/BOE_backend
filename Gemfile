@@ -6,6 +6,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
@@ -15,8 +16,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'materialize-sass'
-gem 'will_paginate', '~> 3.0'
-gem 'will_paginate-materialize', '0.1.2'
 gem 'active_model_serializers', '~> 0.10.0' # json response as collection
 gem 'faker' # fake data
 gem 'activerecord-import' # bulk insert record
@@ -25,7 +24,7 @@ gem "chartkick" #chart
 gem 'devise_token_auth', '~> 0.1.39' # authen-token
 gem 'devise', '~> 4.2.0' # authen
 gem 'omniauth-facebook' # authen fb/github/..
-
+gem 'groupdate'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0' # File Uploader
 gem 'mini_magick' # resize picture
 gem 'fog' # aws
@@ -34,6 +33,9 @@ gem 'kaminari' # paginate model view
 # gem 'geocoder' # longtitue, ip address , city, hometown
 gem 'rack-cors', :require => 'rack/cors' # cross origin region
 gem "figaro" # ENV
+
+gem 'rqrcode', '~> 0.10.1' #qr code
+gem 'chunky_png' #save image
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

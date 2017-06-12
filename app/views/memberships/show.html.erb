@@ -1,0 +1,68 @@
+<style>
+  a li {
+    width: 20px;
+  }
+</style>
+<div class="container">
+
+  <div class="fixed-action-btn">
+    <a data-target="modal1" class="btn-floating red">
+      <i class="large material-icons">add</i>
+    </a>
+  </div>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 style="text-align: center">New Membership</h4>
+      <%= form_for(:membership, remote: true) do |f| %>
+          <div class="input-field">
+            <%= f.label :level, "Level" %>
+            <%= f.text_field :level %>
+          </div>
+          <div class="input-field">
+            <%= f.label :discount_rate, "Discount Rate" %>
+            <%= f.text_field :discount_rate %>
+          </div>
+          <div class="input-field">
+            <%= f.label :mark_boundary, "Mark Boundary" %>
+            <%= f.text_field :mark_boundary %>
+          </div>
+          <%= f.submit value: 'submit', class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <table class="highlight responsive-table" id="memberships">
+    <thead>
+    <th>MARK BOUNDARY</th>
+    <th>LEVEl</th>
+    <th>DISCOUNT RATE</th>
+    <th></th>
+    </thead>
+    <tbody>
+    <% @memberships.each do |membership| %>
+        <tr>
+          <td><%= membership.mark_boundary %></td>
+          <td><%= membership.level %></td>
+          <td><%= membership.discount_rate %></td>
+          <td>
+            <a class="" href="memberships/edit?id=<%= membership.id %>">
+              <i class="material-icons">mode_edit</i>
+            </a>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<script>
+    $( document ).on('turbolinks:load', function() {
+        $('#memberships').dataTable()
+        $('select').material_select();
+    });
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+</script>

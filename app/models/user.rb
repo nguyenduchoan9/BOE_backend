@@ -46,6 +46,7 @@
 #
 
 class User < ActiveRecord::Base
+  mount_uploader :avatar, ImageUploader
   # Include default devise modules.
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :validatable, :omniauthable
@@ -63,7 +64,6 @@ class User < ActiveRecord::Base
   has_many :orders
   # validates :email, uniqueness: {message: 'taken'}
   # validates :first_name, presence: true
-
 
   def self.search(term)
     if term

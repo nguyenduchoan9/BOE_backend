@@ -15,19 +15,26 @@
   <nav>
     <div class="nav-wrapper" style="background-color: #26a69a">
 
-      <a href="#" class="brand-logo"><img src="http://demo.geekslabs.com/materialize-v1.0/images/materialize-logo.png"></a>
+      <a href="#" class="brand-logo center"><img src="http://demo.geekslabs.com/materialize-v1.0/images/materialize-logo.png"></a>
 
-      <ul class="right">
-        <% if session[:user_id].nil? %>
-        <% else %>
+
+
+
+      <% if session[:user_id].nil? %>
+      <% else %>
+          <ul class="left">
+            <li><a href="#" data-activates="slide-out" id="slide_nav"><i class="material-icons">menu</i></a></li>
+          </ul>
+          <ul class="right">
             <li>
               <%= link_to logout_path, method: :delete do %>
-                  <i class="small material-icons">input</i>
+                  <%= image_tag("logout.png", size: '30x30', style: 'margin-top: 15px;') %>
               <% end %>
             </li>
-        <% end %>
+          </ul>
+      <% end %>
 
-      </ul>
+
     </div>
   </nav>
 </div>
@@ -39,26 +46,34 @@
       </div>
     </div>
 <% else %>
-    <div class="row">
-      <ul class="side-nav fixed col s2" style="z-index: 0; padding-top: 5%">
-        <li class="no-padding"><%= link_to "DASHBOARD", root_path %></li>
-        <li class="no-padding"><%= link_to "MANAGE USERS", controller: 'users', action: 'show' %></li>
-      </ul>
-      <div class="col s10 offset-s2">
-        <%= yield %>
-      </div>
+    <ul class="side-nav" id="slide-out">
+      <li><div class="userView">
+        <div class="background">
+          <img src="http://materializecss.com/images/office.jpg">
+        </div>
+        <a href="#!user"><img class="circle" src="http://materializecss.com/images/yuna.jpg"></a>
+        <a href="#!name"><span class="white-text name">John Doe</span></a>
+        <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      </div></li>
+      <li class=""><%= link_to "DASHBOARD", root_path %></li>
+      <li class="no-padding"><%= link_to "MANAGE USERS", users_path %></li>
+      <li class="no-padding"><%= link_to "MANAGE DISHES", dishes_path %></li>
+      <li class="no-padding"><%= link_to "MANAGE TABLES", tables_path %></li>
+      <li class="no-padding"><%= link_to "MANAGE DISCOUNT", discount_days_path %></li>
+      <li class="no-padding"><%= link_to "MANAGE MEMBERSHIP", memberships_path %></li>
+    </ul>
+    <div class="col s12">
+      <%= yield %>
     </div>
 
 <% end %>
-
 
 </body>
 </html>
 <script>
     $(document).ready(function () {
+        Materialize.updateTextFields();
         $('select').material_select();
     });
-    $(document).ready(function () {
-        Materialize.updateTextFields();
-    });
+    $("#slide_nav").sideNav();
 </script>

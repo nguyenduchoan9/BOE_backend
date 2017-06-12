@@ -16,6 +16,8 @@
 #
 
 class Dish < ApplicationRecord
+    mount_uploader :image, ImageUploader
+
     belongs_to :category, optional: true
     has_many :order_details
     has_many :price_change_histories

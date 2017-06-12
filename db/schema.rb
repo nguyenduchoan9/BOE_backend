@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20170525154540) do
   create_table "price_change_histories", force: :cascade do |t|
     t.integer  "dish_id"
     t.decimal  "price",      precision: 20, scale: 2
-    t.datetime "from_date",                           default: '2017-06-01 10:01:44'
+    t.datetime "from_date",                           default: '2017-06-01 10:27:35'
     t.datetime "created_at",                                                          null: false
     t.datetime "updated_at",                                                          null: false
     t.index ["dish_id"], name: "index_price_change_histories_on_dish_id", using: :btree
