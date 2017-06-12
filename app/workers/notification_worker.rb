@@ -10,16 +10,16 @@ class NotificationWorker
         # Do something
         if Constant::WAITER == role
             body = { :table_number => table_number, :dish => dish_by_order_detail }.as_json.to_s
-            order_is_done
+            # order_is_done
 
             send_message_to_waiter body, waiter_reg_tokens
         elsif Constant::CHEF == role
-            if ver = 0
-                body = { :order_id => id, :order_detail => serial_order_detail}.as_json.to_s
+            if ver == 0
+                body = { :order_id => @id, :order_detail => serial_order_detail}.as_json.to_s
                 send_message_to_chef body, chef_reg_tokens, 'order'
             else
                 order_detail_chef.each { |od|
-                    dish_local = Dish.find(od.dish_id).dish_name
+                    dish_local = Dish.find(od.dish_id)
                     body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name), @id).as_json.to_s
                     send_message_to_chef body, chef_reg_tokens, 'dish'
                 }
@@ -32,11 +32,12 @@ class NotificationWorker
 
     # region WAITER
     def order_detail
-        @order_detail ||= OrderDetail.find(id)
+        @order_detail ||= OrderDetail.find(@id)
     end
 
     def table_number
-        order_detail.order.table_number.to_s
+        # order_detail.order.table_number
+        1
     end
 
     def order_is_done
@@ -49,7 +50,7 @@ class NotificationWorker
 
     def dish_by_order_detail
         dish_detail = Dish.find(order_detail.dish_id)
-        waiter_notify.new(dish_detai.id, dish_detail.dish_name)
+        waiter_notify.new(dish_detail.id, dish_detail.dish_name)
     end
 
     def waiter_notify
@@ -66,12 +67,12 @@ class NotificationWorker
     end
 
     def diner_reg_tokens
-        User.find(user_id).reg_token
+        User.find(@user_id).reg_token
     end
 
     # REGION CHEF
     def order_detail_chef
-        @order ||= Order.find(id).order_details
+        @order ||= Order.find(@id).order_details
     end
 
     def serial_order_detail

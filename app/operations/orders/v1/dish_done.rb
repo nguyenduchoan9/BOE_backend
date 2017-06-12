@@ -38,7 +38,7 @@ module Orders
             def order_detail_id
                 order_detail.id
             end
-            receive
+            # receive
             # order_id
             # dish_id
 
