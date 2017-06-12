@@ -1,6 +1,8 @@
-<div style="padding: 5%;">
+<div class="container">
   <%= form_for @user, url: {controller: 'users', action: 'update'} do |f| %>
-      <%= image_tag @user.avatar, size: '400x400'  %>
+      <div class="center">
+        <%= image_tag @user.avatar, size: '400x400' %>
+      </div>
       <%= f.hidden_field :id %>
       <div class="input-field">
         <%= f.label :username, "Username" %>

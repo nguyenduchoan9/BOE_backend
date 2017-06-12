@@ -1,10 +1,6 @@
 class MembershipsController < ApplicationController
   before_action 'authen_user'
 
-  def new
-    @membership = Membership.new
-  end
-
   def show
     @memberships = Membership.all
   end

@@ -1,18 +1,20 @@
-<%= form_for @table, url: {controller: 'tables', action: 'update'} do |f| %>
-    <div class="row  col s8 offset-s2" style="padding-top: 5%">
-      <div class="center-align">
-        <img src="/tables/edit.png?id=<%= @table.id %>" height="300px" width="300px">
-        <br>
-        <a href="/tables/edit.json?id=<%= @table.id %>" target="_blank" class="waves-effect waves-light btn">
-          <i class="material-icons left">play_for_work</i>Download
-        </a>
+<div class="container">
+  <%= form_for @table, url: {controller: 'tables', action: 'update'} do |f| %>
+      <div class="row  col s8 offset-s2" style="padding-top: 5%">
+        <div class="center-align">
+          <img src="/tables/edit.png?id=<%= @table.id %>" height="300px" width="300px">
+          <br>
+          <a href="/tables/edit.json?id=<%= @table.id %>" target="_blank" class="waves-effect waves-light btn">
+            <i class="material-icons left">play_for_work</i>Download
+          </a>
+        </div>
+        <div class="input-field">
+          <%= f.hidden_field :id, value: @table.id %>
+          <%= f.label :table_number, 'Table Number' %>
+          <%= f.text_field :table_number, value: @table.table_number %>
+          <%= f.submit value: 'EDIT', class: 'btn' %>
+          <%= link_to 'Back', :back, class: "btn" %>
+        </div>
       </div>
-      <div class="input-field">
-        <%= f.hidden_field :id, value: @table.id %>
-        <%= f.label :table_number, 'Table Number' %>
-        <%= f.text_field :table_number, value: @table.table_number %>
-        <%= f.submit value: 'EDIT', class: 'btn' %>
-        <%= link_to 'Back', :back, class: "btn" %>
-      </div>
-    </div>
-<% end %>
+  <% end %>
+</div>

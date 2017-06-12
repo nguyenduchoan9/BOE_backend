@@ -7,14 +7,28 @@
     width: 20px;
   }
 </style>
-<div>
+<div class="container">
 
   <div class="fixed-action-btn">
-    <%= link_to new_tables_path, class: 'btn-floating red' do %>
-        <i class="large material-icons">add</i>
-    <% end %>
+    <a data-target="modal1" class="btn-floating red">
+      <i class="large material-icons">add</i>
+    </a>
   </div>
-
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 style="text-align: center">New Table</h4>
+      <%= form_for(:table, remote: true) do |f| %>
+          <div class="row" style="padding-top: 5%">
+            <div class="input-field col s8 offset-s2">
+              <%= f.label :table_number, 'Table Number' %>
+              <%= f.text_field :table_number, id: 'number' %>
+              <%= f.submit value: 'ADD', class: 'btn' %>
+              <%= link_to 'Back', :back, class: "btn" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
   <table class="highlight responsive-table" id="tables">
     <thead>
     <th>NUMBER</th>
@@ -41,8 +55,13 @@
   </table>
 </div>
 <script>
-    $( document ).on('turbolinks:load', function() {
+    $(document).on('turbolinks:load', function () {
         $('#tables').dataTable()
         $('select').material_select();
     });
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+
 </script>

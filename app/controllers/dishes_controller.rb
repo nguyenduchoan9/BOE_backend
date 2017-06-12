@@ -1,11 +1,6 @@
 class DishesController < ApplicationController
   before_action 'authen_user'
 
-  def new
-    @dish = Dish.new
-
-  end
-
   def create
     @dish = Dish.new dish_params
     @dish.save

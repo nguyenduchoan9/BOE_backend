@@ -1,10 +1,6 @@
 class DiscountDaysController < ApplicationController
   before_action 'authen_user'
 
-  def new
-    @discount_day = DiscountDay.new
-  end
-
   def show
     @discount_days = DiscountDay.all
   end

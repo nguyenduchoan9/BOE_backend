@@ -3,13 +3,42 @@
     width: 20px;
   }
 </style>
-<div>
+<div class="fixed-action-btn">
+  <a data-target="modal1" class="btn-floating red">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
 
-  <div class="fixed-action-btn">
-    <%= link_to new_dishes_path, class: 'btn-floating red' do %>
-        <i class="large material-icons">add</i>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4 style="text-align: center">New Dish</h4>
+    <%= form_for(:dish, remote: true) do |f| %>
+        <div class="input-field">
+          <%= f.label :dish_name, "Dish Name" %>
+          <%= f.text_field :dish_name %>
+        </div>
+        <div class="input-field">
+          <%= f.label :description, "Description" %>
+          <%= f.text_field :description %>
+        </div>
+        <div class="input-field">
+          <%= collection_select :dish, :category_id, Category.all, :id, :category_name, prompt: true %>
+          <label>Category</label>
+        </div>
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Image</span>
+            <%= f.file_field :image %>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+        <%= f.submit value: 'submit', class: 'btn' %>
     <% end %>
   </div>
+</div>
+<div class="container">
   <table class="highlight responsive-table" id="dishes">
     <thead>
     <th>DISH NAME</th>
@@ -34,8 +63,12 @@
   </table>
 </div>
 <script>
-    $( document ).on('turbolinks:load', function() {
+    $(document).on('turbolinks:load', function () {
         $('#dishes').dataTable()
         $('select').material_select();
+    });
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
     });
 </script>

@@ -1,4 +1,4 @@
-<div style="padding: 5%;">
+<div class="container">
   <%= form_for @dish, url: {controller: 'dishes', action: 'update'} do |f| %>
       <%= image_tag @dish.image, size: '400x400'  %>
       <%= f.hidden_field :id %>

@@ -1,10 +1,6 @@
 class TablesController < ApplicationController
   before_action 'authen_user'
 
-  def new
-    @table = Table.new
-  end
-
   def create
     @table = Table.new table_params
     @table.save
