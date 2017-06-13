@@ -2,44 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bf38130-4caf-4da8-9100-b4b4c2577af7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/category.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/dishes/show.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/price_change_histories/create.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/price_change_histories/new.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/price_change_histories/update.html.erb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/_metadata_/metadata.values.at" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/BOE_backend.iml" afterPath="$PROJECT_DIR$/.idea/BOE_backend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/discount_days_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/discount_days_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dishes_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dishes_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/memberships_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/memberships_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/price_change_histories_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/price_change_histories_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/session_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/session_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/statistic_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/statistic_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/tables_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/tables_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/discount_days/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/discount_days/edit.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/discount_days/show.html.erb" afterPath="$PROJECT_DIR$/app/views/discount_days/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dishes/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/dishes/edit.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/memberships/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/memberships/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/memberships/show.html.erb" afterPath="$PROJECT_DIR$/app/views/memberships/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/price_change_histories/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/price_change_histories/edit.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/price_change_histories/show.html.erb" afterPath="$PROJECT_DIR$/app/views/price_change_histories/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/session/new.html.erb" afterPath="$PROJECT_DIR$/app/views/session/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/tables/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/show.html.erb" afterPath="$PROJECT_DIR$/app/views/tables/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/users/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -160,16 +126,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/dishes/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="65" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="dishes_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/dishes_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -180,21 +136,54 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/discount_days/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="53" column="14" lean-forward="true" selection-start-line="51" selection-start-column="8" selection-end-line="53" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="price_change_histories_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/price_change_histories_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
-              <caret line="3" column="54" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+            <state relative-caret-position="200">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/price_change_histories/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="53" />
+            <state relative-caret-position="225">
+              <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statistic_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/statistic_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-272">
+              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -218,19 +207,14 @@
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/price_change_histories/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="76" column="4" lean-forward="false" selection-start-line="76" selection-start-column="4" selection-end-line="79" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="37" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="3" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="295">
+              <caret line="32" column="11" lean-forward="false" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -238,7 +222,7 @@
       <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="157">
               <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
               <folding />
             </state>
@@ -248,19 +232,12 @@
       <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="101" column="41" lean-forward="false" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="259">
+              <caret line="113" column="55" lean-forward="true" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -277,7 +254,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>will</find>
       <find>.j</find>
       <find>activ</find>
       <find>colum</find>
@@ -307,6 +283,7 @@
       <find>&lt;%= yie</find>
       <find>pri</find>
       <find>bi</find>
+      <find>5</find>
     </findStrings>
   </component>
   <component name="GeneratorOptions">
@@ -349,7 +326,6 @@
         <option value="$PROJECT_DIR$/app/views/statistic/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/session_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/tables/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/discount_days/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/memberships/show.html.erb" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/console.sql" />
         <option value="$PROJECT_DIR$/app/views/dishes/_form.html.erb" />
@@ -366,15 +342,16 @@
         <option value="$PROJECT_DIR$/app/views/session/new.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/discount_days_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/memberships_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/app/views/discount_days/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/memberships/edit.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/price_change_histories/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/price_change_histories_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/price_change_histories/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/discount_days/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/price_change_histories/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
       </list>
     </option>
   </component>
@@ -459,46 +436,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="price_change_histories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BOE_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -507,7 +444,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/rails" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="edit&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/users/edit.html.erb&#10;dish&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;pri&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;user&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/users_controller.rb&#10;show&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/price_change_histories/show.html.erb&#10;p&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;app&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;prich&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;rout&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/routes.rb&#10;scss&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/assets/stylesheets/application.scss&#10;members&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/memberships_controller.rb&#10;discount&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/discount_days_controller.rb&#10;new&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/session/new.html.erb&#10;tablcon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/tables_controller.rb&#10;discon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;usercon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/users_controller.rb&#10;appli&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;sta&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;gem&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/Gemfile&#10;application&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;dishcon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;dis&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;create&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/db/migrate/20170525153604_create_dishes.rb&#10;Dish&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/models/dish.rb&#10;turbo&#9;FILE&#9;file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/turbolinks-5.0.1/lib/turbolinks.rb&#10;member&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/memberships_controller.rb&#10;ses&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/session_controller.rb&#10;session&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/session_controller.rb&#10;index&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/statistic/index.html.erb&#10;st&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;in&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/statistic/index.html.erb&#10;Discount&#9;null&#9;null&#10;discountda&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/discount_days_controller.rb&#10;statis&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;database&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/database.yml&#10;tablecon&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/tables_controller.rb&#10;Usercon&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/users_controller.rb&#10;dishco&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/dishes_controller.rb&#10;upload&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/uploaders/image_uploader.rb&#10;dishc&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/dishes_controller.rb&#10;gemfil&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;table&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/tables_controller.rb&#10;applicat&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/views/layouts/application.html.erb&#10;file&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;membership&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/memberships_controller.rb&#10;gemfi&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;rou&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/routes.rb&#10;stat&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb&#10;applica&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/assets/javascripts/application.js&#10;js&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/assets/javascripts/application.js" />
+    <property name="SearchEverywhereHistoryKey" value="statis&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;applicat&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;scss&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/assets/stylesheets/application.scss&#10;show&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/price_change_histories/show.html.erb&#10;edit&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/users/edit.html.erb&#10;dish&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;pri&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;user&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/users_controller.rb&#10;p&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;app&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;prich&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;rout&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/routes.rb&#10;members&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/memberships_controller.rb&#10;discount&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/discount_days_controller.rb&#10;new&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/session/new.html.erb&#10;tablcon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/tables_controller.rb&#10;discon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;usercon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/users_controller.rb&#10;appli&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;sta&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;gem&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/Gemfile&#10;application&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;dishcon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;dis&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;create&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/db/migrate/20170525153604_create_dishes.rb&#10;Dish&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/models/dish.rb&#10;turbo&#9;FILE&#9;file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/turbolinks-5.0.1/lib/turbolinks.rb&#10;member&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/memberships_controller.rb&#10;ses&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/session_controller.rb&#10;session&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/session_controller.rb&#10;index&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/statistic/index.html.erb&#10;st&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;in&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/statistic/index.html.erb&#10;Discount&#9;null&#9;null&#10;discountda&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/discount_days_controller.rb&#10;database&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/database.yml&#10;tablecon&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/tables_controller.rb&#10;Usercon&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/users_controller.rb&#10;dishco&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/dishes_controller.rb&#10;upload&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/uploaders/image_uploader.rb&#10;dishc&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/dishes_controller.rb&#10;gemfil&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;table&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/tables_controller.rb&#10;file&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;membership&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/memberships_controller.rb&#10;gemfi&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile&#10;rou&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/config/routes.rb&#10;stat&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/statistic_controller.rb&#10;applica&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/assets/javascripts/application.js&#10;js&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/assets/javascripts/application.js" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL&#10;Sqlite (Xerial)" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
@@ -988,7 +925,7 @@
       <workItem from="1497262510785" duration="1627000" />
       <workItem from="1497315696102" duration="4458000" />
       <workItem from="1497343052819" duration="8875000" />
-      <workItem from="1497352425671" duration="11421000" />
+      <workItem from="1497352425671" duration="13064000" />
     </task>
     <task id="LOCAL-00001" summary="commit update">
       <created>1496309285598</created>
@@ -1116,11 +1053,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497234668807</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update dish">
+      <created>1497363996997</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1497363996997</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192239000" />
+    <option name="totallyTimeSpent" value="193882000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1137,9 +1081,9 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.49092284" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32735425" sideWeight="0.44326776" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35724962" sideWeight="0.58320725" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.46066564" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35724962" sideWeight="0.41679275" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.54236007" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.45763993" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35724962" sideWeight="0.41679275" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.245142" sideWeight="0.44251135" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.65431166" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15279879" sideWeight="0.49476832" order="1" side_tool="false" content_ui="combo" />
@@ -1268,6 +1212,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1275,13 +1222,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/discount_days/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="53" column="8" lean-forward="false" selection-start-line="53" selection-start-column="8" selection-end-line="55" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1303,6 +1243,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1469,14 +1410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/statistic_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tables_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1513,14 +1446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1565,14 +1490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="101" column="41" lean-forward="false" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1602,34 +1519,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/price_change_histories/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="76" column="4" lean-forward="false" selection-start-line="76" selection-start-column="4" selection-end-line="79" selection-end-column="7" />
+        <state relative-caret-position="157">
+          <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/price_change_histories_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="3" column="54" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+        <state relative-caret-position="200">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/price_change_histories/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="53" />
+        <state relative-caret-position="225">
+          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/discount_days/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="53" column="14" lean-forward="true" selection-start-line="51" selection-start-column="8" selection-end-line="53" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/price_change_histories/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="32" column="11" lean-forward="false" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="113" column="55" lean-forward="true" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/statistic_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
           <folding />
         </state>
       </provider>

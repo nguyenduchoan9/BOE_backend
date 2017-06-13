@@ -8,10 +8,11 @@
     <i class="large material-icons">add</i>
   </a>
 </div>
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4 style="text-align: center">New Dish</h4>
-    <%= form_for :price_change_history do |f| %>
+<div id="modal1" class="modal modal-fixed-footer" style="min-height: 600px">
+  <%= form_for :price_change_history do |f| %>
+      <div class="modal-content">
+        <h4 style="text-align: center">New Dish</h4>
+
         <div class="input-field">
           <%= collection_select :price_change_history, :dish_id, Dish.all, :id, :dish_name, prompt: true %>
           <label>Dish Name</label>
@@ -24,9 +25,12 @@
           <%= f.label :from_date, "From Date" %>
           <%= f.date_field :from_date, class: "datepicker" %>
         </div>
-        <%= f.submit value: 'submit', class: 'btn' %>
-    <% end %>
-  </div>
+
+      </div>
+      <div class="modal-footer">
+        <%= f.submit value: 'INSERT', class: 'modal-action modal-close waves-effect waves-green btn-flat' %>
+      </div>
+  <% end %>
 </div>
 <div style="padding: 0 1%;">
   <table class="highlight responsive-table" id="dishes">
