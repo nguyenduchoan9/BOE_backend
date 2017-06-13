@@ -13,7 +13,7 @@
           <%= f.label :table_number, 'Table Number' %>
           <%= f.text_field :table_number, value: @table.table_number %>
           <%= f.submit value: 'EDIT', class: 'btn' %>
-          <%= link_to 'Back', :back, class: "btn" %>
+          <%= link_to 'Back', tables_path, class: "btn" %>
         </div>
       </div>
   <% end %>

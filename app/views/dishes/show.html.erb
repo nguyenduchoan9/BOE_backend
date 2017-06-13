@@ -8,11 +8,11 @@
     <i class="large material-icons">add</i>
   </a>
 </div>
-
 <div id="modal1" class="modal">
   <div class="modal-content">
     <h4 style="text-align: center">New Dish</h4>
-    <%= form_for(:dish, remote: true) do |f| %>
+    <%= form_for :dish do |f| %>
+        <%= f.hidden_field :id %>
         <div class="input-field">
           <%= f.label :dish_name, "Dish Name" %>
           <%= f.text_field :dish_name %>
@@ -38,12 +38,13 @@
     <% end %>
   </div>
 </div>
-<div class="container">
+<div style="padding: 0 1%;">
   <table class="highlight responsive-table" id="dishes">
     <thead>
     <th>DISH NAME</th>
     <th>DESCRIPTION</th>
     <th>CATEGORY</th>
+    <th>STATUS</th>
     <th></th>
     </thead>
     <tbody>
@@ -52,6 +53,18 @@
           <td><%= dish.dish_name %></td>
           <td><%= dish.description %></td>
           <td><%= dish.category.category_name %></td>
+          <td>
+            <p>
+              <%= check_box_tag 'status', 'status', dish.status, disabled: true %>
+              <label for="status">
+                <% if dish.status %>
+                    Enable
+                <% else %>
+                    Disable
+                <% end %>
+              </label>
+            </p>
+          </td>
           <td>
             <a class="" href="dishes/edit?id=<%= dish.id %>">
               <i class="material-icons">mode_edit</i>

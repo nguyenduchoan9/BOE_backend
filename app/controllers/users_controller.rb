@@ -1,5 +1,7 @@
 class UsersController < WebApplcationController
   before_action 'authen_user'
+  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Users", :users_path
 
   def new
     @user = User.new
@@ -14,6 +16,7 @@ class UsersController < WebApplcationController
 
   def edit
     @user = User.find params[:id]
+    add_breadcrumb "User "+ params[:id]
   end
 
   def update

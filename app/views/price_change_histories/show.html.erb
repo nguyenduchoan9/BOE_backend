@@ -1,1 +1,81 @@
-
+<style>
+  a li {
+    width: 20px;
+  }
+</style>
+<div class="fixed-action-btn">
+  <a data-target="modal1" class="btn-floating red">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4 style="text-align: center">New Dish</h4>
+    <%= form_for :price_change_history do |f| %>
+        <div class="input-field">
+          <%= collection_select :price_change_history, :dish_id, Dish.all, :id, :dish_name, prompt: true %>
+          <label>Dish Name</label>
+        </div>
+        <div class="input-field">
+          <%= f.label :price, "Dish Price" %>
+          <%= f.text_field :price %>
+        </div>
+        <div class="input-field">
+          <%= f.label :from_date, "From Date" %>
+          <%= f.date_field :from_date, class: "datepicker" %>
+        </div>
+        <%= f.submit value: 'submit', class: 'btn' %>
+    <% end %>
+  </div>
+</div>
+<div style="padding: 0 1%;">
+  <table class="highlight responsive-table" id="dishes">
+    <thead>
+    <th>DISH NAME</th>
+    <th>PRICE</th>
+    <th>FROM DAY</th>
+    <th>STATUS</th>
+    <th></th>
+    </thead>
+    <tbody>
+    <% @price_change_histories.each do |price| %>
+        <tr>
+          <td><%= price.dish.dish_name %></td>
+          <td><%= price.price %></td>
+          <td><%= price.from_date %></td>
+          <td>
+            <p>
+              <%= check_box_tag 'status', 'status', price.status, disabled: true %>
+              <label for="status">
+                <% if price.status %>
+                    Enable
+                <% else %>
+                    Disable
+                <% end %>
+              </label>
+            </p>
+          </td>
+          <td>
+            <a class="" href="price_change_histories/edit?id=<%= price.id %>">
+              <i class="material-icons">mode_edit</i>
+            </a>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<script>
+    $(document).on('turbolinks:load', function () {
+        $('#dishes').dataTable()
+        $('select').material_select();
+    });
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 50, // Creates a dropdown of 15 years to control year
+    });
+</script>

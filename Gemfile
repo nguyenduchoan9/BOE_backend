@@ -14,6 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
+gem "breadcrumbs_on_rails"
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'materialize-sass'
 gem 'active_model_serializers', '~> 0.10.0' # json response as collection

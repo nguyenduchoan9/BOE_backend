@@ -7,29 +7,32 @@
     width: 20px;
   }
 </style>
-<div class="container">
+<div class="fixed-action-btn">
+  <a data-target="modal1" class="btn-floating red">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
+<div style="padding: 0 1%;">
 
-  <div class="fixed-action-btn">
-    <a data-target="modal1" class="btn-floating red">
-      <i class="large material-icons">add</i>
-    </a>
-  </div>
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4 style="text-align: center">New Table</h4>
-      <%= form_for(:table, remote: true) do |f| %>
+
+  <div id="modal1" class="modal modal-fixed-footer">
+    <%= form_for(:table, remote: true) do |f| %>
+        <div class="modal-content">
+          <h4 style="text-align: center">New Table</h4>
+
           <div class="row" style="padding-top: 5%">
             <div class="input-field col s8 offset-s2">
               <%= f.label :table_number, 'Table Number' %>
               <%= f.text_field :table_number, id: 'number' %>
-              <%= f.submit value: 'ADD', class: 'btn' %>
-              <%= link_to 'Back', :back, class: "btn" %>
             </div>
           </div>
-      <% end %>
-    </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit value: 'INSERT', class: 'modal-action modal-close waves-effect waves-green btn-flat' %>
+        </div>
+    <% end %>
   </div>
-  <table class="highlight responsive-table" id="tables">
+  <table class="highlight" id="tables">
     <thead>
     <th>NUMBER</th>
     <th></th>

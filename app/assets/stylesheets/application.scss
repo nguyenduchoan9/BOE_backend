@@ -9,11 +9,24 @@
 @import "materialize";
 @import url("http://fonts.googleapis.com/icon?family=Material+Icons");
 
-
 .pagination a li.active {
   color: #fff;
 }
 
 .side-nav li > a {
   font-size: 13px;
+}
+
+td a {
+  color: black;
+}
+
+header, main {
+  padding-left: 250px;
+}
+
+@media only screen and (max-width: 992px) {
+  header, main {
+    padding-left: 0;
+  }
 }

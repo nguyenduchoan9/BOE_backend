@@ -1,5 +1,7 @@
 class TablesController < ApplicationController
   before_action 'authen_user'
+  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Tables", :tables_path
 
   def create
     @table = Table.new table_params
@@ -17,6 +19,7 @@ class TablesController < ApplicationController
 
   def edit
     @table = Table.find params[:id]
+    add_breadcrumb "Table " + params[:id]
     qrcode = RQRCode::QRCode.new(@table.table_number.to_s)
     png = qrcode.as_png(resize_gte_to: false,
                         resize_exactly_to: false,
