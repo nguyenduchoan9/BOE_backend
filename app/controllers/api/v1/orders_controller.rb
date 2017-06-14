@@ -29,6 +29,9 @@ module Api
 
             def mark_order_reject
             end
+
+            def order_in_time
+            end
         end
     end
 end
