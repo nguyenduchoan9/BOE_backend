@@ -44,3 +44,4 @@ bower.json
 .byebug_history
 
 /config/database.yml
+/tmp/cache/assets

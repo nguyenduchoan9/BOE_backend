@@ -72,7 +72,7 @@ class NotificationWorker
 
     # REGION CHEF
     def order_detail_chef
-        @order ||= Order.find(@id).order_details
+        @order ||= Order.find(@id).order_details.order(created_at: :asc)
     end
 
     def serial_order_detail

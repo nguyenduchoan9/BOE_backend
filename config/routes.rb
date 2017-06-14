@@ -55,7 +55,7 @@ Rails.application.routes.draw do
                 end
             end
 
-            resources :orders, only: [:create] do
+            resources :orders, only: [:create, :index] do
                 collection do
                     get :order_history
                     post :dish_done # mon an duoc lam xong
@@ -64,6 +64,7 @@ Rails.application.routes.draw do
                     get :all_order # get toan bo order
                     post :mark_order_accept
                     post :mark_order_reject
+                    get :order_in_time
                 end
             end
         end
