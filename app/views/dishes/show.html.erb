@@ -8,10 +8,10 @@
     <i class="large material-icons">add</i>
   </a>
 </div>
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4 style="text-align: center">New Dish</h4>
-    <%= form_for :dish do |f| %>
+<div id="modal1" class="modal modal-fixed-footer" style="min-height: 600px">
+  <%= form_for :dish do |f| %>
+      <div class="modal-content">
+        <h4 style="text-align: center">New Dish</h4>
         <%= f.hidden_field :id %>
         <div class="input-field">
           <%= f.label :dish_name, "Dish Name" %>
@@ -34,12 +34,14 @@
             <input class="file-path validate" type="text">
           </div>
         </div>
-        <%= f.submit value: 'submit', class: 'btn' %>
-    <% end %>
-  </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit value: 'INSERT', class: 'modal-action modal-close waves-effect waves-green btn-flat' %>
+      </div>
+  <% end %>
 </div>
 <div style="padding: 0 1%;">
-  <table class="highlight responsive-table" id="dishes">
+  <table class="highlight" id="dishes">
     <thead>
     <th>DISH NAME</th>
     <th>DESCRIPTION</th>
@@ -55,8 +57,8 @@
           <td><%= dish.category.category_name %></td>
           <td>
             <p>
-              <%= check_box_tag 'status', 'status', dish.status, disabled: true %>
-              <label for="status">
+              <%= check_box_tag dish.id, dish.status, dish.status, onclick: "changeStatus(#{dish.id})" %>
+              <label for="<%= dish.id %>" id="label<%= dish.id %>">
                 <% if dish.status %>
                     Enable
                 <% else %>
@@ -82,6 +84,21 @@
     });
     $(document).ready(function () {
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+
         $('.modal').modal();
     });
+    function changeStatus(dish_id) {
+        if ($('#label' + dish_id).text().trim() == 'Enable') {
+            $('#label' + dish_id).text('Disable')
+        } else {
+            $('#label' + dish_id).text('Enable')
+        }
+        $.ajax({
+            url: 'dishes/updateStatus.json',
+            dataType: 'json',
+            data: {
+                id: dish_id
+            }
+        })
+    }
 </script>

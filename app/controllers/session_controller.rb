@@ -11,26 +11,32 @@ class SessionController < WebApplcationController
   end
 
   def create
+
     user_password = params[:session][:password]
     user_username = params[:session][:username]
     user = user_username.present? && User.find_by(username: user_username)
-    if user.valid_password? user_password
-      sign_in user, store: false
-
-      if user.role.name == 'admin'
-        session[:user_id] = user.id
-        current_user = User.find user.id
-        session[:full_name] = current_user.full_name
-        session[:email] = current_user.email
-        session[:avatar] = current_user.avatar
-        redirect_to root_path
+    if user.present?
+      if user.valid_password? user_password
+        sign_in user, store: false
+        if user.role.name == 'admin'
+          session[:user_id] = user.id
+          current_user = User.find user.id
+          session[:full_name] = current_user.full_name
+          session[:email] = current_user.email
+          session[:avatar] = current_user.avatar
+          redirect_to root_path
+        else
+          redirect_to login_path
+        end
       else
-        redirect_to login_path
+        flash.now.alert = 'Email or password is invalid'
+        render :new
       end
     else
-      flash.now.alert = 'Email or password is invalid'
       render :new
     end
+
+
   end
 
   def destroy

@@ -17,6 +17,18 @@ class DishesController < ApplicationController
     end
   end
 
+  def update_status
+    respond_to do |format|
+      format.json {
+        @dish = Dish.find params[:id]
+        if @dish.status.nil?
+          @dish.update status: false
+        end
+        @dish.update status: !@dish.status
+      }
+    end
+  end
+
   def edit
     @dish = Dish.find params[:id]
     add_breadcrumb "Dish "+ params[:id]
@@ -24,7 +36,7 @@ class DishesController < ApplicationController
 
   def update
     @dish = Dish.find params[:dish][:id]
-    @dish.update_attributes(dish_name: params[:dish][:dish_name], description: params[:dish][:description], category_id: params[:dish][:category_id], image: params[:dish][:image], status: params[:dish][:status])
+    @dish.update_attributes(dish_params)
     redirect_to action: 'show'
   end
 

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resource 'dishes'
     resource 'price_change_histories'
     get 'make_statistic', to: 'statistic#make_statistic'
-
+    get 'dishes/updateStatus', to: 'dishes#update_status'
     devise_for :users
 
     require 'sidekiq/web'
