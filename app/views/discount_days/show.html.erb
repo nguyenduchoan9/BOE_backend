@@ -3,18 +3,16 @@
     width: 20px;
   }
 </style>
-<div class="container">
-
-  <div class="fixed-action-btn">
-    <a data-target="modal1" class="btn-floating red">
-      <i class="large material-icons">add</i>
-    </a>
-  </div>
-
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4 style="text-align: center">New Discount Day</h4>
-      <%= form_for(:discount_day, remote: true) do |f| %>
+<div class="fixed-action-btn">
+  <a data-target="modal1" class="btn-floating red">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
+<div style="padding: 0 1%;">
+  <div id="modal1" class="modal modal-fixed-footer" style="min-height: 600px">
+    <%= form_for(:discount_day, remote: true) do |f| %>
+        <div class="modal-content">
+          <h4 style="text-align: center">New Discount Day</h4>
           <div class="input-field">
             <%= f.label :name, "Discount Name" %>
             <%= f.text_field :name %>
@@ -29,7 +27,7 @@
           </div>
           <%= f.hidden_field :discount_item %>
           <div class="input-field">
-            <select multiple name="discount_item" id="discount_item" onchange="onSelected()" >
+            <select multiple name="discount_item" id="discount_item" onchange="onSelected()">
               <option value="" disabled selected>Choose your option</option>
               <%= Dish.all.each do |dish| %>
                   <option value="<%= dish.id %>"><%= dish.dish_name %></option>
@@ -50,14 +48,13 @@
               <input class="file-path validate" type="text">
             </div>
           </div>
-          <%= f.submit value: 'submit', class: 'btn' %>
-          <%= link_to 'Back', :back, class: "btn" %>
-      <% end %>
-    </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit value: 'INSERT', class: 'modal-action modal-close waves-effect waves-green btn-flat' %>
+        </div>
+    <% end %>
   </div>
-
-
-  <table class="highlight responsive-table" id="discount_days">
+  <table class="highlight" id="data_tables">
     <thead>
     <th>FROM DAY</th>
     <th>TO DAY</th>
@@ -84,10 +81,6 @@
 
 </div>
 <script>
-    $(document).on('turbolinks:load', function () {
-        $('#discount_days').dataTable()
-        $('select').material_select();
-    });
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 50, // Creates a dropdown of 15 years to control year
