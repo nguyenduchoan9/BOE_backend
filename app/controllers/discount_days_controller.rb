@@ -1,5 +1,7 @@
 class DiscountDaysController < ApplicationController
   before_action 'authen_user'
+  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Discounts", :discount_days_path
 
   def show
     @discount_days = DiscountDay.all
@@ -13,6 +15,7 @@ class DiscountDaysController < ApplicationController
 
   def edit
     @discount_day = DiscountDay.find params[:id]
+    add_breadcrumb "Discount Day "+ params[:id]
   end
 
   def update

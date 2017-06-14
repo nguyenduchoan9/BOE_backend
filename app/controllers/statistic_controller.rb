@@ -1,11 +1,17 @@
 class StatisticController < WebApplcationController
   before_action 'authen_user'
+  add_breadcrumb "Home", :root_path
+
+  def home
+
+  end
 
   def index
     @user = Order.order('sum_total desc').includes(:user).group('users.username').select('users.username').references(:users).sum(:total).first
     @dish = OrderDetail.order('sum_quantity desc').includes(:dish).group('dishes.dish_name').references(:dishes).sum(:quantity).first
     @revenue = Order.sum(:total)
     @visit = Order.count
+    add_breadcrumb "Dashboard"
   end
 
   def make_statistic
@@ -18,9 +24,9 @@ class StatisticController < WebApplcationController
         duration = params[:duration]
         if type == 'user'
           if duration == 'month'
-            render json: Order.order('sum_total').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10).to_json
+            render json: Order.order('sum_total desc').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'month\', orders.created_at) = date_part(\'month\', current_date)').sum(:total).first(10).to_json
           elsif duration == 'year'
-            render json: Order.order('sum_total').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'year\', orders.created_at) = date_part(\'year\', current_date)').sum(:total).first(10).to_json
+            render json: Order.order('sum_total desc').includes(:user).group('users.username').select('users.username').references(:users).where('date_part(\'year\', orders.created_at) = date_part(\'year\', current_date)').sum(:total).first(10).to_json
           else
 
           end

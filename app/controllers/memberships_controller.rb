@@ -1,5 +1,7 @@
 class MembershipsController < ApplicationController
   before_action 'authen_user'
+  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Memberships", :memberships_path
 
   def show
     @memberships = Membership.all
@@ -13,6 +15,7 @@ class MembershipsController < ApplicationController
 
   def edit
     @membership = Membership.find params[:id]
+    add_breadcrumb "Membership " + params[:id]
   end
 
   def update

@@ -14,6 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
+gem "breadcrumbs_on_rails"
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'materialize-sass'
 gem 'active_model_serializers', '~> 0.10.0' # json response as collection
@@ -35,7 +36,6 @@ gem 'kaminari' # paginate model view
 gem 'rack-cors', :require => 'rack/cors' # cross origin region
 gem "figaro" # ENV
 gem "sidekiq"
-
 gem 'rqrcode', '~> 0.10.1' #qr code
 gem 'chunky_png' #save image
 

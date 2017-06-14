@@ -46,3 +46,6 @@ bower.json
 /config/database.yml
 /tmp/cache/assets
 /log/*
+
+.tmp
+.log
