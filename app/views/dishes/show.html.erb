@@ -41,7 +41,7 @@
   <% end %>
 </div>
 <div style="padding: 0 1%;">
-  <table class="highlight" id="dishes">
+  <table class="highlight" id="data_tables">
     <thead>
     <th>DISH NAME</th>
     <th>DESCRIPTION</th>
@@ -68,7 +68,7 @@
             </p>
           </td>
           <td>
-            <a href="dishes/edit?id=<%= dish.id %>">
+            <a href="dishes/edit?id=<%= dish.id %>" data-turbolinks="false">
               <i class="material-icons">mode_edit</i>
             </a>
           </td>
@@ -78,10 +78,6 @@
   </table>
 </div>
 <script>
-    $(document).on('turbolinks:load', function () {
-        $('#dishes').dataTable()
-        $('select').material_select();
-    });
     $(document).ready(function () {
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 

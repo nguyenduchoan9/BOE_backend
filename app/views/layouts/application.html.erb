@@ -6,7 +6,7 @@
   <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
   <%= javascript_include_tag "chartkick" %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application' %>
 </head>
 
 <body>
@@ -142,10 +142,3 @@
 
 </body>
 </html>
-<script>
-    $(document).ready(function () {
-        Materialize.updateTextFields();
-        $('select').material_select();
-    });
-    $("#slide_nav").sideNav();
-</script>

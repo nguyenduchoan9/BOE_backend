@@ -33,7 +33,7 @@
   <% end %>
 </div>
 <div style="padding: 0 1%;">
-  <table class="highlight" id="dishes">
+  <table class="highlight" id="data_tables">
     <thead>
     <th>DISH NAME</th>
     <th>PRICE</th>
@@ -70,10 +70,6 @@
   </table>
 </div>
 <script>
-    $(document).on('turbolinks:load', function () {
-        $('#dishes').dataTable()
-        $('select').material_select();
-    });
     $(document).ready(function () {
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();

@@ -34,7 +34,7 @@
   </div>
 
 
-  <table class="highlight" id="memberships">
+  <table class="highlight" id="data_tables">
     <thead>
     <th>MARK BOUNDARY</th>
     <th>LEVEL</th>
@@ -58,10 +58,6 @@
   </table>
 </div>
 <script>
-    $(document).on('turbolinks:load', function () {
-        $('#memberships').dataTable()
-        $('select').material_select();
-    });
     $(document).ready(function () {
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();

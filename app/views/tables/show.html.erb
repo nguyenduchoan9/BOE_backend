@@ -32,7 +32,7 @@
         </div>
     <% end %>
   </div>
-  <table class="highlight" id="tables">
+  <table class="highlight" id="data_tables">
     <thead>
     <th>NUMBER</th>
     <th></th>
@@ -58,10 +58,6 @@
   </table>
 </div>
 <script>
-    $(document).on('turbolinks:load', function () {
-        $('#tables').dataTable()
-        $('select').material_select();
-    });
     $(document).ready(function () {
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();

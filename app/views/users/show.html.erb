@@ -5,7 +5,7 @@
 </style>
 
 <div style="padding: 0 1%;">
-  <table class="highlight" id="users" >
+  <table class="highlight" id="data_tables" >
     <thead>
     <th>USERNAME</th>
     <th>FULLNAME</th>
@@ -31,9 +31,3 @@
   </table>
 
 </div>
-<script>
-    $(document).on('turbolinks:load', function () {
-        $('#users').dataTable();
-        $('select').material_select();
-    })
-</script>
