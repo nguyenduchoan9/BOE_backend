@@ -11,7 +11,6 @@ class SessionController < WebApplcationController
   end
 
   def create
-
     user_password = params[:session][:password]
     user_username = params[:session][:username]
     user = user_username.present? && User.find_by(username: user_username)
