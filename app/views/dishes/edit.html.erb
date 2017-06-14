@@ -10,8 +10,8 @@
         <%= f.text_field :dish_name %>
       </div>
       <div class="input-field">
-        <%= f.label :description, "Description" %>
         <%= f.text_area :description, class: 'materialize-textarea' %>
+        <%= f.label :description, "Description" %>
       </div>
       <div class="input-field">
         <%= collection_select :dish, :category_id, Category.all, :id, :category_name, prompt: true %>
@@ -23,7 +23,6 @@
         <% else %>
             <%= f.select :status, options_for_select([["Enable", true], ["Disable", false]], selected: false) %>
         <% end %>
-
         <label>Status</label>
       </div>
       <div class="file-field input-field">

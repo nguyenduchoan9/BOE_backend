@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bf38130-4caf-4da8-9100-b4b4c2577af7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/ready.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/discount_days/show.html.erb" afterPath="$PROJECT_DIR$/app/views/discount_days/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/ready.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/ready.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dishes/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/dishes/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dishes/show.html.erb" afterPath="$PROJECT_DIR$/app/views/dishes/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/memberships/show.html.erb" afterPath="$PROJECT_DIR$/app/views/memberships/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/price_change_histories/show.html.erb" afterPath="$PROJECT_DIR$/app/views/price_change_histories/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/session/new.html.erb" afterPath="$PROJECT_DIR$/app/views/session/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/tables/edit.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/show.html.erb" afterPath="$PROJECT_DIR$/app/views/tables/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/users/edit.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -40,7 +38,7 @@
     <SUITE FILE_PATH="coverage/BOE_backend@schema.coverage" NAME="schema Coverage Results" MODIFIED="1495771952591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" MODULE_NAME="BOE_backend" />
     <SUITE FILE_PATH="coverage/BOE_backend@db_create__BOE_backend.coverage" NAME="db:create: BOE_backend Coverage Results" MODIFIED="1497356117540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
     <SUITE FILE_PATH="coverage/BOE_backend@db_drop__BOE_backend.coverage" NAME="db:drop: BOE_backend Coverage Results" MODIFIED="1497356096345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
-    <SUITE FILE_PATH="coverage/BOE_backend@Development__BOE_backend.coverage" NAME="Development: BOE_backend Coverage Results" MODIFIED="1497424144482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
+    <SUITE FILE_PATH="coverage/BOE_backend@Development__BOE_backend.coverage" NAME="Development: BOE_backend Coverage Results" MODIFIED="1497428897949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="BOE_backend" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -107,31 +105,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/dishes/show.html.erb">
+      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/dishes/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="70" column="75" lean-forward="false" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ready.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/ready.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="119">
+              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/dishes/edit.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="46" column="7" lean-forward="false" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+            <state relative-caret-position="152">
+              <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ready.coffee" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/ready.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tables/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tables/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="53" lean-forward="false" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/statistic/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-68">
+              <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="8" column="66" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_input-fields.scss" pinned="false" current-in-tab="false">
+        <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/materialize-sass-0.98.2/app/assets/stylesheets/materialize/components/forms/_input-fields.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="87" column="7" lean-forward="false" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_variables.scss" pinned="false" current-in-tab="false">
+        <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/materialize-sass-0.98.2/app/assets/stylesheets/materialize/components/_variables.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="153" column="1" lean-forward="false" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -149,12 +217,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>button</find>
-      <find>cente</find>
-      <find>re</find>
-      <find>r</find>
-      <find>side</find>
-      <find>reve</find>
       <find>min</find>
       <find>modal</find>
       <find>check</find>
@@ -179,6 +241,12 @@
       <find>data</find>
       <find>data:</find>
       <find>data-tu</find>
+      <find>.materialize-textarea</find>
+      <find>textarea</find>
+      <find>texta</find>
+      <find>download</find>
+      <find>label</find>
+      <find>Focused label style</find>
     </findStrings>
   </component>
   <component name="GeneratorOptions">
@@ -196,8 +264,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/discount_day_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/discount_day/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/discount_day/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/discount_day/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_edit.html.erb" />
@@ -215,38 +281,40 @@
         <option value="$PROJECT_DIR$/app/views/memberships/new.html.erb" />
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="dbtable:/840bbadd/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/MobileApi_development.public.orders" />
-        <option value="$PROJECT_DIR$/app/views/statistic/index.html.erb" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/console.sql" />
         <option value="$PROJECT_DIR$/app/views/dishes/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/dishes/_new.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/tables/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/discount_days_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/memberships_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/memberships/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/price_change_histories_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/price_change_histories/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/app/views/discount_days/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/session_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tables_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/views/session/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/statistic/home.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/statistic_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/dishes_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/tables/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/price_change_histories/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/discount_days/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/memberships/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/ready.coffee" />
         <option value="$PROJECT_DIR$/app/views/dishes/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/session/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/tables/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/statistic/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/tables/edit.html.erb" />
+        <option value="C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/materialize-sass-0.98.2/app/assets/stylesheets/materialize/components/_variables.scss" />
         <option value="$PROJECT_DIR$/app/views/dishes/edit.html.erb" />
+        <option value="C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/materialize-sass-0.98.2/app/assets/stylesheets/materialize/components/forms/_input-fields.scss" />
+        <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       </list>
     </option>
   </component>
@@ -284,7 +352,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,7 +392,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,25 +414,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
       <pane id="Scratches" />
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/rails" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="show&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/dishes/show.html.erb&#10;edit&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/dishes/edit.html.erb&#10;appli&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;SHOW&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/tables/show.html.erb&#10;APPLI&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;app&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;sho&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/dishes/show.html.erb&#10;js&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/assets/javascripts/application.js&#10;dishcon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;stati&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;rout&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/routes.rb&#10;sta&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;gem&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/Gemfile&#10;table&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/tables_controller.rb&#10;new&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/session/new.html.erb&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;session&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/session_controller.rb&#10;application&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;rou&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/routes.rb&#10;index&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/statistic/index.html.erb&#10;dishc&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;statis&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;applicat&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;scss&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/assets/stylesheets/application.scss&#10;dish&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;pri&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;user&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/users_controller.rb&#10;p&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;prich&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;members&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/memberships_controller.rb&#10;discount&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/discount_days_controller.rb&#10;tablcon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/tables_controller.rb&#10;discon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;usercon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/users_controller.rb&#10;dis&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;create&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/db/migrate/20170525153604_create_dishes.rb&#10;Dish&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/models/dish.rb&#10;turbo&#9;FILE&#9;file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/turbolinks-5.0.1/lib/turbolinks.rb&#10;member&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/memberships_controller.rb&#10;ses&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/session_controller.rb&#10;st&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;in&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/statistic/index.html.erb&#10;Discount&#9;null&#9;null&#10;discountda&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/discount_days_controller.rb&#10;database&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/database.yml&#10;tablecon&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/tables_controller.rb&#10;Usercon&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/users_controller.rb&#10;dishco&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/controllers/dishes_controller.rb&#10;upload&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/app/uploaders/image_uploader.rb&#10;gemfil&#9;FILE&#9;file://C:/Users/PHONG/BOE_backend/Gemfile" />
+    <property name="SearchEverywhereHistoryKey" value="read&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/assets/javascripts/ready.coffee&#10;edit&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/users/edit.html.erb&#10;usercon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/users_controller.rb&#10;_input&#9;FILE&#9;file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/materialize-sass-0.98.2/app/assets/stylesheets/materialize/components/forms/_input-fields.scss&#10;appli&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;index&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/statistic/index.html.erb&#10;show&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/tables/show.html.erb&#10;new&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/session/new.html.erb&#10;cof&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/assets/javascripts/ready.coffee&#10;materialize&#9;FILE&#9;file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/materialize-sass-0.98.2/app/assets/javascripts/materialize.js&#10;sessionstore&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/initializers/session_store.rb&#10;SHOW&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/tables/show.html.erb&#10;APPLI&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;app&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;sho&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/dishes/show.html.erb&#10;js&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/assets/javascripts/application.js&#10;dishcon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;stati&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;rout&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/routes.rb&#10;sta&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;gem&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/Gemfile&#10;table&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/tables_controller.rb&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;session&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/session_controller.rb&#10;application&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;rou&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/routes.rb&#10;dishc&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;statis&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;applicat&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/layouts/application.html.erb&#10;scss&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/assets/stylesheets/application.scss&#10;dish&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;pri&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;user&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/users_controller.rb&#10;p&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;prich&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/price_change_histories_controller.rb&#10;members&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/memberships_controller.rb&#10;discount&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/discount_days_controller.rb&#10;tablcon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/tables_controller.rb&#10;discon&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;dis&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/dishes_controller.rb&#10;create&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/db/migrate/20170525153604_create_dishes.rb&#10;Dish&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/models/dish.rb&#10;turbo&#9;FILE&#9;file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/turbolinks-5.0.1/lib/turbolinks.rb&#10;member&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/memberships_controller.rb&#10;ses&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/session_controller.rb&#10;st&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/statistic_controller.rb&#10;in&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/views/statistic/index.html.erb&#10;Discount&#9;null&#9;null&#10;discountda&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/app/controllers/discount_days_controller.rb&#10;database&#9;FILE&#9;file://C:/Users/PHONG/RubymineProjects/BOE_backend/config/database.yml" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL&#10;Sqlite (Xerial)" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
@@ -369,13 +437,13 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\PHONG\BOE_backend\app\assets\images" />
-      <recent name="C:\Users\PHONG\BOE_backend\app\views\users" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\PHONG\BOE_backend\app\controllers" />
       <recent name="C:\Users\PHONG\BOE_backend\app\assets\javascripts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PHONG\BOE_backend\app\assets\images" />
+      <recent name="C:\Users\PHONG\BOE_backend\app\views\users" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -390,7 +458,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Rake.routes: BOE_backend">
+  <component name="RunManager" selected="Rails.Development: BOE_backend">
     <configuration default="false" name="db:create: BOE_backend" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="BOE_backend" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -842,7 +910,8 @@
       <workItem from="1497343052819" duration="8875000" />
       <workItem from="1497352425671" duration="15704000" />
       <workItem from="1497398947949" duration="13837000" />
-      <workItem from="1497420721153" duration="5564000" />
+      <workItem from="1497420721153" duration="7121000" />
+      <workItem from="1497428821604" duration="6439000" />
     </task>
     <task id="LOCAL-00001" summary="commit update">
       <created>1496309285598</created>
@@ -1012,11 +1081,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497421842160</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update layout">
+      <created>1497426335385</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1497426335385</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215923000" />
+    <option name="totallyTimeSpent" value="223919000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1031,12 +1107,12 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15506808" sideWeight="0.49476832" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15733737" sideWeight="0.49476832" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.48789713" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5121029" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.19818456" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.45763993" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34828103" sideWeight="0.4107413" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23467863" sideWeight="0.4107413" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.245142" sideWeight="0.44251135" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22919819" sideWeight="0.5052317" order="0" side_tool="true" content_ui="tabs" />
@@ -1122,35 +1198,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts/turbolinks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1581">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/turbolinks-5.0.1/lib/turbolinks.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/rails">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20170525153604_create_dishes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/840bbadd/1e23f3a7-0bb6-4fca-99b7-166d2bf4e653/MobileApi_development.public.categories">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1252,18 +1299,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/discount_days_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="49" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="3" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,7 +1310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,13 +1317,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="37" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="3" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1305,14 +1336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/price_change_histories/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1320,14 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/discount_days/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1349,7 +1364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1378,15 +1392,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/session/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="18" column="75" lean-forward="false" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,15 +1399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/statistic/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1422,14 +1418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/dishes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="727">
@@ -1442,7 +1430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1454,27 +1441,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/price_change_histories/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1482,7 +1452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59">
           <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1490,38 +1459,141 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/discount_days/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="100" column="80" lean-forward="false" selection-start-line="100" selection-start-column="80" selection-end-line="100" selection-end-column="80" />
+        <state relative-caret-position="119">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/ready.coffee">
+    <entry file="file://$PROJECT_DIR$/app/views/price_change_histories/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        <state relative-caret-position="340">
+          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dishes/edit.html.erb">
+    <entry file="file://$PROJECT_DIR$/config/initializers/session_store.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="46" column="7" lean-forward="false" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/materialize-sass-0.98.2/app/assets/javascripts/materialize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="2" column="26659" lean-forward="false" selection-start-line="2" selection-start-column="26651" selection-end-line="2" selection-end-column="26659" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dishes/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="424">
           <caret line="70" column="75" lean-forward="false" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/session/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="73" lean-forward="false" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/statistic/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="53" lean-forward="false" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="66" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dishes/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/materialize-sass-0.98.2/app/assets/stylesheets/materialize/components/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="153" column="1" lean-forward="false" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/materialize-sass-0.98.2/app/assets/stylesheets/materialize/components/forms/_input-fields.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="87" column="7" lean-forward="false" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/ready.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

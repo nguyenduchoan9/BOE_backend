@@ -6,7 +6,7 @@
   <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
   <%= javascript_include_tag "chartkick" %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
@@ -91,8 +91,8 @@
             <a href="#!email"><span class="white-text email"><%= session[:email] %></span></a>
           </div>
         </li>
-        <li class=""><%= link_to "HOME", root_path %></li>
-        <li class=""><%= link_to "DASHBOARD", dashboard_path %></li>
+        <li class="no-padding"><%= link_to "HOME", root_path %></li>
+        <li class="no-padding"><%= link_to "DASHBOARD", dashboard_path %></li>
         <li class="no-padding"><%= link_to "MANAGE USERS", users_path %></li>
         <li class="no-padding"><%= link_to "MANAGE DISHES", dishes_path %></li>
         <li class="no-padding"><%= link_to "MANAGE TABLES", tables_path %></li>
