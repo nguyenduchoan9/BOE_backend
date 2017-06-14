@@ -3,14 +3,9 @@
     width: 20px;
   }
 </style>
-<div class="container">
-  <div class="fixed-action-btn">
-    <%= link_to new_users_path, class: 'btn-floating red' do %>
-        <i class="large material-icons">add</i>
-    <% end %>
-  </div>
 
-  <table class="highlight responsive-table" id="users">
+<div style="padding: 0 1%;">
+  <table class="highlight" id="data_tables" >
     <thead>
     <th>USERNAME</th>
     <th>FULLNAME</th>
@@ -36,9 +31,3 @@
   </table>
 
 </div>
-<script>
-    $( document ).on('turbolinks:load', function() {
-        $('#users').dataTable();
-        $('select').material_select();
-    })
-</script>
