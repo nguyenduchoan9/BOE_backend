@@ -2,11 +2,16 @@ class StatisticController < WebApplcationController
   before_action 'authen_user'
   add_breadcrumb "Home", :root_path
 
+  def home
+
+  end
+
   def index
     @user = Order.order('sum_total desc').includes(:user).group('users.username').select('users.username').references(:users).sum(:total).first
     @dish = OrderDetail.order('sum_quantity desc').includes(:dish).group('dishes.dish_name').references(:dishes).sum(:quantity).first
     @revenue = Order.sum(:total)
     @visit = Order.count
+    add_breadcrumb "Dashboard"
   end
 
   def make_statistic

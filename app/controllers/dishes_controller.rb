@@ -25,6 +25,7 @@ class DishesController < ApplicationController
           @dish.update status: false
         end
         @dish.update status: !@dish.status
+        render nothing: ''
       }
     end
   end

@@ -36,7 +36,6 @@ gem 'kaminari' # paginate model view
 gem 'rack-cors', :require => 'rack/cors' # cross origin region
 gem "figaro" # ENV
 gem "sidekiq"
-
 gem 'rqrcode', '~> 0.10.1' #qr code
 gem 'chunky_png' #save image
 
