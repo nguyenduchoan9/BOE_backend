@@ -1,0 +1,11 @@
+I"(function() {
+  $(document).on("turbolinks:load", function() {
+    Materialize.updateTextFields();
+    $('select').material_select();
+    $("#slide_nav").sideNav();
+    $('#data_tables').dataTable();
+    return $('select').material_select();
+  });
+
+}).call(this);
+:ET

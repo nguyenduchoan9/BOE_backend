@@ -58,6 +58,7 @@ Rails.application.routes.draw do
                     post :mark_order_accept
                     post :mark_order_reject
                     get :order_in_time
+                    get :is_in_time_order
                 end
             end
         end

@@ -72,7 +72,7 @@ Category.all.each do |i|
 end
 
 Dish.all.each do |dish|
-    Random.rand(10).times do
+    (2 + Random.rand(6)).times do
         PriceChangeHistory.create(dish: dish, price: 50 + Random.rand(10)*10, from_date: DateTime.now)
     end
 end

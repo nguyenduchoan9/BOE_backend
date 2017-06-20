@@ -1,6 +1,6 @@
 class DateUtils
   def self.format
-    '%d/%m/%Y %H:%M'
+    '%d/%m/%Y'
   end
 
   def self.parse_date(value)

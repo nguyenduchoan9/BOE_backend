@@ -32,6 +32,9 @@ module Api
 
             def order_in_time
             end
+
+            def is_in_time_order
+            end
         end
     end
 end
