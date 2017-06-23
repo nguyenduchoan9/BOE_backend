@@ -3,63 +3,65 @@
     width: 20px;
   }
 </style>
-<div class="fixed-action-btn">
-  <a data-target="modal1" class="btn-floating red">
-    <i class="large material-icons">add</i>
-  </a>
-</div>
-<div style="padding: 0 1%;">
-  <div id="modal1" class="modal modal-fixed-footer">
-    <%= form_for(:membership, remote: true) do |f| %>
-        <div class="modal-content">
-          <h4 style="text-align: center">New Membership</h4>
-
-          <div class="input-field">
-            <%= f.label :level, "Level" %>
-            <%= f.text_field :level %>
-          </div>
-          <div class="input-field">
-            <%= f.label :discount_rate, "Discount Rate" %>
-            <%= f.text_field :discount_rate %>
-          </div>
-          <div class="input-field">
-            <%= f.label :mark_boundary, "Mark Boundary" %>
-            <%= f.text_field :mark_boundary %>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <%= f.submit value: 'INSERT', class: 'modal-action modal-close waves-effect waves-green btn-flat' %>
-        </div>
-    <% end %>
+<div class="row" style="text-align: right; margin-bottom: 0;">
+  <div class="left" style="margin-left: 1%; font-size: 18px">
+    <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-
-
-  <table class="highlight" id="data_tables">
-    <thead>
-    <th>MARK BOUNDARY</th>
-    <th>LEVEL</th>
-    <th>DISCOUNT RATE</th>
-    <th></th>
-    </thead>
-    <tbody>
-    <% @memberships.each do |membership| %>
-        <tr>
-          <td><%= membership.mark_boundary %></td>
-          <td><%= membership.level %></td>
-          <td><%= membership.discount_rate %></td>
-          <td>
-            <a class="" href="memberships/edit?id=<%= membership.id %>">
-              <i class="material-icons">mode_edit</i>
-            </a>
-          </td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
+  <div class="col s5 right" >
+    <div class="input-field" style="margin-top: 0">
+      <%= form_tag(memberships_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search' %>
+          <button type="submit" class="btn-floating waves-effect waves-light">
+            <i class="material-icons">search</i>
+          </button>
+          <%= link_to new_memberships_path, data: {turbolinks: false} do %>
+              <input type="button" class="btn" value="Add">
+          <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+<div style="padding: 0 1%;">
+  <% if !@memberships.nil? && @memberships.size > 0 %>
+      <table class="highlight">
+        <thead>
+        <th>Mark Boundary</th>
+        <th>Level</th>
+        <th>Discount Rate</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <% @memberships.each do |membership| %>
+            <tr>
+              <td><%= membership.mark_boundary %></td>
+              <td><%= membership.level %></td>
+              <td><%= membership.discount_rate %></td>
+              <td>
+                <a class="" href="memberships/edit?id=<%= membership.id %>">
+                  <i class="material-icons">mode_edit</i>
+                </a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="center">
+        <%= will_paginate @memberships %>
+      </div>
+  <% elsif !params[:term].nil? %>
+      <h3 style="text-align: center">No Membership Found</h3>
+  <% end %>
+</div>
+
 <script>
-    $(document).ready(function () {
-        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-        $('.modal').modal();
-    });
+    function changeStatus(dish_id) {
+        $.ajax({
+            url: 'dishes/updateStatus.json',
+            dataType: 'json',
+            data: {
+                id: dish_id
+            }
+        })
+    }
 </script>

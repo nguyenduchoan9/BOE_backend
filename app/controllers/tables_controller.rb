@@ -9,8 +9,15 @@ class TablesController < ApplicationController
     redirect_to action: 'show'
   end
 
+  def new
+    @table = Table.new
+    add_breadcrumb "New Table"
+  end
+
   def show
-    @tables = Table.all
+    if !params[:term].nil? && params[:term] != ''
+      @tables = Table.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    end
     respond_to do |format|
       format.json {render json: @tables}
       format.html

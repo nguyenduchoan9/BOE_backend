@@ -17,4 +17,10 @@
 
 class PriceChangeHistory < ApplicationRecord
   belongs_to :dish, optional: true
+
+  def self.search(term)
+    if term
+      where('lower(dishes.dish_name) LIKE ?', "%#{term.downcase}%").includes(:dish).references(:dishes)
+    end
+  end
 end

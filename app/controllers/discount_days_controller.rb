@@ -4,7 +4,17 @@ class DiscountDaysController < ApplicationController
   add_breadcrumb "Discounts", :discount_days_path
 
   def show
-    @discount_days = DiscountDay.all
+    if !params[:term].nil? && params[:term] != ''
+      @discount_days = DiscountDay.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    end
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def new
+    @discount_day = DiscountDay.new
   end
 
   def create
@@ -20,7 +30,7 @@ class DiscountDaysController < ApplicationController
 
   def update
     @discount_day = DiscountDay.find params[:discount_day][:id]
-    @discount_day.update_attributes(name: params[:discount_day][:name], from_day: params[:discount_day][:from_day], to_day: params[:discount_day][:to_day], discount_item: params[:discount_day][:discount_item], discount_rate: params[:discount_day][:discount_rate], image: params[:discount_day][:image])
+    @discount_day.update_attributes(discount_day_params)
     redirect_to discount_days_path
   end
 

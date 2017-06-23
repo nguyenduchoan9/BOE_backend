@@ -4,7 +4,17 @@ class MembershipsController < ApplicationController
   add_breadcrumb "Memberships", :memberships_path
 
   def show
-    @memberships = Membership.all
+    if !params[:term].nil? && params[:term] != ''
+      @memberships = Membership.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    end
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def new
+    @membership = Membership.new
   end
 
   def create

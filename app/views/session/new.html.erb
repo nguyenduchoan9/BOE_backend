@@ -1,21 +1,17 @@
 <%= form_for :session, url: login_path do |f| %>
-    <div class="row col s6 offset-s3" style="padding-top: 2%">
-      <div class="input-field col s12">
-        <span class="prefix" style="font-size: 100%; padding-top: 7%">
-        <b>Username:</b>
-        </span>
-        <div class="col s10 offset-s2">
-          <%= f.text_field :username, id: 'username' %>
+    <div class="row col s6 offset-s3 card" style="margin-top: 2%">
+      <div class="card-content">
+        <span class="card-title center" style="margin-bottom: 2%">BOE System Login</span>
+        <div class="input-field">
+          <label style="font-weight: bold; color: black">Username</label>
+          <%= f.text_field :username, id: 'username', placeholder: 'Username' %>
         </div>
-      </div>
-      <div class="input-field col s12">
-        <span class="prefix" style="font-size: 100%; padding-top: 7%">
-        <b>Password:</b>
-        </span>
-        <div class="col s10 offset-s2">
-          <%= f.password_field :password %>
+        <div class="input-field">
+          <label style="font-weight: bold; color: black">Password</label>
+          <%= f.password_field :password, placeholder: 'Password' %>
         </div>
+        <%= f.submit value: "Login", class: "btn"%>
       </div>
-      <%= f.submit value: "Login", class: "btn", style: 'margin-left: 20%;' %>
+
     </div>
 <% end %>

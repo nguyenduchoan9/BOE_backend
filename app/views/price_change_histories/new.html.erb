@@ -5,10 +5,9 @@
 </div>
 <div class="container">
   <div class="card">
-    <%= form_for @price_change_history, url: {controller: 'price_change_histories', action: 'update'} do |f| %>
+    <%= form_for @price_change_history do |f| %>
         <div class="card-content">
-          <span class="card-title">Edit Price</span>
-          <%= f.hidden_field :id %>
+          <span class="card-title">New Price</span>
           <div class="row">
             <div class="input-field col s6">
               <%= collection_select :price_change_history, :dish_id, Dish.all, :id, :dish_name, prompt: true %>
@@ -25,8 +24,9 @@
               <%= f.date_field :from_date, class: "datepicker" %>
             </div>
           </div>
+
           <%= link_to 'Back', price_change_histories_path, class: "btn" %>
-          <%= f.submit value: 'Update', class: 'btn' %>
+          <%= f.submit value: 'Add', class: 'btn' %>
         </div>
     <% end %>
   </div>

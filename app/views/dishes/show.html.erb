@@ -3,92 +3,66 @@
     width: 20px;
   }
 </style>
-<div class="fixed-action-btn">
-  <a data-target="modal1" class="btn-floating red">
-    <i class="large material-icons">add</i>
-  </a>
-</div>
-<div id="modal1" class="modal modal-fixed-footer" style="min-height: 600px;">
-  <%= form_for :dish do |f| %>
-      <div class="modal-content">
-        <h4 style="text-align: center">New Dish</h4>
-        <%= f.hidden_field :id %>
-        <div class="input-field">
-          <%= f.label :dish_name, "Dish Name" %>
-          <%= f.text_field :dish_name %>
-        </div>
-        <div class="input-field">
-          <%= f.label :description, "Description" %>
-          <%= f.text_field :description %>
-        </div>
-        <div class="input-field">
-          <%= collection_select :dish, :category_id, Category.all, :id, :category_name, prompt: true %>
-          <label>Category</label>
-        </div>
-        <div class="file-field input-field">
-          <div class="btn">
-            <span>Image</span>
-            <%= f.file_field :image %>
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <%= f.submit value: 'INSERT', class: 'modal-action modal-close waves-effect waves-green btn-flat' %>
-      </div>
-  <% end %>
+<div class="row" style="text-align: right; margin-bottom: 0;">
+  <div class="left" style="margin-left: 1%; font-size: 18px">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+  <div class="col s5 right">
+    <div class="input-field" style="margin-top: 0">
+      <%= form_tag(dishes_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: { autocomplete_source: Dish.order(:dish_name).map(&:dish_name)} %>
+          <button type="submit" class="btn-floating waves-effect waves-light">
+            <i class="material-icons">search</i>
+          </button>
+          <%= link_to new_dishes_path, data: {turbolinks: false} do %>
+              <input type="button" class="btn" value="Add">
+          <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div style="padding: 0 1%;">
-  <table class="highlight" id="data_tables">
-    <thead>
-    <th>DISH NAME</th>
-    <th>DESCRIPTION</th>
-    <th>CATEGORY</th>
-    <th>STATUS</th>
-    <th></th>
-    </thead>
-    <tbody>
-    <% @dishes.each do |dish| %>
-        <tr>
-          <td><%= dish.dish_name %></td>
-          <td><%= dish.description %></td>
-          <td><%= dish.category.category_name %></td>
-          <td>
-            <p>
-              <%= check_box_tag dish.id, dish.status, dish.status, onclick: "changeStatus(#{dish.id})" %>
-              <label for="<%= dish.id %>" id="label<%= dish.id %>">
-                <% if dish.status %>
-                    Enable
-                <% else %>
-                    Disable
-                <% end %>
-              </label>
-            </p>
-          </td>
-          <td>
-            <a href="dishes/edit?id=<%= dish.id %>" data-turbolinks="false">
-              <i class="material-icons">mode_edit</i>
-            </a>
-          </td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
+  <% if !@dishes.nil? && @dishes.size > 0 %>
+      <table class="highlight">
+        <thead>
+        <th>Dish Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th style="text-align: center">Status</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <% @dishes.each do |dish| %>
+            <tr>
+              <td><%= dish.dish_name %></td>
+              <td><%= dish.description %></td>
+              <td><%= dish.category.category_name %></td>
+              <td style="text-align: center">
+                <p>
+                  <%= check_box_tag dish.id, dish.status, dish.status, onclick: "changeStatus(#{dish.id})" %>
+                  <label for="<%= dish.id %>" id="label<%= dish.id %>">
+                  </label>
+                </p>
+              </td>
+              <td>
+                <a href="dishes/edit?id=<%= dish.id %>" data-turbolinks="false">
+                  <i class="material-icons">mode_edit</i>
+                </a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="center">
+        <%= will_paginate @dishes %>
+      </div>
+  <% elsif !params[:term].nil? %>
+      <h3 style="text-align: center">No Dish Found</h3>
+  <% end %>
 </div>
-<script>
-    $(document).ready(function () {
-        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 
-        $('.modal').modal();
-    });
+<script>
     function changeStatus(dish_id) {
-        if ($('#label' + dish_id).text().trim() == 'Enable') {
-            $('#label' + dish_id).text('Disable')
-        } else {
-            $('#label' + dish_id).text('Enable')
-        }
         $.ajax({
             url: 'dishes/updateStatus.json',
             dataType: 'json',
@@ -97,4 +71,7 @@
             }
         })
     }
+    $('#term').autocomplete({
+        source: $('#term').data('autocomplete-source')
+    });
 </script>
