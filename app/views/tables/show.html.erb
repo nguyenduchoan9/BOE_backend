@@ -1,66 +1,74 @@
 <style>
-  button a:link, button a:visited {
-    color: white !important;
-  }
-
   a li {
     width: 20px;
   }
 </style>
-<div class="fixed-action-btn">
-  <a data-target="modal1" class="btn-floating red">
-    <i class="large material-icons">add</i>
-  </a>
+<div class="row" style="text-align: right; margin-bottom: 0;">
+  <div class="left" style="margin-left: 1%; font-size: 18px">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+  <div class="col s5 right" >
+    <div class="input-field" style="margin-top: 0">
+      <%= form_tag(tables_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search' %>
+          <button type="submit" class="btn-floating waves-effect waves-light">
+            <i class="material-icons">search</i>
+          </button>
+          <%= link_to new_tables_path, data: {turbolinks: false} do %>
+              <input type="button" class="btn" value="Add">
+          <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div style="padding: 0 1%;">
-
-
-  <div id="modal1" class="modal modal-fixed-footer">
-    <%= form_for(:table, remote: true) do |f| %>
-        <div class="modal-content">
-          <h4 style="text-align: center">New Table</h4>
-
-          <div class="row" style="padding-top: 5%">
-            <div class="input-field col s8 offset-s2">
-              <%= f.label :table_number, 'Table Number' %>
-              <%= f.text_field :table_number, id: 'number' %>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <%= f.submit value: 'INSERT', class: 'modal-action modal-close waves-effect waves-green btn-flat' %>
-        </div>
-    <% end %>
-  </div>
-  <table class="highlight" id="data_tables">
-    <thead>
-    <th>NUMBER</th>
-    <th></th>
-    <th></th>
-    </thead>
-    <tbody>
-    <% @tables.each do |table| %>
-        <tr>
-          <td><%= table.table_number %></td>
-          <td>
-            <a href="/tables/edit.json?id=<%= table.id %>" target="_blank" class="waves-effect waves-light btn">
-              <i class="material-icons left">get_app</i>Download
-            </a>
-          </td>
-          <td>
-            <a href="tables/edit?id=<%= table.id %>">
-              <i class="material-icons">mode_edit</i>
-            </a>
-          </td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
+  <% if !@tables.nil? && @tables.size > 0 %>
+      <table class="highlight">
+        <thead>
+        <th>Table Number</th>
+        <th style="text-align: center">Status</th>
+        <th style="text-align: center">Action</th>
+        </thead>
+        <tbody>
+        <% @tables.each do |table| %>
+            <tr>
+              <td><%= table.table_number %></td>
+              <td style="text-align: center">
+                <p>
+                  <%= check_box_tag table.id, table.status, table.status, onclick: "changeStatus(#{table.id})" %>
+                  <label for="<%= table.id %>" id="label<%= table.id %>">
+                  </label>
+                </p>
+              </td>
+              <td style="text-align: center">
+                <a href="/tables/edit.json?id=<%= table.id %>" target="_blank" class="waves-effect waves-light btn">
+                  <i class="material-icons left">get_app</i>Download
+                </a>
+              </td>
+              <!--<td>-->
+                <!--<a href="tables/edit?id=<%= table.id %>">-->
+                  <!--<i class="material-icons">mode_edit</i>-->
+                <!--</a>-->
+              <!--</td>-->
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="center">
+        <%= will_paginate @tables %>
+      </div>
+  <% elsif !params[:term].nil? %>
+      <h3 style="text-align: center">No Table Found</h3>
+  <% end %>
 </div>
 <script>
-    $(document).ready(function () {
-        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-        $('.modal').modal();
-    });
-
+    function changeStatus(dish_id) {
+        $.ajax({
+            url: 'tables/updateStatus.json',
+            dataType: 'json',
+            data: {
+                id: dish_id
+            }
+        })
+    }
 </script>

@@ -3,7 +3,9 @@ class StatisticController < WebApplcationController
   add_breadcrumb "Home", :root_path
 
   def home
-
+    if session[:role] == 'admin'
+      render 'users/show'
+    end
   end
 
   def index

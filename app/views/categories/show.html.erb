@@ -9,12 +9,12 @@
   </div>
   <div class="col s5 right">
     <div class="input-field" style="margin-top: 0">
-      <%= form_tag(dishes_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: { autocomplete_source: Dish.order(:dish_name).map(&:dish_name)} %>
+      <%= form_tag(categories_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: { autocomplete_source: Category.order(:category_name).map(&:category_name)} %>
           <button type="submit" class="btn-floating waves-effect waves-light">
             <i class="material-icons">search</i>
           </button>
-          <%= link_to new_dishes_path, data: {turbolinks: false} do %>
+          <%= link_to new_categories_path, data: {turbolinks: false} do %>
               <input type="button" class="btn" value="Add">
           <% end %>
       <% end %>
@@ -22,30 +22,26 @@
   </div>
 </div>
 <div style="padding: 0 1%;">
-  <% if !@dishes.nil? && @dishes.size > 0 %>
+  <% if !@categories.nil? && @categories.size > 0 %>
       <table class="highlight">
         <thead>
-        <th>Dish Name</th>
-        <th>Description</th>
-        <th>Category</th>
+        <th>Category Name</th>
         <th style="text-align: center">Status</th>
         <th></th>
         </thead>
         <tbody>
-        <% @dishes.each do |dish| %>
+        <% @categories.each do |category| %>
             <tr>
-              <td><%= dish.dish_name %></td>
-              <td><%= dish.description %></td>
-              <td><%= dish.category.category_name %></td>
+              <td><%= category.category_name %></td>
               <td style="text-align: center">
                 <p>
-                  <%= check_box_tag dish.id, dish.status, dish.status, onclick: "changeStatus(#{dish.id})" %>
-                  <label for="<%= dish.id %>" id="label<%= dish.id %>">
+                  <%= check_box_tag category.id, category.status, category.status, onclick: "changeStatus(#{category.id})" %>
+                  <label for="<%= category.id %>" id="label<%= category.id %>">
                   </label>
                 </p>
               </td>
               <td>
-                <a href="dishes/edit?id=<%= dish.id %>" data-turbolinks="false">
+                <a href="categories/edit?id=<%= category.id %>" data-turbolinks="false">
                   <i class="material-icons">mode_edit</i>
                 </a>
               </td>
@@ -54,20 +50,20 @@
         </tbody>
       </table>
       <div class="center">
-        <%= will_paginate @dishes %>
+        <%= will_paginate @categories %>
       </div>
   <% elsif !params[:term].nil? %>
-      <h3 style="text-align: center">No Dish Found</h3>
+      <h3 style="text-align: center">No Category Found</h3>
   <% end %>
 </div>
 
 <script>
-    function changeStatus(dish_id) {
+    function changeStatus(id) {
         $.ajax({
-            url: 'dishes/updateStatus.json',
+            url: 'categories/updateStatus.json',
             dataType: 'json',
             data: {
-                id: dish_id
+                id: id
             }
         })
     }

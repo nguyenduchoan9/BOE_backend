@@ -16,8 +16,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 gem "breadcrumbs_on_rails"
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
-gem 'materialize-sass'
 gem 'active_model_serializers', '~> 0.10.0' # json response as collection
+gem 'materialize-sass'
 gem 'faker' # fake data
 gem 'activerecord-import' # bulk insert record
 gem 'annotate' # annotate model
@@ -32,13 +32,17 @@ gem 'mini_magick' # resize picture
 gem 'fog' # aws
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'kaminari' # paginate model view
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-materialize', '0.1.2'
 # gem 'geocoder' # longtitue, ip address , city, hometown
 gem 'rack-cors', :require => 'rack/cors' # cross origin region
 gem "figaro" # ENV
 gem "sidekiq"
 gem 'rqrcode', '~> 0.10.1' #qr code
 gem 'chunky_png' #save image
-
+gem 'jquery-ui-rails'
+gem 'firebase'
+gem 'fcm'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

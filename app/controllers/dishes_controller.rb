@@ -10,11 +10,18 @@ class DishesController < ApplicationController
   end
 
   def show
-    @dishes = Dish.all
+    if !params[:term].nil? && params[:term] != ''
+      @dishes = Dish.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    end
     respond_to do |format|
       format.html
       format.json
     end
+  end
+
+  def new
+    @dish = Dish.new
+    add_breadcrumb "New Dish"
   end
 
   def update_status
@@ -43,6 +50,6 @@ class DishesController < ApplicationController
 
   private
   def dish_params
-    params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status
+    params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status, :term
   end
 end
