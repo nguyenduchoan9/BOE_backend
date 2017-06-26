@@ -11,4 +11,10 @@
 
 class Category < ApplicationRecord
 	has_many :dishes
+
+	def self.search(term)
+		if term
+			where('lower(category_name) LIKE ?', "%#{term.downcase}%")
+		end
+	end
 end

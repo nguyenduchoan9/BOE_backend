@@ -9,7 +9,7 @@ $(document).on "turbolinks:load", ->
   data = firebase.database().ref().child('Phongdemo')
   data.on 'child_added', (snapshot) ->
     number = firebase.database().ref('/number');
-    if snapshot.child('status').val() == 'unread'
+    if snapshot.child('status').val() == 'new'
       number.once('value').then (snapshotnumber) ->
         realNumber = snapshotnumber.val() + 1;
         console.log(realNumber);
@@ -17,7 +17,7 @@ $(document).on "turbolinks:load", ->
         update['/number'] = realNumber;
         firebase.database().ref().update(update);
         update_status = {}
-        update_status['/Phongdemo/'+snapshot.key+'/status'] = 'read'
+        update_status['/Phongdemo/'+snapshot.key+'/status'] = 'old'
         firebase.database().ref().update(update_status);
     if i < 5
       appendNotification snapshot.child('username').val();

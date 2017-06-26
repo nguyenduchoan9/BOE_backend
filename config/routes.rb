@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   resource 'tables'
   resource 'memberships'
   resource 'discount_days'
+  resource 'categories'
   resource 'price_change_histories'
   get 'make_statistic', to: 'statistic#make_statistic'
   get 'dishes/updateStatus', to: 'dishes#update_status'
   get 'tables/updateStatus', to: 'tables#update_status'
+  get 'categories/updateStatus', to: 'categories#update_status'
   get 'home', to: 'statistic#home'
   get 'dashboard', to: 'statistic#index'
   devise_for :users

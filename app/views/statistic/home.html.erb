@@ -1,9 +1,13 @@
+<style>
+  label {
+    font-weight: bold;
+  }
+</style>
 <div class="row">
   <div class="left" style="margin-left: 1%; font-size: 18px;">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
 </div>
-
 <div class="container">
   <div class="card">
     <div class="card-content">
@@ -25,11 +29,11 @@
       <span class="card-title">Restaurant Schedule</span>
       <div class="row">
         <div class="input-field col s6">
-          <input type="text" id="open_time">
+          <input type="text" id="open_time" placeholder="Open Time">
           <label for="open_time">Open Time</label>
         </div>
         <div class="input-field col s6">
-          <input type="text" id="close_time">
+          <input type="text" id="close_time" placeholder="Close Time">
           <label for="close_time">Close Time</label>
         </div>
       </div>
@@ -43,7 +47,7 @@
     $(document).ready(function () {
         data = firebase.database().ref().child('Phongdemo');
         data.on('child_added', function (snapshot) {
-            $('#tbody').prepend('<tr><td>' + snapshot.child('usename').val() + '</td><td>' + snapshot.child('orderdetail').val() +
+            $('#tbody').prepend('<tr><td>' + snapshot.child('username').val() + '</td><td>' + snapshot.child('orderdetail').val() +
                 '</td><td><input type="button" class="btn red" value="Refund ' + snapshot.child('total').val() + ' VND"></td></tr>')
         });
     });
