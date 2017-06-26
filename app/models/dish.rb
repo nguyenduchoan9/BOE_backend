@@ -24,6 +24,8 @@ class Dish < ApplicationRecord
     belongs_to :category, optional: true
     has_many :order_details
     has_many :price_change_histories
+    has_many :dish_discounts
+    has_many :discount_days, through: :dish_discounts
 
     def self.search_cutlery(keysearch)
         where('lower(dish_name) LIKE ?', "%#{keysearch}%")

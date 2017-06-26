@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525154540) do
+ActiveRecord::Schema.define(version: 20170624103352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.boolean  "status"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "dish_discounts", force: :cascade do |t|
+    t.integer "dish_id"
+    t.integer "discount_day_id"
+    t.index ["discount_day_id"], name: "index_dish_discounts_on_discount_day_id", using: :btree
+    t.index ["dish_id"], name: "index_dish_discounts_on_dish_id", using: :btree
   end
 
   create_table "dishes", force: :cascade do |t|
@@ -144,6 +151,8 @@ ActiveRecord::Schema.define(version: 20170525154540) do
     t.index ["username"], name: "index_users_on_username", using: :btree
   end
 
+  add_foreign_key "dish_discounts", "discount_days"
+  add_foreign_key "dish_discounts", "dishes"
   add_foreign_key "dishes", "categories"
   add_foreign_key "order_details", "dishes"
   add_foreign_key "orders", "users"

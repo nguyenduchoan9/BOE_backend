@@ -16,6 +16,8 @@
 
 class DiscountDay < ApplicationRecord
   mount_uploader :image, ImageUploader
+  has_many :dish_discounts
+  has_many :dishes, through: :dish_discounts
 
   def self.search(term)
     if !term.nil? and term != ''

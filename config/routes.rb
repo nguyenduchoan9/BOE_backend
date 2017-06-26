@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get 'dishes/updateStatus', to: 'dishes#update_status'
     get 'home', to: 'statistic#home'
     get 'dashboard', to: 'statistic#index'
+    resources :fakes, only: [:index]
     devise_for :users
 
     require 'sidekiq/web'
@@ -52,6 +53,7 @@ Rails.application.routes.draw do
                 collection do
                     get :order_history
                     post :dish_done # mon an duoc lam xong
+                    post :list_dish_done
                     post :remove_dish # mon an remove khoi menu vi nhet nguyen lieu
                     post :reject_order # order bi reject boi chef
                     get :all_order # get toan bo order
