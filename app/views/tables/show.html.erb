@@ -26,23 +26,30 @@
       <table class="highlight">
         <thead>
         <th>Table Number</th>
-        <th></th>
-        <th></th>
+        <th style="text-align: center">Status</th>
+        <th style="text-align: center">Action</th>
         </thead>
         <tbody>
         <% @tables.each do |table| %>
             <tr>
               <td><%= table.table_number %></td>
-              <td>
+              <td style="text-align: center">
+                <p>
+                  <%= check_box_tag table.id, table.status, table.status, onclick: "changeStatus(#{table.id})" %>
+                  <label for="<%= table.id %>" id="label<%= table.id %>">
+                  </label>
+                </p>
+              </td>
+              <td style="text-align: center">
                 <a href="/tables/edit.json?id=<%= table.id %>" target="_blank" class="waves-effect waves-light btn">
                   <i class="material-icons left">get_app</i>Download
                 </a>
               </td>
-              <td>
-                <a href="tables/edit?id=<%= table.id %>">
-                  <i class="material-icons">mode_edit</i>
-                </a>
-              </td>
+              <!--<td>-->
+                <!--<a href="tables/edit?id=<%= table.id %>">-->
+                  <!--<i class="material-icons">mode_edit</i>-->
+                <!--</a>-->
+              <!--</td>-->
             </tr>
         <% end %>
         </tbody>
@@ -54,3 +61,14 @@
       <h3 style="text-align: center">No Table Found</h3>
   <% end %>
 </div>
+<script>
+    function changeStatus(dish_id) {
+        $.ajax({
+            url: 'tables/updateStatus.json',
+            dataType: 'json',
+            data: {
+                id: dish_id
+            }
+        })
+    }
+</script>

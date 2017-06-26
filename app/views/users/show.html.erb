@@ -7,17 +7,13 @@
   <div class="left" style="margin-left: 1%; font-size: 18px">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-
   <div class="col s5 right">
     <div class="input-field" style="margin-top: 0;">
       <%= form_tag(users_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search' %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: {autocomplete_source: User.order(:full_name).map(&:full_name)} %>
           <button type="submit" class="btn-floating waves-effect waves-light">
             <i class="material-icons">search</i>
           </button>
-          <%= link_to new_users_path, data: {turbolinks: false} do %>
-              <input type="button" class="btn" value="Add">
-          <% end %>
       <% end %>
     </div>
   </div>
@@ -55,3 +51,8 @@
       <h3 style="text-align: center">No User Found</h3>
   <% end %>
 </div>
+<script>
+    $('#term').autocomplete({
+        source: $('#term').data('autocomplete-source')
+    });
+</script>

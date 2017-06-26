@@ -25,19 +25,6 @@ class PriceChangeHistoriesController < ApplicationController
     add_breadcrumb "Price " + params[:id]
   end
 
-  def update_status
-    respond_to do |format|
-      format.json {
-        @price_change_history = PriceChangeHistory.find params[:id]
-        if @price_change_history.status.nil?
-          @price_change_history.update status: false
-        end
-        @price_change_history.update status: !@price_change_history.status
-        render nothing: ''
-      }
-    end
-  end
-
   def update
     @price_change_history = PriceChangeHistory.find params[:price_change_history][:id]
     @price_change_history.update_attributes(price_history_params)

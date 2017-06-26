@@ -7,10 +7,10 @@
   <div class="left" style="margin-left: 1%; font-size: 18px">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <div class="col s5 right" >
+  <div class="col s5 right">
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(discount_days_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: { autocomplete_source: DiscountDay.order(:name).map(&:name)} %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: {autocomplete_source: DiscountDay.order(:name).map(&:name)} %>
           <button type="submit" class="btn-floating waves-effect waves-light">
             <i class="material-icons">search</i>
           </button>
@@ -29,7 +29,7 @@
         <th>Discount Name</th>
         <th>From Day</th>
         <th>To Day</th>
-        <th>Discount Item</th>
+        <th style="width: 500px; text-align: center">Discount Item</th>
         <th>Discount Rate</th>
         <th></th>
         </thead>
@@ -39,7 +39,12 @@
               <td><%= discount_day.name %></td>
               <td><%= discount_day.from_day %></td>
               <td><%= discount_day.to_day %></td>
-              <td><%= discount_day.discount_item %></td>
+              <td>
+                <% discount_item_id = discount_day.discount_item.split(',') %>
+                <% discount_item_id.each do |item| %>
+                    <%= Dish.find(item).dish_name %>,
+                <% end %>
+              </td>
               <td><%= discount_day.discount_rate %></td>
               <td>
                 <a href="discount_days/edit?id=<%= discount_day.id %>">

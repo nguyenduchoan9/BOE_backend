@@ -19,7 +19,7 @@ class DiscountDay < ApplicationRecord
 
   def self.search(term)
     if !term.nil? and term != ''
-      where('lower(name) LIKE ?', "%#{term}%");
+      where('lower(name) LIKE ? AND (discount_days.from_day >= current_date OR (discount_days.to_day >= current_date AND discount_days.from_day <= current_date))', "%#{term}%");
     end
   end
 end

@@ -28,7 +28,6 @@
         <th>Dish Name</th>
         <th>Price</th>
         <th>From Day</th>
-        <th style="text-align: center">Status</th>
         <th></th>
         </thead>
         <tbody>
@@ -36,14 +35,7 @@
             <tr>
               <td><%= price.dish.dish_name %></td>
               <td><%= price.price %></td>
-              <td><%= price.from_date %></td>
-              <td style="text-align: center;">
-                <p>
-                  <%= check_box_tag price.id, price.status, price.status, onclick: "changeStatus(#{price.id})" %>
-                  <label for="<%= price.id %>" id="label<%= price.id %>">
-                  </label>
-                </p>
-              </td>
+              <td><%= price.from_date.to_date %></td>
               <td>
                 <a class="" href="price_change_histories/edit?id=<%= price.id %>">
                   <i class="material-icons">mode_edit</i>
@@ -61,15 +53,6 @@
   <% end %>
 </div>
 <script>
-  function changeStatus(id) {
-      $.ajax({
-          url: 'price_change_histories/updateStatus.json',
-          dataType: 'json',
-          data: {
-              id: id
-          }
-      })
-  };
   $('#term').autocomplete({
       source: $('#term').data('autocomplete-source')
   });

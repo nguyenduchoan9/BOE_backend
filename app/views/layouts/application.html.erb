@@ -50,7 +50,7 @@
               <ul class="right">
                 <% if session[:role]== 'manager' %>
                     <li>
-                      <a class="dropdown-button" data-beloworigin="true"
+                      <a class="dropdown-button pulse" data-beloworigin="true"
                          constrainWidth="false" data-activates="notification_dropdown"><i class="material-icons">notifications</i></a>
                     </li>
                     <ul id="notification_dropdown" class="dropdown-content" style="min-width: 250px">
@@ -138,9 +138,8 @@
 </body>
 </html>
 <script>
-
     function appendNotification(text) {
-        $('#notification_dropdown').prepend('<li><a href="<%= home_path %>">' + text + '</a></li>')
+        $('#notification_dropdown').append('<li><a href="<%= home_path %>">' + text + '\'s order was rejected</a></li>')
     }
     var config = {
         apiKey: "AIzaSyB9OrnpLwPlNy3ldhwfb5BMS2PRAV1o9j4",
@@ -152,11 +151,4 @@
     };
     firebase.initializeApp(config);
     var data = firebase.database().ref().child('Phongdemo');
-    //    data.on('child_added', function (snapshot) {
-    //        console.log(snapshot.child('type').val());
-    //        console.log(snapshot.child('type').val() == 'unread');
-    //        if(snapshot.child('type').val() == 'unread'){
-    //            appendNotification(snapshot.child('text').val())
-    //        }
-    //    });
 </script>
