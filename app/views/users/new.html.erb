@@ -1,40 +1,78 @@
+<div class="row">
+  <div class="left" style="margin-left: 1%; font-size: 18px;">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+</div>
 <div class="container">
-  <%= form_for @user do |f| %>
-      <div class="input-field">
-        <%= f.label :username, "Username" %>
-        <%= f.text_field :username %>
-      </div>
-      <div class="input-field">
-        <%= f.label :full_name, "Fullname" %>
-        <%= f.text_field :full_name %>
-      </div>
-      <div class="input-field">
-        <%= f.label :email, "Email" %>
-        <%= f.email_field :email, class: "validate" %>
-      </div>
-      <div class="input-field">
-        <%= f.label :birthdate, "Birthday" %>
-        <%= f.date_field :birthdate, class: "datepicker" %>
-      </div>
-      <div class="input-field">
-        <%= f.label :phone, "Phone" %>
-        <%= f.phone_field :phone %>
-      </div>
-      <div class="input-field">
-        <%= collection_select :user, :role_id, Role.all, :id, :name, prompt: true %>
-        <label>User Role</label>
-      </div>
-      <div class="input-field">
-        <%= collection_select :user, :membership_id, Membership.all, :id, :level, prompt: true %>
-        <label>User Membership</label>
-      </div>
-      <%= f.submit value: 'submit', class: 'btn' %>
-      <%= link_to 'Back', :back, class: "btn" %>
-  <% end %>
+  <div class="card">
+    <%= form_for @user do |f| %>
+        <div class="card-image" style="background-color: gray" id="image">
+          <img src="http://www.rtings.com/images/test-materials/2015/204_Gray_Uniformity.png" id="tmpImage">
+          <span class="card-title">User Avatar</span>
+          <a id="float" class="btn-floating" style="position: absolute; top: 50%; left: 50%; background-color: transparent; box-shadow: none;"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <%= f.file_field :avatar, style: 'display: none;', onchange: 'readURL(this)' %>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :username, "Username" %>
+              <%= f.text_field :username, value: @user.username %>
+            </div>
+            <div class="input-field col s6">
+              <%= f.label :full_name, "Fullname" %>
+              <%= f.text_field :full_name, value: @user.full_name %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :email, "Email" %>
+              <%= f.email_field :email, value: @user.email, class: "validate" %>
+            </div>
+            <div class="input-field col s6">
+              <%= f.label :birthdate, "Birthday" %>
+              <%= f.date_field :birthdate, value: @user.birthdate, class: "datepicker" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= collection_select :user, :role_id, Role.all, :id, :name, prompt: true %>
+              <label>User Role</label>
+            </div>
+            <div class="input-field col s6">
+              <%= collection_select :user, :membership_id, Membership.all, :id, :level, prompt: true %>
+              <label>User Membership</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :phone, "Phone" %>
+              <%= f.phone_field :phone, value: @user.phone %>
+            </div>
+          </div>
+          <%= link_to 'Back', users_path, class: "btn" %>
+          <%= f.submit value: 'Add', class: 'btn' %>
+        </div>
+    <% end %>
+  </div>
 </div>
 <script>
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
+    $('#image').click(function () {
+        $('#user_avatar').trigger('click');
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#tmpImage')
+                    .attr('src', e.target.result)
+            };
+            reader.readAsDataURL(input.files[0]);
+            $('#float').css('display', 'none');
+        }
+    }
 </script>

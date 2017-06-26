@@ -15,7 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url(*args)
-    "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    "http://www.rtings.com/images/test-materials/2015/204_Gray_Uniformity.png"
   end
 
   def set_filename(path)

@@ -5,10 +5,9 @@
 </div>
 <div class="container">
   <div class="card">
-    <%= form_for @membership, url: {controller: 'memberships', action: 'update'} do |f| %>
-        <%= f.hidden_field :id %>
+    <%= form_for @membership do |f| %>
         <div class="card-content">
-          <span class="card-title">Edit Membership</span>
+          <span class="card-title">New Membership</span>
           <div class="row">
             <div class="input-field col s6">
               <%= f.label :level, "Level" %>
@@ -25,8 +24,9 @@
               <%= f.text_field :mark_boundary %>
             </div>
           </div>
+
           <%= link_to 'Back', memberships_path, class: "btn" %>
-          <%= f.submit value: 'Update', class: 'btn' %>
+          <%= f.submit value: 'Add', class: 'btn' %>
         </div>
     <% end %>
   </div>

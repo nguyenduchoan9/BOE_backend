@@ -17,12 +17,13 @@ class SessionController < WebApplcationController
     if user.present?
       if user.valid_password? user_password
         sign_in user, store: false
-        if user.role.name == 'admin'
+        if user.role.name == 'admin' || user.role.name == 'manager'
           session[:user_id] = user.id
           current_user = User.find user.id
           session[:full_name] = current_user.full_name
           session[:email] = current_user.email
           session[:avatar] = current_user.avatar
+          session[:role] = current_user.role.name
           redirect_to root_path
         else
           redirect_to login_path

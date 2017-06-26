@@ -3,8 +3,15 @@ class PriceChangeHistoriesController < ApplicationController
   add_breadcrumb "Home", :root_path
   add_breadcrumb "Price", :price_change_histories_path
 
+  def new
+    @price_change_history = PriceChangeHistory.new
+    add_breadcrumb "New Price"
+  end
+
   def show
-    @price_change_histories = PriceChangeHistory.all
+    if !params[:term].nil? && params[:term] != ''
+      @price_change_histories = PriceChangeHistory.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def create

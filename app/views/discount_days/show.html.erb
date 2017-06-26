@@ -3,94 +3,67 @@
     width: 20px;
   }
 </style>
-<div class="fixed-action-btn">
-  <a data-target="modal1" class="btn-floating red">
-    <i class="large material-icons">add</i>
-  </a>
-</div>
-<div style="padding: 0 1%;">
-  <div id="modal1" class="modal modal-fixed-footer" style="min-height: 600px">
-    <%= form_for(:discount_day, remote: true) do |f| %>
-        <div class="modal-content">
-          <h4 style="text-align: center">New Discount Day</h4>
-          <div class="input-field">
-            <%= f.label :name, "Discount Name" %>
-            <%= f.text_field :name %>
-          </div>
-          <div class="input-field">
-            <%= f.label :from_day, "From Day" %>
-            <%= f.date_field :from_day, class: "datepicker" %>
-          </div>
-          <div class="input-field">
-            <%= f.label :to_day, "To Day" %>
-            <%= f.date_field :to_day, class: "datepicker" %>
-          </div>
-          <%= f.hidden_field :discount_item %>
-          <div class="input-field">
-            <select multiple name="discount_item" id="discount_item" onchange="onSelected()">
-              <option value="" disabled selected>Choose your option</option>
-              <%= Dish.all.each do |dish| %>
-                  <option value="<%= dish.id %>"><%= dish.dish_name %></option>
-              <% end %>
-            </select>
-            <label>Discount Item</label>
-          </div>
-          <div class="input-field">
-            <%= f.label :discount_rate, "Discount Rate" %>
-            <%= f.text_field :discount_rate %>
-          </div>
-          <div class="file-field input-field">
-            <div class="btn">
-              <span>Image</span>
-              <%= f.file_field :image %>
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <%= f.submit value: 'INSERT', class: 'modal-action modal-close waves-effect waves-green btn-flat' %>
-        </div>
-    <% end %>
+<div class="row" style="text-align: right; margin-bottom: 0;">
+  <div class="left" style="margin-left: 1%; font-size: 18px">
+    <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <table class="highlight" id="data_tables">
-    <thead>
-    <th>FROM DAY</th>
-    <th>TO DAY</th>
-    <th>DISCOUNT ITEM</th>
-    <th>DISCOUNT RATE</th>
-    <th></th>
-    </thead>
-    <tbody>
-    <% @discount_days.each do |discount_day| %>
-        <tr>
-          <td><%= discount_day.from_day %></td>
-          <td><%= discount_day.to_day %></td>
-          <td><%= discount_day.discount_item %></td>
-          <td><%= discount_day.discount_rate %></td>
-          <td>
-            <a href="discount_days/edit?id=<%= discount_day.id %>">
-              <i class="material-icons">mode_edit</i>
-            </a>
-          </td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
+  <div class="col s5 right">
+    <div class="input-field" style="margin-top: 0">
+      <%= form_tag(discount_days_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: {autocomplete_source: DiscountDay.order(:name).map(&:name)} %>
+          <button type="submit" class="btn-floating waves-effect waves-light">
+            <i class="material-icons">search</i>
+          </button>
+          <%= link_to new_discount_days_path, data: {turbolinks: false} do %>
+              <input type="button" class="btn" value="Add">
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
+<div style="padding: 0 1%;">
+  <% if !@discount_days.nil? && @discount_days.size > 0 %>
+      <table class="highlight">
+        <thead>
+        <th>Discount Name</th>
+        <th>From Day</th>
+        <th>To Day</th>
+        <th style="width: 500px; text-align: center">Discount Item</th>
+        <th>Discount Rate</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <% @discount_days.each do |discount_day| %>
+            <tr>
+              <td><%= discount_day.name %></td>
+              <td><%= discount_day.from_day %></td>
+              <td><%= discount_day.to_day %></td>
+              <td>
+                <% discount_item_id = discount_day.discount_item.split(',') %>
+                <% discount_item_id.each do |item| %>
+                    <%= Dish.find(item).dish_name %>,
+                <% end %>
+              </td>
+              <td><%= discount_day.discount_rate %></td>
+              <td>
+                <a href="discount_days/edit?id=<%= discount_day.id %>">
+                  <i class="material-icons">mode_edit</i>
+                </a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="center">
+        <%= will_paginate @discount_days %>
+      </div>
+  <% elsif !params[:term].nil? %>
+      <h3 style="text-align: center">No Discount Day Found</h3>
+  <% end %>
 </div>
 <script>
-    $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 50, // Creates a dropdown of 15 years to control year
+    $('#term').autocomplete({
+        source: $('#term').data('autocomplete-source')
     });
-    $(document).ready(function () {
-        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-        $('.modal').modal();
-    });
-    function onSelected() {
-        var items = $('#discount_item').val();
-        $('#discount_day_discount_item').val(items);
-    }
 </script>
