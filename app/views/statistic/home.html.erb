@@ -43,7 +43,7 @@
     $(document).ready(function () {
         data = firebase.database().ref().child('Phongdemo');
         data.on('child_added', function (snapshot) {
-            $('#tbody').append('<tr><td>' + snapshot.child('usename').val() + '</td><td>' + snapshot.child('orderdetail').val() +
+            $('#tbody').prepend('<tr><td>' + snapshot.child('usename').val() + '</td><td>' + snapshot.child('orderdetail').val() +
                 '</td><td><input type="button" class="btn red" value="Refund ' + snapshot.child('total').val() + ' VND"></td></tr>')
         });
     });

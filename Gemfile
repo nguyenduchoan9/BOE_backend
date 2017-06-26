@@ -42,6 +42,7 @@ gem 'rqrcode', '~> 0.10.1' #qr code
 gem 'chunky_png' #save image
 gem 'jquery-ui-rails'
 gem 'firebase'
+gem 'fcm'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

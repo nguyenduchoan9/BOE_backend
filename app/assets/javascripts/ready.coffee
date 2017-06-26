@@ -6,15 +6,25 @@ $(document).on "turbolinks:load", ->
   $('.dropdown-button').dropdown();
   data = firebase.database().ref().child('Phongdemo');
   i = 0;
+  data = firebase.database().ref().child('Phongdemo')
   data.on 'child_added', (snapshot) ->
+    number = firebase.database().ref('/number');
+    if snapshot.child('status').val() == 'unread'
+      number.once('value').then (snapshotnumber) ->
+        realNumber = snapshotnumber.val() + 1;
+        console.log(realNumber);
+        update = {}
+        update['/number'] = realNumber;
+        firebase.database().ref().update(update);
+        update_status = {}
+        update_status['/Phongdemo/'+snapshot.key+'/status'] = 'read'
+        firebase.database().ref().update(update_status);
     if i < 5
-      appendNotification snapshot.child('usename').val();
+      appendNotification snapshot.child('username').val();
       i++;
     else if i == 5
       $('#notification_dropdown').append('<li style="text-align: center;"><a href="http://localhost:3000/home" style="color: blue;">More...</a></li>');
       i++
-    $('#')
-
   $ ->
     url = window.location.pathname
     activePage = url.substring(url.lastIndexOf('/') + 1)
