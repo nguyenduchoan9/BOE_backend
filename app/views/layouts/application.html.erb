@@ -167,7 +167,8 @@
         console.log('error');
     });
     message.onMessage(function (payload) {
-//        console.log('onMessage: ', payload);
+        alert('message');
+        console.log('onMessage: ', payload);
     });
     const notification = firebase.database().ref().child('number');
     notification.on('value', function (snapshot) {
