@@ -15,6 +15,7 @@ class MembershipsController < ApplicationController
 
   def new
     @membership = Membership.new
+    add_breadcrumb "New Membership"
   end
 
   def create

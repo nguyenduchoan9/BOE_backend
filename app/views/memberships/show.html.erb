@@ -10,7 +10,7 @@
   <div class="col s5 right" >
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(memberships_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search' %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: { autocomplete_source: Membership.order(:level).map(&:level)} %>
           <button type="submit" class="btn-floating waves-effect waves-light">
             <i class="material-icons">search</i>
           </button>
@@ -64,4 +64,7 @@
             }
         })
     }
+    $('#term').autocomplete({
+        source: $('#term').data('autocomplete-source')
+    });
 </script>

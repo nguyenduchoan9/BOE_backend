@@ -10,7 +10,7 @@
   <div class="col s5 right" >
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(tables_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: { autocomplete_source: Table.order(:table_number).map(&:table_number)} %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search' %>
           <button type="submit" class="btn-floating waves-effect waves-light">
             <i class="material-icons">search</i>
           </button>
@@ -54,8 +54,3 @@
       <h3 style="text-align: center">No Table Found</h3>
   <% end %>
 </div>
-<script>
-    $('#term').autocomplete({
-        source: $('#term').data('autocomplete-source')
-    });
-</script>

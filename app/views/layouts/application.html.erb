@@ -19,7 +19,7 @@
         <a href="#" class="brand-logo">LOGO</a>
       </div>
     </nav>
-    <div class="row" style="min-height: 535px">
+    <div class="row" style="min-height: 560px">
       <div class="col s8 offset-s2">
         <%= yield %>
       </div>
@@ -46,14 +46,16 @@
                   <a href="#" data-activates="slide-out" id="slide_nav" class="button-collapse"><i class="material-icons">menu</i></a>
                 </li>
               </ul>
-              <ul id="notification_dropdown" class="dropdown-content" style="min-width: 250px">
 
-              </ul>
               <ul class="right">
-                <li>
-                  <a class="dropdown-button" data-beloworigin="true"
-                     constrainWidth="false" data-activates="notification_dropdown"><i class="material-icons">notifications</i></a>
-                </li>
+                <% if session[:role]== 'manager' %>
+                    <li>
+                      <a class="dropdown-button" data-beloworigin="true"
+                         constrainWidth="false" data-activates="notification_dropdown"><i class="material-icons">notifications</i></a>
+                    </li>
+                    <ul id="notification_dropdown" class="dropdown-content" style="min-width: 250px">
+                    </ul>
+                <% end %>
                 <li>
                   <%= link_to logout_path, method: :delete do %>
                       <i class="material-icons">exit_to_app</i>
@@ -80,53 +82,47 @@
               <i class="material-icons" style="margin-right: 10px">home</i><span>Home</span>
           <% end %>
         </li>
-        <li>
-          <div class="divider"></div>
-        </li>
-        <li class="no-padding" style="height: 5%;"><a href="#">MANAGE</a></li>
         <% if session[:role] == 'admin' %>
-            <li class="no-padding">
-              <%= link_to users_path do %>
-                  <i class="material-icons" style="margin-right: 10px">supervisor_account</i><span>Users</span>
-              <% end %>
-            </li>
         <% else %>
+            <li>
+              <div class="divider"></div>
+            </li>
+            <li class="no-padding" style="height: 5%;"><a href="#">MANAGE</a></li>
             <li class="no-padding">
-              <%= link_to dashboard_path do %>
+              <%= link_to dashboard_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">dashboard</i><span>Dashboard</span>
               <% end %>
             </li>
             <li class="no-padding">
-              <%= link_to dishes_path do %>
+              <%= link_to dishes_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">restaurant_menu</i><span>Dishes</span>
               <% end %>
             </li>
             <li class="no-padding">
-              <%= link_to tables_path do %>
+              <%= link_to tables_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">event_seat</i><span>Tables</span>
               <% end %>
             </li>
             <li class="no-padding">
-              <%= link_to price_change_histories_path do %>
+              <%= link_to price_change_histories_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">attach_money</i><span>Prices</span>
               <% end %>
             </li>
             <li class="no-padding">
-              <%= link_to discount_days_path do %>
+              <%= link_to discount_days_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">event</i><span>Discount Days</span>
               <% end %>
             </li>
             <li class="no-padding">
-              <%= link_to memberships_path do %>
+              <%= link_to memberships_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">card_membership</i><span>Memberships</span>
               <% end %>
             </li>
         <% end %>
       </ul>
-
     </header>
     <main>
-      <div style="margin-bottom: 2%; margin-top: 1%; min-height: 520px">
+      <div style="margin-bottom: 2%; margin-top: 1%; min-height: 560px">
         <%= yield %>
       </div>
 
@@ -142,8 +138,9 @@
 </body>
 </html>
 <script>
+
     function appendNotification(text) {
-        $('#notification_dropdown').prepend('<li><a href="#">' + text + '</a></li>')
+        $('#notification_dropdown').prepend('<li><a href="<%= home_path %>">' + text + '</a></li>')
     }
     var config = {
         apiKey: "AIzaSyB9OrnpLwPlNy3ldhwfb5BMS2PRAV1o9j4",
@@ -155,11 +152,11 @@
     };
     firebase.initializeApp(config);
     var data = firebase.database().ref().child('Phongdemo');
-    data.on('child_added', function (snapshot) {
-        console.log(snapshot.child('type').val());
-        console.log(snapshot.child('type').val() == 'unread');
-        if(snapshot.child('type').val() == 'unread'){
-            appendNotification(snapshot.child('text').val())
-        }
-    });
+    //    data.on('child_added', function (snapshot) {
+    //        console.log(snapshot.child('type').val());
+    //        console.log(snapshot.child('type').val() == 'unread');
+    //        if(snapshot.child('type').val() == 'unread'){
+    //            appendNotification(snapshot.child('text').val())
+    //        }
+    //    });
 </script>

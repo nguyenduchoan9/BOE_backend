@@ -5,6 +5,7 @@ class PriceChangeHistoriesController < ApplicationController
 
   def new
     @price_change_history = PriceChangeHistory.new
+    add_breadcrumb "New Price"
   end
 
   def show

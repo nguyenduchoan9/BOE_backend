@@ -4,6 +4,11 @@ $(document).on "turbolinks:load", ->
   $("#slide_nav").sideNav();
   $('select').material_select();
   $('.dropdown-button').dropdown();
+  data = firebase.database().ref().child('Phongdemo')
+  data.on 'child_added', (snapshot) ->
+    if snapshot.child('type').val() == 'unread'
+      appendNotification snapshot.child('text').val()
+    return
   $ ->
     url = window.location.pathname
     activePage = url.substring(url.lastIndexOf('/') + 1)

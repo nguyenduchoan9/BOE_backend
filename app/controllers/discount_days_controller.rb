@@ -15,6 +15,7 @@ class DiscountDaysController < ApplicationController
 
   def new
     @discount_day = DiscountDay.new
+    add_breadcrumb "New DiscountDay"
   end
 
   def create

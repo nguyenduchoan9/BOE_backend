@@ -5,6 +5,7 @@ class UsersController < WebApplcationController
 
   def new
     @user = User.new
+    add_breadcrumb "New User"
   end
 
   def create
