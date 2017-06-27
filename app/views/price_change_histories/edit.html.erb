@@ -25,7 +25,7 @@
               <%= f.date_field :from_date, class: "datepicker" %>
             </div>
           </div>
-          <%= link_to 'Back', price_change_histories_path, class: "btn" %>
+          <%= link_to 'Back', price_change_histories_path, class: "btn", data: {turbolinks: false} %>
           <%= f.submit value: 'Update', class: 'btn' %>
         </div>
     <% end %>

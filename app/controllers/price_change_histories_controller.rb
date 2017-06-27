@@ -10,7 +10,7 @@ class PriceChangeHistoriesController < ApplicationController
 
   def show
     if !params[:term].nil? && params[:term] != ''
-      @price_change_histories = PriceChangeHistory.search(params[:term]).paginate(page: params[:page], per_page: 10)
+      @price_change_histories = PriceChangeHistory.search(params[:term]).order('price_change_histories.dish_id, price_change_histories.status').paginate(page: params[:page], per_page: 10)
     end
   end
 
@@ -27,7 +27,10 @@ class PriceChangeHistoriesController < ApplicationController
 
   def update
     @price_change_history = PriceChangeHistory.find params[:price_change_history][:id]
-    @price_change_history.update_attributes(price_history_params)
+    @price_change_history.update(status: !@price_change_history.status)
+    @new_price = PriceChangeHistory.new price_history_params
+    @new_price.status = true
+    @new_price.save
     redirect_to price_change_histories_path
   end
 

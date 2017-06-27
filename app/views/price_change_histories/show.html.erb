@@ -28,6 +28,7 @@
         <th>Dish Name</th>
         <th>Price</th>
         <th>From Day</th>
+        <th>Note</th>
         <th></th>
         </thead>
         <tbody>
@@ -35,11 +36,18 @@
             <tr>
               <td><%= price.dish.dish_name %></td>
               <td><%= price.price %></td>
-              <td><%= price.from_date.to_date %></td>
+              <td><%= price.from_date.to_date.strftime("%d/%m/%Y") %></td>
               <td>
-                <a class="" href="price_change_histories/edit?id=<%= price.id %>">
-                  <i class="material-icons">mode_edit</i>
-                </a>
+                <% if price.status %>
+                    <span style="color: red">Current Price</span>
+                <% end %>
+              </td>
+              <td>
+                <% if price.status %>
+                    <a class="" href="price_change_histories/edit?id=<%= price.id %>">
+                      <i class="material-icons">mode_edit</i>
+                    </a>
+                <% end %>
               </td>
             </tr>
         <% end %>

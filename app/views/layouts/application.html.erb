@@ -29,8 +29,8 @@
     <footer class="page-footer" style="background-color: #26a69a; padding-top: 0;">
       <div class="footer-copyright">
         <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          © 2017 Copyright Boe team
+          <a class="grey-text text-lighten-4 right">Barcode order eateries</a>
         </div>
       </div>
     </footer>
@@ -137,7 +137,8 @@
       <footer class="page-footer" style="background-color: #26a69a; padding-top: 0;">
         <div class="footer-copyright">
           <div class="container">
-            © 2014 Copyright Boe team
+            © 2017 Copyright Boe team
+            <a class="grey-text text-lighten-4 right">Barcode order eateries</a>
           </div>
         </div>
       </footer>
@@ -160,6 +161,7 @@
     firebase.initializeApp(config);
     const message = firebase.messaging();
     message.requestPermission().then(function () {
+        navigator.serviceWorker.register('firebase-messaging-sw.js');
         return message.getToken();
     }).then(function (token) {
         console.log(token)
