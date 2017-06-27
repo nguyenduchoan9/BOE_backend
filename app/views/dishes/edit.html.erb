@@ -3,45 +3,52 @@
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
 </div>
-<div class="container">
-  <div class="card">
-    <%= form_for @dish, url: {controller: 'dishes', action: 'update'} do |f| %>
-        <div class="card-image" style="background-color: gray" id="image">
-          <%= image_tag @dish.image, id: 'tmpImage' %>
-          <span class="card-title">Dish Image</span>
+<div class="row">
+  <%= form_for @dish, url: {controller: 'dishes', action: 'update'} do |f| %>
+      <div class="col s4">
+        <div class="card">
+          <div class="card-image" style="background-color: gray; min-height: 250px" id="image">
+            <%= image_tag @dish.image, id: 'tmpImage', style: 'min-height: 250px' %>
+            <span class="card-title">Dish Image</span>
+            <a id="float" class="btn-floating" style="position: absolute; top: 50%; left: 50%; background-color: transparent; box-shadow: none;"><i class="material-icons">add</i></a>
+          </div>
         </div>
-        <div class="card-content">
-          <%= f.file_field :image, style: 'display: none;', onchange: 'readURL(this)' %>
-          <div class="center">
-          </div>
-          <%= f.hidden_field :id %>
-          <div class="input-field">
-            <%= f.label :dish_name, "Dish Name" %>
-            <%= f.text_field :dish_name, style: 'width: 50%' %>
-          </div>
-          <div class="input-field">
-            <%= f.text_area :description, class: 'materialize-textarea' %>
-            <%= f.label :description, "Description" %>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <%= collection_select :dish, :category_id, Category.all, :id, :category_name, prompt: true %>
-              <label>Category</label>
+      </div>
+      <div class="col s8">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Dish Info</span>
+            <%= f.file_field :image, style: 'display: none;', onchange: 'readURL(this)' %>
+            <%= f.hidden_field :id %>
+            <div class="input-field">
+              <%= f.label :dish_name, "Dish Name" %>
+              <%= f.text_field :dish_name, style: 'width: 50%', placeholder: 'Dish Name' %>
             </div>
-            <div class="input-field col s6">
-              <% if @dish.status == true %>
-                  <%= f.select :status, options_for_select([["Enable", true], ["Disable", false]]) %>
-              <% else %>
-                  <%= f.select :status, options_for_select([["Enable", true], ["Disable", false]], selected: false) %>
-              <% end %>
-              <label>Status</label>
+            <div class="input-field">
+              <%= f.text_area :description, class: 'materialize-textarea' %>
+              <%= f.label :description, "Description" %>
             </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <%= collection_select :dish, :category_id, Category.all, :id, :category_name, prompt: true %>
+                <label>Category</label>
+              </div>
+              <div class="input-field col s6">
+                <% if @dish.status == true %>
+                    <%= f.select :status, options_for_select([["Enable", true], ["Disable", false]]) %>
+                <% else %>
+                    <%= f.select :status, options_for_select([["Enable", true], ["Disable", false]], selected: false) %>
+                <% end %>
+                <label>Status</label>
+              </div>
+            </div>
+            <%= link_to 'Back', dishes_path, class: "btn" %>
+            <%= f.submit value: 'Update', class: 'btn' %>
           </div>
-          <%= link_to 'Back', dishes_path, class: "btn" %>
-          <%= f.submit value: 'Update', class: 'btn' %>
+
         </div>
-    <% end %>
-  </div>
+      </div>
+  <% end %>
 </div>
 <script>
     $('.datepicker').pickadate({

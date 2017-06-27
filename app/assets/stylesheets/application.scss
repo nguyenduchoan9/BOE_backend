@@ -43,6 +43,11 @@ header, main {
   }
 }
 
+.input-field label {
+  color: black;
+  font-weight: bold;
+}
+
 ul.ui-autocomplete {
   position: absolute;
   list-style: none;

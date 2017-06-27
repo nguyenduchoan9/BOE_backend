@@ -21,6 +21,13 @@ class DiscountDaysController < ApplicationController
   def create
     @discount_day = DiscountDay.new discount_day_params
     @discount_day.save
+    discount_item = @discount_day.discount_item.split(',');
+    discount_item.each do |discount_item|
+      dish_discount = DishDiscount.new
+      dish_discount.dish_id = discount_item
+      dish_discount.discount_day_id = @discount_day.id
+      dish_discount.save
+    end
     redirect_to discount_days_path
   end
 
@@ -32,6 +39,14 @@ class DiscountDaysController < ApplicationController
   def update
     @discount_day = DiscountDay.find params[:discount_day][:id]
     @discount_day.update_attributes(discount_day_params)
+    DishDiscount.destroy_all discount_day_id: @discount_day.id
+    discount_item = @discount_day.discount_item.split(',');
+    discount_item.each do |discount_item|
+      dish_discount = DishDiscount.new
+      dish_discount.dish_id = discount_item
+      dish_discount.discount_day_id = @discount_day.id
+      dish_discount.save
+    end
     redirect_to discount_days_path
   end
 

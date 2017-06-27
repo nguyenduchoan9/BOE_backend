@@ -4,19 +4,23 @@
   }
 </style>
 <div class="row" style="text-align: right; margin-bottom: 0;">
+  <input type="hidden" value="<%= @table_string %>" id="table_string">
   <div class="left" style="margin-left: 1%; font-size: 18px">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <div class="col s5 right" >
+  <div class="col s6 right">
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(tables_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search' %>
+          <%= text_field_tag :term, params[:term], style: 'width: 40%;', placeholder: 'Search' %>
           <button type="submit" class="btn-floating waves-effect waves-light">
             <i class="material-icons">search</i>
           </button>
           <%= link_to new_tables_path, data: {turbolinks: false} do %>
               <input type="button" class="btn" value="Add">
           <% end %>
+          <a target="_blank" class="waves-effect waves-light btn" onclick="onClickPrintAll()">
+            <i class="material-icons left">print</i>All
+          </a>
       <% end %>
     </div>
   </div>
@@ -26,7 +30,6 @@
       <table class="highlight">
         <thead>
         <th>Table Number</th>
-        <th style="text-align: center">Status</th>
         <th style="text-align: center">Action</th>
         </thead>
         <tbody>
@@ -34,22 +37,10 @@
             <tr>
               <td><%= table.table_number %></td>
               <td style="text-align: center">
-                <p>
-                  <%= check_box_tag table.id, table.status, table.status, onclick: "changeStatus(#{table.id})" %>
-                  <label for="<%= table.id %>" id="label<%= table.id %>">
-                  </label>
-                </p>
-              </td>
-              <td style="text-align: center">
-                <a href="/tables/edit.json?id=<%= table.id %>" target="_blank" class="waves-effect waves-light btn">
-                  <i class="material-icons left">get_app</i>Download
+                <a target="_blank" class="waves-effect waves-light btn" onclick="onClickPrint(<%=table.id %>)">
+                  <i class="material-icons left">print</i>Print
                 </a>
               </td>
-              <!--<td>-->
-                <!--<a href="tables/edit?id=<%= table.id %>">-->
-                  <!--<i class="material-icons">mode_edit</i>-->
-                <!--</a>-->
-              <!--</td>-->
             </tr>
         <% end %>
         </tbody>
@@ -62,13 +53,24 @@
   <% end %>
 </div>
 <script>
-    function changeStatus(dish_id) {
-        $.ajax({
-            url: 'tables/updateStatus.json',
-            dataType: 'json',
-            data: {
-                id: dish_id
-            }
-        })
+    function onClickPrint(id) {
+        popup = window.open(); // display popup
+        popup.document.write('<div style="text-align: center"><img id="image" src="/tables/edit.png?id=' + id + '" onload="window.print()"></div>'); // This is where the image url goes which will just open up the image
+    }
+
+    function onClickPrintAll() {
+
+        var value = $('#table_string').val();
+        var array = JSON.parse(value);
+        popup = window.open(); // display popup
+        var i = 0;
+        while (i < array.length) {
+            popup.document.write('<img id="image" src="/tables/edit.png?id=' + array[i] + '" width="200px" height="200px" style="margin: 10px">'); // This is where the image url goes which will just open up the image
+            i++;
+        }
+        function alert1() {
+            popup.window.print();
+        }
+        setTimeout(alert1, 3000);
     }
 </script>
