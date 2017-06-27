@@ -1,4 +1,4 @@
-emodule Dishes
+module Dishes
     module V1
         class AsCart < Operation
 

@@ -31,18 +31,18 @@ module Orders
                     total += order.total
                     order.order_details.each do |od|
                         dish = Dish.find(od.dish_id)
-                        rs << order_detail_construct.new(dish.dish_name, od.quantity, od.price, DateUtils.format_date(od.create_at))
+                        rs << order_detail_construct.new(dish.id, dish.dish_name, od.quantity, od.price, DateUtils.format_date(od.created_at))
                     end
                 end
-                result_construct(total, rs)
+                result_construct.new(total, rs)
             end
 
             def result_construct
-                Construct.new(:total, :list_order_detail)
+                Struct.new(:total, :list_order_detail)
             end
 
             def order_detail_construct
-                Construct.new(:dish_name, :quantity, :price, :create_at)
+                Struct.new(:id, :dish_name, :quantity, :price, :create_at)
             end
         end
     end

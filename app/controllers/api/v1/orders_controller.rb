@@ -32,6 +32,12 @@ module Api
 
             def order_in_time
             end
+
+            def is_in_time_order
+            end
+
+            def list_dish_done
+            end
         end
     end
 end

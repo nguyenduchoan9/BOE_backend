@@ -1,5 +1,3 @@
-
-
 module ApplicationHelper
     require 'gcm'
     def send_message reg_tokens
