@@ -1,53 +1,83 @@
+<div class="row">
+  <div class="left" style="margin-left: 1%; font-size: 18px;">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+</div>
 <div class="container">
-  <%= form_for @user, url: {controller: 'users', action: 'update'} do |f| %>
-      <div class="center">
-        <%= image_tag @user.avatar, size: '400x400' %>
-      </div>
-      <%= f.hidden_field :id %>
-      <div class="input-field">
-        <%= f.label :username, "Username" %>
-        <%= f.text_field :username, value: @user.username %>
-      </div>
-      <div class="input-field">
-        <%= f.label :full_name, "Fullname" %>
-        <%= f.text_field :full_name, value: @user.full_name %>
-      </div>
-      <div class="input-field">
-        <%= f.label :email, "Email" %>
-        <%= f.email_field :email, value: @user.email, class: "validate" %>
-      </div>
-      <div class="input-field">
-        <%= f.label :birthdate, "Birthday" %>
-        <%= f.date_field :birthdate, value: @user.birthdate, class: "datepicker" %>
-      </div>
-      <div class="input-field">
-        <%= f.label :phone, "Phone" %>
-        <%= f.phone_field :phone, value: @user.phone %>
-      </div>
-      <div class="input-field">
-        <%= collection_select :user, :role_id, Role.all, :id, :name, prompt: true %>
-        <label>User Role</label>
-      </div>
-      <div class="input-field">
-        <%= collection_select :user, :membership_id, Membership.all, :id, :level, prompt: true %>
-        <label>User Membership</label>
-      </div>
-      <div class="file-field input-field">
-        <div class="btn">
-          <span>Avatar</span>
-          <%= f.file_field :avatar %>
+  <div class="card">
+    <%= form_for @user, url: {controller: 'users', action: 'update'} do |f| %>
+        <div class="card-image" style="background-color: gray" id="image">
+          <%= image_tag @user.avatar, id: 'tmpImage' %>
+          <span class="card-title">User Avatar</span>
         </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
+        <div class="card-content">
+          <%= f.file_field :avatar, style: 'display: none;', onchange: 'readURL(this)' %>
+          <%= f.hidden_field :id %>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :username, "Username" %>
+              <%= f.text_field :username, value: @user.username %>
+            </div>
+            <div class="input-field col s6">
+              <%= f.label :full_name, "Fullname" %>
+              <%= f.text_field :full_name, value: @user.full_name %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :email, "Email" %>
+              <%= f.email_field :email, value: @user.email, class: "validate" %>
+            </div>
+            <div class="input-field col s6">
+              <%= f.label :birthdate, "Birthday" %>
+              <%= f.date_field :birthdate, value: @user.birthdate, class: "datepicker" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= collection_select :user, :role_id, Role.all, :id, :name, prompt: true %>
+              <label>User Role</label>
+            </div>
+            <div class="input-field col s6">
+              <%= collection_select :user, :membership_id, Membership.all, :id, :level, prompt: true %>
+              <label>User Membership</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :phone, "Phone" %>
+              <%= f.phone_field :phone, value: @user.phone %>
+            </div>
+          </div>
+          <%= link_to 'Back', users_path, class: "btn" %>
+          <%= f.submit value: 'update', class: 'btn' %>
         </div>
-      </div>
-      <%= f.submit value: 'update', class: 'btn' %>
-      <%= link_to 'Back', users_path, class: "btn" %>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 <script>
     $('.datepicker').pickadate({
+        format: 'mm/dd/yy',
         selectMonths: true, // Creates a dropdown to control month
-        selectYears: 50, // Creates a dropdown of 15 years to control year
+        selectYears: 15 // Creates a dropdown of 15 years to control year
     });
+    var $input = $('.datepicker').pickadate();
+    // Use the picker object directly.
+    var picker = $input.pickadate('picker');
+    picker.set('select', $('#user_birthdate').val())
+    $('#image').click(function () {
+        $('#user_avatar').trigger('click');
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#tmpImage')
+                    .attr('src', e.target.result)
+            };
+            reader.readAsDataURL(input.files[0]);
+            $('#float').css('display', 'none');
+        }
+    }
 </script>

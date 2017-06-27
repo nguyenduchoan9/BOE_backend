@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="left" style="margin-left: 1%; font-size: 18px;">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <%= form_for @price_change_history do |f| %>
+        <div class="card-content">
+          <span class="card-title">New Price</span>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= collection_select :price_change_history, :dish_id, Dish.all, :id, :dish_name, prompt: true %>
+              <label>Dish Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :price, "Dish Price" %>
+              <%= f.text_field :price %>
+            </div>
+            <div class="input-field col s6">
+              <%= f.label :from_date, "From Date" %>
+              <%= f.date_field :from_date, class: "datepicker" %>
+            </div>
+          </div>
+
+          <%= link_to 'Back', price_change_histories_path, class: "btn" %>
+          <%= f.submit value: 'Add', class: 'btn' %>
+        </div>
+    <% end %>
+  </div>
+</div>
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+</script>

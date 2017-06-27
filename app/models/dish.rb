@@ -18,7 +18,7 @@
 #
 
 class Dish < ApplicationRecord
-    # mount_uploader :image, ImageUploader
+    mount_uploader :image, ImageUploader
     # skip_callback :save, :before, :store_picture!
 
     belongs_to :category, optional: true
@@ -33,5 +33,11 @@ class Dish < ApplicationRecord
 
     def self.search_drinking(keysearch)
         where('lower(dish_name) LIKE ?', "%#{keysearch}%")
+    end
+
+    def self.search(term)
+        if term
+            where('lower(dish_name) LIKE ?', "%#{term.downcase}%")
+        end
     end
 end

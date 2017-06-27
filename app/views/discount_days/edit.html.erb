@@ -1,49 +1,60 @@
+<div class="row">
+  <div class="left" style="margin-left: 1%; font-size: 18px;">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+</div>
 <div class="container">
-  <%= form_for @discount_day, url: {controller: 'discount_days', action: 'update'} do |f| %>
-      <%= image_tag @discount_day.image, size: '400x400' %>
-      <%= f.hidden_field :id %>
-      <div class="input-field">
-        <%= f.label :name, "Discount Name" %>
-        <%= f.text_field :name %>
-      </div>
-      <div class="input-field">
-        <%= f.label :from_day, "From Day" %>
-        <%= f.date_field :from_day, class: "datepicker" %>
-      </div>
-      <div class="input-field">
-        <%= f.label :to_day, "To Day" %>
-        <%= f.date_field :to_day, class: "datepicker" %>
-      </div>
-      <%= f.hidden_field :discount_item %>
-      <% selected = @discount_day.discount_item.split(',') %>
-      <div class="input-field">
-        <select multiple name="discount_item" id="discount_item" onchange="onSelected()">
-          <%= Dish.all.each do |dish| %>
-              <% if selected.include? dish.id.to_s %>
-                  <option value="<%= dish.id %>" selected><%= dish.dish_name %></option>
-              <% else %>
-                  <option value="<%= dish.id %>"><%= dish.dish_name %></option>
-              <% end %>
-          <% end %>
-        </select>
-        <label>Discount Item</label>
-      </div>
-      <div class="input-field">
-        <%= f.label :discount_rate, "Discount Rate" %>
-        <%= f.text_field :discount_rate %>
-      </div>
-      <div class="file-field input-field">
-        <div class="btn">
-          <span>Image</span>
-          <%= f.file_field :image %>
+  <div class="card">
+    <%= form_for @discount_day, url: {controller: 'discount_days', action: 'update'} do |f| %>
+        <div class="card-image" style="background-color: gray" id="image">
+          <img src="http://www.rtings.com/images/test-materials/2015/204_Gray_Uniformity.png" id="tmpImage">
+          <span class="card-title">Discount Image</span>
+          <a id="float" class="btn-floating" style="position: absolute; top: 50%; left: 50%; background-color: transparent; box-shadow: none;"><i class="material-icons">add</i></a>
         </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
+        <div class="card-content">
+          <%= f.hidden_field :id %>
+          <%= f.file_field :image, style: 'display: none;', onchange: 'readURL(this)' %>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :name, "Discount Name" %>
+              <%= f.text_field :name %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :from_day, "From Day" %>
+              <%= f.date_field :from_day, class: "datepicker" %>
+            </div>
+            <div class="input-field col s6">
+              <%= f.label :to_day, "To Day" %>
+              <%= f.date_field :to_day, class: "datepicker" %>
+            </div>
+          </div>
+          <div class="row">
+            <%= f.hidden_field :discount_item %>
+            <% selected = @discount_day.discount_item.split(',') %>
+            <div class="input-field col s6">
+              <select multiple name="discount_item" id="discount_item" onchange="onSelected()">
+                <%= Dish.all.each do |dish| %>
+                    <% if selected.include? dish.id.to_s %>
+                        <option value="<%= dish.id %>" selected><%= dish.dish_name %></option>
+                    <% else %>
+                        <option value="<%= dish.id %>"><%= dish.dish_name %></option>
+                    <% end %>
+                <% end %>
+              </select>
+              <label>Discount Item</label>
+            </div>
+            <div class="input-field col s6">
+              <%= f.label :discount_rate, "Discount Rate" %>
+              <%= f.text_field :discount_rate %>
+            </div>
+          </div>
+          <%= link_to 'Back', discount_days_path, class: "btn" %>
+          <%= f.submit value: 'Update', class: 'btn' %>
         </div>
-      </div>
-      <%= f.submit value: 'submit', class: 'btn' %>
-      <%= link_to 'Back', discount_days_path, class: "btn" %>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 <script>
     $('.datepicker').pickadate({
@@ -53,5 +64,20 @@
     function onSelected() {
         var items = $('#discount_item').val();
         $('#discount_day_discount_item').val(items);
+    }
+    $('#image').click(function () {
+        $('#discount_day_image').trigger('click');
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#tmpImage')
+                    .attr('src', e.target.result)
+            };
+            reader.readAsDataURL(input.files[0]);
+            $('#float').css('display', 'none');
+        }
     }
 </script>

@@ -9,8 +9,15 @@ class TablesController < ApplicationController
     redirect_to action: 'show'
   end
 
+  def new
+    @table = Table.new
+    add_breadcrumb "New Table"
+  end
+
   def show
-    @tables = Table.all
+    if !params[:term].nil? && params[:term] != ''
+      @tables = Table.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    end
     respond_to do |format|
       format.json {render json: @tables}
       format.html
@@ -34,7 +41,7 @@ class TablesController < ApplicationController
         send_data png, type: 'image/png'
       }
       format.json {
-        filename = "table"+@table.id.to_s + ".png"
+        filename = "table"+@table.table_number.to_s + ".png"
         send_data png.to_datastream, type: 'image/png', filename: filename
       }
     end
@@ -44,6 +51,19 @@ class TablesController < ApplicationController
     @table = Table.find params[:table][:id]
     @table.update_attributes(:table_number => params[:table][:table_number])
     redirect_to action: 'show'
+  end
+
+  def update_status
+    respond_to do |format|
+      format.json {
+        @table = Table.find params[:id]
+        if @table.status.nil?
+          @table.update status: false
+        end
+        @table.update status: !@table.status
+        render nothing: ''
+      }
+    end
   end
 
   private

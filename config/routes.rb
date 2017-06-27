@@ -1,25 +1,26 @@
 Rails.application.routes.draw do
     get 'notification/index'
     get 'notification/background_job'
-
     post 'notification/create'
     root 'statistic#home'
     get 'login', to: 'session#new'
     post 'login', to: 'session#create'
     delete 'logout', to: 'session#destroy'
     resource 'users'
+    resource 'dishes'
     resource 'tables'
     resource 'memberships'
     resource 'discount_days'
-    resource 'dishes'
+    resource 'categories'
     resource 'price_change_histories'
     get 'make_statistic', to: 'statistic#make_statistic'
     get 'dishes/updateStatus', to: 'dishes#update_status'
+    get 'tables/updateStatus', to: 'tables#update_status'
+    get 'categories/updateStatus', to: 'categories#update_status'
     get 'home', to: 'statistic#home'
     get 'dashboard', to: 'statistic#index'
     resources :fakes, only: [:index]
     devise_for :users
-
     require 'sidekiq/web'
     mount Sidekiq::Web => '/side'
 

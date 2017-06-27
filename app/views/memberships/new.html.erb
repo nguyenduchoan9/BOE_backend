@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="left" style="margin-left: 1%; font-size: 18px;">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <%= form_for @membership do |f| %>
+        <div class="card-content">
+          <span class="card-title">New Membership</span>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :level, "Level" %>
+              <%= f.text_field :level %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :discount_rate, "Discount Rate" %>
+              <%= f.text_field :discount_rate %>
+            </div>
+            <div class="input-field col s6">
+              <%= f.label :mark_boundary, "Mark Boundary" %>
+              <%= f.text_field :mark_boundary %>
+            </div>
+          </div>
+
+          <%= link_to 'Back', memberships_path, class: "btn" %>
+          <%= f.submit value: 'Add', class: 'btn' %>
+        </div>
+    <% end %>
+  </div>
+</div>
