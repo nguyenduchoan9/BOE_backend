@@ -11,35 +11,30 @@
 <div class="container">
   <div class="card">
     <div class="card-content">
+      <span class="card-title">Restaurant Schedule</span>
+      <div class="row">
+        <div class="input-field col s6">
+          <b>Close Time</b><input type="time" id="close_time" placeholder="Close Time">
+        </div>
+      </div>
+    </div>
+    <div class="card-action">
+      <button class="btn" onclick="setTimeScheduler()">Set</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-content">
       <span class="card-title">Rejected Order</span>
       <table>
         <thead>
         <th>Username</th>
         <th>Order Item</th>
-        <th style="width: 200px"></th>
+        <th>Total</th>
         </thead>
         <tbody id="tbody">
 
         </tbody>
       </table>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">Restaurant Schedule</span>
-      <div class="row">
-        <div class="input-field col s6">
-          <input type="text" id="open_time" placeholder="Open Time">
-          <label for="open_time">Open Time</label>
-        </div>
-        <div class="input-field col s6">
-          <input type="text" id="close_time" placeholder="Close Time">
-          <label for="close_time">Close Time</label>
-        </div>
-      </div>
-    </div>
-    <div class="card-action">
-      <button class="btn">Set</button>
     </div>
   </div>
 </div>
@@ -48,7 +43,22 @@
         data = firebase.database().ref().child('Phongdemo');
         data.on('child_added', function (snapshot) {
             $('#tbody').prepend('<tr><td>' + snapshot.child('username').val() + '</td><td>' + snapshot.child('orderdetail').val() +
-                '</td><td><input type="button" class="btn red" value="Refund ' + snapshot.child('total').val() + ' VND"></td></tr>')
+                '</td><td>' + snapshot.child('total').val() + '</td></tr>')
         });
     });
+    function setTimeScheduler() {
+        var closeTime = $('#close_time').val();
+        $.ajax({
+            url: 'setScheduler',
+            dataType: 'json',
+            data: {
+                closeTime: closeTime
+            },
+            success: function (data) {
+                if (data.status) {
+                    alert('Set Scheduler Successfully')
+                }
+            }
+        })
+    }
 </script>

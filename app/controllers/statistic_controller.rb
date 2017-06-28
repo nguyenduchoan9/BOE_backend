@@ -1,6 +1,7 @@
 class StatisticController < WebApplcationController
   before_action 'authen_user'
   add_breadcrumb "Home", :root_path
+  include ConfigBoeHelper
 
   def home
     if session[:role] == 'admin'
@@ -14,6 +15,16 @@ class StatisticController < WebApplcationController
     @revenue = Order.sum(:total)
     @visit = Order.count
     add_breadcrumb "Dashboard"
+  end
+
+  def setScheduler
+    closeTime = params[:closeTime]
+    if closeTime != ''
+      set_time_close closeTime.split(':')[0], closeTime.split(':')[1]
+      render json: {status: 'true'}
+    else
+      render nothing: true
+    end
   end
 
   def make_statistic
