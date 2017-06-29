@@ -28,10 +28,10 @@ class DishesController < ApplicationController
     respond_to do |format|
       format.json {
         @dish = Dish.find params[:id]
-        if @dish.status.nil?
-          @dish.update status: false
+        if @dish.is_available.nil?
+          @dish.update is_available: false
         end
-        @dish.update status: !@dish.status
+        @dish.update is_available: !@dish.is_available
         render nothing: ''
       }
     end
