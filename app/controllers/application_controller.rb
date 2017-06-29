@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     # base_uri = 'https://boebackend.firebaseio.com'
     # firebase = Firebase::Client.new('https://boebackend.firebaseio.com', 'FpE63dhjckc4wr6w5wGyRATrYlkEXJ3b5EJOwaGI')
-    # response = firebase.push("todos", { :name => 'Pick the milk', :priority => 1 })
+    # response = firebase.push("Phongdemo", { username: 'phong', status: 'new' })
 
     # fcm = FCM.new("AIzaSyDrFf5420hhnSDQ_attRZLC-57O5ahVHBw")
     # registration_ids= ["cUd8y0jRSM0:APA91bF1vQG3KrAZkzZm1peAO322RLnPd7943shQQEqMWP5ub0qIT8Td9mXIoUfTc9n-Ni85LGqwRfkI38sYk2kT-ff_Z5XVfMNzZF6vaFipZ4nPrUN4qef5msZHIkeDqBae3-bfvz_3"]
