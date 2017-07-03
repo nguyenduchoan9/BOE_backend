@@ -9,6 +9,10 @@ class StatisticController < WebApplcationController
     end
   end
 
+  def scheduler
+    add_breadcrumb "Scheduler"
+  end
+
   def index
     @user = Order.order('sum_total desc').includes(:user).group('users.username').select('users.username').references(:users).sum(:total).first
     @dish = OrderDetail.order('sum_quantity desc').includes(:dish).group('dishes.dish_name').references(:dishes).sum(:quantity).first

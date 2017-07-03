@@ -7,38 +7,8 @@
   <div class="left" style="margin-left: 1%; font-size: 18px;">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <div class="right">
-    <!-- Modal Trigger -->
-    <!--<a class="waves-effect waves-light btn" data-target="modal1">Modal</a>-->
-  </div>
 </div>
-
-
-<!-- Modal Structure -->
-<!--<div id="modal1" class="modal">-->
-  <!--<div class="modal-content">-->
-    <!--<h4>Modal Header</h4>-->
-    <!--<p>A bunch of text</p>-->
-  <!--</div>-->
-  <!--<div class="modal-footer">-->
-    <!--<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>-->
-  <!--</div>-->
-<!--</div>-->
-
 <div class="container">
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">Restaurant Schedule</span>
-      <div class="row">
-        <div class="input-field col s6">
-          <b>Close Time</b><input type="time" id="close_time" placeholder="Close Time">
-        </div>
-      </div>
-    </div>
-    <div class="card-action">
-      <button class="btn" onclick="setTimeScheduler()">Set</button>
-    </div>
-  </div>
   <div class="card">
     <div class="card-content">
       <span class="card-title">Rejected Order</span>
@@ -47,6 +17,7 @@
         <th>Username</th>
         <th>Order Item</th>
         <th>Total</th>
+        <th></th>
         </thead>
         <tbody id="tbody">
 
@@ -60,7 +31,7 @@
         data = firebase.database().ref().child('Phongdemo');
         data.on('child_added', function (snapshot) {
             $('#tbody').prepend('<tr><td>' + snapshot.child('username').val() + '</td><td>' + snapshot.child('orderdetail').val() +
-                '</td><td>' + snapshot.child('total').val() + '</td></tr>')
+                '</td><td>' + snapshot.child('total').val() + '</td><td style="text-align: center"><button class="btn red">Refund</button></td></tr>')
         });
     });
     function setTimeScheduler() {
@@ -78,8 +49,4 @@
             }
         })
     }
-//    $(document).ready(function(){
-//        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-//        $('.modal').modal();
-//    });
 </script>

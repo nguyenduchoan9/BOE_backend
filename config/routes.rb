@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get 'tables/updateStatus', to: 'tables#update_status'
     get 'categories/updateStatus', to: 'categories#update_status'
     get 'setScheduler', to: 'statistic#setScheduler'
+    get 'scheduler', to: 'statistic#scheduler'
     get 'home', to: 'statistic#home'
     get 'dashboard', to: 'statistic#index'
     resources :fakes, only: [:index]
