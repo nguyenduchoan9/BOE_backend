@@ -1,0 +1,45 @@
+<style>
+  label {
+    font-weight: bold;
+  }
+</style>
+<div class="row">
+  <div class="left" style="margin-left: 1%; font-size: 18px;">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Restaurant Schedule</span>
+      <div class="row">
+        <div class="input-field col s6">
+          <b>Close Time *</b><input type="time" id="close_time" placeholder="Close Time" required="required">
+        </div>
+      </div>
+    </div>
+    <div class="card-action">
+      <button class="btn" onclick="setTimeScheduler()">Set</button>
+    </div>
+  </div>
+</div>
+<script>
+    function setTimeScheduler() {
+        var closeTime = $('#close_time').val();
+        if (closeTime == '') {
+            alert('Please Insert Time');
+        }
+        $.ajax({
+            url: 'setScheduler',
+            dataType: 'json',
+            data: {
+                closeTime: closeTime
+            },
+            success: function (data) {
+                if (data.status) {
+                    alert('Set Scheduler Successfully')
+                }
+            }
+        })
+    }
+</script>
