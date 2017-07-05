@@ -1,12 +1,12 @@
 class PayPalController < ApplicationController
-  Braintree::Configuration.environment = :sandbox
-  Braintree::Configuration.merchant_id = "t96gbj9c6z2kppx3"
-  Braintree::Configuration.public_key = "56t58d9t9yffs94m"
-  Braintree::Configuration.private_key = "8d1ffcc94df3e2d21f61e59fc371abd5"
+  # Braintree::Configuration.environment = :sandbox
+  # Braintree::Configuration.merchant_id = "t96gbj9c6z2kppx3"
+  # Braintree::Configuration.public_key = "56t58d9t9yffs94m"
+  # Braintree::Configuration.private_key = "8d1ffcc94df3e2d21f61e59fc371abd5"
   # PayPal::SDK.configure(
   #     :mode => "sandbox", # "sandbox" or "live"
-  #     :client_id => "AfZ-4aTeG7YlIEmuR78RxU6MINSo9gkktjrySjwdkGWC2JQRR-QBobvY2tM2hEFdf10v-_k3XZD9nlXl",
-  #     :client_secret => "EN1aVEvpmOCx0QBygmpH8JsDeUQct5EOuosGJIQlUs2QfKHPloXd2NTk1E6BnraHQ19DxbTrGN35F51M",
+  #     :client_id => "Aa-zOjgWjSCBw9UWHHvxRihf2S2yvBpEjKiGWCu7dFUsa0Lsmd5J9jMpL0OxZOaJziPPh_mAIUzVzSBc",
+  #     :client_secret => "EMxsOJ9oG-d2RJR4vGfFAP5SOwyZChfviEZMFUGzqjZGVVVweS3tZf-ufMea5avVCl5PQe0ZiwqTrz__",
   #     :ssl_options => {})
   # @payment = PayPal::SDK::REST::Payment.new({
   #                                               :intent => "sale",
@@ -40,7 +40,7 @@ class PayPalController < ApplicationController
   #                                                                         :currency => "USD"},
   #                                                                     :description => "This is the payment transaction description."}]})
   # @payment.create
-  # @sale = PayPal::SDK::REST::DataTypes::Sale.find 'sale_id'
+  # @sale = PayPal::SDK::REST::DataTypes::Sale.find '0KN32949AS9765432'
   # @refund = @sale.refund_request({})
   # or
   # @refund = @sale.refund_request({
@@ -65,13 +65,8 @@ class PayPalController < ApplicationController
   #   search.settled_at >= Time.now - 60*60*24 # a day ago
   # end
 
-  def payment(amount)
-    result = Braintree::Transaction.sale(
-        :amount => amount,
-        :payment_method_nonce => 'fake-valid-nonce',
-        :options => {
-            :submit_for_settlement => true
-        }
-    )
+  def refund(sale_id)
+    @sale = PayPal::SDK::REST::DataTypes::Sale.find "#{sale_id}"
+    @refund = @sale.refund_request({})
   end
 end

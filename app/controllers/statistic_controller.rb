@@ -5,7 +5,7 @@ class StatisticController < WebApplcationController
 
   def home
     if session[:role] == 'admin'
-      render 'users/show'
+      redirect_to users_path
     end
   end
 

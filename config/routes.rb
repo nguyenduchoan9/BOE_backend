@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource 'discount_days'
     resource 'categories'
     resource 'price_change_histories'
+    get 'refund', to: 'pay_pal#refund'
     get 'make_statistic', to: 'statistic#make_statistic'
     get 'dishes/updateStatus', to: 'dishes#update_status'
     get 'tables/updateStatus', to: 'tables#update_status'
