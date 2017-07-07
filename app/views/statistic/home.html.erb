@@ -17,7 +17,7 @@
         <th>Username</th>
         <th>Order Item</th>
         <th>Total</th>
-        <th></th>
+        <!--<th></th>-->
         </thead>
         <tbody id="tbody">
 
@@ -31,7 +31,7 @@
         data = firebase.database().ref().child('Phongdemo');
         data.on('child_added', function (snapshot) {
             $('#tbody').prepend('<tr><td>' + snapshot.child('username').val() + '</td><td>' + snapshot.child('orderdetail').val() +
-                '</td><td>' + snapshot.child('total').val() + '</td><td style="text-align: center"><button class="btn red">Refund</button></td></tr>')
+                '</td><td>' + snapshot.child('total').val() + '</td></tr>')
         });
     });
     function setTimeScheduler() {
