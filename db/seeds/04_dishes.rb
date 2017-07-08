@@ -16,7 +16,7 @@ Category.all.each do |i|
 
     nuong_image = ['tom-uop-sua-chua-nuong.jpg', 'thit-nuong-texas.jpg', 'thit-nuong-indonesia.jpg', 'suon-cuu-nuong.JPG',
                  'hau-nuong-pho-mai-kieu-phap.jpg', 'ga_nuong_phomai_han_quoc.jpg', 'bo-nuong-beefstek-canada.jpg', 'ba-roi-xong-khoi-cuon-bo-bam.jpg']
-    nuong_name = ['Tôm ướp sửexasua nướng', 'Thịt nướng Texas', 'Thịt nướng Indonesia', 'Sường cừu nướng', 'Hầu nướng phô mai kiều Pháp',
+    nuong_name = ['Tôm ướp sữa chua nướng', 'Thịt nướng Texas', 'Thịt nướng Indonesia', 'Sường cừu nướng', 'Hầu nướng phô mai kiều Pháp',
                 'Gà nướng phô mai', 'Bò nướng Canada', 'Ba rọi xông khói']
 
     drink_image = ['bac-ha-thuong-hai.jpg', 'ruou-vang-chile.jpg', 'tra-quat-mat-ong.jpg', 'tra-buoi-mat-ong.jpg', 'tra-chanh-dai-tay-duong.jpg',
@@ -73,9 +73,20 @@ end
 
 Dish.all.each do |dish|
     (2 + Random.rand(6)).times do
-        PriceChangeHistory.create(dish: dish, price: 50 + Random.rand(10)*10, from_date: DateTime.now)
+        PriceChangeHistory.create(dish: dish, price: (50 + Random.rand(10)*10)*1000, from_date: DateTime.now)
     end
 end
+
+['Gà', 'Bò', 'Dê', 'Sữa', 'Lợn', 'Mỳ', 'Cút', 'Rắn', 'Thỏ', 'Cua', 'Tôm', 'Mực', 'Cừu', 'Cá mập'].each do |name|
+    Material.find_or_create_by!(name: name)
+end
+
+Dish.all.each do |dish|
+    pos = Random.rand(Material.count)
+    material = Material.find( pos == 0 ? pos + 1 : pos)
+    dish.update(material_id: material.id)
+end
+
 
 
 # dish_id    :integer

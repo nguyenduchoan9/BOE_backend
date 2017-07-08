@@ -38,6 +38,15 @@ module Api
 
             def list_dish_done
             end
+
+            def partial_refund
+            end
+
+            def fully_refund
+            end
+
+            def table_dish
+            end
         end
     end
 end

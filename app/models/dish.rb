@@ -11,14 +11,16 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  category_id  :integer
+#  material_id  :integer
 #
 # Indexes
 #
 #  index_dishes_on_category_id  (category_id)
+#  index_dishes_on_material_id  (material_id)
 #
 
 class Dish < ApplicationRecord
-    mount_uploader :image, ImageUploader
+    # mount_uploader :image, ImageUploader
     # skip_callback :save, :before, :store_picture!
 
     belongs_to :category, optional: true
@@ -26,6 +28,7 @@ class Dish < ApplicationRecord
     has_many :price_change_histories
     has_many :dish_discounts
     has_many :discount_days, through: :dish_discounts
+    belongs_to :material, optional: true
 
     def self.search_cutlery(keysearch)
         where('lower(dish_name) LIKE ?', "%#{keysearch}%")

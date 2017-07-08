@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624103352) do
+ActiveRecord::Schema.define(version: 20170627152610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,16 @@ ActiveRecord::Schema.define(version: 20170624103352) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.integer  "category_id"
+    t.integer  "material_id"
     t.index ["category_id"], name: "index_dishes_on_category_id", using: :btree
+    t.index ["material_id"], name: "index_dishes_on_material_id", using: :btree
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "available",  default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -68,8 +77,9 @@ ActiveRecord::Schema.define(version: 20170624103352) do
     t.integer  "quantity"
     t.integer  "order_id"
     t.boolean  "status"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.integer  "cooking_status",                                default: 0
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
     t.integer  "dish_id"
     t.index ["dish_id"], name: "index_order_details_on_dish_id", using: :btree
     t.index ["order_id"], name: "index_order_details_on_order_id", using: :btree
@@ -81,8 +91,9 @@ ActiveRecord::Schema.define(version: 20170624103352) do
     t.integer  "user_id"
     t.integer  "table_number"
     t.boolean  "status"
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
+    t.integer  "cooking_status",                                       default: 0
+    t.datetime "created_at",                                                       null: false
+    t.datetime "updated_at",                                                       null: false
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
@@ -154,6 +165,7 @@ ActiveRecord::Schema.define(version: 20170624103352) do
   add_foreign_key "dish_discounts", "discount_days"
   add_foreign_key "dish_discounts", "dishes"
   add_foreign_key "dishes", "categories"
+  add_foreign_key "dishes", "materials"
   add_foreign_key "order_details", "dishes"
   add_foreign_key "orders", "users"
   add_foreign_key "price_change_histories", "dishes"
