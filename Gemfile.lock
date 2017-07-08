@@ -509,6 +509,7 @@ DEPENDENCIES
   fog
   gcm
   groupdate
+  httparty
   jbuilder (~> 2.5)
   jquery-datatables-rails!
   jquery-rails
