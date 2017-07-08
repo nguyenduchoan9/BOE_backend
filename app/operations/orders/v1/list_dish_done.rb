@@ -22,8 +22,10 @@ module Orders
             def send_each_notification
                 split_list_done.each {|dish_done|
                     dish_done_detail = dish_done.split("_")
-                    order_detail = order_detail(dish_done_detail[0], dish_done_detail[1])
-                    NotificationWorker.perform_async(Constant::WAITER, order_detail.id, user.id)
+                    order_detail_var = order_detail(dish_done_detail[0], dish_done_detail[1])
+                    quantity_not_serve = order_detail_var.quantity_not_serve
+                    order_detail_var.update(quantity_not_serve: quantity_not_serve - 1)
+                    NotificationWorker.perform_async(Constant::WAITER, order_detail_var.id, user.id)
                 }
             end
 

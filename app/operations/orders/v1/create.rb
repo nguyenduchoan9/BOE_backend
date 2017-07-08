@@ -23,6 +23,10 @@ module Orders
                 params[:table_number]
             end
 
+            def payment_id
+                params[:payment_id]
+            end
+
             def do_transaction!
                 begin
                     ActiveRecord::Base.transaction do
@@ -55,7 +59,8 @@ module Orders
                         price: cart[:dish].price_change_histories.order(from_date: :asc).last.try(:price),
                         discount_rate_by_day: 0,
                         quantity: cart[:quantity],
-                        dish_id: cart[:dish].id
+                        dish_id: cart[:dish].id,
+                        quantity_not_serve: cart[:quantity]
                     )
                 end
             end
