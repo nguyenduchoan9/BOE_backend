@@ -13,10 +13,13 @@ Rails.application.routes.draw do
     resource 'discount_days'
     resource 'categories'
     resource 'price_change_histories'
+    get 'refund', to: 'pay_pal#refund'
     get 'make_statistic', to: 'statistic#make_statistic'
     get 'dishes/updateStatus', to: 'dishes#update_status'
     get 'tables/updateStatus', to: 'tables#update_status'
     get 'categories/updateStatus', to: 'categories#update_status'
+    get 'setScheduler', to: 'statistic#setScheduler'
+    get 'scheduler', to: 'statistic#scheduler'
     get 'home', to: 'statistic#home'
     get 'dashboard', to: 'statistic#index'
     resources :fakes, only: [:index]
@@ -41,6 +44,7 @@ Rails.application.routes.draw do
                     get :search_drinking
                     post :register_reg_token
                     post :disable_dish
+                    get :check_dish_available
                 end
             end
 
@@ -62,8 +66,19 @@ Rails.application.routes.draw do
                     post :mark_order_reject
                     get :order_in_time
                     get :is_in_time_order
+                    post :fully_refund
+                    post :partial_refund
+                    get :table_dish
                 end
             end
+
+            resources :materials, only: [:index] do
+                collection do
+                    post :mark_not_available
+                    post :mark_available
+                end
+            end
+
         end
     end
 end

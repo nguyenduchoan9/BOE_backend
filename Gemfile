@@ -43,6 +43,8 @@ gem 'chunky_png' #save image
 gem 'jquery-ui-rails'
 gem 'firebase'
 gem 'fcm'
+gem 'braintree'
+gem 'paypal-sdk-rest'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

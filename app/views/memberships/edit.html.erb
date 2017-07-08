@@ -11,18 +11,18 @@
           <span class="card-title">Edit Membership</span>
           <div class="row">
             <div class="input-field col s6">
-              <%= f.label :level, "Level" %>
-              <%= f.text_field :level %>
+              <%= f.label :level, "Level *" %>
+              <%= f.text_field :level, placeholder: 'Level' %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <%= f.label :discount_rate, "Discount Rate" %>
-              <%= f.text_field :discount_rate %>
+              <%= f.label :discount_rate, "Discount Rate *" %>
+              <%= f.text_field :discount_rate, placeholder: 'Disount Rate' %>
             </div>
             <div class="input-field col s6">
-              <%= f.label :mark_boundary, "Mark Boundary" %>
-              <%= f.text_field :mark_boundary %>
+              <%= f.label :mark_boundary, "Mark Boundary *" %>
+              <%= f.text_field :mark_boundary, placeholder: 'Mark Boundary' %>
             </div>
           </div>
           <%= link_to 'Back', memberships_path, class: "btn" %>

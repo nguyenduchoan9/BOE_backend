@@ -11,10 +11,12 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  category_id  :integer
+#  material_id  :integer
 #
 # Indexes
 #
 #  index_dishes_on_category_id  (category_id)
+#  index_dishes_on_material_id  (material_id)
 #
 
 require 'rails_helper'

@@ -11,17 +11,17 @@
           <div class="row">
             <div class="input-field col s6">
               <%= collection_select :price_change_history, :dish_id, Dish.all, :id, :dish_name, prompt: true %>
-              <label>Dish Name</label>
+              <label id="dish_name_label">Dish Name *</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <%= f.label :price, "Dish Price" %>
-              <%= f.text_field :price %>
+              <%= f.label :price, "Dish Price *" %>
+              <%= f.text_field :price, required: true, placeholder: 'Dish Price' %>
             </div>
             <div class="input-field col s6">
-              <%= f.label :from_date, "From Date" %>
-              <%= f.date_field :from_date, class: "datepicker" %>
+              <%= f.label :from_date, "From Date *" %>
+              <%= f.date_field :from_date, class: "datepicker validate", required: true, placeholder: 'From Date' %>
             </div>
           </div>
 
@@ -36,4 +36,22 @@
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
+//    $('#price_change_history_dish_id').on('change', function () {
+//        if ($.isNumeric($('#price_change_history_dish_id').val())){
+//            $('#dish_name_label').css('color', 'black');
+//        }
+//    });
+//    $("form").submit(function (e) {
+//        var check = true;
+//        if (!$('#price_change_history_from_date').val()) {
+//            check = false;
+//        }
+//        if (!$.isNumeric($('#price_change_history_dish_id').val())) {
+//            $('#dish_name_label').css('color', 'red');
+//            check = false;
+//        }
+//        if (check) {
+//            e.submit()
+//        }
+//    });
 </script>

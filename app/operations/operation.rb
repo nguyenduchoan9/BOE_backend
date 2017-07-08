@@ -2,6 +2,7 @@ class Operation
   include Support::Authen
   include Support::Policy
   include Support::Validate
+  include Support::CheckDishAvailable
   attr_accessor :params, :headers, :user
 
   def initialize(params, headers, user = nil)

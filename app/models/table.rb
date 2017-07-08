@@ -14,6 +14,8 @@ class Table < ApplicationRecord
   def self.search(term)
     if term
       where('table_number = ?', "#{term}")
+    else
+      all
     end
   end
 end
