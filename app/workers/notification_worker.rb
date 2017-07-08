@@ -21,7 +21,7 @@ class NotificationWorker
                 order_detail_chef.each { |od|
                     dish_local = Dish.find(od.dish_id)
                     od.quantity.times do
-                        body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name), @id).as_json.to_s
+                        body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name, od.id), @id).as_json.to_s
                         send_message_to_chef body, chef_reg_tokens, 'dish'
                     end
                 }
@@ -97,7 +97,7 @@ class NotificationWorker
     end
 
     def dish_serializer
-        Struct.new(:dish_id, :dish_name)
+        Struct.new(:dish_id, :dish_name, :order_detail_id)
     end
 
     def chef_dish_notify

@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20170627152610) do
     t.decimal  "price",                precision: 20, scale: 2
     t.float    "discount_rate_by_day"
     t.integer  "quantity"
+    t.integer  "quantity_not_serve"
     t.integer  "order_id"
     t.boolean  "status"
     t.integer  "cooking_status",                                default: 0
@@ -90,6 +91,7 @@ ActiveRecord::Schema.define(version: 20170627152610) do
     t.string   "discount_date_by_membership"
     t.integer  "user_id"
     t.integer  "table_number"
+    t.string   "payment_id"
     t.boolean  "status"
     t.integer  "cooking_status",                                       default: 0
     t.datetime "created_at",                                                       null: false

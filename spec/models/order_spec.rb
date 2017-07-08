@@ -7,6 +7,7 @@
 #  discount_date_by_membership :string
 #  user_id                     :integer
 #  table_number                :integer
+#  payment_id                  :string
 #  status                      :boolean
 #  cooking_status              :integer          default(0)
 #  created_at                  :datetime         not null

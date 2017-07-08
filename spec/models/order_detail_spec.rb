@@ -6,6 +6,7 @@
 #  price                :decimal(20, 2)
 #  discount_rate_by_day :float
 #  quantity             :integer
+#  quantity_not_serve   :integer
 #  order_id             :integer
 #  status               :boolean
 #  cooking_status       :integer          default(0)
