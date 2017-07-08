@@ -5,6 +5,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
             t.string :discount_date_by_membership
             t.references :user, foreign_key: true
             t.integer :table_number
+            t.string :payment_id
             t.boolean :status
             t.integer :cooking_status, default: 0
             t.timestamps
