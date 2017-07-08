@@ -43,4 +43,9 @@ class Dish < ApplicationRecord
             where('lower(dish_name) LIKE ?', "%#{term.downcase}%")
         end
     end
+
+    def self.suggest_by_user(user_id)
+        ActiveRecord::Base.connection.execute("SELECT order_details.dish_id, sum(order_details.quantity) sum_quantity FROM orders, dishes, order_details WHERE orders.id = order_details.order_id AND dishes.id = order_details.dish_id AND user_id = #{user_id} GROUP BY order_details.dish_id ORDER BY sum_quantity DESC FETCH FIRST 5 ROWS ONLY").to_json
+    end
+
 end

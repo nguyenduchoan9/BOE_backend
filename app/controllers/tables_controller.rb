@@ -15,12 +15,10 @@ class TablesController < ApplicationController
   end
 
   def show
-    if !params[:term].nil? && params[:term] != ''
-      @tables = Table.search(params[:term]).paginate(page: params[:page], per_page: 10)
-    end
-    respond_to do |format|
-      format.json {render json: @tables}
-      format.html
+    @tables = Table.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    @table_string = []
+    Table.all.each do |table_number|
+      @table_string.push "#{table_number.id}"
     end
   end
 

@@ -80,13 +80,18 @@
             <a href="#!email"><span class="white-text email"><%= session[:email] %></span></a>
           </div>
         </li>
-        <li class="no-padding">
-          <%= link_to root_path do %>
-              <i class="material-icons" style="margin-right: 10px">home</i><span>Home</span>
-          <% end %>
-        </li>
         <% if session[:role] == 'admin' %>
+            <li class="no-padding">
+              <%= link_to users_path do %>
+                  <i class="material-icons" style="margin-right: 10px">supervisor_account</i><span>Users</span>
+              <% end %>
+            </li>
         <% else %>
+            <li class="no-padding">
+              <%= link_to root_path do %>
+                  <i class="material-icons" style="margin-right: 10px">home</i><span>Home</span>
+              <% end %>
+            </li>
             <li>
               <div class="divider"></div>
             </li>
@@ -126,6 +131,11 @@
                   <i class="material-icons" style="margin-right: 10px">loyalty</i><span>Categories</span>
               <% end %>
             </li>
+            <li class="no-padding">
+              <%= link_to scheduler_path, data: {turbolinks: false} do %>
+                  <i class="material-icons" style="margin-right: 10px">schedule</i><span>Scheduler</span>
+              <% end %>
+            </li>
         <% end %>
       </ul>
     </header>
@@ -158,18 +168,18 @@
         messagingSenderId: "827854885414"
     };
     firebase.initializeApp(config);
-    const message = firebase.messaging();
-    message.requestPermission().then(function () {
-        return message.getToken();
-    }).then(function (token) {
-        console.log(token)
-    }).catch(function () {
-        console.log('error');
-    });
-    message.onMessage(function (payload) {
-        alert('message');
-        console.log('onMessage: ', payload);
-    });
+//    const message = firebase.messaging();
+//    message.requestPermission().then(function () {
+//        return message.getToken();
+//    }).then(function (token) {
+//        console.log(token)
+//    }).catch(function () {
+//        console.log('error');
+//    });
+//    message.onMessage(function (payload) {
+//        alert('message');
+//        console.log('onMessage: ', payload);
+//    });
     const notification = firebase.database().ref().child('number');
     notification.on('value', function (snapshot) {
         var num = snapshot.val();

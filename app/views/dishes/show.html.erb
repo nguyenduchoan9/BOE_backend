@@ -28,7 +28,7 @@
         <th>Dish Name</th>
         <th>Description</th>
         <th>Category</th>
-        <th style="text-align: center">Status</th>
+        <th style="text-align: center">Available</th>
         <th></th>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@
               <td><%= dish.category.category_name %></td>
               <td style="text-align: center">
                 <p>
-                  <%= check_box_tag dish.id, dish.status, dish.status, onclick: "changeStatus(#{dish.id})" %>
+                  <%= check_box_tag dish.id, dish.is_available, dish.is_available, onclick: "changeStatus(#{dish.id})" %>
                   <label for="<%= dish.id %>" id="label<%= dish.id %>">
                   </label>
                 </p>

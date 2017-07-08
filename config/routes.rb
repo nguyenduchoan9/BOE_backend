@@ -13,10 +13,13 @@ Rails.application.routes.draw do
     resource 'discount_days'
     resource 'categories'
     resource 'price_change_histories'
+    get 'refund', to: 'pay_pal#refund'
     get 'make_statistic', to: 'statistic#make_statistic'
     get 'dishes/updateStatus', to: 'dishes#update_status'
     get 'tables/updateStatus', to: 'tables#update_status'
     get 'categories/updateStatus', to: 'categories#update_status'
+    get 'setScheduler', to: 'statistic#setScheduler'
+    get 'scheduler', to: 'statistic#scheduler'
     get 'home', to: 'statistic#home'
     get 'dashboard', to: 'statistic#index'
     resources :fakes, only: [:index]
