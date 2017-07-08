@@ -1,8 +1,4 @@
 class PayPalController < ApplicationController
-  # Braintree::Configuration.environment = :sandbox
-  # Braintree::Configuration.merchant_id = "t96gbj9c6z2kppx3"
-  # Braintree::Configuration.public_key = "56t58d9t9yffs94m"
-  # Braintree::Configuration.private_key = "8d1ffcc94df3e2d21f61e59fc371abd5"
   # PayPal::SDK.configure(
   #     :mode => "sandbox", # "sandbox" or "live"
   #     :client_id => "Aa-zOjgWjSCBw9UWHHvxRihf2S2yvBpEjKiGWCu7dFUsa0Lsmd5J9jMpL0OxZOaJziPPh_mAIUzVzSBc",
@@ -50,23 +46,38 @@ class PayPalController < ApplicationController
   #     }
   # })
 
+  def notify_webapp
+    firebase = Firebase::Client.new('https://boebackend.firebaseio.com', 'FpE63dhjckc4wr6w5wGyRATrYlkEXJ3b5EJOwaGI')
+    list_orderdetail_id = params[:list_orderdetail_id].split('_')
+    list_orderdetail_id.each do |order_detail_id|
+      orderdetail = OrderDetail.find order_detail_id
+      firebase.push("rejectedOrder", {tableNumber: "#{orderdetail.order.table_number}", status: 'new', dishName: "#{orderdetail.dish.dish_name}", price: "#{orderdetail.price}", quantity: "#{orderdetail.quantity_not_serve}", order_detail_id: "#{orderdetail.id}"})
+    end
+    render nothing: true
+  end
 
-  # result = Braintree::Transaction.sale(
-  #     :amount => '27.00',
-  #     :payment_method_nonce => 'fake-valid-nonce',
-  #     :options => {
-  #         :submit_for_settlement => true
-  #     }
-  # )
-
-  # result = Braintree::Transaction.refund("transactions_id")
-
-  # search_results = Braintree::Transaction.search do |search|
-  #   search.settled_at >= Time.now - 60*60*24 # a day ago
-  # end
-
-  def refund(sale_id)
-    @sale = PayPal::SDK::REST::DataTypes::Sale.find "#{sale_id}"
-    @refund = @sale.refund_request({})
+  def refund
+    PayPal::SDK.configure(
+        :mode => "sandbox", # "sandbox" or "live"
+        :client_id => "AVgD-aYUhsUuxtwUhIS0Ry3bS_rqFJkc4XLdV3CExGsmyMNJ1yYzYqGyCtmfa8FN_LTTcH04jzFVjcie",
+        :client_secret => "EGO-YRcOXWEQaGSpt09KjpPNA-itKeF1v1v7bpuqP5Pjh_8MdArOxy7fdDjqI6DSe38Oj2iDjVuxHJaj",
+        :ssl_options => {})
+    order_detail_id = params[:order_detail_id]
+    order_detail = OrderDetail.find order_detail_id
+    payment_id = order_detail.order.payment_id
+    payment = PayPal::SDK::REST::DataTypes::Payment.find payment_id
+    json = JSON.parse payment.to_json
+    @sale = PayPal::SDK::REST::DataTypes::Sale.find json["transactions"][0]["related_resources"][0]["sale"]["id"]
+    total = order_detail.quantity_not_serve * order_detail.price
+    @refund = @sale.refund_request({
+                                       :amount => {
+                                           :total => "1",
+                                           :currency => "USD"
+                                       }
+                                   })
+    firebase = Firebase::Client.new('https://boebackend.firebaseio.com', 'FpE63dhjckc4wr6w5wGyRATrYlkEXJ3b5EJOwaGI')
+    fcm = params[:fcm]
+    firebase.delete("rejectedOrder/#{fcm}")
+    redirect_to home_path
   end
 end

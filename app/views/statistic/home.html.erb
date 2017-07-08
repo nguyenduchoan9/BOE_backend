@@ -8,16 +8,18 @@
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
 </div>
-<div class="container">
+<div style="padding: 0% 5%">
   <div class="card">
     <div class="card-content">
       <span class="card-title">Rejected Order</span>
       <table>
         <thead>
-        <th>Username</th>
-        <th>Order Item</th>
+        <th>Table Number</th>
+        <th>Dish Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
         <th>Total</th>
-        <!--<th></th>-->
+        <th></th>
         </thead>
         <tbody id="tbody">
 
@@ -28,10 +30,14 @@
 </div>
 <script>
     $(document).ready(function () {
-        data = firebase.database().ref().child('Phongdemo');
+        var update = {};
+        update['/number'] = 0;
+        firebase.database().ref().update(update);
+        data = firebase.database().ref().child('rejectedOrder');
         data.on('child_added', function (snapshot) {
-            $('#tbody').prepend('<tr><td>' + snapshot.child('username').val() + '</td><td>' + snapshot.child('orderdetail').val() +
-                '</td><td>' + snapshot.child('total').val() + '</td></tr>')
+            $('#tbody').prepend('<tr><td>' + snapshot.child('tableNumber').val() + '</td><td>' + snapshot.child('dishName').val() +
+                '</td><td>' + snapshot.child('price').val() + '</td><td>' + snapshot.child('quantity').val() + '</td><td>' + snapshot.child('quantity').val() * snapshot.child('price').val() + '</td>' +
+                '<td class="center"><a href="refund?order_detail_id=' + snapshot.child('order_detail_id').val() + '&fcm=' + snapshot.key + '"><button class="btn red">Refund</button></a></td></tr>')
         });
     });
     function setTimeScheduler() {
