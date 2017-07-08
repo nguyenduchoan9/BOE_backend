@@ -31,7 +31,7 @@ module Orders
                 begin
                     ActiveRecord::Base.transaction do
                         OrderDetail.import(build_order_details)
-                        order.update!(total: total, table_number: table_number)
+                        order.update!(total: total, table_number: table_number, payment_id: payment_id)
                     end
 
                 rescue StandardError => error

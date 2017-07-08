@@ -3,6 +3,7 @@ module Materials
         class MarkAvailable < Operation
 
             def process
+                # byebug
                 mark_available
                 { status: true}
             end
@@ -19,9 +20,7 @@ module Materials
             def mark_available
                 begin
                     ActiveRecord::Base.transaction do
-                        split_id.each do |id|
-                            Material.find(id).update!(available: true)
-                        end
+                        Material.find(id_params).update!(available: true)
                     end
                 rescue StandardError => error
                     raise ValidateError.new(error)

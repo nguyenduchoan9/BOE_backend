@@ -47,6 +47,9 @@ module Api
 
             def table_dish
             end
+
+            def notify_order_detail_not_available
+            end
         end
     end
 end
