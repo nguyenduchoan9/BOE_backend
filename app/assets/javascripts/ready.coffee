@@ -4,9 +4,8 @@ $(document).on "turbolinks:load", ->
   $("#slide_nav").sideNav();
   $('select').material_select();
   $('.dropdown-button').dropdown();
-  data = firebase.database().ref().child('Phongdemo');
+  data = firebase.database().ref().child('rejectedOrder');
   i = 0;
-  data = firebase.database().ref().child('Phongdemo')
   data.on 'child_added', (snapshot) ->
     number = firebase.database().ref('/number');
     if snapshot.child('status').val() == 'new'
@@ -17,7 +16,7 @@ $(document).on "turbolinks:load", ->
         update['/number'] = realNumber;
         firebase.database().ref().update(update);
         update_status = {}
-        update_status['/Phongdemo/'+snapshot.key+'/status'] = 'old'
+        update_status['/rejectedOrder/'+snapshot.key+'/status'] = 'old'
         firebase.database().ref().update(update_status);
     if i < 5
       appendNotification snapshot.child('username').val();
