@@ -20,13 +20,21 @@ class NotificationWorker
             else
                 order_detail_chef.each { |od|
                     dish_local = Dish.find(od.dish_id)
-                    body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name), @id).as_json.to_s
-                    send_message_to_chef body, chef_reg_tokens, 'dish'
+                    od.quantity.times do
+                        body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name), @id).as_json.to_s
+                        send_message_to_chef body, chef_reg_tokens, 'dish'
+                    end
                 }
             end
         elsif Constant::DINER ==role
-            body = { :message => 'Your order has been rejected'}.as_json.to_s
+            body = { :message => list_dish_reject}.as_json.to_s
             send_message_to_diner body, diner_reg_tokens
+            # if ver == 0
+            #     body = { :message => 'Your order has been rejected'}.as_json.to_s
+            #     send_message_to_diner body, diner_reg_tokens,
+            # elsif ver == 1
+            #     , 'reject'
+            # end
         end
     end
 
@@ -72,7 +80,7 @@ class NotificationWorker
 
     # REGION CHEF
     def order_detail_chef
-        @order ||= Order.find(@id).order_details.order(created_at: :asc)
+        @order ||= Order.find(@id).order_details.order(created_at: :asc).where(cooking_status: 0)
     end
 
     def serial_order_detail
@@ -99,6 +107,12 @@ class NotificationWorker
     # END REGION CHEF
 
     # REGION DINER
-
+    def list_dish_reject
+        rs = []
+        @id.each do |ids|
+            rs << Dishes::Serializer.new(Dish.find(ids))
+        end
+        rs
+    end
     # END REGION DINER
 end

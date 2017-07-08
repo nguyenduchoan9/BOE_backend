@@ -5,8 +5,12 @@ module Orders
 
             def process
                 do_transaction!
-                NotificationWorker.perform_async(Constant::CHEF, order.id, user.id)
-                {status: true}
+                s = check_dish_cart_avilable.size
+                if s == 0
+                    NotificationWorker.perform_async(Constant::CHEF, order.id, user.id, 1)
+                else
+                end
+                result.new(order.id, list_dish_reject)
             end
 
             private
@@ -25,6 +29,7 @@ module Orders
                         OrderDetail.import(build_order_details)
                         order.update!(total: total, table_number: table_number)
                     end
+
                 rescue StandardError => error
                     raise ValidateError.new(error)
                 end
@@ -68,6 +73,29 @@ module Orders
             def order
                 @order ||= user.orders.create!
             end
+
+            def check_dish_cart_avilable
+                reject_dish = []
+                list_cart_object.each do |cart|
+                    reject_dish <<  cart[:dish].id unless is_dish_available cart[:dish].id
+                end
+                reject_dish
+            end
+
+            def list_dish_reject
+                rs = []
+                check_dish_cart_avilable.each do |ids|
+                    rs << Dishes::Serializer.new(Dish.find(ids))
+                end
+                rs
+            end
+
+            def result
+                Struct.new(:order_id, :dish)
+            end
         end
     end
 end
+# -1: dish is cancel
+# 0 : dish is cooking
+#  1: dish is finish cooking

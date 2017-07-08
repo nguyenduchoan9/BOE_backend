@@ -29,6 +29,9 @@ module Api
 
             def disable_dish
             end
+
+            def check_dish_available
+            end
         end
     end
 end
