@@ -47,7 +47,7 @@
 #
 
 class User < ActiveRecord::Base
-  mount_uploader :avatar, ImageUploader
+  # mount_uploader :avatar, ImageUploader
   # Include default devise modules.
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :validatable, :omniauthable

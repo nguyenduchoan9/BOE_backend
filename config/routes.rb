@@ -41,6 +41,7 @@ Rails.application.routes.draw do
                     get :search_drinking
                     post :register_reg_token
                     post :disable_dish
+                    get :check_dish_available
                 end
             end
 
@@ -62,8 +63,19 @@ Rails.application.routes.draw do
                     post :mark_order_reject
                     get :order_in_time
                     get :is_in_time_order
+                    post :fully_refund
+                    post :partial_refund
+                    get :table_dish
                 end
             end
+
+            resources :materials, only: [:index] do
+                collection do
+                    post :mark_not_available
+                    post :mark_available
+                end
+            end
+
         end
     end
 end
