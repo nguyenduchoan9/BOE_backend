@@ -10,7 +10,7 @@ module Orders
 
             private
             def get_recent_order
-                @order ||= Order.where('created_at < ? AND created_at > ? AND cooking_staus = 0',Time.now, Time.now - 1.day).order(created_at: :desc)
+                @order ||= Order.where('created_at < ? AND created_at > ? AND cooking_status = 0',Time.now, Time.now - 1.day).order(created_at: :desc)
             end
 
             def select_by_hoang
@@ -47,7 +47,10 @@ module Orders
                                 # byebug
                                 item_table_time[:time_order] = od.created_at.to_i
                                 @table_with_time[pos] = item_table_time
-                                table_with_dish[:dish_detail] << dishes_list
+                                # byebug
+                                current_list = table_with_dish.dish_detail
+                                current_list << dishes_list
+                                table_with_dish.dish_detail = current_list
                                 table_with_dish[pos] = item_table_dish
                             end
                         end
