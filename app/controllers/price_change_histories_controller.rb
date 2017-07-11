@@ -22,7 +22,7 @@ class PriceChangeHistoriesController < ApplicationController
 
   def edit
     @price_change_history = PriceChangeHistory.find params[:id]
-    add_breadcrumb "Price " + params[:id]
+    add_breadcrumb @price_change_history.dish.dish_name
   end
 
   def update

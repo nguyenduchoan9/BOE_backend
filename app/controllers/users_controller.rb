@@ -23,7 +23,7 @@ class UsersController < WebApplcationController
 
   def edit
     @user = User.find params[:id]
-    add_breadcrumb "User "+ params[:id]
+    add_breadcrumb @user.username
   end
 
   def update
