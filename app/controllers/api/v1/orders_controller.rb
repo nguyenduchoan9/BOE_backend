@@ -50,6 +50,12 @@ module Api
 
             def notify_order_detail_not_available
             end
+
+            def mark_order_detail_served
+            end
+
+            def mark_list_order_detail_served
+            end
         end
     end
 end

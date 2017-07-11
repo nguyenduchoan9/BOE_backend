@@ -73,6 +73,8 @@ Rails.application.routes.draw do
                     post :partial_refund
                     get :table_dish
                     post :notify_order_detail_not_available
+                    post :mark_order_detail_served
+                    post :mark_list_order_detail_served
                 end
             end
 

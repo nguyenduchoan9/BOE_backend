@@ -35,6 +35,8 @@ module Orders
             def is_available
                 if hour_now < hour_close
                     return result_struct.new(true)
+                elsif  hour_now == hour_close && minute_now < minute_close
+                    return result_struct.new(true)
                 else
                     return result_struct.new(false)
                 end
