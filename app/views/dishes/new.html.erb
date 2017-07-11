@@ -7,7 +7,7 @@
   <div class="col s4">
     <div class="card">
       <div class="card-image" style="background-color: gray; min-height: 250px" id="image">
-        <img src="http://www.rtings.com/images/test-materials/2015/204_Gray_Uniformity.png" id="tmpImage" style="min-height: 250px">
+        <img src="http://www.rtings.com/images/test-materials/2015/204_Gray_Uniformity.png" id="tmpImage" style="min-height: 250px; max-height: 250px">
         <span class="card-title">Dish Image</span>
         <a id="float" class="btn-floating" style="position: absolute; top: 45%; left: 45%; background-color: transparent; box-shadow: none;"><i class="material-icons">add</i></a>
       </div>
@@ -29,17 +29,29 @@
               <%= f.label :description, "Description" %>
             </div>
             <div class="row">
-              <div class="input-field col s6">
-                <%= collection_select :dish, :category_id, Category.all, :id, :category_name, prompt: true %>
-                <label>Category *</label>
+              <div class="col s6" style="padding-left: 0">
+                <div class="input-field">
+                  <%= collection_select :dish, :category_id, Category.all, :id, :category_name, prompt: true %>
+                  <label>Category *</label>
+                </div>
               </div>
-              <div class="input-field col s6">
-                <% if @dish.status == true %>
-                    <%= f.select :status, options_for_select([["Enable", true], ["Disable", false]]) %>
-                <% else %>
-                    <%= f.select :status, options_for_select([["Enable", true], ["Disable", false]], selected: false) %>
-                <% end %>
-                <label>Status</label>
+              <div class="col s6" style="padding-left: 0">
+                <div class="input-field">
+                  <% if @dish.status == true %>
+                      <%= f.select :status, options_for_select([["Enable", true], ["Disable", false]]) %>
+                  <% else %>
+                      <%= f.select :status, options_for_select([["Enable", true], ["Disable", false]], selected: false) %>
+                  <% end %>
+                  <label>Status</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s6" style="padding-left: 0">
+                <div class="input-field">
+                  <%= collection_select :dish, :material_id, Material.all, :id, :name, prompt: true %>
+                  <label>Material *</label>
+                </div>
               </div>
             </div>
             <%= link_to 'Back', dishes_path, class: "btn", data: {turbolinks: false} %>

@@ -39,7 +39,7 @@ class DishesController < ApplicationController
 
   def edit
     @dish = Dish.find params[:id]
-    add_breadcrumb "Dish "+ params[:id]
+    add_breadcrumb @dish.dish_name
   end
 
   def update
@@ -50,6 +50,6 @@ class DishesController < ApplicationController
 
   private
   def dish_params
-    params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status, :term
+    params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status, :term, :material_id
   end
 end
