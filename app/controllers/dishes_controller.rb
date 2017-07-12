@@ -3,6 +3,15 @@ class DishesController < ApplicationController
   add_breadcrumb "Home", :root_path
   add_breadcrumb "Dishes", :dishes_path
 
+  # me = FbGraph::User.me(ACCESS_TOKEN)
+  # me.feed!(
+  #     :message => 'Updating via FbGraph',
+  #     :picture => 'https://graph.facebook.com/matake/picture',
+  #     :link => 'https://github.com/nov/fb_graph',
+  #     :name => 'FbGraph',
+  #     :description => 'A Ruby wrapper for Facebook Graph API'
+  # )
+
   def create
     @dish = Dish.new dish_params
     @dish.save
@@ -39,7 +48,7 @@ class DishesController < ApplicationController
 
   def edit
     @dish = Dish.find params[:id]
-    add_breadcrumb "Dish "+ params[:id]
+    add_breadcrumb @dish.dish_name
   end
 
   def update
@@ -50,6 +59,6 @@ class DishesController < ApplicationController
 
   private
   def dish_params
-    params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status, :term
+    params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status, :term, :material_id
   end
 end

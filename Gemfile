@@ -46,6 +46,8 @@ gem 'fcm'
 gem 'braintree'
 gem 'paypal-sdk-rest'
 gem 'httparty'
+# gem 'fb_graph2'
+gem 'fb_graph'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

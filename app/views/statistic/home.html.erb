@@ -1,3 +1,27 @@
+<!--<script>-->
+<!--//    window.fbAsyncInit = function () {-->
+<!--//        FB.init({-->
+<!--//            appId: '146799929207310',-->
+<!--//            autoLogAppEvents: true,-->
+<!--//            xfbml: true,-->
+<!--//            version: 'v2.9'-->
+<!--//        });-->
+<!--//-->
+<!--//    };-->
+<!--//    (function(d, s, id){-->
+<!--//        var js, fjs = d.getElementsByTagName(s)[0];-->
+<!--//        if (d.getElementById(id)) {return;}-->
+<!--//        js = d.createElement(s); js.id = id;-->
+<!--//        js.src = "//connect.facebook.net/en_US/sdk.js";-->
+<!--//        fjs.parentNode.insertBefore(js, fjs);-->
+<!--//    }(document, 'script', 'facebook-jssdk'));-->
+<!--//    function getFB() {-->
+<!--//        console.log('getFB');-->
+<!--//        console.log(FB.getLoginStatus());-->
+<!--//        FB.getAuthResponse();-->
+<!--//    }-->
+<!--</script>-->
+<!--<button class="btn" onclick="getFB()">facebook</button>-->
 <style>
   label {
     font-weight: bold;
@@ -12,7 +36,8 @@
   <div class="card">
     <div class="card-content">
       <span class="card-title">Rejected Order</span>
-      <table>
+      <h5 id="available" style="text-align: center;">Not Available</h5>
+      <table id="table" style="display: none">
         <thead>
         <th>Table Number</th>
         <th>Dish Name</th>
@@ -37,7 +62,9 @@
         data.on('child_added', function (snapshot) {
             $('#tbody').prepend('<tr><td>' + snapshot.child('tableNumber').val() + '</td><td>' + snapshot.child('dishName').val() +
                 '</td><td>' + snapshot.child('price').val() + '</td><td>' + snapshot.child('quantity').val() + '</td><td>' + snapshot.child('quantity').val() * snapshot.child('price').val() + '</td>' +
-                '<td class="center"><a href="refund?order_detail_id=' + snapshot.child('order_detail_id').val() + '&fcm=' + snapshot.key + '"><button class="btn red">Refund</button></a></td></tr>')
+                '<td class="center"><a href="refund?order_detail_id=' + snapshot.child('order_detail_id').val() + '&fcm=' + snapshot.key + '"><button class="btn red">Refund</button></a></td></tr>');
+            $('#table').css('display', '');
+            $('#available').css('display', 'none');
         });
     });
     function setTimeScheduler() {
