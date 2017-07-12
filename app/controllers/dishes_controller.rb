@@ -8,7 +8,7 @@ class DishesController < ApplicationController
     @dish.is_available = true
     @dish.save
     if params["isSocial"] == "on"
-      me = FbGraph::User.me('')
+      me = FbGraph::User.me('EAACEdEose0cBAD9N8nLuszpOzuy3wEpek93PCZBZC9y8dxC33zJDb0DDqlDNLOXMWAFJBQPZCQIg5VlPhLc32gRhgYCZAV9UnUdgRDliQM6fjv8U4VcHB76KZAVIwol2WviI12qlfdO1vrQAVlxY4gbql9uao9ZCZC0K0EwGXGgSZAMEZBr3ytZAykAP2ADal4DbJF7poQWYzwqQZDZD')
       me.feed!(
           :message => "#{@dish.description}",
           :picture => 'https://graph.facebook.com/matake/picture',

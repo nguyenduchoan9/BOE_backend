@@ -1,0 +1,73 @@
+<style>
+  a li {
+    width: 20px;
+  }
+</style>
+<div class="row" style="text-align: right; margin-bottom: 0;">
+  <div class="left" style="margin-left: 1%; font-size: 18px">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+  <div class="col s7 right">
+    <div class="input-field" style="margin-top: 0">
+      <%= form_tag(materials_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 70%;', placeholder: 'Search', data: { autocomplete_source: Material.order(:name).map(&:name)} %>
+          <button type="submit" class="btn-floating waves-effect waves-light">
+            <i class="material-icons">search</i>
+          </button>
+          <%= link_to new_materials_path, data: {turbolinks: false} do %>
+              <input type="button" class="btn" value="Add">
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div style="padding: 0 1%;">
+  <% if !@materials.nil? && @materials.size > 0 %>
+      <table class="bordered striped">
+        <thead>
+        <th style="text-align: center">Material Name</th>
+        <th style="text-align: center">Available</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <% @materials.each do |material| %>
+            <tr>
+              <td><%= material.name %></td>
+              <td style="text-align: center">
+                <p>
+                  <%= check_box_tag material.id, material.available, material.available, onclick: "changeStatus(#{material.id})" %>
+                  <label for="<%= material.id %>" id="label<%= material.id %>">
+                  </label>
+                </p>
+              </td>
+              <td>
+                <a href="materials/edit?id=<%= material.id %>" data-turbolinks="false">
+                  <i class="material-icons">mode_edit</i>
+                </a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="center">
+        <%= will_paginate @materials %>
+      </div>
+  <% elsif !params[:term].nil? %>
+      <h3 style="text-align: center">No Material Found</h3>
+  <% end %>
+</div>
+
+<script>
+    function changeStatus(material_id) {
+        $.ajax({
+            url: 'materials/updateStatus.json',
+            dataType: 'json',
+            data: {
+                id: material_id
+            }
+        })
+    }
+    $('#term').autocomplete({
+        source: $('#term').data('autocomplete-source')
+    });
+</script>
