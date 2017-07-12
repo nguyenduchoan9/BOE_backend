@@ -7,10 +7,10 @@
   <div class="left" style="margin-left: 1%; font-size: 18px">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <div class="col s5 right">
+  <div class="col s7 right">
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(categories_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search', data: { autocomplete_source: Category.order(:category_name).map(&:category_name)} %>
+          <%= text_field_tag :term, params[:term], style: 'width: 70%;', placeholder: 'Search', data: { autocomplete_source: Category.order(:category_name).map(&:category_name)} %>
           <button type="submit" class="btn-floating waves-effect waves-light">
             <i class="material-icons">search</i>
           </button>

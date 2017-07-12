@@ -3,18 +3,20 @@ class DishesController < ApplicationController
   add_breadcrumb "Home", :root_path
   add_breadcrumb "Dishes", :dishes_path
 
-  # me = FbGraph::User.me(ACCESS_TOKEN)
-  # me.feed!(
-  #     :message => 'Updating via FbGraph',
-  #     :picture => 'https://graph.facebook.com/matake/picture',
-  #     :link => 'https://github.com/nov/fb_graph',
-  #     :name => 'FbGraph',
-  #     :description => 'A Ruby wrapper for Facebook Graph API'
-  # )
-
   def create
     @dish = Dish.new dish_params
     @dish.save
+    if params["isSocial"] == "on"
+      me = FbGraph::User.me('EAACEdEose0cBAD9N8nLuszpOzuy3wEpek93PCZBZC9y8dxC33zJDb0DDqlDNLOXMWAFJBQPZCQIg5VlPhLc32gRhgYCZAV9UnUdgRDliQM6fjv8U4VcHB76KZAVIwol2WviI12qlfdO1vrQAVlxY4gbql9uao9ZCZC0K0EwGXGgSZAMEZBr3ytZAykAP2ADal4DbJF7poQWYzwqQZDZD')
+      me.feed!(
+          :message => "#{@dish.description}",
+          :picture => 'https://graph.facebook.com/matake/picture',
+          :link => 'https://github.com/nov/fb_graph',
+          :name => 'FbGraph',
+          :description => ""
+      )
+      puts params["isSocial"]
+    end
     redirect_to dishes_path
   end
 
@@ -59,6 +61,6 @@ class DishesController < ApplicationController
 
   private
   def dish_params
-    params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status, :term, :material_id
+    params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status, :term, :material_id, :isSocial
   end
 end
