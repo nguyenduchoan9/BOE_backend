@@ -32,7 +32,7 @@
               <div class="col s6" style="padding-left: 0">
                 <div class="input-field">
                   <%= collection_select :dish, :category_id, Category.all, :id, :category_name, prompt: true %>
-                  <label>Category *</label>
+                  <label>Category</label>
                 </div>
               </div>
               <div class="col s6" style="padding-left: 0">
@@ -44,6 +44,17 @@
                   <% end %>
                   <label>Status</label>
                 </div>
+<<<<<<< HEAD
+=======
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s6" style="padding-left: 0">
+                <div class="input-field">
+                  <%= collection_select :dish, :material_id, Material.all, :id, :name, prompt: true %>
+                  <label>Material *</label>
+                </div>
+>>>>>>> master
               </div>
             </div>
             <div class="row">
@@ -53,6 +64,12 @@
                   <label>Material *</label>
                 </div>
               </div>
+            </div>
+            <div class="row" style="margin-bottom: 3%">
+              <p>
+                <input type="checkbox" name="isSocial" id="isSocial">
+                <label for="isSocial">Post to Social Network</label>
+              </p>
             </div>
             <%= link_to 'Back', dishes_path, class: "btn", data: {turbolinks: false} %>
             <%= f.submit value: 'Add', class: 'btn' %>
