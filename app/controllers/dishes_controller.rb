@@ -8,13 +8,13 @@ class DishesController < ApplicationController
     @dish.is_available = true
     @dish.save
     if params["isSocial"] == "on"
-      me = FbGraph::User.me('EAACEdEose0cBAD9N8nLuszpOzuy3wEpek93PCZBZC9y8dxC33zJDb0DDqlDNLOXMWAFJBQPZCQIg5VlPhLc32gRhgYCZAV9UnUdgRDliQM6fjv8U4VcHB76KZAVIwol2WviI12qlfdO1vrQAVlxY4gbql9uao9ZCZC0K0EwGXGgSZAMEZBr3ytZAykAP2ADal4DbJF7poQWYzwqQZDZD')
+      me = FbGraph::User.me('EAACEdEose0cBADYbNe7ne4nXaEzZAEE2LW30RrRT3k4qJ7bCqVgYfp8kainASLXA8VPv5bS7h7BZCnkVUrZAt2VF20XNeCfTcOtuYIjGKemcEGbfnwlpOfGK0r6PZCGpTsNegeEwhIyAP0mzIho76NprjjYLhGj3IgHuOmhuJQ95WZBN92bZAgswhkI7GZCZCgikv7ZClKOCS9AZDZD')
       me.feed!(
           :message => "#{@dish.description}",
           :picture => 'https://graph.facebook.com/matake/picture',
           :link => 'https://github.com/nov/fb_graph',
           :name => "#{@dish.dish_name}",
-          :description => "#{@dish.created_at.to_date}"
+          :description => "#{@dish.category.category_name}"
       )
     end
     redirect_to dishes_path
