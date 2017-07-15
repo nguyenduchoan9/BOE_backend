@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource 'discount_days'
     resource 'categories'
     resource 'price_change_histories'
+    resource 'materials'
 
     post 'notify_webapp', to: 'pay_pal#notify_webapp'
     get 'refund', to: 'pay_pal#refund'

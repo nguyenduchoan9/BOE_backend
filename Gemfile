@@ -49,6 +49,7 @@ gem 'httparty'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'detect_language'
+gem 'fb_graph'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

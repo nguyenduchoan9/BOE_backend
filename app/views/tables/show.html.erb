@@ -8,10 +8,10 @@
   <div class="left" style="margin-left: 1%; font-size: 18px">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <div class="col s6 right">
+  <div class="col s7 right">
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(tables_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 40%;', placeholder: 'Search' %>
+          <%= text_field_tag :term, params[:term], style: 'width: 50%;', placeholder: 'Search' %>
           <button type="submit" class="btn-floating waves-effect waves-light">
             <i class="material-icons">search</i>
           </button>
@@ -27,15 +27,15 @@
 </div>
 <div style="padding: 0 5%;">
   <% if !@tables.nil? && @tables.size > 0 %>
-      <table class="bordered striped centered">
+      <table class="bordered striped">
         <thead>
-        <th>Table Number</th>
+        <th style="text-align: center">Table Number</th>
         <th style="text-align: center">Action</th>
         </thead>
         <tbody>
         <% @tables.each do |table| %>
             <tr>
-              <td><%= table.table_number %></td>
+              <td style="text-align: center"><%= table.table_number %></td>
               <td style="text-align: center">
                 <a target="_blank" class="waves-effect waves-light btn" onclick="onClickPrint(<%=table.id %>)">
                   <i class="material-icons left">print</i>Print
@@ -59,7 +59,6 @@
     }
 
     function onClickPrintAll() {
-
         var value = $('#table_string').val();
         var array = JSON.parse(value);
         popup = window.open(); // display popup
