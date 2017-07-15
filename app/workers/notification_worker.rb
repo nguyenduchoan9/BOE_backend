@@ -9,7 +9,7 @@ class NotificationWorker
         @user_id = user_id
         # Do something
         if Constant::WAITER == role
-            body = { :table_number => table_number, :dish => dish_by_order_detail }.as_json.to_s
+            body = { :table_number => table_number, :dish => dish_by_order_detail, :order_detail_id => order_detail.id }.as_json.to_s
             # order_is_done
 
             send_message_to_waiter body, waiter_reg_tokens

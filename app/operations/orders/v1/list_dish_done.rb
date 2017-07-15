@@ -24,8 +24,15 @@ module Orders
                     dish_done_detail = dish_done.split("_")
                     order_detail_var = order_detail(dish_done_detail[0], dish_done_detail[1])
                     quantity_not_serve = order_detail_var.quantity_not_serve
-                    order_detail_var.update(quantity_not_serve: quantity_not_serve - 1)
-                    NotificationWorker.perform_async(Constant::WAITER, order_detail_var.id, user.id)
+                    if order_detail_var.cooking_status == 0
+                        if quantity_not_serve == 1
+                            order_detail_var.update(quantity_not_serve: quantity_not_serve - 1, cooking_status: 1)
+                        else
+                            order_detail_var.update(quantity_not_serve: quantity_not_serve - 1)
+                        end
+
+                        NotificationWorker.perform_async(Constant::WAITER, order_detail_var.id, user.id)
+                    end
                 }
             end
 

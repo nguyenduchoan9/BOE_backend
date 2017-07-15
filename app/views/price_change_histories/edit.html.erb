@@ -12,16 +12,16 @@
           <div class="row">
             <div class="input-field col s6">
               <%= collection_select :price_change_history, :dish_id, Dish.all, :id, :dish_name, prompt: true %>
-              <label>Dish Name</label>
+              <label>Dish Name *</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <%= f.label :price, "Dish Price" %>
+              <%= f.label :price, "Dish Price *" %>
               <%= f.text_field :price %>
             </div>
             <div class="input-field col s6">
-              <%= f.label :from_date, "From Date" %>
+              <%= f.label :from_date, "From Date *" %>
               <%= f.date_field :from_date, class: "datepicker" %>
             </div>
           </div>

@@ -29,8 +29,7 @@
     <footer class="page-footer" style="background-color: #26a69a; padding-top: 0;">
       <div class="footer-copyright">
         <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          © 2017 Copyright Boe team
         </div>
       </div>
     </footer>
@@ -152,7 +151,7 @@
       <footer class="page-footer" style="background-color: #26a69a; padding-top: 0;">
         <div class="footer-copyright">
           <div class="container">
-            © 2014 Copyright Boe team
+            © 2017 Copyright Boe team
           </div>
         </div>
       </footer>
@@ -173,18 +172,6 @@
         messagingSenderId: "827854885414"
     };
     firebase.initializeApp(config);
-//    const message = firebase.messaging();
-//    message.requestPermission().then(function () {
-//        return message.getToken();
-//    }).then(function (token) {
-//        console.log(token)
-//    }).catch(function () {
-//        console.log('error');
-//    });
-//    message.onMessage(function (payload) {
-//        alert('message');
-//        console.log('onMessage: ', payload);
-//    });
     const notification = firebase.database().ref().child('number');
     notification.on('value', function (snapshot) {
         var num = snapshot.val();

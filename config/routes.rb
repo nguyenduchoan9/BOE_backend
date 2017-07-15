@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource 'discount_days'
     resource 'categories'
     resource 'price_change_histories'
+    resource 'materials'
 
     post 'notify_webapp', to: 'pay_pal#notify_webapp'
     get 'refund', to: 'pay_pal#refund'
@@ -73,6 +74,8 @@ Rails.application.routes.draw do
                     post :partial_refund
                     get :table_dish
                     post :notify_order_detail_not_available
+                    post :mark_order_detail_served
+                    post :mark_list_order_detail_served
                 end
             end
 
