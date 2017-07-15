@@ -35,7 +35,7 @@ module ConfigBoeHelper
         rs.to_i
     end
 
-    def find_or_creata_membership_point mem_name, mem_point
+    def find_or_create_membership_point mem_name, mem_point
         if mem_point.is_a? Integer
             config = load_yml
             config['development']['membership'][mem_name] = mem_point

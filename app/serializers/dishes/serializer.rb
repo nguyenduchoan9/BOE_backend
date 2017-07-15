@@ -11,5 +11,9 @@ module Dishes
         def price
             Dish.find(object.id).price_change_histories.last.try(:price)
         end
+
+        def image
+           object.image.url 
+        end
     end
 end

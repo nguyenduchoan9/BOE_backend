@@ -14,34 +14,39 @@ module Dishes
             # http://www.newyorker.com/culture/culture-desk/the-curse-of-the-diaeresis
             def format_params_utf
                 detect = DetectLanguage.simple_detect(key_search_params)
-                eng_lang = false
-                vi_lang = false
+                @eng_lang = false
+                @vi_lang = false
                 if detect != nil
                     if detect.kind_of?(Array)
                         if detect.count > 0
                             detect.each do |lang|
-                                eng_lang = true if lang == 'en'
-                                vi_lang = true if lang == 'vi'
+                                @eng_lang = true if lang == 'en'
+                                @vi_lang = true if lang == 'vi'
                             end
                         end
                     elsif detect.kind_of?(String)
-                        eng_lang = true if detect == 'en'
-                        vi_lang = true if detect == 'vi'
+                        @eng_lang = true if detect == 'en'
+                        @vi_lang = true if detect == 'vi'
                     end
 
                 end
                 # byebug
-                if eng_lang == true
+                if @vi_lang == true
                     return key_search_params.mb_chars.normalize.to_s
                 end
-                if vi_lang == true
+                if @eng_lang == true
                     return key_search_params.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
                 end
                 key_search_params.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
             end
 
             def dish_by_key_search
-                Dish.search(format_params_utf)
+                if @vi_lang == true
+                    return Dish.search_by_dish_name(format_params_utf)
+                end
+                if @eng_lang == true
+                    return Dish.search_by_dish_name_not_mark(format_params_utf)
+                end
             end
 
             def result
@@ -55,14 +60,16 @@ module Dishes
             def group_dish_by_category
                 dish_result = dish_by_key_search
                 dish_by_cate = []
-                if dish_result.count > 0
-                    Category.all.each { |cate|
-                        dishes = []
-                        dish_result.each { |dish|
-                            dishes << dish if dish.category_id == cate.id && is_dish_available(dish.id)
+                if dish_result
+                    if dish_result.count > 0
+                        Category.all.each { |cate|
+                            dishes = []
+                            dish_result.each { |dish|
+                                dishes << dish if dish.category_id == cate.id && is_dish_available(dish.id)
+                            }
+                            dish_by_cate << {'category': cate, 'dishes': dishes } if dishes && dishes.length > 0
                         }
-                        dish_by_cate << {'category': cate, 'dishes': dishes } if dishes && dishes.length > 0
-                    }
+                    end
                 end
                 dish_by_cate
             end

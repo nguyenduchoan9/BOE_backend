@@ -7,6 +7,7 @@
     Material.find_or_create_by!(name: name)
 end
 
+
 Category.all.each do |i|
     bun_image = ['bun-bo.jpg', 'bun-bo-hue.jpg', 'bun_ca_loc.jpg', 'hu-tieu-ca-loc-kieu-trung.jpg' , 'hu-tieu-mi-du-ky.jpg',
                  'hu-tiu-nam-vang.jpg',
@@ -44,52 +45,53 @@ Category.all.each do |i|
 
     if(i.id == 1)
         bun_name.each_with_index do |name, index|
-            image_url = '/images/' + bun_image[index]
-            Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
-                                    dish_name: bun_name[index],
-                                    image: image_url,
-                                    category: i,
-                                    material_id: bun_mate[index])
+            ab = Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
+                                         dish_name: bun_name[index],
+                                         category: i,
+                                         material_id: bun_mate[index])
+            ab.image.store!(Rails.root.join('public/images/' + bun_image[index]).open)
+            ab.save!
         end
+
     end
     if(i.id == 2)
         ca_name.each_with_index do |name, index|
-            image_url = '/images/' + ca_image[index]
-            Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
+            ab = Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
                                     dish_name: ca_name[index],
-                                    image: image_url,
                                     category: i,
                                     material_id: ca_mate[index])
+            ab.image.store!(Rails.root.join('public/images/' + ca_image[index]).open)
+            ab.save!
         end
     end
     if(i.id == 3)
         sup_name.each_with_index do |name, index|
-            image_url = '/images/' + sup_image[index]
-            Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
+            ab = Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
                                     dish_name: sup_name[index],
-                                    image: image_url,
                                     category: i,
                                     material_id: sup_mate[index])
+            ab.image.store!(Rails.root.join('public/images/' + sup_image[index]).open)
+            ab.save!
         end
     end
     if(i.id == 4)
         nuong_name.each_with_index do |name, index|
-            image_url = '/images/' + nuong_image[index]
-            Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
+            ab = Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
                                     dish_name: nuong_name[index],
-                                    image: image_url,
                                     category: i,
                                     material_id: nuong_mate[index])
+            ab.image.store!(Rails.root.join('public/images/' + nuong_image[index]).open)
+            ab.save!
         end
     end
     if(i.id == 5)
         drink_name.each_with_index do |name, index|
-            image_url = '/images/' + drink_image[index]
-            Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
+            ab = Dish.find_or_create_by!(description: Faker::Lorem.paragraph(2),
                                     dish_name: drink_name[index],
-                                    image: image_url,
                                     category: i,
                                     material_id: drink_mate[index])
+            ab.image.store!(Rails.root.join('public/images/' + drink_image[index]).open)
+            ab.save!
         end
     end
 end

@@ -22,7 +22,7 @@ class DishesController < ApplicationController
 
     def show
         if !params[:term].nil? && params[:term] != ''
-            @dishes = Dish.search(params[:term]).paginate(page: params[:page], per_page: 10)
+            @dishes = Dish.search_by_phong(params[:term]).paginate(page: params[:page], per_page: 10)
         end
         respond_to do |format|
             format.html

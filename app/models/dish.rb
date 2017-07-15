@@ -24,7 +24,8 @@ require 'elasticsearch/model'
 class Dish < ApplicationRecord
     include Elasticsearch::Model
     include Elasticsearch::Model::Callbacks
-    # mount_uploader :image, ImageUploader
+    mount_uploader :image, ImageUploader
+
     # skip_callback :save, :before, :store_picture!
     before_validation :normal_dish_name
 
@@ -44,7 +45,7 @@ class Dish < ApplicationRecord
                 query: {
                     multi_match: {
                         query: query,
-                        fields: ['dish_name_not_mark']
+                        fields: ['dish_name','dish_name_not_mark']
                     }
                 }
             }
@@ -61,9 +62,21 @@ class Dish < ApplicationRecord
         Dish.search(keysearch)
     end
 
-    def self.search(term)
+    def self.search_by_phong(term)
         if term
             where('lower(dish_name) LIKE ?', "%#{term.downcase}%")
+        end
+    end
+
+    def self.search_by_dish_name(term)
+        if term
+            where('lower(dish_name) LIKE ?', "%#{term.downcase}%")
+        end
+    end
+
+    def self.search_by_dish_name_not_mark(term)
+        if term
+            where('lower(dish_name_not_mark) LIKE ?', "%#{term.downcase}%")
         end
     end
 
@@ -73,8 +86,9 @@ class Dish < ApplicationRecord
 
     private
     def normal_dish_name
-        self.dish_name_not_mark = self.dish_name.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
+        if self.dish_name
+            self.dish_name_not_mark = self.dish_name.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
+        end
     end
-
 end
 # Dish.import
