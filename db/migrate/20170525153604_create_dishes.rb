@@ -3,6 +3,7 @@ class CreateDishes < ActiveRecord::Migration[5.0]
     create_table :dishes do |t|
       t.string :description
       t.string :dish_name
+      t.string :dish_name_not_mark
       t.string :image
       t.boolean :status
       t.boolean :is_available, default: true

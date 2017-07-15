@@ -17,9 +17,11 @@ module Dishes
 
             def list_dish_not_available
                 rs = []
-                list_id.each do |id|
-                    dish = Dish.find(id)
-                    rs << not_available_res.new(id, dish.dish_name) unless is_dish_available id
+                if list_id.count > 0
+                    list_id.each do |id|
+                        dish = Dish.find(id)
+                        rs << not_available_res.new(id, dish.dish_name) unless is_dish_available id
+                    end
                 end
                 rs.compact
             end

@@ -37,10 +37,8 @@ module Materials
                             # byebug
                             if od.cooking_status == 0
                                 if is_have_material material_id_params.to_i, od.dish_id
-                                    if od.cooking_status == 0
-                                        od.update!(cooking_status: -1)
-                                        @rs << od.id
-                                    end
+                                    od.update!(cooking_status: -1)
+                                    @rs << od.id
                                 end
                             end
 
@@ -59,4 +57,3 @@ module Materials
         end
     end
 end
-

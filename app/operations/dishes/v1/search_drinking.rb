@@ -12,27 +12,57 @@ module Dishes
             end
 
             def dish_by_key_search
-                Dish.search_drinking(key_search_params)
+                Dish.search(format_params_utf)
+            end
+
+            def format_params_utf
+                detect = DetectLanguage.simple_detect(key_search_params)
+                eng_lang = false
+                vi_lang = false
+                if detect != nil
+                    if detect.kind_of?(Array)
+                        if detect.count > 0
+                            detect.each do |lang|
+                                eng_lang = true if lang == 'en'
+                                vi_lang = true if lang == 'vi'
+                            end
+                        end
+                    elsif detect.kind_of?(String)
+                        eng_lang = true if detect == 'en'
+                        vi_lang = true if detect == 'vi'
+                    end
+
+                end
+                # byebug
+                if eng_lang == true
+                    return key_search_params.mb_chars.normalize.to_s
+                end
+                if vi_lang == true
+                    return key_search_params.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
+                end
+                key_search_params.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
             end
 
             def result
-                if !key_search_params || key_search_params.length == 0
+                if !format_params_utf || format_params_utf.length == 0
                     blank_key_search
                 else
                     not_blank_key_search
                 end
             end
-            
+
             def group_dish_by_category
                 dish_result = dish_by_key_search
                 dish_by_cate = []
-                Category.all.each { |cate|
-                    dishes = []
-                    dish_result.each { |dish|
-                        dishes << dish if dish.category_id == cate.id
+                if dish_result.count > 0
+                    Category.all.each { |cate|
+                        dishes = []
+                        dish_result.each { |dish|
+                            dishes << dish if dish.category_id == cate.id
+                        }
+                        dish_by_cate << {'category': cate, 'dishes': dishes } if dishes && dishes.length > 0
                     }
-                    dish_by_cate << {'category': cate, 'dishes': dishes } if dishes && dishes.length > 0
-                }
+                end
                 dish_by_cate
             end
 

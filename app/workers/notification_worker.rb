@@ -12,17 +12,23 @@ class NotificationWorker
             body = { :table_number => table_number, :dish => dish_by_order_detail, :order_detail_id => order_detail.id }.as_json.to_s
             # order_is_done
 
-            send_message_to_waiter body, waiter_reg_tokens
+            if order_detail.cooking_status == 1 || order_detail.cooking_status == 0
+                send_message_to_waiter body, waiter_reg_tokens
+            end
         elsif Constant::CHEF == role
             if ver == 0
                 body = { :order_id => @id, :order_detail => serial_order_detail}.as_json.to_s
                 send_message_to_chef body, chef_reg_tokens, 'order'
             else
+                # notify dish in orderDetail to Chef
+                # Maybe include dish is not available because transfer to GCM
                 order_detail_chef.each { |od|
                     dish_local = Dish.find(od.dish_id)
                     od.quantity.times do
-                        body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name, od.id), @id).as_json.to_s
-                        send_message_to_chef body, chef_reg_tokens, 'dish'
+                        if dish_local.is_available
+                            body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name, od.id), @id).as_json.to_s
+                            send_message_to_chef body, chef_reg_tokens, 'dish'
+                        end
                     end
                 }
             end

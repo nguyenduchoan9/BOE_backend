@@ -1,4 +1,4 @@
-:concurrency: 1
+:concurrency: 4
 :pidfile: tmp/pids/sidekiq.pid
 staging:
   :concurrency: 10

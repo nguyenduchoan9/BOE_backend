@@ -29,6 +29,21 @@ module ConfigBoeHelper
         File.open(Rails.root.join('config/config_boe.yml'), 'w') {|f| f.write config.to_yaml }
     end
 
+    def get_membership_by_name mem_name
+        config = HashWithIndifferentAccess.new(load_yml)
+        rs = config['development']['membership'][mem_name]
+        rs.to_i
+    end
+
+    def find_or_creata_membership_point mem_name, mem_point
+        if mem_point.is_a? Integer
+            config = load_yml
+            config['development']['membership'][mem_name] = mem_point
+            File.open(Rails.root.join('config/config_boe.yml'), 'w') {|f| f.write config.to_yaml }
+        end
+    end
+
+    private
     def file_path
         Rails.root.join('config/config_boe.yml')
     end

@@ -9,6 +9,9 @@ class SessionController < WebApplcationController
     end
 
     def new
+        find_or_creata_membership_point 'silver', 100
+        ab = get_membership_by_name 'silver'
+        byebug
     end
 
     def create

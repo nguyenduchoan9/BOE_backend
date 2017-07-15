@@ -29,10 +29,19 @@ module Orders
 
             def mark_served
                 if get_list_id.count > 0
+                    # byebug
                     get_list_id.each do |id|
                         order_detail = find_order_detail id
-                        if order_detail.cooking_status == 1
-                            order_detail.update(cooking_status: 2)
+                        if order_detail.cooking_status == 1 || order_detail.cooking_status == 0
+                            quantity_minus = order_detail.quantity_not_served - order_detail.quantity_not_serve
+                            if order_detail.quantity > order_detail.quantity_not_serve && quantity_minus > 0
+                                not_serve = order_detail.quantity_not_served
+                                if order_detail.quantity_not_serve == 0
+                                    order_detail.update(quantity_not_served: 0, cooking_status: 2)
+                                elsif not_serve > 0
+                                    order_detail.update(quantity_not_served: order_detail.quantity_not_serve)
+                                end
+                            end
                         end
                     end
                 end
