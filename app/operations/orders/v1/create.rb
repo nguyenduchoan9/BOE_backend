@@ -60,7 +60,8 @@ module Orders
                         discount_rate_by_day: 0,
                         quantity: cart[:quantity],
                         dish_id: cart[:dish].id,
-                        quantity_not_serve: cart[:quantity]
+                        quantity_not_serve: cart[:quantity],
+                        quantity_not_served: cart[:quantity]
                     )
                 end
             end

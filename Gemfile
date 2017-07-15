@@ -46,6 +46,9 @@ gem 'fcm'
 gem 'braintree'
 gem 'paypal-sdk-rest'
 gem 'httparty'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'detect_language'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

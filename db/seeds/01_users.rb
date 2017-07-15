@@ -42,7 +42,7 @@ User.create(username: 'namphandang',
             membership: Membership.find_by(level: 'ruby'))
 
 User.create(username: 'hoangnguyen',
-            password: '123123123',
+            password: '12345678',
             email: 'hoangnd@gmail.com',
             role: Role.find_by(name: 'diner'),
             avatar: '',

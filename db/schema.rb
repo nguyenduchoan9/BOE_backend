@@ -44,11 +44,12 @@ ActiveRecord::Schema.define(version: 20170627152610) do
   create_table "dishes", force: :cascade do |t|
     t.string   "description"
     t.string   "dish_name"
+    t.string   "dish_name_not_mark"
     t.string   "image"
     t.boolean  "status"
-    t.boolean  "is_available", default: true
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.boolean  "is_available",       default: true
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "category_id"
     t.integer  "material_id"
     t.index ["category_id"], name: "index_dishes_on_category_id", using: :btree
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 20170627152610) do
     t.float    "discount_rate_by_day"
     t.integer  "quantity"
     t.integer  "quantity_not_serve"
+    t.integer  "quantity_not_served"
     t.integer  "order_id"
     t.boolean  "status"
     t.integer  "cooking_status",                                default: 0

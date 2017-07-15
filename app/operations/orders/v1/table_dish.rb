@@ -20,9 +20,12 @@ module Orders
                     if  pos == -1
                         dishes_list = []
                         od.order_details.each do |odetail|
-                            if odetail.cooking_status == 1
+                            if odetail.cooking_status == 1 || odetail.cooking_status == 0
                                 # byebug
-                                dishes_list << dish_detail_hash.new(Dishes::Serializer.new(Dish.find(odetail.dish_id)), odetail.id)
+                                if odetail.quantity > odetail.quantity_not_serve && (odetail.quantity_not_served - odetail.quantity_not_serve) > 0
+                                    dishes_list << dish_detail_hash.new(Dishes::Serializer.new(Dish.find(odetail.dish_id)),
+                                                                        odetail.id, odetail.quantity_not_served - odetail.quantity_not_serve)
+                                end
                             end
                         end
                         # byebug
@@ -38,19 +41,22 @@ module Orders
                         if (item_table_time[:time_order] - current_od_time) < get_time_group_in_int
                             dishes_list = []
                             od.order_details.each do |odetail|
-                                if odetail.cooking_status == 1
+                                if odetail.cooking_status == 1 || odetail.cooking_status == 0
                                     # byebug
-                                    dishes_list << dish_detail_hash.new(Dishes::Serializer.new(Dish.find(odetail.dish_id)), odetail.id)
+                                    if odetail.quantity > odetail.quantity_not_serve && (odetail.quantity_not_served - odetail.quantity_not_serve) > 0
+                                        dishes_list << dish_detail_hash.new(Dishes::Serializer.new(Dish.find(odetail.dish_id)),
+                                                                            odetail.id, odetail.quantity_not_served - odetail.quantity_not_serve)
+                                    end
                                 end
                             end
                             if dishes_list.count > 0
-                                # byebug
                                 item_table_time[:time_order] = od.created_at.to_i
                                 @table_with_time[pos] = item_table_time
-                                # byebug
-                                current_list = table_with_dish.dish_detail
-                                current_list << dishes_list
-                                table_with_dish.dish_detail = current_list
+                                current_list = item_table_dish[:dish_detail]
+                                dishes_list.each do |item|
+                                    current_list << item
+                                end
+                                item_table_dish.dish_detail = current_list
                                 table_with_dish[pos] = item_table_dish
                             end
                         end
@@ -76,7 +82,7 @@ module Orders
             end
 
             def dish_detail_hash
-                Struct.new(:dish, :order_detail_id)
+                Struct.new(:dish, :order_detail_id, :quantity_not_serve)
             end
 
             def table_time_hash

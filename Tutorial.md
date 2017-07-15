@@ -23,4 +23,12 @@ ps ax|grep sidekiq
 
  * fix db error - no schema find*
  DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=test bundle exec rake db:drop db:create db:migrate
+
+ * run elasticsearch *
+ sudo services elasticsearch start
+ sudo systemctl restart elasticsearch
+    systemctl status elasticsearch
+
+ sudo /etc/init.d/elasticsearch start/stop
+ edit host in yml file
  
