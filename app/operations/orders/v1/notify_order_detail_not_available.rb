@@ -26,6 +26,42 @@ module Orders
                                                      quantity: "#{orderdetail.quantity_not_serve}",
                                                      order_detail_id: "#{orderdetail.id}"})
                 end
+                handle_notify_to_user list_orderdetail_id
+            end
+
+            def handle_notify_to_user order_detail_ids
+                next_handle_ids = []
+                if order_detail_ids
+                    if order_detail_ids.count > 0
+                        current_user_id = nil
+                        od_id_group_by_user = []
+                        order_detail_ids.each do |od_id|
+                            order_detail_p = OrderDetail.find od_id
+                            unless current_user_id
+                                current_user_id = order_detail_p.order.user.id
+                                od_id_group_by_user << od_id
+                            else
+                                process_user_id = order_detail_p.order.user.id
+                                if process_user_id == current_user_id
+                                    od_id_group_by_user << od_id
+                                else
+                                    next_handle_ids << od_id
+                                end
+                            end
+                        end
+                        if current_user_id && od_id_group_by_user.count > 0
+                            notify_to_user current_user_id, od_id_group_by_user
+                        end
+
+                        if next_handle_ids.count > 0
+                            handle_notify_to_user next_handle_ids
+                        end
+                    end
+                end
+            end
+
+            def notify_to_user user_id, order_details_ids
+                NotificationWorker.perform_async(Constant::DINER, order_details_ids, user_id)
             end
 
             def notify_contruct
@@ -62,6 +98,3 @@ module Orders
         end
     end
 end
-# -1: dish is cancel
-# 0 : dish is cooking
-#  1: dish is finish cooking

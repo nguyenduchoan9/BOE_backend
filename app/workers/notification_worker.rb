@@ -33,7 +33,7 @@ class NotificationWorker
                 }
             end
         elsif Constant::DINER ==role
-            body = { :message => list_dish_reject}.as_json.to_s
+            body = list_dish_notify
             send_message_to_diner body, diner_reg_tokens
             # if ver == 0
             #     body = { :message => 'Your order has been rejected'}.as_json.to_s
@@ -113,12 +113,23 @@ class NotificationWorker
     # END REGION CHEF
 
     # REGION DINER
-    def list_dish_reject
+    def list_dish_notify
         rs = []
-        @id.each do |ids|
-            rs << Dishes::Serializer.new(Dish.find(ids))
+        dish_list = []
+        dish_list_id = []
+        @id.each do |od_id|
+            od = OrderDetail.find od_id
+            dish = Dish.find od.dish.id
+            unless dish_list_id.index dish.id
+                dish_list_id << dish.id
+                rs << Dishes::Serializer.new(dish)
+            end
         end
         rs
+    end
+
+    def format_notify_user
+        Struct.new(:dish, :quantity)
     end
     # END REGION DINER
 end

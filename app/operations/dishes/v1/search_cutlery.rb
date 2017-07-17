@@ -34,9 +34,6 @@ module Dishes
                 if @vi_lang == true
                     return key_search_params.mb_chars.normalize.to_s
                 end
-                if @eng_lang == true
-                    return key_search_params.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
-                end
                 key_search_params.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
             end
 
@@ -44,9 +41,7 @@ module Dishes
                 if @vi_lang == true
                     return Dish.search_by_dish_name(format_params_utf)
                 end
-                if @eng_lang == true
-                    return Dish.search_by_dish_name_not_mark(format_params_utf)
-                end
+                Dish.search_by_dish_name_not_mark(format_params_utf)
             end
 
             def result

@@ -49,6 +49,7 @@ Rails.application.routes.draw do
                     post :register_reg_token
                     post :disable_dish
                     get :check_dish_available
+                    get :dish_suggestion
                 end
             end
 

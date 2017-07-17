@@ -12,7 +12,9 @@ module ApplicationHelper
                 :body => "Phong stupid"
             }
         }
-
+        p '>>>>>>'
+        print options
+        p '<<<<<<'
         response = gcm.send(registration_ids, options)
     end
 
@@ -26,8 +28,10 @@ module ApplicationHelper
                 :body => body
             }
         }
+        p '>>>>>>Waiter>>>>'
+        print options
+        p '<<<<<<'
         response = gcm.send(reg_tokens, options)
-        print response + '-------------------------'
     end
 
     def send_message_to_chef body, reg_tokens, term
@@ -41,8 +45,9 @@ module ApplicationHelper
                 :body => body
             }
         }
-
+        p '>>>>>>Chef>>>>'
         print options
+        p '<<<<<<'
         response = gcm.send(reg_tokens, options)
         # print response + '-------------------------'
     end
@@ -58,8 +63,10 @@ module ApplicationHelper
                 :body => body
             }
         }
-
+        p '>>>>>>Diner>>>>'
+        print options
+        p   '<<<<<<'
         response = gcm.send(reg_tokens, options)
-        print response + '-------------------------'
+
     end
 end

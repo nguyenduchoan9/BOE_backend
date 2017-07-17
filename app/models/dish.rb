@@ -19,11 +19,9 @@
 #  index_dishes_on_category_id  (category_id)
 #  index_dishes_on_material_id  (material_id)
 #
-require 'elasticsearch/model'
+
 
 class Dish < ApplicationRecord
-    include Elasticsearch::Model
-    include Elasticsearch::Model::Callbacks
     mount_uploader :image, ImageUploader
 
     # skip_callback :save, :before, :store_picture!

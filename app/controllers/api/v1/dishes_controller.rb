@@ -32,6 +32,9 @@ module Api
 
             def check_dish_available
             end
+
+            def dish_suggestion
+            end
         end
     end
 end

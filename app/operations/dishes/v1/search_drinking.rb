@@ -11,36 +11,36 @@ module Dishes
                 params[:key_search]
             end
 
-            def dish_by_key_search
-                Dish.search(format_params_utf)
-            end
-
             def format_params_utf
                 detect = DetectLanguage.simple_detect(key_search_params)
-                eng_lang = false
-                vi_lang = false
+                @eng_lang = false
+                @vi_lang = false
                 if detect != nil
                     if detect.kind_of?(Array)
                         if detect.count > 0
                             detect.each do |lang|
-                                eng_lang = true if lang == 'en'
-                                vi_lang = true if lang == 'vi'
+                                @eng_lang = true if lang == 'en'
+                                @vi_lang = true if lang == 'vi'
                             end
                         end
                     elsif detect.kind_of?(String)
-                        eng_lang = true if detect == 'en'
-                        vi_lang = true if detect == 'vi'
+                        @eng_lang = true if detect == 'en'
+                        @vi_lang = true if detect == 'vi'
                     end
 
                 end
                 # byebug
-                if eng_lang == true
+                if @vi_lang == true
                     return key_search_params.mb_chars.normalize.to_s
                 end
-                if vi_lang == true
-                    return key_search_params.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
-                end
                 key_search_params.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
+            end
+
+            def dish_by_key_search
+                if @vi_lang == true
+                    return Dish.search_by_dish_name(format_params_utf)
+                end
+                Dish.search_by_dish_name_not_mark(format_params_utf)
             end
 
             def result
