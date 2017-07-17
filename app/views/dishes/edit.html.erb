@@ -57,6 +57,12 @@
                   <label>Material *</label>
                 </div>
               </div>
+              <div class="col s6" style="padding-left: 0">
+                <div class="input-field">
+                  <label>Dish Price *</label>
+                  <input type="text" name="price" placeholder="Dish Price" required="required" value="<%= @dish.price_change_histories.last.price %>">
+                </div>
+              </div>
             </div>
             <%= link_to 'Back', dishes_path, class: "btn", data: {turbolinks: false} %>
             <%= f.submit value: 'Update', class: 'btn' %>

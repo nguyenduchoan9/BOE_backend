@@ -44,8 +44,6 @@
                   <% end %>
                   <label>Status</label>
                 </div>
-<<<<<<< HEAD
-=======
               </div>
             </div>
             <div class="row">
@@ -54,14 +52,11 @@
                   <%= collection_select :dish, :material_id, Material.all, :id, :name, prompt: true %>
                   <label>Material *</label>
                 </div>
->>>>>>> master
               </div>
-            </div>
-            <div class="row">
               <div class="col s6" style="padding-left: 0">
                 <div class="input-field">
-                  <%= collection_select :dish, :material_id, Material.all, :id, :name, prompt: true %>
-                  <label>Material *</label>
+                  <label>Dish Price *</label>
+                  <input type="text" name="price" placeholder="Dish Price" required="required">
                 </div>
               </div>
             </div>
