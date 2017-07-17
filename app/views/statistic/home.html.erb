@@ -20,7 +20,7 @@
 <div style="padding: 0% 5%">
   <div class="card">
     <div class="card-content">
-      <span class="card-title">Rejected Order</span>
+      <span class="card-title">Rejected Order <span id="title_date"></span></span>
       <h5 id="available" style="text-align: center;">Not Available</h5>
       <table id="table" style="display: none" class="bordered striped">
         <thead>
@@ -40,13 +40,14 @@
 </div>
 <script>
     function update_notification() {
+        $('#title_date').text($('#date_search').val());
         $('#table').css('display', 'none');
         $('#available').css('display', '');
         $('#table').find("tr:gt(0)").remove();
         data = firebase.database().ref().child('rejectedOrder');
         data.once('value').then(function (snapshot1) {
             snapshot1.forEach(function (snapshot) {
-                if ($('#date_search').val() == snapshot.child('date').val()) {
+                if ($('#title_date').text() == snapshot.child('date').val()) {
                     $('#tbody').prepend('<tr><td style="text-align: center">' + snapshot.child('tableNumber').val() + '</td><td style="text-align: center">' + snapshot.child('dishName').val() +
                         '</td><td style="text-align: center">' + snapshot.child('price').val() + '</td><td style="text-align: center">' + snapshot.child('quantity').val() + '</td><td style="text-align: center">' + snapshot.child('quantity').val() * snapshot.child('price').val() + '</td>' +
                         '<td class="center"><a href="refund?order_detail_id=' + snapshot.child('order_detail_id').val() + '&fcm=' + snapshot.key + '"><button class="btn red">Refund</button></a></td></tr>');
@@ -62,7 +63,7 @@
         firebase.database().ref().update(update);
         data = firebase.database().ref().child('rejectedOrder');
         data.on('child_added', function (snapshot) {
-            if ($('#date_search').val() == snapshot.child('date').val()) {
+            if ($('#title_date').text() == snapshot.child('date').val()) {
                 $('#tbody').prepend('<tr><td style="text-align: center">' + snapshot.child('tableNumber').val() + '</td><td style="text-align: center">' + snapshot.child('dishName').val() +
                     '</td><td style="text-align: center">' + snapshot.child('price').val() + '</td><td style="text-align: center">' + snapshot.child('quantity').val() + '</td><td style="text-align: center">' + snapshot.child('quantity').val() * snapshot.child('price').val() + '</td>' +
                     '<td class="center"><a href="refund?order_detail_id=' + snapshot.child('order_detail_id').val() + '&fcm=' + snapshot.key + '"><button class="btn red">Refund</button></a></td></tr>');
@@ -92,5 +93,6 @@
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
     var picker = $input.pickadate('picker');
-    picker.set('select', $('#today').val())
+    picker.set('select', $('#today').val());
+    $('#title_date').text($('#date_search').val());
 </script>
