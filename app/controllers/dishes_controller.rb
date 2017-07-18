@@ -17,6 +17,11 @@ class DishesController < ApplicationController
                 :description => "#{@dish.category.category_name}"
             )
         end
+        @price = PriceChangeHistory.new
+        @price.dish_id = @dish.id
+        @price.from_date = Date.today
+        @price.price = params[:price]
+        @price.save!
         redirect_to dishes_path
     end
 
@@ -56,11 +61,16 @@ class DishesController < ApplicationController
     def update
         @dish = Dish.find params[:dish][:id]
         @dish.update_attributes(dish_params)
+        @price = PriceChangeHistory.new
+        @price.dish_id = @dish.id
+        @price.price = params[:price]
+        @price.from_date = Date.today
+        @price.save!
         redirect_to action: 'show'
     end
 
     private
     def dish_params
-        params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status, :term, :material_id, :isSocial
+        params.require(:dish).permit :id, :description, :dish_name, :category_id, :image, :status, :term, :material_id, :isSocial, :price
     end
 end

@@ -23,7 +23,7 @@ class SessionController < WebApplcationController
                     current_user = User.find user.id
                     session[:full_name] = current_user.full_name
                     session[:email] = current_user.email
-                    session[:avatar] = current_user.avatar
+                    session[:avatar] = current_user.avatar.url
                     session[:role] = current_user.role.name
                     redirect_to root_path
                 else
