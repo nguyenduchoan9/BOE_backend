@@ -13,8 +13,8 @@ class PayPalController < ApplicationController
   def refund
     PayPal::SDK.configure(
         :mode => "sandbox", # "sandbox" or "live"
-        :client_id => "AVgD-aYUhsUuxtwUhIS0Ry3bS_rqFJkc4XLdV3CExGsmyMNJ1yYzYqGyCtmfa8FN_LTTcH04jzFVjcie",
-        :client_secret => "EGO-YRcOXWEQaGSpt09KjpPNA-itKeF1v1v7bpuqP5Pjh_8MdArOxy7fdDjqI6DSe38Oj2iDjVuxHJaj",
+        :client_id => "AetzVQhJh6kV_v_GDex0IynGO_6ky0VLzvF0D3akJ7YDCVGYSrgTpIW-FAq-AdYlVW0TMJ7XdYpbCPz-",
+        :client_secret => "EP-HvkNBWll71g9q2PKfTDtWXQ0T-Nwx5_v4AXsdSeeq-Y0IChsauzdMGTriTWrD0Vi8uMclrC5shTpe",
         :ssl_options => {})
     order_detail_id = params[:order_detail_id]
     order_detail = OrderDetail.find order_detail_id
