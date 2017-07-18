@@ -46,7 +46,6 @@
                   <a href="#" data-activates="slide-out" id="slide_nav" class="button-collapse"><i class="material-icons">menu</i></a>
                 </li>
               </ul>
-
               <ul class="right">
                 <% if session[:role]== 'manager' %>
                     <li>
@@ -64,6 +63,7 @@
                   <% end %>
                 </li>
               </ul>
+              <ul class="center" style="font-size: 150%">BOE SYSTEM</ul>
           <% end %>
         </div>
       </nav>
@@ -74,7 +74,7 @@
             <div class="background">
               <img src="http://materializecss.com/images/office.jpg">
             </div>
-            <a href="#!user"><img class="circle" src="http://materializecss.com/images/yuna.jpg"></a>
+            <a href="#!user"><img class="circle" src="<%= session[:avatar] %>"></a>
             <a href="#!name"><span class="white-text name"><%= session[:full_name] %></span></a>
             <a href="#!email"><span class="white-text email"><%= session[:email] %></span></a>
           </div>
