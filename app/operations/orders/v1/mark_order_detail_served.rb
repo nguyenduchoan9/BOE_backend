@@ -40,6 +40,12 @@ module Orders
                                 order_detail.update(quantity_not_served: not_serve - quantity.to_i)
                             end
                         end
+                    elsif order_detail.cooking_status == 3 || order_detail.cooking_status == 4
+                        not_serve = order_detail.quantity_not_served
+                        if not_serve > 0 && quantity.to_i <= not_serve
+                            # byebug
+                            order_detail.update(quantity_not_served: not_serve - quantity.to_i)
+                        end
                     end
                 end
 

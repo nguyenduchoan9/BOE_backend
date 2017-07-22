@@ -38,6 +38,7 @@ class PayPalController < ApplicationController
     order_detail.cooking_status = 4
     order_detail.order.total -= total
     order_detail.order.save!
+    order_detail.save!
     redirect_to home_path
   end
 end

@@ -17,11 +17,13 @@ module Orders
                 table_with_dish = []
                 get_recent_order.each do |od|
                     pos = is_exist_in_table_in_time od.table_number
+                    # table not in queue
                     if  pos == -1
                         dishes_list = []
                         od.order_details.each do |odetail|
-                            if odetail.cooking_status == 1 || odetail.cooking_status == 0
+                            if odetail.cooking_status == 1 || odetail.cooking_status == 0 || odetail.cooking_status == 3 || odetail.cooking_status == 4
                                 # byebug
+                                # 1 => dish da duoc phuc vu
                                 if odetail.quantity > odetail.quantity_not_serve && (odetail.quantity_not_served - odetail.quantity_not_serve) > 0
                                     dishes_list << dish_detail_hash.new(Dishes::Serializer.new(Dish.find(odetail.dish_id)),
                                                                         odetail.id, odetail.quantity_not_served - odetail.quantity_not_serve)
@@ -41,7 +43,7 @@ module Orders
                         if (item_table_time[:time_order] - current_od_time) < get_time_group_in_int
                             dishes_list = []
                             od.order_details.each do |odetail|
-                                if odetail.cooking_status == 1 || odetail.cooking_status == 0
+                                if odetail.cooking_status == 1 || odetail.cooking_status == 0 || odetail.cooking_status == 3 || odetail.cooking_status == 4
                                     # byebug
                                     if odetail.quantity > odetail.quantity_not_serve && (odetail.quantity_not_served - odetail.quantity_not_serve) > 0
                                         dishes_list << dish_detail_hash.new(Dishes::Serializer.new(Dish.find(odetail.dish_id)),

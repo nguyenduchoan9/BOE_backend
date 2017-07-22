@@ -42,6 +42,11 @@ module Orders
                                     order_detail.update(quantity_not_served: order_detail.quantity_not_serve)
                                 end
                             end
+                        elsif order_detail.cooking_status == 3 || order_detail.cooking_status == 4
+                            quantity_minus = order_detail.quantity_not_served - order_detail.quantity_not_serve
+                            if order_detail.quantity > order_detail.quantity_not_serve && quantity_minus > 0
+                                order_detail.update(quantity_not_served: order_detail.quantity_not_serve)
+                            end
                         end
                     end
                 end
