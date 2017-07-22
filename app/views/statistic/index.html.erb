@@ -8,8 +8,13 @@
     <div class="card blue-grey darken-1">
       <div class="card-content white-text center-align">
         <span class="card-title">TOP USER</span>
-        <p><%= @user[0] %></p>
-        <p>Total: <%= @user[1] %>VND</p>
+        <% if !@user.nil? %>
+            <p><%= @user[0] %></p>
+            <p>Total: <%= @user[1] %>VND</p>
+        <% else %>
+            <p>N/A</p>
+            <p>Total: N/A</p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -17,8 +22,13 @@
     <div class="card blue-grey darken-1">
       <div class="card-content white-text center-align">
         <span class="card-title">TOP DISH</span>
-        <p><%= @dish[0] %></p>
-        <p>Total quantity: <%= @dish[1] %></p>
+        <% if !@dish.nil? %>
+            <p><%= @dish[0] %></p>
+            <p>Total quantity: <%= @dish[1] %></p>
+        <% else %>
+            <p>N/A</p>
+            <p>Total quantity: N/A</p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -26,8 +36,16 @@
     <div class="card blue-grey darken-1">
       <div class="card-content white-text center-align">
         <span class="card-title">Revenue</span>
-        <p>Total order: <%= @visit %></p>
-        <p>Total income: <%= @revenue %></p>
+        <% if !@visit.nil? %>
+            <p>Total order: <%= @visit %></p>
+        <% else %>
+            <p>Total order: N/A</p>
+        <% end %>
+        <% if !@revenue.nil? %>
+            <p>Total income: <%= @revenue %></p>
+        <% else %>
+            <p>Total income: N/A</p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -96,7 +114,7 @@
 </div>
 <script>
     function make_statistic(type, duration_name, chart_name) {
-        if ($('#'+duration_name).is(':checked')) {
+        if ($('#' + duration_name).is(':checked')) {
             duration = 'year';
         } else {
             duration = 'month';

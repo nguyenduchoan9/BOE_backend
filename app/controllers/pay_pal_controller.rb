@@ -32,10 +32,12 @@ class PayPalController < ApplicationController
                                            :currency => "USD"
                                        }
                                    })
-    firebase = Firebase::Client.new('https://boebackend.firebaseio.com', 'FpE63dhjckc4wr6w5wGyRATrYlkEXJ3b5EJOwaGI')
-    fcm = params[:fcm]
-    firebase.delete("rejectedOrder/#{fcm}")
-    order_detail.cooking_status = 3
+    # firebase = Firebase::Client.new('https://boebackend.firebaseio.com', 'FpE63dhjckc4wr6w5wGyRATrYlkEXJ3b5EJOwaGI')
+    # fcm = params[:fcm]
+    # firebase.delete("rejectedOrder/#{fcm}")
+    order_detail.cooking_status = 4
+    order_detail.order.total -= total
+    order_detail.order.save!
     redirect_to home_path
   end
 end
