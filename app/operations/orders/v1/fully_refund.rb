@@ -44,4 +44,7 @@ module Orders
 end
 # -1: dish is cancel
 # 0 : dish is cooking
-#  1: dish is finish cooking
+#  1: dish is serving
+# 2: done
+# 3: refunding
+# 4: refunded
