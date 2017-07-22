@@ -19,12 +19,8 @@ module Orders
         list_orderdetail_id = order_details_id_params.split('_')
         list_orderdetail_id.each do |order_detail_id|
           orderdetail = OrderDetail.find order_detail_id
-          fire_base.push("rejectedOrder", {tableNumber: "#{orderdetail.order.table_number}",
-                                           status: 'new',
+          fire_base.push("rejectedOrder", {status: 'new',
                                            dishName: "#{orderdetail.dish.dish_name}",
-                                           price: "#{orderdetail.price}",
-                                           quantity: "#{orderdetail.quantity_not_serve}",
-                                           order_detail_id: "#{orderdetail.id}",
                                            date: "#{orderdetail.created_at.strftime('%d/%m/%Y')}"})
         end
         handle_notify_to_user list_orderdetail_id
