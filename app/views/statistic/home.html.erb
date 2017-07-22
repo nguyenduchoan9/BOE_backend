@@ -11,7 +11,6 @@
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(home_path, method: :get) do %>
           <%= text_field_tag :term, params[:term], style: 'width: 80%;', placeholder: 'Search', class: 'datepicker', id: "date_search" %>
-          <!--<input type="hidden" id="today" value="<%= Date.today() %>">-->
           <button type="submit" class="btn-floating waves-effect waves-light" onclick="update_notification()">
             <i class="material-icons">search</i>
           </button>
