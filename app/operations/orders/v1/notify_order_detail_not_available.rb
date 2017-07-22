@@ -25,7 +25,7 @@ module Orders
                                            price: "#{orderdetail.price}",
                                            quantity: "#{orderdetail.quantity_not_serve}",
                                            order_detail_id: "#{orderdetail.id}",
-                                           date: "#{orderdetail.created_at}"})
+                                           date: "#{orderdetail.created_at.strftime('%d/%m/%Y')}"})
         end
         handle_notify_to_user list_orderdetail_id
       end

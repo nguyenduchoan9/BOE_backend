@@ -11,5 +11,9 @@ module Users
         def membership
             object.membership.try(:level)
         end
+
+        def avatar
+            object.avatar.url
+        end
     end
 end

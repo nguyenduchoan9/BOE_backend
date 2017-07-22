@@ -27416,3 +27416,1549 @@ Did you mean?  dish_detail
 2017-07-17T05:02:58.748Z 9730 TID-gmzs05d1k INFO: Scheduler exiting...
 2017-07-17T05:02:58.848Z 9730 TID-gmzrc86ok INFO: Pausing to allow workers to finish...
 2017-07-17T05:03:00.151Z 9730 TID-gmzrc86ok INFO: Bye!
+2017-07-18T18:14:20.705Z 31636 TID-gr4ab1gb4 INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-31636", :url=>nil}
+2017-07-18T18:14:21.327Z 31636 TID-gr4ab1gb4 INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-07-18T18:14:21.327Z 31636 TID-gr4ab1gb4 INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-07-18T18:14:21.327Z 31636 TID-gr4ab1gb4 INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-07-18T18:14:21.331Z 31636 TID-gr4ab1gb4 INFO: Starting processing, hit Ctrl-C to stop
+2017-07-18T18:14:21.342Z 31636 TID-gr4az2c90 NotificationWorker JID-e46c86bb1f565edaaf1f5292 INFO: start
+2017-07-18T18:14:21.345Z 31636 TID-gr4az2cf4 NotificationWorker JID-55ebd733e7c9010a9c62e9a2 INFO: start
+2017-07-18T18:14:21.350Z 31636 TID-gr4az2cls NotificationWorker JID-5fc361b29e73ff5104ea2457 INFO: start
+2017-07-18T18:14:21.362Z 31636 TID-gr4az2c2w NotificationWorker JID-5728d681b0ad5d1106f84732 INFO: start
+2017-07-18T18:14:21.440Z 31636 TID-gr4az2cls NotificationWorker JID-5fc361b29e73ff5104ea2457 INFO: done: 0.09 sec
+2017-07-18T18:14:21.441Z 31636 TID-gr4az2cls NotificationWorker JID-82837e98a757dda06f22e535 INFO: start
+2017-07-18T18:14:21.445Z 31636 TID-gr4az2cls NotificationWorker JID-82837e98a757dda06f22e535 INFO: done: 0.004 sec
+2017-07-18T18:14:21.445Z 31636 TID-gr4az2c90 NotificationWorker JID-e46c86bb1f565edaaf1f5292 INFO: done: 0.103 sec
+2017-07-18T18:14:21.446Z 31636 TID-gr4az2cls NotificationWorker JID-366969b270e7386196b98380 INFO: start
+2017-07-18T18:14:21.447Z 31636 TID-gr4az2c90 NotificationWorker JID-1121979f34da8ab20c638b36 INFO: start
+2017-07-18T18:14:22.744Z 31636 TID-gr4az2c90 NotificationWorker JID-1121979f34da8ab20c638b36 INFO: done: 1.297 sec
+2017-07-18T18:14:22.747Z 31636 TID-gr4az2c90 NotificationWorker JID-de8c8cc922c821c93314b103 INFO: start
+2017-07-18T18:14:24.474Z 31636 TID-gr4az2c90 NotificationWorker JID-de8c8cc922c821c93314b103 INFO: done: 1.727 sec
+2017-07-18T18:14:24.930Z 31636 TID-gr4az2cf4 NotificationWorker JID-55ebd733e7c9010a9c62e9a2 INFO: done: 3.585 sec
+2017-07-18T18:14:25.010Z 31636 TID-gr4az2cls NotificationWorker JID-366969b270e7386196b98380 INFO: done: 3.563 sec
+2017-07-18T18:14:25.092Z 31636 TID-gr4az2c2w NotificationWorker JID-5728d681b0ad5d1106f84732 INFO: done: 3.73 sec
+2017-07-18T18:23:19.552Z 31636 TID-gr4az2c90 NotificationWorker JID-ea3e6e5ea287562d8a3f8797 INFO: start
+2017-07-18T18:23:19.563Z 31636 TID-gr4az2cf4 NotificationWorker JID-7188b14496fb74b54c145597 INFO: start
+2017-07-18T18:23:19.573Z 31636 TID-gr4az2c2w NotificationWorker JID-26f767909354489c1cddf1d1 INFO: start
+2017-07-18T18:23:19.584Z 31636 TID-gr4az2cls NotificationWorker JID-19eb2a7bf5b6d479cc054b59 INFO: start
+2017-07-18T18:23:19.851Z 31636 TID-gr4az2c90 NotificationWorker JID-ea3e6e5ea287562d8a3f8797 INFO: done: 0.298 sec
+2017-07-18T18:23:19.851Z 31636 TID-gr4az2c90 NotificationWorker JID-591a0307c2ad94ce01bff6ab INFO: start
+2017-07-18T18:23:19.933Z 31636 TID-gr4az2cf4 NotificationWorker JID-7188b14496fb74b54c145597 INFO: done: 0.37 sec
+2017-07-18T18:23:19.934Z 31636 TID-gr4az2cf4 NotificationWorker JID-ad0fc235e3f31ab96ab09cab INFO: start
+2017-07-18T18:23:20.009Z 31636 TID-gr4az2c2w NotificationWorker JID-26f767909354489c1cddf1d1 INFO: done: 0.436 sec
+2017-07-18T18:23:20.139Z 31636 TID-gr4az2c90 NotificationWorker JID-591a0307c2ad94ce01bff6ab INFO: done: 0.288 sec
+2017-07-18T18:23:20.166Z 31636 TID-gr4az2cls NotificationWorker JID-19eb2a7bf5b6d479cc054b59 INFO: done: 0.581 sec
+2017-07-18T18:23:20.246Z 31636 TID-gr4az2cf4 NotificationWorker JID-ad0fc235e3f31ab96ab09cab INFO: done: 0.312 sec
+2017-07-18T18:32:06.781Z 31636 TID-gr4ab1gb4 INFO: Shutting down
+2017-07-18T18:32:06.781Z 31636 TID-gr4ab1gb4 INFO: Terminating quiet workers
+2017-07-18T18:32:06.781Z 31636 TID-gr4az2cuo INFO: Scheduler exiting...
+2017-07-18T18:32:06.882Z 31636 TID-gr4ab1gb4 INFO: Pausing to allow workers to finish...
+2017-07-18T18:32:07.583Z 31636 TID-gr4ab1gb4 INFO: Bye!
+2017-07-19T04:12:33.148Z 16457 TID-gp38x611w INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-16457", :url=>nil}
+2017-07-19T04:12:33.751Z 16457 TID-gp38x611w INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-07-19T04:12:33.751Z 16457 TID-gp38x611w INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-07-19T04:12:33.751Z 16457 TID-gp38x611w INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-07-19T04:12:33.757Z 16457 TID-gp38x611w INFO: Starting processing, hit Ctrl-C to stop
+2017-07-19T04:12:35.946Z 16457 TID-gp39nvtcw NotificationWorker JID-6d99a766b609836da9a04f8c INFO: start
+2017-07-19T04:12:43.931Z 16457 TID-gp39nvtcw NotificationWorker JID-6d99a766b609836da9a04f8c INFO: done: 7.984 sec
+2017-07-19T04:12:51.550Z 16457 TID-gp39nvtk4 NotificationWorker JID-28fa9626211d22549c24a6de INFO: start
+2017-07-19T04:12:51.562Z 16457 TID-gp39nvtt0 NotificationWorker JID-2c09c8abd0fda5acad553014 INFO: start
+2017-07-19T04:12:51.574Z 16457 TID-gp39nvt6s NotificationWorker JID-b59475395ea817e6fb496bee INFO: start
+2017-07-19T04:12:51.592Z 16457 TID-gp39nvtcw NotificationWorker JID-a57858ca6da4b9091ad3a90b INFO: start
+2017-07-19T04:12:52.136Z 16457 TID-gp39nvtk4 NotificationWorker JID-28fa9626211d22549c24a6de INFO: done: 0.586 sec
+2017-07-19T04:12:52.136Z 16457 TID-gp39nvtcw NotificationWorker JID-a57858ca6da4b9091ad3a90b INFO: done: 0.545 sec
+2017-07-19T04:12:52.137Z 16457 TID-gp39nvtk4 NotificationWorker JID-5d5736f3927de3d235f9906a INFO: start
+2017-07-19T04:12:52.190Z 16457 TID-gp39nvt6s NotificationWorker JID-b59475395ea817e6fb496bee INFO: done: 0.617 sec
+2017-07-19T04:12:52.192Z 16457 TID-gp39nvtt0 NotificationWorker JID-2c09c8abd0fda5acad553014 INFO: done: 0.629 sec
+2017-07-19T04:12:53.094Z 16457 TID-gp39nvtk4 NotificationWorker JID-5d5736f3927de3d235f9906a INFO: done: 0.957 sec
+2017-07-19T04:14:18.848Z 16457 TID-gp39nvtk4 NotificationWorker JID-b06886767a2612add8af6d0a INFO: start
+2017-07-19T04:14:19.726Z 16457 TID-gp39nvtk4 NotificationWorker JID-b06886767a2612add8af6d0a INFO: done: 0.878 sec
+2017-07-19T04:15:47.111Z 16457 TID-gp39nvtk4 NotificationWorker JID-71698609573dbbe2f2d03f03 INFO: start
+2017-07-19T04:15:47.911Z 16457 TID-gp39nvtk4 NotificationWorker JID-71698609573dbbe2f2d03f03 INFO: done: 0.8 sec
+2017-07-19T04:15:51.652Z 16457 TID-gp39nvtk4 NotificationWorker JID-be5f6e2fdc5bdb93d82d21f3 INFO: start
+2017-07-19T04:15:51.664Z 16457 TID-gp39nvtcw NotificationWorker JID-a439b9a5cefac360f7e001e9 INFO: start
+2017-07-19T04:15:55.106Z 16457 TID-gp39nvtcw NotificationWorker JID-a439b9a5cefac360f7e001e9 INFO: done: 3.442 sec
+2017-07-19T04:15:55.117Z 16457 TID-gp39nvtk4 NotificationWorker JID-be5f6e2fdc5bdb93d82d21f3 INFO: done: 3.466 sec
+2017-07-19T04:16:07.020Z 16457 TID-gp39nvtk4 NotificationWorker JID-b7765e0afa7bfa65741e2d21 INFO: start
+2017-07-19T04:16:07.031Z 16457 TID-gp39nvtcw NotificationWorker JID-f00c88533af2bcad339719cc INFO: start
+2017-07-19T04:16:07.750Z 16457 TID-gp39nvtk4 NotificationWorker JID-b7765e0afa7bfa65741e2d21 INFO: done: 0.73 sec
+2017-07-19T04:16:07.751Z 16457 TID-gp39nvtcw NotificationWorker JID-f00c88533af2bcad339719cc INFO: done: 0.721 sec
+2017-07-19T04:28:59.137Z 16457 TID-gp39nvtk4 NotificationWorker JID-fb4b4dd7619fd0b2bad82763 INFO: start
+2017-07-19T04:29:17.068Z 16457 TID-gp39nvtk4 NotificationWorker JID-fb4b4dd7619fd0b2bad82763 INFO: done: 17.931 sec
+2017-07-19T04:29:26.565Z 16457 TID-gp39nvt6s NotificationWorker JID-88ef69f7325fb5f48373cac1 INFO: start
+2017-07-19T04:29:26.577Z 16457 TID-gp39nvtt0 NotificationWorker JID-ba95cf8038ab344752db21eb INFO: start
+2017-07-19T04:29:26.588Z 16457 TID-gp39nvtk4 NotificationWorker JID-a25e6a37652b32f262059c0e INFO: start
+2017-07-19T04:29:27.109Z 16457 TID-gp39nvt6s NotificationWorker JID-88ef69f7325fb5f48373cac1 INFO: done: 0.544 sec
+2017-07-19T04:29:27.129Z 16457 TID-gp39nvtt0 NotificationWorker JID-ba95cf8038ab344752db21eb INFO: done: 0.551 sec
+2017-07-19T04:29:31.726Z 16457 TID-gp39nvtk4 NotificationWorker JID-a25e6a37652b32f262059c0e INFO: done: 5.137 sec
+2017-07-19T04:29:33.231Z 16457 TID-gp39nvtt0 NotificationWorker JID-509db2c74ebd851d42008a37 INFO: start
+2017-07-19T04:29:34.017Z 16457 TID-gp39nvtt0 NotificationWorker JID-509db2c74ebd851d42008a37 INFO: done: 0.786 sec
+2017-07-19T04:29:39.914Z 16457 TID-gp39nvtk4 NotificationWorker JID-f20d3d90f5f05afcfa4375dd INFO: start
+2017-07-19T04:29:39.920Z 16457 TID-gp39nvtcw NotificationWorker JID-0f61b0c5ea67eb0b7c01247b INFO: start
+2017-07-19T04:29:39.927Z 16457 TID-gp39nvtt0 NotificationWorker JID-8fa6bb5f75b98cc698d9b284 INFO: start
+2017-07-19T04:29:39.934Z 16457 TID-gp39nvt6s NotificationWorker JID-c96c6d0f6d51d4cc9a4f14f9 INFO: start
+2017-07-19T04:29:40.826Z 16457 TID-gp39nvtk4 NotificationWorker JID-f20d3d90f5f05afcfa4375dd INFO: done: 0.911 sec
+2017-07-19T04:29:40.861Z 16457 TID-gp39nvtt0 NotificationWorker JID-8fa6bb5f75b98cc698d9b284 INFO: done: 0.934 sec
+2017-07-19T04:29:41.069Z 16457 TID-gp39nvt6s NotificationWorker JID-c96c6d0f6d51d4cc9a4f14f9 INFO: done: 1.134 sec
+2017-07-19T04:29:41.070Z 16457 TID-gp39nvtcw NotificationWorker JID-0f61b0c5ea67eb0b7c01247b INFO: done: 1.15 sec
+2017-07-19T04:30:04.557Z 16457 TID-gp39nvtk4 NotificationWorker JID-7e6f86cd175dcf25407216ab INFO: start
+2017-07-19T04:30:04.570Z 16457 TID-gp39nvtt0 NotificationWorker JID-20c2b9218fa1409a829b3ef7 INFO: start
+2017-07-19T04:30:05.251Z 16457 TID-gp39nvtt0 NotificationWorker JID-20c2b9218fa1409a829b3ef7 INFO: done: 0.681 sec
+2017-07-19T04:30:05.353Z 16457 TID-gp39nvtk4 NotificationWorker JID-7e6f86cd175dcf25407216ab INFO: done: 0.796 sec
+2017-07-19T04:35:34.246Z 16457 TID-gp39nvt6s NotificationWorker JID-d9b4f127320502402402a3fa INFO: start
+2017-07-19T04:35:34.258Z 16457 TID-gp39nvtt0 NotificationWorker JID-081a06e666866c5d1d88bf98 INFO: start
+2017-07-19T04:35:34.271Z 16457 TID-gp39nvtcw NotificationWorker JID-37dce72be41534d9083086bf INFO: start
+2017-07-19T04:35:34.282Z 16457 TID-gp39nvtk4 NotificationWorker JID-c80ab351e0d7cfea0c46d5d6 INFO: start
+2017-07-19T04:35:34.800Z 16457 TID-gp39nvtcw NotificationWorker JID-37dce72be41534d9083086bf INFO: done: 0.529 sec
+2017-07-19T04:35:34.801Z 16457 TID-gp39nvt6s NotificationWorker JID-d9b4f127320502402402a3fa INFO: done: 0.554 sec
+2017-07-19T04:35:34.802Z 16457 TID-gp39nvtcw NotificationWorker JID-6f0f22c8ca17874d2ac23253 INFO: start
+2017-07-19T04:35:34.804Z 16457 TID-gp39nvtt0 NotificationWorker JID-081a06e666866c5d1d88bf98 INFO: done: 0.546 sec
+2017-07-19T04:35:34.920Z 16457 TID-gp39nvtk4 NotificationWorker JID-c80ab351e0d7cfea0c46d5d6 INFO: done: 0.637 sec
+2017-07-19T04:35:35.370Z 16457 TID-gp39nvtcw NotificationWorker JID-6f0f22c8ca17874d2ac23253 INFO: done: 0.568 sec
+2017-07-19T04:36:34.948Z 16457 TID-gp39nvtt0 NotificationWorker JID-82f7982fdcf6c2c5f2a33c02 INFO: start
+2017-07-19T04:36:35.808Z 16457 TID-gp39nvtt0 NotificationWorker JID-82f7982fdcf6c2c5f2a33c02 INFO: done: 0.86 sec
+2017-07-19T04:36:49.646Z 16457 TID-gp39nvtt0 NotificationWorker JID-3ba72229c3cb9406f2704bd3 INFO: start
+2017-07-19T04:37:01.679Z 16457 TID-gp39nvtt0 NotificationWorker JID-3ba72229c3cb9406f2704bd3 INFO: done: 12.033 sec
+2017-07-19T04:43:53.778Z 16457 TID-gp39nvt6s NotificationWorker JID-cc2db3d9d02d7fa650975895 INFO: start
+2017-07-19T04:43:53.788Z 16457 TID-gp39nvtk4 NotificationWorker JID-6a710f49d1a80975a1ffeb70 INFO: start
+2017-07-19T04:43:53.802Z 16457 TID-gp39nvtcw NotificationWorker JID-a8a10fb8542db999d6ea6475 INFO: start
+2017-07-19T04:43:58.233Z 16457 TID-gp39nvt6s NotificationWorker JID-cc2db3d9d02d7fa650975895 INFO: done: 4.455 sec
+2017-07-19T04:43:58.291Z 16457 TID-gp39nvtcw NotificationWorker JID-a8a10fb8542db999d6ea6475 INFO: done: 4.489 sec
+2017-07-19T04:43:58.767Z 16457 TID-gp39nvtk4 NotificationWorker JID-6a710f49d1a80975a1ffeb70 INFO: done: 4.979 sec
+2017-07-19T04:44:06.615Z 16457 TID-gp39nvtt0 NotificationWorker JID-65282bdd9767c4995b0f0117 INFO: start
+2017-07-19T04:44:06.625Z 16457 TID-gp39nvtk4 NotificationWorker JID-0bec54313032ad61bf61dad2 INFO: start
+2017-07-19T04:44:10.450Z 16457 TID-gp39nvtk4 NotificationWorker JID-0bec54313032ad61bf61dad2 INFO: done: 3.825 sec
+2017-07-19T04:44:10.451Z 16457 TID-gp39nvtt0 NotificationWorker JID-65282bdd9767c4995b0f0117 INFO: done: 3.836 sec
+2017-07-19T04:45:29.822Z 16457 TID-gp39nvt6s NotificationWorker JID-1ac354997bd8e3913d03e307 INFO: start
+2017-07-19T04:45:40.325Z 16457 TID-gp39nvt6s NotificationWorker JID-1ac354997bd8e3913d03e307 INFO: done: 10.504 sec
+2017-07-19T04:45:52.720Z 16457 TID-gp39nvtt0 NotificationWorker JID-2c7b2b13b3d2f5995f8a46c0 INFO: start
+2017-07-19T04:45:58.814Z 16457 TID-gp39nvtt0 NotificationWorker JID-2c7b2b13b3d2f5995f8a46c0 INFO: done: 6.094 sec
+2017-07-19T04:46:39.023Z 16457 TID-gp39nvt6s NotificationWorker JID-a0c6d0a1e3afa71f6b47854f INFO: start
+2017-07-19T04:46:39.677Z 16457 TID-gp39nvt6s NotificationWorker JID-a0c6d0a1e3afa71f6b47854f INFO: done: 0.654 sec
+2017-07-19T04:46:48.997Z 16457 TID-gp39nvt6s NotificationWorker JID-317aeb50b2380eff4fc8d984 INFO: start
+2017-07-19T04:46:50.179Z 16457 TID-gp39nvt6s NotificationWorker JID-317aeb50b2380eff4fc8d984 INFO: done: 1.181 sec
+2017-07-19T04:48:16.126Z 16457 TID-gp38x611w INFO: Shutting down
+2017-07-19T04:48:16.127Z 16457 TID-gp38x611w INFO: Terminating quiet workers
+2017-07-19T04:48:16.127Z 16457 TID-gp39nvu1c INFO: Scheduler exiting...
+2017-07-19T04:48:16.228Z 16457 TID-gp38x611w INFO: Pausing to allow workers to finish...
+2017-07-19T04:48:17.129Z 16457 TID-gp38x611w INFO: Bye!
+2017-07-19T16:49:10.381Z 4893 TID-gpriggsf4 INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-4893", :url=>nil}
+2017-07-19T16:49:11.142Z 4893 TID-gpriggsf4 INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-07-19T16:49:11.142Z 4893 TID-gpriggsf4 INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-07-19T16:49:11.142Z 4893 TID-gpriggsf4 INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-07-19T16:49:11.147Z 4893 TID-gpriggsf4 INFO: Starting processing, hit Ctrl-C to stop
+2017-07-19T16:58:05.690Z 4893 TID-gpriggsf4 INFO: Shutting down
+2017-07-19T16:58:05.692Z 4893 TID-gpriggsf4 INFO: Terminating quiet workers
+2017-07-19T16:58:05.692Z 4893 TID-gprj7318o INFO: Scheduler exiting...
+2017-07-19T16:58:05.792Z 4893 TID-gpriggsf4 INFO: Pausing to allow workers to finish...
+2017-07-19T16:58:06.594Z 4893 TID-gpriggsf4 INFO: Bye!
+2017-07-19T17:00:27.023Z 3264 TID-goh9ntl8s INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-3264", :url=>nil}
+2017-07-19T17:00:28.452Z 3264 TID-goh9ntl8s INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-07-19T17:00:28.452Z 3264 TID-goh9ntl8s INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-07-19T17:00:28.452Z 3264 TID-goh9ntl8s INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-07-19T17:00:28.464Z 3264 TID-goh9ntl8s INFO: Starting processing, hit Ctrl-C to stop
+2017-07-19T17:03:14.895Z 3264 TID-gohagpexk NotificationWorker JID-caa3d3d7910e5256c39e9aa7 INFO: start
+2017-07-19T17:03:16.732Z 3264 TID-gohagpexk NotificationWorker JID-caa3d3d7910e5256c39e9aa7 INFO: done: 1.837 sec
+2017-07-19T17:03:43.417Z 3264 TID-gohagpexk NotificationWorker JID-d134ecba6af9e2a3af299102 INFO: start
+2017-07-19T17:03:43.431Z 3264 TID-goha1wznc NotificationWorker JID-87a3f009908d55207301ba59 INFO: start
+2017-07-19T17:03:43.441Z 3264 TID-gohagperg NotificationWorker JID-0866eb6572b59be41b47b517 INFO: start
+2017-07-19T17:03:43.457Z 3264 TID-goha1wz0k NotificationWorker JID-4276c8b7b9b93a346545f9f7 INFO: start
+2017-07-19T17:03:43.759Z 3264 TID-goha1wznc NotificationWorker JID-87a3f009908d55207301ba59 INFO: done: 0.328 sec
+2017-07-19T17:03:43.832Z 3264 TID-gohagperg NotificationWorker JID-0866eb6572b59be41b47b517 INFO: done: 0.391 sec
+2017-07-19T17:03:44.127Z 3264 TID-goha1wz0k NotificationWorker JID-4276c8b7b9b93a346545f9f7 INFO: done: 0.67 sec
+2017-07-19T17:03:48.910Z 3264 TID-gohagpexk NotificationWorker JID-d134ecba6af9e2a3af299102 INFO: done: 5.493 sec
+2017-07-19T17:03:54.732Z 3264 TID-gohagpexk NotificationWorker JID-4507f01fb8d24d06946d534d INFO: start
+2017-07-19T17:04:10.518Z 3264 TID-gohagpexk NotificationWorker JID-4507f01fb8d24d06946d534d INFO: done: 15.785 sec
+2017-07-19T17:04:39.724Z 3264 TID-goha1wznc NotificationWorker JID-3617060f1e8abab0e426cf83 INFO: start
+2017-07-19T17:04:39.735Z 3264 TID-gohagperg NotificationWorker JID-b2e5ca73468fb1dcdfb20871 INFO: start
+2017-07-19T17:04:39.745Z 3264 TID-goha1wz0k NotificationWorker JID-45702dd5307ebd40f91a361c INFO: start
+2017-07-19T17:04:39.754Z 3264 TID-gohagpexk NotificationWorker JID-ce7ade003127e984d9744365 INFO: start
+2017-07-19T17:04:40.037Z 3264 TID-goha1wznc NotificationWorker JID-3617060f1e8abab0e426cf83 INFO: done: 0.312 sec
+2017-07-19T17:04:40.134Z 3264 TID-gohagperg NotificationWorker JID-b2e5ca73468fb1dcdfb20871 INFO: done: 0.398 sec
+2017-07-19T17:04:40.250Z 3264 TID-goha1wz0k NotificationWorker JID-45702dd5307ebd40f91a361c INFO: done: 0.504 sec
+2017-07-19T17:04:40.276Z 3264 TID-gohagpexk NotificationWorker JID-ce7ade003127e984d9744365 INFO: done: 0.522 sec
+2017-07-19T17:04:55.063Z 3264 TID-goha1wznc NotificationWorker JID-9e1fbc673cf16f723a08492b INFO: start
+2017-07-19T17:04:55.077Z 3264 TID-gohagperg NotificationWorker JID-f5ee34d2f26ca430b0714549 INFO: start
+2017-07-19T17:04:55.087Z 3264 TID-gohagpexk NotificationWorker JID-6acc743c4552236f37e57fc3 INFO: start
+2017-07-19T17:04:55.096Z 3264 TID-goha1wz0k NotificationWorker JID-21c92b4c4057b3b379346376 INFO: start
+2017-07-19T17:04:55.436Z 3264 TID-goha1wznc NotificationWorker JID-9e1fbc673cf16f723a08492b INFO: done: 0.374 sec
+2017-07-19T17:04:55.437Z 3264 TID-goha1wznc NotificationWorker JID-485c98580eaae4897df062e4 INFO: start
+2017-07-19T17:04:55.465Z 3264 TID-gohagperg NotificationWorker JID-f5ee34d2f26ca430b0714549 INFO: done: 0.388 sec
+2017-07-19T17:04:55.518Z 3264 TID-goha1wz0k NotificationWorker JID-21c92b4c4057b3b379346376 INFO: done: 0.421 sec
+2017-07-19T17:04:55.556Z 3264 TID-gohagpexk NotificationWorker JID-6acc743c4552236f37e57fc3 INFO: done: 0.469 sec
+2017-07-19T17:04:55.836Z 3264 TID-goha1wznc NotificationWorker JID-485c98580eaae4897df062e4 INFO: done: 0.399 sec
+2017-07-19T17:05:02.358Z 3264 TID-gohagperg NotificationWorker JID-52c2563211136adfda61a250 INFO: start
+2017-07-19T17:05:02.371Z 3264 TID-goha1wz0k NotificationWorker JID-694298db5692dbdb871b7d3b INFO: start
+2017-07-19T17:05:02.699Z 3264 TID-goha1wz0k NotificationWorker JID-694298db5692dbdb871b7d3b INFO: done: 0.328 sec
+2017-07-19T17:05:07.637Z 3264 TID-gohagperg NotificationWorker JID-52c2563211136adfda61a250 INFO: done: 5.279 sec
+2017-07-19T17:06:01.890Z 3264 TID-goha1wznc NotificationWorker JID-b879c642f9e22b2b46705e56 INFO: start
+2017-07-19T17:06:15.189Z 3264 TID-goha1wznc NotificationWorker JID-b879c642f9e22b2b46705e56 INFO: done: 13.299 sec
+2017-07-19T17:07:19.101Z 3264 TID-goha1wz0k NotificationWorker JID-ba60da9b44de85976e652aa3 INFO: start
+2017-07-19T17:07:19.114Z 3264 TID-goha1wznc NotificationWorker JID-d1ff0fef1f76998c54e3fac5 INFO: start
+2017-07-19T17:07:19.127Z 3264 TID-gohagperg NotificationWorker JID-0d31038655b994507950903e INFO: start
+2017-07-19T17:07:19.136Z 3264 TID-gohagpexk NotificationWorker JID-b28688473bfbeb651021299c INFO: start
+2017-07-19T17:07:19.379Z 3264 TID-goha1wz0k NotificationWorker JID-ba60da9b44de85976e652aa3 INFO: done: 0.278 sec
+2017-07-19T17:07:19.381Z 3264 TID-goha1wz0k NotificationWorker JID-228dee179ef527c3707291b1 INFO: start
+2017-07-19T17:07:19.464Z 3264 TID-goha1wznc NotificationWorker JID-d1ff0fef1f76998c54e3fac5 INFO: done: 0.349 sec
+2017-07-19T17:07:19.516Z 3264 TID-gohagperg NotificationWorker JID-0d31038655b994507950903e INFO: done: 0.389 sec
+2017-07-19T17:07:19.701Z 3264 TID-gohagpexk NotificationWorker JID-b28688473bfbeb651021299c INFO: done: 0.565 sec
+2017-07-19T17:07:19.755Z 3264 TID-goha1wz0k NotificationWorker JID-228dee179ef527c3707291b1 INFO: done: 0.374 sec
+2017-07-19T17:07:27.134Z 3264 TID-goha1wznc NotificationWorker JID-0803cb4b8c819ad67147324c INFO: start
+2017-07-19T17:07:27.144Z 3264 TID-gohagperg NotificationWorker JID-f4246b43cd93710f94793989 INFO: start
+2017-07-19T17:07:27.157Z 3264 TID-gohagpexk NotificationWorker JID-9b9192677de29a245ff5c118 INFO: start
+2017-07-19T17:07:27.476Z 3264 TID-gohagperg NotificationWorker JID-f4246b43cd93710f94793989 INFO: done: 0.331 sec
+2017-07-19T17:07:27.590Z 3264 TID-gohagpexk NotificationWorker JID-9b9192677de29a245ff5c118 INFO: done: 0.433 sec
+2017-07-19T17:07:31.102Z 3264 TID-gohagperg NotificationWorker JID-61f63b06b44dccc604b904cd INFO: start
+2017-07-19T17:07:31.792Z 3264 TID-gohagperg NotificationWorker JID-61f63b06b44dccc604b904cd INFO: done: 0.69 sec
+2017-07-19T17:07:32.429Z 3264 TID-goha1wznc NotificationWorker JID-0803cb4b8c819ad67147324c INFO: done: 5.295 sec
+2017-07-19T17:20:20.252Z 3264 TID-gohagperg NotificationWorker JID-53b219e957d30187e7f10b04 INFO: start
+2017-07-19T17:20:30.148Z 3264 TID-goha1wz0k NotificationWorker JID-b433d7db7c06272f2f9a74e6 INFO: start
+2017-07-19T17:20:30.158Z 3264 TID-gohagpexk NotificationWorker JID-54d0db1f0381769b8ed5fcdb INFO: start
+2017-07-19T17:20:30.171Z 3264 TID-goha1wznc NotificationWorker JID-1616e9ce18463bd1eebea3bc INFO: start
+2017-07-19T17:20:30.311Z 3264 TID-gohagperg NotificationWorker JID-53b219e957d30187e7f10b04 INFO: done: 10.059 sec
+2017-07-19T17:20:30.312Z 3264 TID-gohagperg NotificationWorker JID-7821a0b614a43f7393e1ae8f INFO: start
+2017-07-19T17:20:30.469Z 3264 TID-goha1wz0k NotificationWorker JID-b433d7db7c06272f2f9a74e6 INFO: done: 0.321 sec
+2017-07-19T17:20:30.469Z 3264 TID-goha1wz0k NotificationWorker JID-dfbebb0391b0d7e442fa6adb INFO: start
+2017-07-19T17:20:30.654Z 3264 TID-goha1wznc NotificationWorker JID-1616e9ce18463bd1eebea3bc INFO: done: 0.483 sec
+2017-07-19T17:20:30.731Z 3264 TID-gohagperg NotificationWorker JID-7821a0b614a43f7393e1ae8f INFO: done: 0.419 sec
+2017-07-19T17:20:30.758Z 3264 TID-gohagpexk NotificationWorker JID-54d0db1f0381769b8ed5fcdb INFO: done: 0.6 sec
+2017-07-19T17:20:30.784Z 3264 TID-goha1wz0k NotificationWorker JID-dfbebb0391b0d7e442fa6adb INFO: done: 0.315 sec
+2017-07-19T17:20:33.129Z 3264 TID-goha1wznc NotificationWorker JID-f3b516d341dea286bfbf50ef INFO: start
+2017-07-19T17:20:33.138Z 3264 TID-gohagpexk NotificationWorker JID-6c16108453b8dbb55e9af755 INFO: start
+2017-07-19T17:20:33.146Z 3264 TID-gohagperg NotificationWorker JID-46dcfc1484068aafe564a95e INFO: start
+2017-07-19T17:20:33.155Z 3264 TID-goha1wz0k NotificationWorker JID-95200dc39a5e89acd9506239 INFO: start
+2017-07-19T17:20:33.522Z 3264 TID-gohagperg NotificationWorker JID-46dcfc1484068aafe564a95e INFO: done: 0.376 sec
+2017-07-19T17:20:33.522Z 3264 TID-gohagperg NotificationWorker JID-547424520695030d0482ceb8 INFO: start
+2017-07-19T17:20:33.561Z 3264 TID-goha1wz0k NotificationWorker JID-95200dc39a5e89acd9506239 INFO: done: 0.406 sec
+2017-07-19T17:20:33.636Z 3264 TID-gohagpexk NotificationWorker JID-6c16108453b8dbb55e9af755 INFO: done: 0.498 sec
+2017-07-19T17:20:33.793Z 3264 TID-gohagperg NotificationWorker JID-547424520695030d0482ceb8 INFO: done: 0.271 sec
+2017-07-19T17:20:34.416Z 3264 TID-goha1wznc NotificationWorker JID-f3b516d341dea286bfbf50ef INFO: done: 1.288 sec
+2017-07-19T17:23:06.386Z 3264 TID-goha1wznc NotificationWorker JID-48b9db5d37c9b7ab136da305 INFO: start
+2017-07-19T17:23:06.402Z 3264 TID-goha1wz0k NotificationWorker JID-ba04bcb84be80edd558726f1 INFO: start
+2017-07-19T17:23:06.423Z 3264 TID-gohagpexk NotificationWorker JID-1476d59744f9979f6dd84ba9 INFO: start
+2017-07-19T17:23:06.435Z 3264 TID-gohagperg NotificationWorker JID-2786c1a6bc1cb9dbfed4af81 INFO: start
+2017-07-19T17:23:06.682Z 3264 TID-goha1wznc NotificationWorker JID-48b9db5d37c9b7ab136da305 INFO: done: 0.297 sec
+2017-07-19T17:23:06.739Z 3264 TID-goha1wz0k NotificationWorker JID-ba04bcb84be80edd558726f1 INFO: done: 0.337 sec
+2017-07-19T17:23:06.821Z 3264 TID-gohagperg NotificationWorker JID-2786c1a6bc1cb9dbfed4af81 INFO: done: 0.387 sec
+2017-07-19T17:23:06.862Z 3264 TID-gohagpexk NotificationWorker JID-1476d59744f9979f6dd84ba9 INFO: done: 0.439 sec
+2017-07-19T17:23:13.105Z 3264 TID-goha1wznc NotificationWorker JID-53920bd184d28c1a0ac4e1a5 INFO: start
+2017-07-19T17:23:13.366Z 3264 TID-goha1wznc NotificationWorker JID-53920bd184d28c1a0ac4e1a5 INFO: done: 0.261 sec
+2017-07-19T17:34:49.029Z 3264 TID-goha1wznc NotificationWorker JID-dc8ca51f4aeafdd089f4a460 INFO: start
+2017-07-19T17:34:52.004Z 3264 TID-goha1wznc NotificationWorker JID-dc8ca51f4aeafdd089f4a460 INFO: done: 2.975 sec
+2017-07-19T17:34:55.990Z 3264 TID-goha1wznc NotificationWorker JID-91efa9c6ad88388618f89b20 INFO: start
+2017-07-19T17:34:56.001Z 3264 TID-gohagperg NotificationWorker JID-df21f0ab8df6666081724e74 INFO: start
+2017-07-19T17:34:56.010Z 3264 TID-gohagpexk NotificationWorker JID-3e4f5f570b0fa783281ef7ef INFO: start
+2017-07-19T17:34:56.020Z 3264 TID-goha1wz0k NotificationWorker JID-592e4caaea8061bd0352fade INFO: start
+2017-07-19T17:34:57.186Z 3264 TID-goha1wznc NotificationWorker JID-91efa9c6ad88388618f89b20 INFO: done: 1.196 sec
+2017-07-19T17:34:57.186Z 3264 TID-gohagperg NotificationWorker JID-df21f0ab8df6666081724e74 INFO: done: 1.185 sec
+2017-07-19T17:34:57.210Z 3264 TID-goha1wz0k NotificationWorker JID-592e4caaea8061bd0352fade INFO: done: 1.19 sec
+2017-07-19T17:34:57.264Z 3264 TID-gohagpexk NotificationWorker JID-3e4f5f570b0fa783281ef7ef INFO: done: 1.254 sec
+2017-07-19T17:34:59.015Z 3264 TID-goha1wznc NotificationWorker JID-c0910258ce5ac547ae2e2e39 INFO: start
+2017-07-19T17:34:59.024Z 3264 TID-gohagperg NotificationWorker JID-63d97e77196f9942a89c430f INFO: start
+2017-07-19T17:34:59.035Z 3264 TID-goha1wz0k NotificationWorker JID-c68069e05339daaa9c4e491c INFO: start
+2017-07-19T17:34:59.327Z 3264 TID-goha1wznc NotificationWorker JID-c0910258ce5ac547ae2e2e39 INFO: done: 0.312 sec
+2017-07-19T17:34:59.377Z 3264 TID-gohagperg NotificationWorker JID-63d97e77196f9942a89c430f INFO: done: 0.354 sec
+2017-07-19T17:34:59.430Z 3264 TID-goha1wz0k NotificationWorker JID-c68069e05339daaa9c4e491c INFO: done: 0.395 sec
+2017-07-19T17:35:02.017Z 3264 TID-gohagpexk NotificationWorker JID-f7ef4d20b2a064f382c7910f INFO: start
+2017-07-19T17:35:02.027Z 3264 TID-goha1wznc NotificationWorker JID-08361611c60a98f0ab1ad478 INFO: start
+2017-07-19T17:35:02.341Z 3264 TID-goha1wznc NotificationWorker JID-08361611c60a98f0ab1ad478 INFO: done: 0.313 sec
+2017-07-19T17:35:02.370Z 3264 TID-gohagpexk NotificationWorker JID-f7ef4d20b2a064f382c7910f INFO: done: 0.353 sec
+2017-07-19T17:35:03.865Z 3264 TID-goha1wznc NotificationWorker JID-e6c88136dddc7d259215287d INFO: start
+2017-07-19T17:35:04.155Z 3264 TID-goha1wznc NotificationWorker JID-e6c88136dddc7d259215287d INFO: done: 0.29 sec
+2017-07-19T17:35:30.040Z 3264 TID-goha1wznc NotificationWorker JID-51feb6c8b636440cbf20c4df INFO: start
+2017-07-19T17:35:39.004Z 3264 TID-gohagperg NotificationWorker JID-83a03a835b0a37e4483828e3 INFO: start
+2017-07-19T17:35:39.011Z 3264 TID-goha1wz0k NotificationWorker JID-e1964509076c07d0c10b6b87 INFO: start
+2017-07-19T17:35:40.181Z 3264 TID-gohagperg NotificationWorker JID-83a03a835b0a37e4483828e3 INFO: done: 1.177 sec
+2017-07-19T17:35:40.181Z 3264 TID-goha1wz0k NotificationWorker JID-e1964509076c07d0c10b6b87 INFO: done: 1.17 sec
+2017-07-19T17:35:42.170Z 3264 TID-goha1wznc NotificationWorker JID-51feb6c8b636440cbf20c4df INFO: done: 12.13 sec
+2017-07-19T17:35:42.221Z 3264 TID-gohagperg NotificationWorker JID-fda85d206f93446b915126a0 INFO: start
+2017-07-19T17:35:42.233Z 3264 TID-gohagpexk NotificationWorker JID-1e5a92bc7ba3b0df4289555b INFO: start
+2017-07-19T17:35:45.120Z 3264 TID-goha1wz0k NotificationWorker JID-603f067b8a3c78dbd7ddfa1a INFO: start
+2017-07-19T17:35:45.131Z 3264 TID-goha1wznc NotificationWorker JID-4df46f9af8851d141a0d3600 INFO: start
+2017-07-19T17:35:45.765Z 3264 TID-goha1wz0k NotificationWorker JID-603f067b8a3c78dbd7ddfa1a INFO: done: 0.645 sec
+2017-07-19T17:35:45.766Z 3264 TID-goha1wznc NotificationWorker JID-4df46f9af8851d141a0d3600 INFO: done: 0.635 sec
+2017-07-19T17:35:47.512Z 3264 TID-gohagperg NotificationWorker JID-fda85d206f93446b915126a0 INFO: done: 5.291 sec
+2017-07-19T17:35:47.613Z 3264 TID-gohagpexk NotificationWorker JID-1e5a92bc7ba3b0df4289555b INFO: done: 5.38 sec
+2017-07-19T17:37:02.115Z 3264 TID-gohagpexk NotificationWorker JID-59498908af320de74f31ba6b INFO: start
+2017-07-19T17:37:06.214Z 3264 TID-gohagpexk NotificationWorker JID-59498908af320de74f31ba6b INFO: done: 4.099 sec
+2017-07-19T17:37:08.374Z 3264 TID-gohagperg NotificationWorker JID-1489b05b9da5a4c00ef2d23e INFO: start
+2017-07-19T17:37:08.659Z 3264 TID-gohagperg NotificationWorker JID-1489b05b9da5a4c00ef2d23e INFO: done: 0.285 sec
+2017-07-19T17:37:15.948Z 3264 TID-goha1wznc NotificationWorker JID-7ff88754fd2a76f310c153e1 INFO: start
+2017-07-19T17:37:15.959Z 3264 TID-goha1wz0k NotificationWorker JID-a541920eb3edf99154f8c4b8 INFO: start
+2017-07-19T17:37:16.255Z 3264 TID-goha1wznc NotificationWorker JID-7ff88754fd2a76f310c153e1 INFO: done: 0.307 sec
+2017-07-19T17:37:16.309Z 3264 TID-goha1wz0k NotificationWorker JID-a541920eb3edf99154f8c4b8 INFO: done: 0.349 sec
+2017-07-19T17:37:22.007Z 3264 TID-goha1wznc NotificationWorker JID-dc1a95957936118045c97a3d INFO: start
+2017-07-19T17:37:22.307Z 3264 TID-goha1wznc NotificationWorker JID-dc1a95957936118045c97a3d INFO: done: 0.299 sec
+2017-07-19T17:39:49.052Z 3264 TID-gohagperg NotificationWorker JID-68cebc868f90e6439ff29541 INFO: start
+2017-07-19T17:39:52.475Z 3264 TID-gohagperg NotificationWorker JID-68cebc868f90e6439ff29541 INFO: done: 3.422 sec
+2017-07-19T17:39:56.022Z 3264 TID-gohagperg NotificationWorker JID-ca6def77b28f75bc0239819f INFO: start
+2017-07-19T17:39:56.031Z 3264 TID-gohagpexk NotificationWorker JID-31c9555186f776930e574655 INFO: start
+2017-07-19T17:39:56.038Z 3264 TID-goha1wz0k NotificationWorker JID-7cedf25054f233f3279866f2 INFO: start
+2017-07-19T17:39:56.048Z 3264 TID-goha1wznc NotificationWorker JID-158a660dbc35528d2113814c INFO: start
+2017-07-19T17:39:56.351Z 3264 TID-gohagperg NotificationWorker JID-ca6def77b28f75bc0239819f INFO: done: 0.329 sec
+2017-07-19T17:39:56.447Z 3264 TID-goha1wznc NotificationWorker JID-158a660dbc35528d2113814c INFO: done: 0.399 sec
+2017-07-19T17:39:56.454Z 3264 TID-gohagpexk NotificationWorker JID-31c9555186f776930e574655 INFO: done: 0.424 sec
+2017-07-19T17:39:59.857Z 3264 TID-gohagperg NotificationWorker JID-5f300db2bab99538554fcec0 INFO: start
+2017-07-19T17:39:59.867Z 3264 TID-goha1wznc NotificationWorker JID-663d3e1cdc0b516674dcabb1 INFO: start
+2017-07-19T17:39:59.877Z 3264 TID-gohagpexk NotificationWorker JID-d9b1d5a13e9fb3abf328a343 INFO: start
+2017-07-19T17:40:00.167Z 3264 TID-gohagperg NotificationWorker JID-5f300db2bab99538554fcec0 INFO: done: 0.311 sec
+2017-07-19T17:40:00.168Z 3264 TID-gohagperg NotificationWorker JID-9dc0213df916ee84af0011eb INFO: start
+2017-07-19T17:40:00.227Z 3264 TID-goha1wznc NotificationWorker JID-663d3e1cdc0b516674dcabb1 INFO: done: 0.36 sec
+2017-07-19T17:40:00.227Z 3264 TID-goha1wznc NotificationWorker JID-41fb0d754dd546d95d2dedd7 INFO: start
+2017-07-19T17:40:00.305Z 3264 TID-gohagpexk NotificationWorker JID-d9b1d5a13e9fb3abf328a343 INFO: done: 0.428 sec
+2017-07-19T17:40:00.544Z 3264 TID-gohagperg NotificationWorker JID-9dc0213df916ee84af0011eb INFO: done: 0.376 sec
+2017-07-19T17:40:00.578Z 3264 TID-goha1wznc NotificationWorker JID-41fb0d754dd546d95d2dedd7 INFO: done: 0.35 sec
+2017-07-19T17:40:01.534Z 3264 TID-goha1wz0k NotificationWorker JID-7cedf25054f233f3279866f2 INFO: done: 5.496 sec
+2017-07-19T17:45:33.954Z 3264 TID-goha1wz0k NotificationWorker JID-be335f286f5e76f5a766dddc INFO: start
+2017-07-19T17:45:36.189Z 3264 TID-goha1wz0k NotificationWorker JID-be335f286f5e76f5a766dddc INFO: done: 2.234 sec
+2017-07-19T17:45:39.043Z 3264 TID-gohagpexk NotificationWorker JID-fea0ff208005f359c498d520 INFO: start
+2017-07-19T17:45:39.054Z 3264 TID-goha1wznc NotificationWorker JID-747e168c5657a5d32277016f INFO: start
+2017-07-19T17:45:39.065Z 3264 TID-gohagperg NotificationWorker JID-1c126b3c0a944bc07c702668 INFO: start
+2017-07-19T17:45:39.410Z 3264 TID-goha1wznc NotificationWorker JID-747e168c5657a5d32277016f INFO: done: 0.356 sec
+2017-07-19T17:45:39.413Z 3264 TID-gohagperg NotificationWorker JID-1c126b3c0a944bc07c702668 INFO: done: 0.349 sec
+2017-07-19T17:45:40.487Z 3264 TID-gohagpexk NotificationWorker JID-fea0ff208005f359c498d520 INFO: done: 1.444 sec
+2017-07-19T17:45:41.379Z 3264 TID-goha1wznc NotificationWorker JID-c1c4ef037997fcb30163f121 INFO: start
+2017-07-19T17:45:41.389Z 3264 TID-gohagperg NotificationWorker JID-e947ac6b91bd910e2707e2a9 INFO: start
+2017-07-19T17:45:41.689Z 3264 TID-goha1wznc NotificationWorker JID-c1c4ef037997fcb30163f121 INFO: done: 0.31 sec
+2017-07-19T17:45:41.737Z 3264 TID-gohagperg NotificationWorker JID-e947ac6b91bd910e2707e2a9 INFO: done: 0.348 sec
+2017-07-19T17:52:47.022Z 3264 TID-gohagperg NotificationWorker JID-b8543b016df4576b353d1e19 INFO: start
+2017-07-19T17:52:48.651Z 3264 TID-gohagperg NotificationWorker JID-b8543b016df4576b353d1e19 INFO: done: 1.629 sec
+2017-07-19T17:52:51.987Z 3264 TID-gohagperg NotificationWorker JID-655de9a7fc738bcb7739049d INFO: start
+2017-07-19T17:52:51.996Z 3264 TID-goha1wznc NotificationWorker JID-8bbbc5234e91031c97faba58 INFO: start
+2017-07-19T17:52:52.006Z 3264 TID-gohagpexk NotificationWorker JID-c327936b90e8c360cd8ef8ba INFO: start
+2017-07-19T17:52:52.014Z 3264 TID-goha1wz0k NotificationWorker JID-5561a9250d290c464867ea66 INFO: start
+2017-07-19T17:52:52.282Z 3264 TID-gohagperg NotificationWorker JID-655de9a7fc738bcb7739049d INFO: done: 0.295 sec
+2017-07-19T17:52:52.332Z 3264 TID-goha1wznc NotificationWorker JID-8bbbc5234e91031c97faba58 INFO: done: 0.335 sec
+2017-07-19T17:52:52.451Z 3264 TID-goha1wz0k NotificationWorker JID-5561a9250d290c464867ea66 INFO: done: 0.437 sec
+2017-07-19T17:52:52.690Z 3264 TID-gohagpexk NotificationWorker JID-c327936b90e8c360cd8ef8ba INFO: done: 0.684 sec
+2017-07-19T17:52:54.013Z 3264 TID-gohagperg NotificationWorker JID-aea30fa1052fcffff3a7ab28 INFO: start
+2017-07-19T17:52:54.023Z 3264 TID-goha1wznc NotificationWorker JID-c8ee624ae1b96b2165f2b2e0 INFO: start
+2017-07-19T17:52:54.304Z 3264 TID-gohagperg NotificationWorker JID-aea30fa1052fcffff3a7ab28 INFO: done: 0.292 sec
+2017-07-19T17:52:54.361Z 3264 TID-goha1wznc NotificationWorker JID-c8ee624ae1b96b2165f2b2e0 INFO: done: 0.338 sec
+2017-07-19T18:34:52.341Z 3264 TID-goha1wz0k NotificationWorker JID-dabe3db4169b4ab291b8bb1c INFO: start
+2017-07-19T18:34:58.687Z 3264 TID-goha1wz0k NotificationWorker JID-dabe3db4169b4ab291b8bb1c INFO: done: 6.346 sec
+2017-07-19T18:35:01.484Z 3264 TID-gohagperg NotificationWorker JID-c88cb89a3214106b68bcff11 INFO: start
+2017-07-19T18:35:01.491Z 3264 TID-goha1wz0k NotificationWorker JID-310620e3ea7b4868be56bb34 INFO: start
+2017-07-19T18:35:01.826Z 3264 TID-goha1wz0k NotificationWorker JID-310620e3ea7b4868be56bb34 INFO: done: 0.335 sec
+2017-07-19T18:35:01.992Z 3264 TID-gohagperg NotificationWorker JID-c88cb89a3214106b68bcff11 INFO: done: 0.508 sec
+2017-07-19T18:35:05.779Z 3264 TID-goha1wz0k NotificationWorker JID-d64599b128139649ed21411c INFO: start
+2017-07-19T18:35:05.790Z 3264 TID-gohagperg NotificationWorker JID-2c16cc1b514ac3dfd5b12bd9 INFO: start
+2017-07-19T18:35:06.059Z 3264 TID-goha1wz0k NotificationWorker JID-d64599b128139649ed21411c INFO: done: 0.28 sec
+2017-07-19T18:35:06.137Z 3264 TID-gohagperg NotificationWorker JID-2c16cc1b514ac3dfd5b12bd9 INFO: done: 0.347 sec
+2017-07-19T18:36:42.446Z 3264 TID-goha1wznc NotificationWorker JID-8afe7fecdcee83db0e85e13f INFO: start
+2017-07-19T18:36:53.304Z 3264 TID-gohagpexk NotificationWorker JID-69403df0ba6ebaabb0cdef63 INFO: start
+2017-07-19T18:36:53.312Z 3264 TID-goha1wz0k NotificationWorker JID-232c3c751da165b6bcd7687e INFO: start
+2017-07-19T18:36:53.321Z 3264 TID-gohagperg NotificationWorker JID-8453143157872758e7162dea INFO: start
+2017-07-19T18:36:53.636Z 3264 TID-goha1wz0k NotificationWorker JID-232c3c751da165b6bcd7687e INFO: done: 0.324 sec
+2017-07-19T18:36:53.637Z 3264 TID-goha1wz0k NotificationWorker JID-16b9b3ae47287a709b6d9998 INFO: start
+2017-07-19T18:36:53.671Z 3264 TID-gohagperg NotificationWorker JID-8453143157872758e7162dea INFO: done: 0.35 sec
+2017-07-19T18:36:53.671Z 3264 TID-gohagperg NotificationWorker JID-11336aad4367b403668a2335 INFO: start
+2017-07-19T18:36:53.718Z 3264 TID-gohagpexk NotificationWorker JID-69403df0ba6ebaabb0cdef63 INFO: done: 0.415 sec
+2017-07-19T18:36:53.719Z 3264 TID-gohagpexk NotificationWorker JID-6c0c1a8ebe2df5bbbd451ac3 INFO: start
+2017-07-19T18:36:53.991Z 3264 TID-goha1wz0k NotificationWorker JID-16b9b3ae47287a709b6d9998 INFO: done: 0.354 sec
+2017-07-19T18:36:53.991Z 3264 TID-goha1wz0k NotificationWorker JID-e5fa028fe78fc26e827244b2 INFO: start
+2017-07-19T18:36:54.102Z 3264 TID-gohagperg NotificationWorker JID-11336aad4367b403668a2335 INFO: done: 0.431 sec
+2017-07-19T18:36:54.102Z 3264 TID-gohagperg NotificationWorker JID-9d20a646b4de03197b93ac21 INFO: start
+2017-07-19T18:36:54.329Z 3264 TID-gohagpexk NotificationWorker JID-6c0c1a8ebe2df5bbbd451ac3 INFO: done: 0.61 sec
+2017-07-19T18:36:54.360Z 3264 TID-goha1wz0k NotificationWorker JID-e5fa028fe78fc26e827244b2 INFO: done: 0.369 sec
+2017-07-19T18:36:54.566Z 3264 TID-gohagperg NotificationWorker JID-9d20a646b4de03197b93ac21 INFO: done: 0.463 sec
+2017-07-19T18:37:00.691Z 3264 TID-gohagpexk NotificationWorker JID-c181dbc85851c6323cf1beff INFO: start
+2017-07-19T18:37:00.700Z 3264 TID-goha1wz0k NotificationWorker JID-4283f71c79865e95c45abacb INFO: start
+2017-07-19T18:37:00.710Z 3264 TID-gohagperg NotificationWorker JID-27a6acc7e29ce9537072316c INFO: start
+2017-07-19T18:37:02.465Z 3264 TID-gohagperg NotificationWorker JID-27a6acc7e29ce9537072316c INFO: done: 1.756 sec
+2017-07-19T18:37:02.466Z 3264 TID-gohagperg NotificationWorker JID-de208097edef7d70426fd5d9 INFO: start
+2017-07-19T18:37:02.496Z 3264 TID-gohagpexk NotificationWorker JID-c181dbc85851c6323cf1beff INFO: done: 1.805 sec
+2017-07-19T18:37:02.497Z 3264 TID-goha1wz0k NotificationWorker JID-4283f71c79865e95c45abacb INFO: done: 1.798 sec
+2017-07-19T18:37:02.497Z 3264 TID-gohagpexk NotificationWorker JID-a32ba5b1e6b6547996aee07b INFO: start
+2017-07-19T18:37:02.498Z 3264 TID-goha1wz0k NotificationWorker JID-cd076244766c84e901241e89 INFO: start
+2017-07-19T18:37:02.750Z 3264 TID-gohagperg NotificationWorker JID-de208097edef7d70426fd5d9 INFO: done: 0.284 sec
+2017-07-19T18:37:02.751Z 3264 TID-gohagperg NotificationWorker JID-035a8380cf5abe02ffb8e381 INFO: start
+2017-07-19T18:37:02.846Z 3264 TID-goha1wz0k NotificationWorker JID-cd076244766c84e901241e89 INFO: done: 0.347 sec
+2017-07-19T18:37:02.846Z 3264 TID-goha1wz0k NotificationWorker JID-82b7dd61373855fd22cbd5a1 INFO: start
+2017-07-19T18:37:02.875Z 3264 TID-gohagpexk NotificationWorker JID-a32ba5b1e6b6547996aee07b INFO: done: 0.377 sec
+2017-07-19T18:37:03.033Z 3264 TID-gohagperg NotificationWorker JID-035a8380cf5abe02ffb8e381 INFO: done: 0.282 sec
+2017-07-19T18:37:03.180Z 3264 TID-goha1wz0k NotificationWorker JID-82b7dd61373855fd22cbd5a1 INFO: done: 0.334 sec
+2017-07-19T18:37:05.317Z 3264 TID-gohagpexk NotificationWorker JID-cfecdafed9795fa9428e3d24 INFO: start
+2017-07-19T18:37:05.325Z 3264 TID-gohagperg NotificationWorker JID-85ccf75153c53200f1a6b186 INFO: start
+2017-07-19T18:37:05.333Z 3264 TID-goha1wz0k NotificationWorker JID-5e17e8d7afd43d6d37982ee4 INFO: start
+2017-07-19T18:37:05.663Z 3264 TID-gohagperg NotificationWorker JID-85ccf75153c53200f1a6b186 INFO: done: 0.338 sec
+2017-07-19T18:37:05.664Z 3264 TID-gohagperg NotificationWorker JID-d4dd198c7c29cfb551e22b96 INFO: start
+2017-07-19T18:37:05.684Z 3264 TID-goha1wz0k NotificationWorker JID-5e17e8d7afd43d6d37982ee4 INFO: done: 0.35 sec
+2017-07-19T18:37:05.707Z 3264 TID-gohagpexk NotificationWorker JID-cfecdafed9795fa9428e3d24 INFO: done: 0.39 sec
+2017-07-19T18:37:05.949Z 3264 TID-gohagperg NotificationWorker JID-d4dd198c7c29cfb551e22b96 INFO: done: 0.285 sec
+2017-07-19T18:37:08.264Z 3264 TID-goha1wz0k NotificationWorker JID-7455a43bf3588b436b1108fd INFO: start
+2017-07-19T18:37:08.276Z 3264 TID-gohagpexk NotificationWorker JID-822f31f682c6ad5c4721a979 INFO: start
+2017-07-19T18:37:08.558Z 3264 TID-goha1wz0k NotificationWorker JID-7455a43bf3588b436b1108fd INFO: done: 0.294 sec
+2017-07-19T18:37:08.709Z 3264 TID-gohagpexk NotificationWorker JID-822f31f682c6ad5c4721a979 INFO: done: 0.433 sec
+2017-07-19T18:37:11.280Z 3264 TID-gohagperg NotificationWorker JID-dbfb3c2d8755912ff1f6d5ca INFO: start
+2017-07-19T18:37:11.289Z 3264 TID-goha1wz0k NotificationWorker JID-62d720fe31b4474072fc8b0e INFO: start
+2017-07-19T18:37:11.299Z 3264 TID-gohagpexk NotificationWorker JID-5ffb67a182ad617d80e6ca97 INFO: start
+2017-07-19T18:37:12.424Z 3264 TID-gohagperg NotificationWorker JID-dbfb3c2d8755912ff1f6d5ca INFO: done: 1.143 sec
+2017-07-19T18:37:12.451Z 3264 TID-goha1wz0k NotificationWorker JID-62d720fe31b4474072fc8b0e INFO: done: 1.162 sec
+2017-07-19T18:37:12.504Z 3264 TID-gohagpexk NotificationWorker JID-5ffb67a182ad617d80e6ca97 INFO: done: 1.206 sec
+2017-07-19T18:37:14.315Z 3264 TID-gohagperg NotificationWorker JID-673f114a7fce96663c88a0a5 INFO: start
+2017-07-19T18:37:14.323Z 3264 TID-goha1wz0k NotificationWorker JID-01e9d812549ef015ef1ff99d INFO: start
+2017-07-19T18:37:14.724Z 3264 TID-goha1wz0k NotificationWorker JID-01e9d812549ef015ef1ff99d INFO: done: 0.401 sec
+2017-07-19T18:37:14.755Z 3264 TID-gohagperg NotificationWorker JID-673f114a7fce96663c88a0a5 INFO: done: 0.44 sec
+2017-07-19T18:37:19.310Z 3264 TID-gohagpexk NotificationWorker JID-4571e0c98e9dd0c1f0900c14 INFO: start
+2017-07-19T18:37:19.318Z 3264 TID-gohagperg NotificationWorker JID-657da8284e5fe3cf954554e0 INFO: start
+2017-07-19T18:37:19.327Z 3264 TID-goha1wz0k NotificationWorker JID-f3b4ed9780576dcc93de6b2d INFO: start
+2017-07-19T18:37:20.456Z 3264 TID-gohagperg NotificationWorker JID-657da8284e5fe3cf954554e0 INFO: done: 1.138 sec
+2017-07-19T18:37:20.475Z 3264 TID-goha1wz0k NotificationWorker JID-f3b4ed9780576dcc93de6b2d INFO: done: 1.148 sec
+2017-07-19T18:37:20.968Z 3264 TID-goha1wznc NotificationWorker JID-8afe7fecdcee83db0e85e13f INFO: done: 38.522 sec
+2017-07-19T18:37:23.318Z 3264 TID-gohagperg NotificationWorker JID-6da21487dd1962a7fa63d551 INFO: start
+2017-07-19T18:37:23.327Z 3264 TID-goha1wz0k NotificationWorker JID-d63a839b710611f2a27f2212 INFO: start
+2017-07-19T18:37:23.335Z 3264 TID-goha1wznc NotificationWorker JID-fd1bd6020f26085e97e9b302 INFO: start
+2017-07-19T18:37:23.616Z 3264 TID-gohagperg NotificationWorker JID-6da21487dd1962a7fa63d551 INFO: done: 0.298 sec
+2017-07-19T18:37:23.666Z 3264 TID-goha1wz0k NotificationWorker JID-d63a839b710611f2a27f2212 INFO: done: 0.339 sec
+2017-07-19T18:37:23.752Z 3264 TID-goha1wznc NotificationWorker JID-fd1bd6020f26085e97e9b302 INFO: done: 0.417 sec
+2017-07-19T18:37:24.908Z 3264 TID-gohagpexk NotificationWorker JID-4571e0c98e9dd0c1f0900c14 INFO: done: 5.598 sec
+2017-07-19T18:58:15.590Z 3264 TID-gohagpexk NotificationWorker JID-d60af5fc4b4c0b29678ac2e3 INFO: start
+2017-07-19T18:58:26.599Z 3264 TID-gohagpexk NotificationWorker JID-d60af5fc4b4c0b29678ac2e3 INFO: done: 11.009 sec
+2017-07-19T18:58:33.277Z 3264 TID-gohagpexk NotificationWorker JID-1a1cd1e2dfa31740e8162f53 INFO: start
+2017-07-19T18:58:33.292Z 3264 TID-goha1wznc NotificationWorker JID-c4738647babf6cd84670606c INFO: start
+2017-07-19T18:58:33.299Z 3264 TID-gohagperg NotificationWorker JID-b581172669ae1738440df680 INFO: start
+2017-07-19T18:58:34.466Z 3264 TID-gohagperg NotificationWorker JID-b581172669ae1738440df680 INFO: done: 1.167 sec
+2017-07-19T18:58:34.558Z 3264 TID-gohagpexk NotificationWorker JID-1a1cd1e2dfa31740e8162f53 INFO: done: 1.281 sec
+2017-07-19T18:58:34.559Z 3264 TID-goha1wznc NotificationWorker JID-c4738647babf6cd84670606c INFO: done: 1.267 sec
+2017-07-19T18:58:35.820Z 3264 TID-gohagperg NotificationWorker JID-5b98e98c7753d8340b5c0a60 INFO: start
+2017-07-19T18:58:35.827Z 3264 TID-gohagpexk NotificationWorker JID-5e6d66c4c1da3fe46b705c8c INFO: start
+2017-07-19T18:58:35.833Z 3264 TID-goha1wznc NotificationWorker JID-2336368ad62e9f5fe7329f1f INFO: start
+2017-07-19T18:58:36.113Z 3264 TID-gohagperg NotificationWorker JID-5b98e98c7753d8340b5c0a60 INFO: done: 0.293 sec
+2017-07-19T18:58:36.212Z 3264 TID-gohagpexk NotificationWorker JID-5e6d66c4c1da3fe46b705c8c INFO: done: 0.384 sec
+2017-07-19T18:58:36.270Z 3264 TID-goha1wznc NotificationWorker JID-2336368ad62e9f5fe7329f1f INFO: done: 0.436 sec
+2017-07-19T18:58:37.875Z 3264 TID-gohagperg NotificationWorker JID-e4d74550b117e0d7a10ff37e INFO: start
+2017-07-19T18:58:37.882Z 3264 TID-gohagpexk NotificationWorker JID-35f2ab862fa012f596ab491b INFO: start
+2017-07-19T18:58:38.173Z 3264 TID-gohagperg NotificationWorker JID-e4d74550b117e0d7a10ff37e INFO: done: 0.298 sec
+2017-07-19T18:58:38.303Z 3264 TID-gohagpexk NotificationWorker JID-35f2ab862fa012f596ab491b INFO: done: 0.421 sec
+2017-07-19T18:58:39.536Z 3264 TID-gohagperg NotificationWorker JID-cea8ba8f5bdc0dd7be6a4593 INFO: start
+2017-07-19T18:58:39.546Z 3264 TID-gohagpexk NotificationWorker JID-ea20e78cc2349ae662ca02d8 INFO: start
+2017-07-19T18:58:40.143Z 3264 TID-gohagperg NotificationWorker JID-cea8ba8f5bdc0dd7be6a4593 INFO: done: 0.607 sec
+2017-07-19T18:58:40.178Z 3264 TID-gohagpexk NotificationWorker JID-ea20e78cc2349ae662ca02d8 INFO: done: 0.632 sec
+2017-07-19T19:01:05.043Z 3264 TID-goha1wz0k NotificationWorker JID-c4b12647f7ec125bf887d393 INFO: start
+2017-07-19T19:01:08.177Z 3264 TID-gohagperg NotificationWorker JID-965cf8a9c6d82231c6f5bdd6 INFO: start
+2017-07-19T19:01:08.180Z 3264 TID-goha1wz0k NotificationWorker JID-c4b12647f7ec125bf887d393 INFO: done: 3.137 sec
+2017-07-19T19:01:08.460Z 3264 TID-gohagperg NotificationWorker JID-965cf8a9c6d82231c6f5bdd6 INFO: done: 0.283 sec
+2017-07-19T19:01:13.026Z 3264 TID-goha1wz0k NotificationWorker JID-500015e94bff418f3fdd6265 INFO: start
+2017-07-19T19:01:13.035Z 3264 TID-gohagperg NotificationWorker JID-b9fe308f2d3bf3b5e55ef04c INFO: start
+2017-07-19T19:01:13.046Z 3264 TID-gohagpexk NotificationWorker JID-3c00418a96cb7b73fe9b0398 INFO: start
+2017-07-19T19:01:13.350Z 3264 TID-goha1wz0k NotificationWorker JID-500015e94bff418f3fdd6265 INFO: done: 0.324 sec
+2017-07-19T19:01:13.380Z 3264 TID-gohagperg NotificationWorker JID-b9fe308f2d3bf3b5e55ef04c INFO: done: 0.345 sec
+2017-07-19T19:01:13.457Z 3264 TID-gohagpexk NotificationWorker JID-3c00418a96cb7b73fe9b0398 INFO: done: 0.412 sec
+2017-07-19T19:01:16.012Z 3264 TID-goha1wznc NotificationWorker JID-abe4e8f861afb743f75ce718 INFO: start
+2017-07-19T19:01:16.023Z 3264 TID-gohagperg NotificationWorker JID-ef2205ae932da85e9acf369b INFO: start
+2017-07-19T19:01:16.380Z 3264 TID-goha1wznc NotificationWorker JID-abe4e8f861afb743f75ce718 INFO: done: 0.368 sec
+2017-07-19T19:01:17.371Z 3264 TID-gohagperg NotificationWorker JID-ef2205ae932da85e9acf369b INFO: done: 1.348 sec
+2017-07-19T19:01:17.743Z 3264 TID-goha1wznc NotificationWorker JID-6c9abdb40c3d7c7b73d6334c INFO: start
+2017-07-19T19:01:17.754Z 3264 TID-gohagperg NotificationWorker JID-55719510a2cb8a697d17d44d INFO: start
+2017-07-19T19:01:18.073Z 3264 TID-gohagperg NotificationWorker JID-55719510a2cb8a697d17d44d INFO: done: 0.319 sec
+2017-07-19T19:01:18.123Z 3264 TID-goha1wznc NotificationWorker JID-6c9abdb40c3d7c7b73d6334c INFO: done: 0.38 sec
+2017-07-19T19:01:18.999Z 3264 TID-goha1wz0k NotificationWorker JID-fd4a113e6b26ed228a6483a6 INFO: start
+2017-07-19T19:01:19.291Z 3264 TID-goha1wz0k NotificationWorker JID-fd4a113e6b26ed228a6483a6 INFO: done: 0.292 sec
+2017-07-19T19:18:22.598Z 3264 TID-gohagpexk NotificationWorker JID-4b2b92fcc49d3b154bcb0cb3 INFO: start
+2017-07-19T19:18:32.512Z 3264 TID-goha1wz0k NotificationWorker JID-934bae896895508730ae1341 INFO: start
+2017-07-19T19:18:32.521Z 3264 TID-goha1wznc NotificationWorker JID-f5af413f66dafd70472c6861 INFO: start
+2017-07-19T19:18:32.534Z 3264 TID-gohagperg NotificationWorker JID-cb415583981ab6b82dc565d0 INFO: start
+2017-07-19T19:18:32.813Z 3264 TID-goha1wz0k NotificationWorker JID-934bae896895508730ae1341 INFO: done: 0.301 sec
+2017-07-19T19:18:32.813Z 3264 TID-goha1wz0k NotificationWorker JID-2bd216eda859d429b39baf09 INFO: start
+2017-07-19T19:18:32.955Z 3264 TID-goha1wznc NotificationWorker JID-f5af413f66dafd70472c6861 INFO: done: 0.434 sec
+2017-07-19T19:18:33.902Z 3264 TID-gohagperg NotificationWorker JID-cb415583981ab6b82dc565d0 INFO: done: 1.368 sec
+2017-07-19T19:18:39.513Z 3264 TID-gohagperg NotificationWorker JID-a95608fcbff32cb3e43fe884 INFO: start
+2017-07-19T19:18:39.520Z 3264 TID-goha1wznc NotificationWorker JID-c1908fc1d3a6c76874ecd27f INFO: start
+2017-07-19T19:18:39.688Z 3264 TID-goha1wz0k NotificationWorker JID-2bd216eda859d429b39baf09 INFO: done: 6.875 sec
+2017-07-19T19:18:39.689Z 3264 TID-goha1wz0k NotificationWorker JID-b798a3e8baaa98540b7c0d6c INFO: start
+2017-07-19T19:18:39.806Z 3264 TID-gohagperg NotificationWorker JID-a95608fcbff32cb3e43fe884 INFO: done: 0.293 sec
+2017-07-19T19:18:39.806Z 3264 TID-gohagperg NotificationWorker JID-f94bc9869d4a82a8b72624a3 INFO: start
+2017-07-19T19:18:39.938Z 3264 TID-goha1wznc NotificationWorker JID-c1908fc1d3a6c76874ecd27f INFO: done: 0.417 sec
+2017-07-19T19:18:39.938Z 3264 TID-goha1wznc NotificationWorker JID-fe40d190abfff37692645a86 INFO: start
+2017-07-19T19:18:40.002Z 3264 TID-goha1wz0k NotificationWorker JID-b798a3e8baaa98540b7c0d6c INFO: done: 0.313 sec
+2017-07-19T19:18:40.114Z 3264 TID-gohagperg NotificationWorker JID-f94bc9869d4a82a8b72624a3 INFO: done: 0.307 sec
+2017-07-19T19:18:43.499Z 3264 TID-goha1wz0k NotificationWorker JID-bc812f6eead17494553418d1 INFO: start
+2017-07-19T19:18:43.506Z 3264 TID-gohagperg NotificationWorker JID-7cbbeca782c56662202ac8c2 INFO: start
+2017-07-19T19:18:43.800Z 3264 TID-goha1wz0k NotificationWorker JID-bc812f6eead17494553418d1 INFO: done: 0.301 sec
+2017-07-19T19:18:43.800Z 3264 TID-goha1wz0k NotificationWorker JID-a273316b15d86cf73900d6aa INFO: start
+2017-07-19T19:18:43.881Z 3264 TID-gohagperg NotificationWorker JID-7cbbeca782c56662202ac8c2 INFO: done: 0.374 sec
+2017-07-19T19:18:43.881Z 3264 TID-gohagperg NotificationWorker JID-09e641353b45ea1cfcd20ae8 INFO: start
+2017-07-19T19:18:44.099Z 3264 TID-goha1wz0k NotificationWorker JID-a273316b15d86cf73900d6aa INFO: done: 0.299 sec
+2017-07-19T19:18:44.254Z 3264 TID-gohagperg NotificationWorker JID-09e641353b45ea1cfcd20ae8 INFO: done: 0.373 sec
+2017-07-19T19:18:45.285Z 3264 TID-goha1wznc NotificationWorker JID-fe40d190abfff37692645a86 INFO: done: 5.347 sec
+2017-07-19T19:18:46.511Z 3264 TID-goha1wznc NotificationWorker JID-2f86f2144f01a10585c39581 INFO: start
+2017-07-19T19:18:46.517Z 3264 TID-goha1wz0k NotificationWorker JID-9bcd7cde7ed36665e42aeb8c INFO: start
+2017-07-19T19:18:46.527Z 3264 TID-gohagperg NotificationWorker JID-69ec97eace09962e53f0cdc8 INFO: start
+2017-07-19T19:18:46.815Z 3264 TID-goha1wz0k NotificationWorker JID-9bcd7cde7ed36665e42aeb8c INFO: done: 0.298 sec
+2017-07-19T19:18:46.816Z 3264 TID-goha1wz0k NotificationWorker JID-b0ae8f043a034a6b27fc71e1 INFO: start
+2017-07-19T19:18:46.867Z 3264 TID-gohagperg NotificationWorker JID-69ec97eace09962e53f0cdc8 INFO: done: 0.341 sec
+2017-07-19T19:18:47.069Z 3264 TID-goha1wz0k NotificationWorker JID-b0ae8f043a034a6b27fc71e1 INFO: done: 0.254 sec
+2017-07-19T19:18:49.518Z 3264 TID-gohagperg NotificationWorker JID-9278181ae7b7a2d010aade01 INFO: start
+2017-07-19T19:18:49.526Z 3264 TID-goha1wz0k NotificationWorker JID-f6aa03a61e97c632e3e091d9 INFO: start
+2017-07-19T19:18:49.790Z 3264 TID-gohagperg NotificationWorker JID-9278181ae7b7a2d010aade01 INFO: done: 0.272 sec
+2017-07-19T19:18:49.791Z 3264 TID-gohagperg NotificationWorker JID-0cea88713dccf0a4f13b17c4 INFO: start
+2017-07-19T19:18:49.868Z 3264 TID-goha1wz0k NotificationWorker JID-f6aa03a61e97c632e3e091d9 INFO: done: 0.342 sec
+2017-07-19T19:18:49.869Z 3264 TID-goha1wz0k NotificationWorker JID-b84b1d80257359661e636f6f INFO: start
+2017-07-19T19:18:50.045Z 3264 TID-gohagperg NotificationWorker JID-0cea88713dccf0a4f13b17c4 INFO: done: 0.254 sec
+2017-07-19T19:18:50.136Z 3264 TID-goha1wz0k NotificationWorker JID-b84b1d80257359661e636f6f INFO: done: 0.267 sec
+2017-07-19T19:18:51.994Z 3264 TID-goha1wznc NotificationWorker JID-2f86f2144f01a10585c39581 INFO: done: 5.483 sec
+2017-07-19T19:18:52.122Z 3264 TID-goha1wz0k NotificationWorker JID-0115fdba2c0aae65b4dfec8c INFO: start
+2017-07-19T19:18:52.129Z 3264 TID-goha1wznc NotificationWorker JID-2686191be84d3d5afe0b0422 INFO: start
+2017-07-19T19:18:52.138Z 3264 TID-gohagperg NotificationWorker JID-7fffa82d7663ca8283bcc14e INFO: start
+2017-07-19T19:18:52.408Z 3264 TID-goha1wz0k NotificationWorker JID-0115fdba2c0aae65b4dfec8c INFO: done: 0.286 sec
+2017-07-19T19:18:52.408Z 3264 TID-goha1wz0k NotificationWorker JID-aaec43ac7dc081b011234e26 INFO: start
+2017-07-19T19:18:52.543Z 3264 TID-goha1wznc NotificationWorker JID-2686191be84d3d5afe0b0422 INFO: done: 0.415 sec
+2017-07-19T19:18:52.671Z 3264 TID-goha1wz0k NotificationWorker JID-aaec43ac7dc081b011234e26 INFO: done: 0.262 sec
+2017-07-19T19:18:52.732Z 3264 TID-gohagperg NotificationWorker JID-7fffa82d7663ca8283bcc14e INFO: done: 0.593 sec
+2017-07-19T19:18:54.524Z 3264 TID-goha1wznc NotificationWorker JID-2613a53dfd51886d282baa34 INFO: start
+2017-07-19T19:18:54.532Z 3264 TID-goha1wz0k NotificationWorker JID-454718670d10a31e1ba92068 INFO: start
+2017-07-19T19:18:55.667Z 3264 TID-goha1wz0k NotificationWorker JID-454718670d10a31e1ba92068 INFO: done: 1.135 sec
+2017-07-19T19:18:55.722Z 3264 TID-goha1wznc NotificationWorker JID-2613a53dfd51886d282baa34 INFO: done: 1.199 sec
+2017-07-19T19:18:56.928Z 3264 TID-goha1wz0k NotificationWorker JID-7067b2a8db5313ed13e16b7e INFO: start
+2017-07-19T19:18:57.196Z 3264 TID-goha1wz0k NotificationWorker JID-7067b2a8db5313ed13e16b7e INFO: done: 0.269 sec
+2017-07-19T19:18:59.856Z 3264 TID-gohagperg NotificationWorker JID-488d66240c625e403677753b INFO: start
+2017-07-19T19:18:59.865Z 3264 TID-goha1wz0k NotificationWorker JID-084e09bd685d48a746938676 INFO: start
+2017-07-19T19:18:59.877Z 3264 TID-goha1wznc NotificationWorker JID-58aea969ea0d93d2fc7c85ae INFO: start
+2017-07-19T19:19:00.135Z 3264 TID-gohagperg NotificationWorker JID-488d66240c625e403677753b INFO: done: 0.278 sec
+2017-07-19T19:19:00.229Z 3264 TID-goha1wz0k NotificationWorker JID-084e09bd685d48a746938676 INFO: done: 0.364 sec
+2017-07-19T19:19:00.312Z 3264 TID-goha1wznc NotificationWorker JID-58aea969ea0d93d2fc7c85ae INFO: done: 0.435 sec
+2017-07-19T19:19:02.544Z 3264 TID-gohagperg NotificationWorker JID-f62319513f819f4e353ef96e INFO: start
+2017-07-19T19:19:02.552Z 3264 TID-goha1wz0k NotificationWorker JID-56b03a63bb972370aaa9b006 INFO: start
+2017-07-19T19:19:02.560Z 3264 TID-goha1wznc NotificationWorker JID-cf8eaf48aaf69e0af28cd921 INFO: start
+2017-07-19T19:19:02.824Z 3264 TID-gohagperg NotificationWorker JID-f62319513f819f4e353ef96e INFO: done: 0.28 sec
+2017-07-19T19:19:02.925Z 3264 TID-goha1wz0k NotificationWorker JID-56b03a63bb972370aaa9b006 INFO: done: 0.373 sec
+2017-07-19T19:19:03.014Z 3264 TID-goha1wznc NotificationWorker JID-cf8eaf48aaf69e0af28cd921 INFO: done: 0.454 sec
+2017-07-19T19:19:04.635Z 3264 TID-gohagperg NotificationWorker JID-452503c7101875284afa8dd9 INFO: start
+2017-07-19T19:19:04.641Z 3264 TID-goha1wz0k NotificationWorker JID-e3a33c29a7c7b465f105c9e9 INFO: start
+2017-07-19T19:19:04.648Z 3264 TID-goha1wznc NotificationWorker JID-340d5abdf21419d140e9ee7d INFO: start
+2017-07-19T19:19:04.961Z 3264 TID-goha1wz0k NotificationWorker JID-e3a33c29a7c7b465f105c9e9 INFO: done: 0.32 sec
+2017-07-19T19:19:04.961Z 3264 TID-gohagperg NotificationWorker JID-452503c7101875284afa8dd9 INFO: done: 0.327 sec
+2017-07-19T19:19:05.077Z 3264 TID-goha1wznc NotificationWorker JID-340d5abdf21419d140e9ee7d INFO: done: 0.429 sec
+2017-07-19T19:19:06.211Z 3264 TID-gohagpexk NotificationWorker JID-4b2b92fcc49d3b154bcb0cb3 INFO: done: 43.613 sec
+2017-07-19T19:19:07.523Z 3264 TID-gohagpexk NotificationWorker JID-571b7f91dc2116c9134414be INFO: start
+2017-07-19T19:19:07.529Z 3264 TID-goha1wz0k NotificationWorker JID-bf137d4493683f79741bc46b INFO: start
+2017-07-19T19:19:07.537Z 3264 TID-gohagperg NotificationWorker JID-0f9993f88e37f9d20dc65352 INFO: start
+2017-07-19T19:19:08.475Z 3264 TID-gohagperg NotificationWorker JID-0f9993f88e37f9d20dc65352 INFO: done: 0.938 sec
+2017-07-19T19:19:08.475Z 3264 TID-goha1wz0k NotificationWorker JID-bf137d4493683f79741bc46b INFO: done: 0.947 sec
+2017-07-19T19:19:08.553Z 3264 TID-gohagpexk NotificationWorker JID-571b7f91dc2116c9134414be INFO: done: 1.031 sec
+2017-07-19T19:19:09.865Z 3264 TID-gohagperg NotificationWorker JID-3fbce3ee09702c2126a0eac4 INFO: start
+2017-07-19T19:19:09.871Z 3264 TID-goha1wz0k NotificationWorker JID-8c93d2442dd23e6be6cd8e84 INFO: start
+2017-07-19T19:19:10.158Z 3264 TID-gohagperg NotificationWorker JID-3fbce3ee09702c2126a0eac4 INFO: done: 0.293 sec
+2017-07-19T19:19:10.188Z 3264 TID-goha1wz0k NotificationWorker JID-8c93d2442dd23e6be6cd8e84 INFO: done: 0.316 sec
+2017-07-19T19:19:11.500Z 3264 TID-gohagperg NotificationWorker JID-a79c95ed3476f1a083662939 INFO: start
+2017-07-19T19:19:11.750Z 3264 TID-gohagperg NotificationWorker JID-a79c95ed3476f1a083662939 INFO: done: 0.25 sec
+2017-07-19T19:22:14.546Z 3264 TID-goha1wz0k NotificationWorker JID-b7ece2a306daa13a006f12eb INFO: start
+2017-07-19T19:22:20.137Z 3264 TID-goha1wz0k NotificationWorker JID-b7ece2a306daa13a006f12eb INFO: done: 5.591 sec
+2017-07-19T19:23:47.767Z 3264 TID-goha1wznc NotificationWorker JID-52c8d57ed5b452b3e8e965dc INFO: start
+2017-07-19T19:23:54.508Z 3264 TID-gohagpexk NotificationWorker JID-7dbc12bf127e93dc806974e6 INFO: start
+2017-07-19T19:23:54.519Z 3264 TID-gohagperg NotificationWorker JID-4f090a07a7025435dc62b877 INFO: start
+2017-07-19T19:23:54.530Z 3264 TID-goha1wz0k NotificationWorker JID-f78ef11e63efe47f5cce51e6 INFO: start
+2017-07-19T19:23:54.878Z 3264 TID-gohagperg NotificationWorker JID-4f090a07a7025435dc62b877 INFO: done: 0.359 sec
+2017-07-19T19:23:54.878Z 3264 TID-gohagperg NotificationWorker JID-80944222b5f057b506d5e6b9 INFO: start
+2017-07-19T19:23:54.936Z 3264 TID-gohagpexk NotificationWorker JID-7dbc12bf127e93dc806974e6 INFO: done: 0.428 sec
+2017-07-19T19:23:54.937Z 3264 TID-gohagpexk NotificationWorker JID-dfc3af0da108181230a4b15c INFO: start
+2017-07-19T19:23:55.149Z 3264 TID-gohagperg NotificationWorker JID-80944222b5f057b506d5e6b9 INFO: done: 0.27 sec
+2017-07-19T19:23:55.306Z 3264 TID-gohagpexk NotificationWorker JID-dfc3af0da108181230a4b15c INFO: done: 0.369 sec
+2017-07-19T19:23:55.920Z 3264 TID-goha1wz0k NotificationWorker JID-f78ef11e63efe47f5cce51e6 INFO: done: 1.39 sec
+2017-07-19T19:23:56.186Z 3264 TID-goha1wznc NotificationWorker JID-52c8d57ed5b452b3e8e965dc INFO: done: 8.419 sec
+2017-07-19T19:23:57.000Z 3264 TID-gohagperg NotificationWorker JID-4ba2602e53c92cf850c76a9e INFO: start
+2017-07-19T19:23:57.008Z 3264 TID-gohagpexk NotificationWorker JID-a1ef85f0d1bd23d4a05c0ba4 INFO: start
+2017-07-19T19:23:57.018Z 3264 TID-goha1wz0k NotificationWorker JID-c27837572a41d24aeefe2b16 INFO: start
+2017-07-19T19:23:57.288Z 3264 TID-gohagperg NotificationWorker JID-4ba2602e53c92cf850c76a9e INFO: done: 0.288 sec
+2017-07-19T19:23:57.389Z 3264 TID-goha1wz0k NotificationWorker JID-c27837572a41d24aeefe2b16 INFO: done: 0.371 sec
+2017-07-19T19:23:57.391Z 3264 TID-gohagpexk NotificationWorker JID-a1ef85f0d1bd23d4a05c0ba4 INFO: done: 0.382 sec
+2017-07-19T19:23:59.518Z 3264 TID-goha1wz0k NotificationWorker JID-57041089187846e238f80c04 INFO: start
+2017-07-19T19:23:59.529Z 3264 TID-goha1wznc NotificationWorker JID-ea8b50c7e8317880a6fde5fc INFO: start
+2017-07-19T19:23:59.541Z 3264 TID-gohagperg NotificationWorker JID-29822657d3d32a0659ad3385 INFO: start
+2017-07-19T19:23:59.550Z 3264 TID-gohagpexk NotificationWorker JID-230422e76384349c5ee194f2 INFO: start
+2017-07-19T19:23:59.827Z 3264 TID-goha1wz0k NotificationWorker JID-57041089187846e238f80c04 INFO: done: 0.309 sec
+2017-07-19T19:23:59.828Z 3264 TID-goha1wz0k NotificationWorker JID-e484693188bcc8084498d42b INFO: start
+2017-07-19T19:23:59.971Z 3264 TID-gohagperg NotificationWorker JID-29822657d3d32a0659ad3385 INFO: done: 0.43 sec
+2017-07-19T19:24:00.029Z 3264 TID-goha1wznc NotificationWorker JID-ea8b50c7e8317880a6fde5fc INFO: done: 0.5 sec
+2017-07-19T19:24:00.206Z 3264 TID-gohagpexk NotificationWorker JID-230422e76384349c5ee194f2 INFO: done: 0.656 sec
+2017-07-19T19:24:00.207Z 3264 TID-goha1wz0k NotificationWorker JID-e484693188bcc8084498d42b INFO: done: 0.379 sec
+2017-07-19T19:24:01.500Z 3264 TID-gohagperg NotificationWorker JID-30caeba8f3535182e03c1452 INFO: start
+2017-07-19T19:24:01.511Z 3264 TID-goha1wznc NotificationWorker JID-013af7311ee833fda75559f8 INFO: start
+2017-07-19T19:24:01.523Z 3264 TID-gohagpexk NotificationWorker JID-a40447c84f046b9e18044299 INFO: start
+2017-07-19T19:24:01.852Z 3264 TID-gohagperg NotificationWorker JID-30caeba8f3535182e03c1452 INFO: done: 0.352 sec
+2017-07-19T19:24:01.966Z 3264 TID-goha1wznc NotificationWorker JID-013af7311ee833fda75559f8 INFO: done: 0.454 sec
+2017-07-19T19:24:01.990Z 3264 TID-gohagpexk NotificationWorker JID-a40447c84f046b9e18044299 INFO: done: 0.467 sec
+2017-07-19T19:24:03.519Z 3264 TID-gohagperg NotificationWorker JID-1de200524c202e61ceab35a2 INFO: start
+2017-07-19T19:24:03.530Z 3264 TID-goha1wznc NotificationWorker JID-108fb35b2dcdacd9a1b043c5 INFO: start
+2017-07-19T19:24:03.544Z 3264 TID-gohagpexk NotificationWorker JID-6e8e2f0c427eb65e0dca3b07 INFO: start
+2017-07-19T19:24:03.553Z 3264 TID-goha1wz0k NotificationWorker JID-fadabfe28b94dce643469b30 INFO: start
+2017-07-19T19:24:03.853Z 3264 TID-gohagperg NotificationWorker JID-1de200524c202e61ceab35a2 INFO: done: 0.334 sec
+2017-07-19T19:24:03.964Z 3264 TID-goha1wznc NotificationWorker JID-108fb35b2dcdacd9a1b043c5 INFO: done: 0.434 sec
+2017-07-19T19:24:03.965Z 3264 TID-gohagpexk NotificationWorker JID-6e8e2f0c427eb65e0dca3b07 INFO: done: 0.421 sec
+2017-07-19T19:24:06.522Z 3264 TID-gohagperg NotificationWorker JID-65e54a1d2bdb242499e1a7df INFO: start
+2017-07-19T19:24:06.532Z 3264 TID-goha1wznc NotificationWorker JID-24e4c5d9dba1094f11b58f52 INFO: start
+2017-07-19T19:24:07.660Z 3264 TID-gohagperg NotificationWorker JID-65e54a1d2bdb242499e1a7df INFO: done: 1.138 sec
+2017-07-19T19:24:07.749Z 3264 TID-goha1wznc NotificationWorker JID-24e4c5d9dba1094f11b58f52 INFO: done: 1.217 sec
+2017-07-19T19:24:07.887Z 3264 TID-gohagpexk NotificationWorker JID-e302738f7a65d9492205513f INFO: start
+2017-07-19T19:24:07.897Z 3264 TID-gohagperg NotificationWorker JID-49acae89ba4f28da22e2dad2 INFO: start
+2017-07-19T19:24:08.180Z 3264 TID-gohagperg NotificationWorker JID-49acae89ba4f28da22e2dad2 INFO: done: 0.283 sec
+2017-07-19T19:24:08.264Z 3264 TID-gohagpexk NotificationWorker JID-e302738f7a65d9492205513f INFO: done: 0.376 sec
+2017-07-19T19:24:08.819Z 3264 TID-goha1wz0k NotificationWorker JID-fadabfe28b94dce643469b30 INFO: done: 5.266 sec
+2017-07-19T19:27:40.253Z 3264 TID-gohagperg NotificationWorker JID-f9a9214ae5418f485c6f2a13 INFO: start
+2017-07-19T19:27:46.553Z 3264 TID-gohagperg NotificationWorker JID-f9a9214ae5418f485c6f2a13 INFO: done: 6.3 sec
+2017-07-19T19:28:29.039Z 3264 TID-goha1wz0k NotificationWorker JID-565ddd0ae3ebfcc31d411e85 INFO: start
+2017-07-19T19:28:31.780Z 3264 TID-goha1wznc NotificationWorker JID-60682b6b5ceddb71369e1bea INFO: start
+2017-07-19T19:28:31.790Z 3264 TID-gohagperg NotificationWorker JID-79ccb4c7795a22d5678e363e INFO: start
+2017-07-19T19:28:31.801Z 3264 TID-gohagpexk NotificationWorker JID-20c04d162fc19d982eb60579 INFO: start
+2017-07-19T19:28:32.145Z 3264 TID-gohagperg NotificationWorker JID-79ccb4c7795a22d5678e363e INFO: done: 0.355 sec
+2017-07-19T19:28:32.145Z 3264 TID-gohagperg NotificationWorker JID-aa808c6af194933a0829b56c INFO: start
+2017-07-19T19:28:32.262Z 3264 TID-goha1wznc NotificationWorker JID-60682b6b5ceddb71369e1bea INFO: done: 0.483 sec
+2017-07-19T19:28:32.281Z 3264 TID-gohagpexk NotificationWorker JID-20c04d162fc19d982eb60579 INFO: done: 0.48 sec
+2017-07-19T19:28:32.572Z 3264 TID-gohagperg NotificationWorker JID-aa808c6af194933a0829b56c INFO: done: 0.426 sec
+2017-07-19T19:28:33.495Z 3264 TID-goha1wz0k NotificationWorker JID-565ddd0ae3ebfcc31d411e85 INFO: done: 4.456 sec
+2017-07-19T19:28:34.488Z 3264 TID-gohagperg NotificationWorker JID-9901b41adada65819772d6e9 INFO: start
+2017-07-19T19:28:34.497Z 3264 TID-goha1wz0k NotificationWorker JID-deffa6ee84ddd3b30e3eb14c INFO: start
+2017-07-19T19:28:34.510Z 3264 TID-goha1wznc NotificationWorker JID-76fdadaa96f9f4b812bf3015 INFO: start
+2017-07-19T19:28:34.818Z 3264 TID-gohagperg NotificationWorker JID-9901b41adada65819772d6e9 INFO: done: 0.33 sec
+2017-07-19T19:28:34.845Z 3264 TID-goha1wz0k NotificationWorker JID-deffa6ee84ddd3b30e3eb14c INFO: done: 0.348 sec
+2017-07-19T19:28:34.927Z 3264 TID-goha1wznc NotificationWorker JID-76fdadaa96f9f4b812bf3015 INFO: done: 0.417 sec
+2017-07-19T19:28:36.504Z 3264 TID-gohagperg NotificationWorker JID-3035da30aff9360d30ebe8ef INFO: start
+2017-07-19T19:28:36.520Z 3264 TID-goha1wz0k NotificationWorker JID-1b1cb14a404dcbd7a2d8dec5 INFO: start
+2017-07-19T19:28:36.538Z 3264 TID-goha1wznc NotificationWorker JID-79810a21e74a5de5f560bae9 INFO: start
+2017-07-19T19:28:36.549Z 3264 TID-gohagpexk NotificationWorker JID-72fde20d464e84f837fcc9a7 INFO: start
+2017-07-19T19:28:36.782Z 3264 TID-gohagperg NotificationWorker JID-3035da30aff9360d30ebe8ef INFO: done: 0.277 sec
+2017-07-19T19:28:37.143Z 3264 TID-goha1wznc NotificationWorker JID-79810a21e74a5de5f560bae9 INFO: done: 0.605 sec
+2017-07-19T19:28:37.198Z 3264 TID-gohagpexk NotificationWorker JID-72fde20d464e84f837fcc9a7 INFO: done: 0.649 sec
+2017-07-19T19:28:37.956Z 3264 TID-goha1wz0k NotificationWorker JID-1b1cb14a404dcbd7a2d8dec5 INFO: done: 1.436 sec
+2017-07-19T19:28:38.578Z 3264 TID-gohagperg NotificationWorker JID-61c1d76f4fdf234541cab72a INFO: start
+2017-07-19T19:28:38.590Z 3264 TID-goha1wznc NotificationWorker JID-8fed1e1fe0ec6cf887ddd77e INFO: start
+2017-07-19T19:28:38.603Z 3264 TID-gohagpexk NotificationWorker JID-6b0e5ad650265560df26c009 INFO: start
+2017-07-19T19:28:38.612Z 3264 TID-goha1wz0k NotificationWorker JID-6b67d259c55c2211f9eb046e INFO: start
+2017-07-19T19:28:38.857Z 3264 TID-gohagperg NotificationWorker JID-61c1d76f4fdf234541cab72a INFO: done: 0.279 sec
+2017-07-19T19:28:38.993Z 3264 TID-goha1wz0k NotificationWorker JID-6b67d259c55c2211f9eb046e INFO: done: 0.381 sec
+2017-07-19T19:28:39.049Z 3264 TID-goha1wznc NotificationWorker JID-8fed1e1fe0ec6cf887ddd77e INFO: done: 0.459 sec
+2017-07-19T19:28:39.084Z 3264 TID-gohagpexk NotificationWorker JID-6b0e5ad650265560df26c009 INFO: done: 0.481 sec
+2017-07-19T19:28:40.529Z 3264 TID-gohagperg NotificationWorker JID-354c3f50723e52d166b5c696 INFO: start
+2017-07-19T19:28:40.542Z 3264 TID-goha1wz0k NotificationWorker JID-68466a2389855e2b1ab8b20c INFO: start
+2017-07-19T19:28:40.800Z 3264 TID-gohagperg NotificationWorker JID-354c3f50723e52d166b5c696 INFO: done: 0.271 sec
+2017-07-19T19:28:40.880Z 3264 TID-goha1wz0k NotificationWorker JID-68466a2389855e2b1ab8b20c INFO: done: 0.339 sec
+2017-07-19T19:28:42.533Z 3264 TID-gohagperg NotificationWorker JID-1e86347c7a671a9110e52f82 INFO: start
+2017-07-19T19:28:42.543Z 3264 TID-goha1wz0k NotificationWorker JID-63033265f312f6cc5ad47d2f INFO: start
+2017-07-19T19:28:42.553Z 3264 TID-goha1wznc NotificationWorker JID-877b4a0bd232867d16966e5c INFO: start
+2017-07-19T19:28:42.562Z 3264 TID-gohagpexk NotificationWorker JID-94bb48bce263a6c0a5f6da37 INFO: start
+2017-07-19T19:28:42.811Z 3264 TID-gohagperg NotificationWorker JID-1e86347c7a671a9110e52f82 INFO: done: 0.279 sec
+2017-07-19T19:28:42.960Z 3264 TID-goha1wz0k NotificationWorker JID-63033265f312f6cc5ad47d2f INFO: done: 0.417 sec
+2017-07-19T19:28:42.987Z 3264 TID-goha1wznc NotificationWorker JID-877b4a0bd232867d16966e5c INFO: done: 0.434 sec
+2017-07-19T19:28:43.014Z 3264 TID-gohagpexk NotificationWorker JID-94bb48bce263a6c0a5f6da37 INFO: done: 0.453 sec
+2017-07-19T19:28:45.493Z 3264 TID-gohagperg NotificationWorker JID-f2553558c6f6ab77d3789609 INFO: start
+2017-07-19T19:28:45.512Z 3264 TID-goha1wz0k NotificationWorker JID-f378e5685b76aa26120b9026 INFO: start
+2017-07-19T19:28:45.529Z 3264 TID-gohagpexk NotificationWorker JID-c918d4b1a44e40fff9bd5b65 INFO: start
+2017-07-19T19:28:46.710Z 3264 TID-goha1wz0k NotificationWorker JID-f378e5685b76aa26120b9026 INFO: done: 1.198 sec
+2017-07-19T19:28:46.946Z 3264 TID-gohagpexk NotificationWorker JID-c918d4b1a44e40fff9bd5b65 INFO: done: 1.417 sec
+2017-07-19T19:28:48.507Z 3264 TID-goha1wz0k NotificationWorker JID-93a7ec60eac1a891e4f4ee0b INFO: start
+2017-07-19T19:28:48.518Z 3264 TID-gohagpexk NotificationWorker JID-9d6a96ca6d325f29f2be78c4 INFO: start
+2017-07-19T19:28:48.530Z 3264 TID-goha1wznc NotificationWorker JID-c33036705b50114ea711fa3f INFO: start
+2017-07-19T19:28:48.817Z 3264 TID-goha1wz0k NotificationWorker JID-93a7ec60eac1a891e4f4ee0b INFO: done: 0.311 sec
+2017-07-19T19:28:48.818Z 3264 TID-goha1wz0k NotificationWorker JID-c8e6fa72400b15990625b34c INFO: start
+2017-07-19T19:28:48.953Z 3264 TID-goha1wznc NotificationWorker JID-c33036705b50114ea711fa3f INFO: done: 0.424 sec
+2017-07-19T19:28:49.124Z 3264 TID-goha1wz0k NotificationWorker JID-c8e6fa72400b15990625b34c INFO: done: 0.306 sec
+2017-07-19T19:28:49.154Z 3264 TID-gohagpexk NotificationWorker JID-9d6a96ca6d325f29f2be78c4 INFO: done: 0.636 sec
+2017-07-19T19:28:50.818Z 3264 TID-gohagperg NotificationWorker JID-f2553558c6f6ab77d3789609 INFO: done: 5.324 sec
+2017-07-19T19:44:47.211Z 3264 TID-goh9ntl8s INFO: Shutting down
+2017-07-19T19:44:47.212Z 3264 TID-goh9ntl8s INFO: Terminating quiet workers
+2017-07-19T19:44:47.212Z 3264 TID-goha1x07w INFO: Scheduler exiting...
+2017-07-19T19:44:47.313Z 3264 TID-goh9ntl8s INFO: Pausing to allow workers to finish...
+2017-07-19T19:44:49.116Z 3264 TID-goh9ntl8s INFO: Bye!
+2017-07-19T20:22:55.652Z 4793 TID-gnbfz43x0 INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-4793", :url=>nil}
+2017-07-19T20:22:56.354Z 4793 TID-gnbfz43x0 INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-07-19T20:22:56.354Z 4793 TID-gnbfz43x0 INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-07-19T20:22:56.354Z 4793 TID-gnbfz43x0 INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-07-19T20:22:56.357Z 4793 TID-gnbfz43x0 INFO: Starting processing, hit Ctrl-C to stop
+2017-07-19T20:22:56.368Z 4793 TID-gnbgbm7v8 NotificationWorker JID-7f1e36d3d2e71b8aedb9aa28 INFO: start
+2017-07-19T20:22:59.965Z 4793 TID-gnbgbm7v8 NotificationWorker JID-7f1e36d3d2e71b8aedb9aa28 INFO: done: 3.598 sec
+2017-07-19T20:23:51.581Z 4793 TID-gnbgbm7v8 NotificationWorker JID-10751d30ed45d87034a4c8a8 INFO: start
+2017-07-19T20:24:04.697Z 4793 TID-gnbgbm7v8 NotificationWorker JID-10751d30ed45d87034a4c8a8 INFO: done: 13.116 sec
+2017-07-19T20:24:09.016Z 4793 TID-gnbgbm6sc NotificationWorker JID-1176d8669f092b8aab833329 INFO: start
+2017-07-19T20:24:09.027Z 4793 TID-gnbgblyps NotificationWorker JID-5995ff90396957db09e4ac99 INFO: start
+2017-07-19T20:24:09.037Z 4793 TID-gnbgbly4o NotificationWorker JID-8d151786550a6afa165e766f INFO: start
+2017-07-19T20:24:09.061Z 4793 TID-gnbgbm7v8 NotificationWorker JID-110f10c2564dbec7392b152b INFO: start
+2017-07-19T20:24:09.337Z 4793 TID-gnbgbm6sc NotificationWorker JID-1176d8669f092b8aab833329 INFO: done: 0.32 sec
+2017-07-19T20:24:09.435Z 4793 TID-gnbgblyps NotificationWorker JID-5995ff90396957db09e4ac99 INFO: done: 0.408 sec
+2017-07-19T20:24:09.462Z 4793 TID-gnbgbly4o NotificationWorker JID-8d151786550a6afa165e766f INFO: done: 0.425 sec
+2017-07-19T20:24:09.511Z 4793 TID-gnbgbm7v8 NotificationWorker JID-110f10c2564dbec7392b152b INFO: done: 0.45 sec
+2017-07-19T20:24:11.818Z 4793 TID-gnbgbm6sc NotificationWorker JID-81b4216bb8909d7b909ae64f INFO: start
+2017-07-19T20:24:11.832Z 4793 TID-gnbgbly4o NotificationWorker JID-864a67355da48e9b3855a0d8 INFO: start
+2017-07-19T20:24:11.843Z 4793 TID-gnbgblyps NotificationWorker JID-eb255dd8655d0482845955c5 INFO: start
+2017-07-19T20:24:11.854Z 4793 TID-gnbgbm7v8 NotificationWorker JID-e0082aa02ee86e8da9f2fa33 INFO: start
+2017-07-19T20:24:12.132Z 4793 TID-gnbgbm6sc NotificationWorker JID-81b4216bb8909d7b909ae64f INFO: done: 0.314 sec
+2017-07-19T20:24:12.158Z 4793 TID-gnbgbly4o NotificationWorker JID-864a67355da48e9b3855a0d8 INFO: done: 0.326 sec
+2017-07-19T20:24:12.242Z 4793 TID-gnbgblyps NotificationWorker JID-eb255dd8655d0482845955c5 INFO: done: 0.4 sec
+2017-07-19T20:24:12.318Z 4793 TID-gnbgbm7v8 NotificationWorker JID-e0082aa02ee86e8da9f2fa33 INFO: done: 0.465 sec
+2017-07-19T20:24:15.017Z 4793 TID-gnbgbm6sc NotificationWorker JID-738ccc7837870662b0b73ab4 INFO: start
+2017-07-19T20:24:15.029Z 4793 TID-gnbgbly4o NotificationWorker JID-2c95f0a77e31bd3bee304d83 INFO: start
+2017-07-19T20:24:15.042Z 4793 TID-gnbgbm7v8 NotificationWorker JID-42ee1eb61a295ad306ee52aa INFO: start
+2017-07-19T20:24:15.052Z 4793 TID-gnbgblyps NotificationWorker JID-9d63d841a90a0871daa505e3 INFO: start
+2017-07-19T20:24:15.321Z 4793 TID-gnbgbm6sc NotificationWorker JID-738ccc7837870662b0b73ab4 INFO: done: 0.304 sec
+2017-07-19T20:24:15.374Z 4793 TID-gnbgbly4o NotificationWorker JID-2c95f0a77e31bd3bee304d83 INFO: done: 0.345 sec
+2017-07-19T20:24:15.429Z 4793 TID-gnbgbm7v8 NotificationWorker JID-42ee1eb61a295ad306ee52aa INFO: done: 0.387 sec
+2017-07-19T20:24:15.525Z 4793 TID-gnbgblyps NotificationWorker JID-9d63d841a90a0871daa505e3 INFO: done: 0.474 sec
+2017-07-19T20:24:18.794Z 4793 TID-gnbgbly4o NotificationWorker JID-515da16110beb34f5a273fd3 INFO: start
+2017-07-19T20:24:18.807Z 4793 TID-gnbgbm6sc NotificationWorker JID-f05d3bebf27cd1be43134d40 INFO: start
+2017-07-19T20:24:18.818Z 4793 TID-gnbgbm7v8 NotificationWorker JID-ef932689f7b3ef522060a237 INFO: start
+2017-07-19T20:24:18.828Z 4793 TID-gnbgblyps NotificationWorker JID-0cf8a29702f5e6961436ea03 INFO: start
+2017-07-19T20:24:19.090Z 4793 TID-gnbgbly4o NotificationWorker JID-515da16110beb34f5a273fd3 INFO: done: 0.296 sec
+2017-07-19T20:24:19.144Z 4793 TID-gnbgbm6sc NotificationWorker JID-f05d3bebf27cd1be43134d40 INFO: done: 0.337 sec
+2017-07-19T20:24:19.411Z 4793 TID-gnbgbm7v8 NotificationWorker JID-ef932689f7b3ef522060a237 INFO: done: 0.593 sec
+2017-07-19T20:24:19.518Z 4793 TID-gnbgblyps NotificationWorker JID-0cf8a29702f5e6961436ea03 INFO: done: 0.691 sec
+2017-07-19T20:24:22.011Z 4793 TID-gnbgbly4o NotificationWorker JID-b22d32f50477f292b562414f INFO: start
+2017-07-19T20:24:22.018Z 4793 TID-gnbgbm6sc NotificationWorker JID-6ca0f8aa6270b4c8967004ff INFO: start
+2017-07-19T20:24:22.029Z 4793 TID-gnbgblyps NotificationWorker JID-d22fb58af62e01d85274e070 INFO: start
+2017-07-19T20:24:22.039Z 4793 TID-gnbgbm7v8 NotificationWorker JID-41d32ee295feb02bc8e0f786 INFO: start
+2017-07-19T20:24:22.295Z 4793 TID-gnbgbly4o NotificationWorker JID-b22d32f50477f292b562414f INFO: done: 0.285 sec
+2017-07-19T20:24:22.380Z 4793 TID-gnbgbm6sc NotificationWorker JID-6ca0f8aa6270b4c8967004ff INFO: done: 0.362 sec
+2017-07-19T20:24:22.456Z 4793 TID-gnbgblyps NotificationWorker JID-d22fb58af62e01d85274e070 INFO: done: 0.427 sec
+2017-07-19T20:24:22.480Z 4793 TID-gnbgbm7v8 NotificationWorker JID-41d32ee295feb02bc8e0f786 INFO: done: 0.441 sec
+2017-07-19T20:24:25.192Z 4793 TID-gnbgbly4o NotificationWorker JID-271155da537283e4b8e7a65f INFO: start
+2017-07-19T20:24:25.208Z 4793 TID-gnbgbm6sc NotificationWorker JID-fa5ac6b2a222384456e76b83 INFO: start
+2017-07-19T20:24:25.219Z 4793 TID-gnbgbm7v8 NotificationWorker JID-1502e675d5f8717358d8282c INFO: start
+2017-07-19T20:24:25.234Z 4793 TID-gnbgblyps NotificationWorker JID-c5bb5a7d364be9933f8914c3 INFO: start
+2017-07-19T20:24:25.526Z 4793 TID-gnbgbly4o NotificationWorker JID-271155da537283e4b8e7a65f INFO: done: 0.334 sec
+2017-07-19T20:24:25.586Z 4793 TID-gnbgbm6sc NotificationWorker JID-fa5ac6b2a222384456e76b83 INFO: done: 0.378 sec
+2017-07-19T20:24:25.639Z 4793 TID-gnbgbm7v8 NotificationWorker JID-1502e675d5f8717358d8282c INFO: done: 0.419 sec
+2017-07-19T20:24:25.727Z 4793 TID-gnbgblyps NotificationWorker JID-c5bb5a7d364be9933f8914c3 INFO: done: 0.493 sec
+2017-07-19T20:24:27.407Z 4793 TID-gnbgbly4o NotificationWorker JID-bf7aff25e901825bf368ce4b INFO: start
+2017-07-19T20:24:27.424Z 4793 TID-gnbgbm6sc NotificationWorker JID-79263ed50859c11a262cf8e1 INFO: start
+2017-07-19T20:24:27.435Z 4793 TID-gnbgbm7v8 NotificationWorker JID-32cb04007d64854b4469a690 INFO: start
+2017-07-19T20:24:27.713Z 4793 TID-gnbgbly4o NotificationWorker JID-bf7aff25e901825bf368ce4b INFO: done: 0.306 sec
+2017-07-19T20:24:27.819Z 4793 TID-gnbgbm6sc NotificationWorker JID-79263ed50859c11a262cf8e1 INFO: done: 0.395 sec
+2017-07-19T20:24:27.846Z 4793 TID-gnbgbm7v8 NotificationWorker JID-32cb04007d64854b4469a690 INFO: done: 0.411 sec
+2017-07-19T20:26:18.229Z 4793 TID-gnbgblyps NotificationWorker JID-a8b179bb4204c19373b4578f INFO: start
+2017-07-19T20:26:21.764Z 4793 TID-gnbgblyps NotificationWorker JID-a8b179bb4204c19373b4578f INFO: done: 3.536 sec
+2017-07-19T20:26:25.415Z 4793 TID-gnbgblyps NotificationWorker JID-1f7abf0afc88a79019b49e8c INFO: start
+2017-07-19T20:26:25.428Z 4793 TID-gnbgbm7v8 NotificationWorker JID-12c2987153e657bffbfd62ec INFO: start
+2017-07-19T20:26:25.440Z 4793 TID-gnbgbm6sc NotificationWorker JID-1a380beb55c08cea2fb7b003 INFO: start
+2017-07-19T20:26:25.451Z 4793 TID-gnbgbly4o NotificationWorker JID-cdd326cf90de8a0b5ce4f836 INFO: start
+2017-07-19T20:26:25.809Z 4793 TID-gnbgbm7v8 NotificationWorker JID-12c2987153e657bffbfd62ec INFO: done: 0.381 sec
+2017-07-19T20:26:25.860Z 4793 TID-gnbgbm6sc NotificationWorker JID-1a380beb55c08cea2fb7b003 INFO: done: 0.42 sec
+2017-07-19T20:26:25.977Z 4793 TID-gnbgbly4o NotificationWorker JID-cdd326cf90de8a0b5ce4f836 INFO: done: 0.525 sec
+2017-07-19T20:26:27.410Z 4793 TID-gnbgbm7v8 NotificationWorker JID-31c6380aaee9ebdb26d7994e INFO: start
+2017-07-19T20:26:27.424Z 4793 TID-gnbgbm6sc NotificationWorker JID-c7bc50e9bf5ad6911868de48 INFO: start
+2017-07-19T20:26:27.447Z 4793 TID-gnbgbly4o NotificationWorker JID-e2fbf3dcc19048bc1598eedc INFO: start
+2017-07-19T20:26:27.733Z 4793 TID-gnbgbm7v8 NotificationWorker JID-31c6380aaee9ebdb26d7994e INFO: done: 0.323 sec
+2017-07-19T20:26:27.817Z 4793 TID-gnbgbm6sc NotificationWorker JID-c7bc50e9bf5ad6911868de48 INFO: done: 0.393 sec
+2017-07-19T20:26:28.837Z 4793 TID-gnbgbly4o NotificationWorker JID-e2fbf3dcc19048bc1598eedc INFO: done: 1.39 sec
+2017-07-19T20:26:28.891Z 4793 TID-gnbgbm7v8 NotificationWorker JID-dbd933a565968943b43438f7 INFO: start
+2017-07-19T20:26:29.186Z 4793 TID-gnbgbm7v8 NotificationWorker JID-dbd933a565968943b43438f7 INFO: done: 0.295 sec
+2017-07-19T20:26:30.458Z 4793 TID-gnbgbly4o NotificationWorker JID-45fce6a4dc34a9ffb0434cdb INFO: start
+2017-07-19T20:26:30.469Z 4793 TID-gnbgbm7v8 NotificationWorker JID-6660cb737c95583402f794f3 INFO: start
+2017-07-19T20:26:31.601Z 4793 TID-gnbgblyps NotificationWorker JID-1f7abf0afc88a79019b49e8c INFO: done: 6.186 sec
+2017-07-19T20:26:31.603Z 4793 TID-gnbgbm7v8 NotificationWorker JID-6660cb737c95583402f794f3 INFO: done: 1.133 sec
+2017-07-19T20:26:31.630Z 4793 TID-gnbgbly4o NotificationWorker JID-45fce6a4dc34a9ffb0434cdb INFO: done: 1.172 sec
+2017-07-19T20:26:32.167Z 4793 TID-gnbgblyps NotificationWorker JID-78a18808a62bb886cb753be4 INFO: start
+2017-07-19T20:26:32.468Z 4793 TID-gnbgblyps NotificationWorker JID-78a18808a62bb886cb753be4 INFO: done: 0.301 sec
+2017-07-19T20:34:06.080Z 4793 TID-gnbgbly4o NotificationWorker JID-c294bf2a18dd4731655eb535 INFO: start
+2017-07-19T20:34:23.196Z 4793 TID-gnbgblyps NotificationWorker JID-078f95ac98697c41283f895d INFO: start
+2017-07-19T20:34:23.204Z 4793 TID-gnbgbm7v8 NotificationWorker JID-209acfb46df0e8b4f196247f INFO: start
+2017-07-19T20:34:23.212Z 4793 TID-gnbgbm6sc NotificationWorker JID-b576ed652073b6bebed3d302 INFO: start
+2017-07-19T20:34:23.594Z 4793 TID-gnbgbly4o NotificationWorker JID-c294bf2a18dd4731655eb535 INFO: done: 17.514 sec
+2017-07-19T20:34:23.595Z 4793 TID-gnbgbly4o NotificationWorker JID-aa5fec5507ad135733ae9916 INFO: start
+2017-07-19T20:34:24.129Z 4793 TID-gnbgblyps NotificationWorker JID-078f95ac98697c41283f895d INFO: done: 0.932 sec
+2017-07-19T20:34:24.197Z 4793 TID-gnbgbm6sc NotificationWorker JID-b576ed652073b6bebed3d302 INFO: done: 0.985 sec
+2017-07-19T20:34:24.311Z 4793 TID-gnbgbm7v8 NotificationWorker JID-209acfb46df0e8b4f196247f INFO: done: 1.107 sec
+2017-07-19T20:34:24.491Z 4793 TID-gnbgbly4o NotificationWorker JID-aa5fec5507ad135733ae9916 INFO: done: 0.896 sec
+2017-07-19T20:34:26.323Z 4793 TID-gnbgbm7v8 NotificationWorker JID-5ccabc199b8aaeb8af3b510a INFO: start
+2017-07-19T20:34:26.336Z 4793 TID-gnbgbly4o NotificationWorker JID-dc7a029c7cd59591f7e8d7f6 INFO: start
+2017-07-19T20:34:26.348Z 4793 TID-gnbgblyps NotificationWorker JID-bb623f36345c374e1a1cfed0 INFO: start
+2017-07-19T20:34:26.360Z 4793 TID-gnbgbm6sc NotificationWorker JID-27f6b6cab82d585692896caf INFO: start
+2017-07-19T20:34:26.647Z 4793 TID-gnbgbm7v8 NotificationWorker JID-5ccabc199b8aaeb8af3b510a INFO: done: 0.324 sec
+2017-07-19T20:34:26.758Z 4793 TID-gnbgbly4o NotificationWorker JID-dc7a029c7cd59591f7e8d7f6 INFO: done: 0.421 sec
+2017-07-19T20:34:26.782Z 4793 TID-gnbgblyps NotificationWorker JID-bb623f36345c374e1a1cfed0 INFO: done: 0.434 sec
+2017-07-19T20:34:27.815Z 4793 TID-gnbgbm6sc NotificationWorker JID-27f6b6cab82d585692896caf INFO: done: 1.455 sec
+2017-07-19T20:39:43.118Z 4793 TID-gnbgbm7v8 NotificationWorker JID-76b501df66065d47d53324c4 INFO: start
+2017-07-19T20:39:46.592Z 4793 TID-gnbgbm7v8 NotificationWorker JID-76b501df66065d47d53324c4 INFO: done: 3.474 sec
+2017-07-19T20:39:54.127Z 4793 TID-gnbgbm6sc NotificationWorker JID-cb2f94773c61716b97d9d933 INFO: start
+2017-07-19T20:39:54.136Z 4793 TID-gnbgbm7v8 NotificationWorker JID-769ac59b210a2eeaca3c772b INFO: start
+2017-07-19T20:39:54.142Z 4793 TID-gnbgblyps NotificationWorker JID-63dfe319c0c69e1270dad0be INFO: start
+2017-07-19T20:39:54.151Z 4793 TID-gnbgbly4o NotificationWorker JID-a01d3a406d00a8044772df29 INFO: start
+2017-07-19T20:39:54.447Z 4793 TID-gnbgbm6sc NotificationWorker JID-cb2f94773c61716b97d9d933 INFO: done: 0.32 sec
+2017-07-19T20:39:54.448Z 4793 TID-gnbgbm6sc NotificationWorker JID-5a672fcaa3128e09f5395d70 INFO: start
+2017-07-19T20:39:54.594Z 4793 TID-gnbgblyps NotificationWorker JID-63dfe319c0c69e1270dad0be INFO: done: 0.451 sec
+2017-07-19T20:39:54.595Z 4793 TID-gnbgblyps NotificationWorker JID-8aaf8d6b06a35459b8973a20 INFO: start
+2017-07-19T20:39:54.648Z 4793 TID-gnbgbly4o NotificationWorker JID-a01d3a406d00a8044772df29 INFO: done: 0.497 sec
+2017-07-19T20:39:54.706Z 4793 TID-gnbgbm6sc NotificationWorker JID-5a672fcaa3128e09f5395d70 INFO: done: 0.259 sec
+2017-07-19T20:39:54.868Z 4793 TID-gnbgblyps NotificationWorker JID-8aaf8d6b06a35459b8973a20 INFO: done: 0.273 sec
+2017-07-19T20:39:55.492Z 4793 TID-gnbgbm7v8 NotificationWorker JID-769ac59b210a2eeaca3c772b INFO: done: 1.356 sec
+2017-07-19T20:47:59.669Z 4793 TID-gnbgbm6sc NotificationWorker JID-ea65a18241587b0be6c60061 INFO: start
+2017-07-19T20:48:05.042Z 4793 TID-gnbgbm6sc NotificationWorker JID-ea65a18241587b0be6c60061 INFO: done: 5.373 sec
+2017-07-19T20:48:43.582Z 4793 TID-gnbgbly4o NotificationWorker JID-6487738d6293ec4300271b85 INFO: start
+2017-07-19T20:48:43.594Z 4793 TID-gnbgblyps NotificationWorker JID-5a1b4813ab9251c05878d5c2 INFO: start
+2017-07-19T20:48:43.605Z 4793 TID-gnbgbm7v8 NotificationWorker JID-417526e15c6079ecd6990b5c INFO: start
+2017-07-19T20:48:43.620Z 4793 TID-gnbgbm6sc NotificationWorker JID-249405d0a25f517d1da91e43 INFO: start
+2017-07-19T20:48:43.919Z 4793 TID-gnbgbly4o NotificationWorker JID-6487738d6293ec4300271b85 INFO: done: 0.337 sec
+2017-07-19T20:48:43.920Z 4793 TID-gnbgbly4o NotificationWorker JID-5cc3d76700a4ac7576e8408c INFO: start
+2017-07-19T20:48:43.972Z 4793 TID-gnbgblyps NotificationWorker JID-5a1b4813ab9251c05878d5c2 INFO: done: 0.379 sec
+2017-07-19T20:48:44.051Z 4793 TID-gnbgbm6sc NotificationWorker JID-249405d0a25f517d1da91e43 INFO: done: 0.431 sec
+2017-07-19T20:48:44.103Z 4793 TID-gnbgbm7v8 NotificationWorker JID-417526e15c6079ecd6990b5c INFO: done: 0.498 sec
+2017-07-19T20:48:44.294Z 4793 TID-gnbgbly4o NotificationWorker JID-5cc3d76700a4ac7576e8408c INFO: done: 0.374 sec
+2017-07-19T20:48:46.583Z 4793 TID-gnbgblyps NotificationWorker JID-d54b6bd9493d2190aea0be1a INFO: start
+2017-07-19T20:48:46.595Z 4793 TID-gnbgbm7v8 NotificationWorker JID-f320aead391cdb8b51379cc5 INFO: start
+2017-07-19T20:48:46.611Z 4793 TID-gnbgbm6sc NotificationWorker JID-6a5bf46f711fdb03432253d8 INFO: start
+2017-07-19T20:48:46.868Z 4793 TID-gnbgblyps NotificationWorker JID-d54b6bd9493d2190aea0be1a INFO: done: 0.284 sec
+2017-07-19T20:48:47.004Z 4793 TID-gnbgbm6sc NotificationWorker JID-6a5bf46f711fdb03432253d8 INFO: done: 0.393 sec
+2017-07-19T20:48:47.053Z 4793 TID-gnbgbm7v8 NotificationWorker JID-f320aead391cdb8b51379cc5 INFO: done: 0.457 sec
+2017-07-19T20:48:49.630Z 4793 TID-gnbgbly4o NotificationWorker JID-03375eb2f03196c78bcd9e8f INFO: start
+2017-07-19T20:48:49.641Z 4793 TID-gnbgblyps NotificationWorker JID-c5e7e533042cc036e81bc39a INFO: start
+2017-07-19T20:48:50.734Z 4793 TID-gnbgbly4o NotificationWorker JID-03375eb2f03196c78bcd9e8f INFO: done: 1.104 sec
+2017-07-19T20:48:50.735Z 4793 TID-gnbgblyps NotificationWorker JID-c5e7e533042cc036e81bc39a INFO: done: 1.094 sec
+2017-07-19T20:48:52.592Z 4793 TID-gnbgbly4o NotificationWorker JID-d2cfc1c3c2ffc997847b5f06 INFO: start
+2017-07-19T20:48:52.603Z 4793 TID-gnbgblyps NotificationWorker JID-43312cc75d100e29c6e1ab26 INFO: start
+2017-07-19T20:48:52.944Z 4793 TID-gnbgbly4o NotificationWorker JID-d2cfc1c3c2ffc997847b5f06 INFO: done: 0.352 sec
+2017-07-19T20:49:08.249Z 4793 TID-gnbgblyps NotificationWorker JID-43312cc75d100e29c6e1ab26 INFO: done: 15.646 sec
+2017-07-19T20:51:14.583Z 4793 TID-gnbfz43x0 INFO: Shutting down
+2017-07-19T20:51:14.583Z 4793 TID-gnbfz43x0 INFO: Terminating quiet workers
+2017-07-19T20:51:14.583Z 4793 TID-gnbgbm8rg INFO: Scheduler exiting...
+2017-07-19T20:51:14.684Z 4793 TID-gnbfz43x0 INFO: Pausing to allow workers to finish...
+2017-07-19T20:51:15.586Z 4793 TID-gnbfz43x0 INFO: Bye!
+2017-07-19T23:03:26.901Z 3920 TID-gq47tblr4 INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-3920", :url=>nil}
+2017-07-19T23:03:27.830Z 3920 TID-gq47tblr4 INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-07-19T23:03:27.830Z 3920 TID-gq47tblr4 INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-07-19T23:03:27.830Z 3920 TID-gq47tblr4 INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-07-19T23:03:27.832Z 3920 TID-gq47tblr4 INFO: Starting processing, hit Ctrl-C to stop
+2017-07-19T23:08:56.567Z 3920 TID-gq488xeds NotificationWorker JID-fbba10f6128eadddb8c3e62d INFO: start
+2017-07-19T23:09:07.464Z 3920 TID-gq488xeds NotificationWorker JID-fbba10f6128eadddb8c3e62d INFO: done: 10.897 sec
+2017-07-19T23:09:09.776Z 3920 TID-gq488xfak NotificationWorker JID-c6539e54c3ab958ffa397ece INFO: start
+2017-07-19T23:09:09.796Z 3920 TID-gq488xfic NotificationWorker JID-fae33dfb5abf24e875a4b4e6 INFO: start
+2017-07-19T23:09:10.078Z 3920 TID-gq488xfak NotificationWorker JID-c6539e54c3ab958ffa397ece INFO: done: 0.301 sec
+2017-07-19T23:09:10.155Z 3920 TID-gq488xfic NotificationWorker JID-fae33dfb5abf24e875a4b4e6 INFO: done: 0.359 sec
+2017-07-19T23:09:11.744Z 3920 TID-gq488xfak NotificationWorker JID-c0c73e46bc009af729ee5c40 INFO: start
+2017-07-19T23:09:11.763Z 3920 TID-gq488xfic NotificationWorker JID-ef2e8873889efdf773a59973 INFO: start
+2017-07-19T23:09:11.771Z 3920 TID-gq488xf2s NotificationWorker JID-a0d8c140e1a7961678230af5 INFO: start
+2017-07-19T23:09:12.030Z 3920 TID-gq488xfak NotificationWorker JID-c0c73e46bc009af729ee5c40 INFO: done: 0.286 sec
+2017-07-19T23:09:12.109Z 3920 TID-gq488xfic NotificationWorker JID-ef2e8873889efdf773a59973 INFO: done: 0.346 sec
+2017-07-19T23:09:12.181Z 3920 TID-gq488xf2s NotificationWorker JID-a0d8c140e1a7961678230af5 INFO: done: 0.41 sec
+2017-07-19T23:09:14.637Z 3920 TID-gq488xeds NotificationWorker JID-167957efbc5a4b802dce65fe INFO: start
+2017-07-19T23:09:14.653Z 3920 TID-gq488xfak NotificationWorker JID-8b36a72542e4cbdaace05bab INFO: start
+2017-07-19T23:09:14.664Z 3920 TID-gq488xfic NotificationWorker JID-1fa0cbe7423a9555824b5c71 INFO: start
+2017-07-19T23:09:14.963Z 3920 TID-gq488xfak NotificationWorker JID-8b36a72542e4cbdaace05bab INFO: done: 0.31 sec
+2017-07-19T23:09:15.043Z 3920 TID-gq488xeds NotificationWorker JID-167957efbc5a4b802dce65fe INFO: done: 0.406 sec
+2017-07-19T23:09:16.810Z 3920 TID-gq488xfak NotificationWorker JID-5aff4d7390622558e323be27 INFO: start
+2017-07-19T23:09:17.161Z 3920 TID-gq488xfak NotificationWorker JID-5aff4d7390622558e323be27 INFO: done: 0.351 sec
+2017-07-19T23:09:19.947Z 3920 TID-gq488xfic NotificationWorker JID-1fa0cbe7423a9555824b5c71 INFO: done: 5.283 sec
+2017-07-19T23:14:46.686Z 3920 TID-gq488xf2s NotificationWorker JID-020ab793f2e8d3a3a77e4490 INFO: start
+2017-07-19T23:14:49.419Z 3920 TID-gq488xf2s NotificationWorker JID-020ab793f2e8d3a3a77e4490 INFO: done: 2.733 sec
+2017-07-19T23:14:53.627Z 3920 TID-gq488xeds NotificationWorker JID-f5b496dc6184837b8f35e1c3 INFO: start
+2017-07-19T23:14:53.641Z 3920 TID-gq488xfak NotificationWorker JID-622cec46aac4b9123dd0a4c5 INFO: start
+2017-07-19T23:14:54.205Z 3920 TID-gq488xfak NotificationWorker JID-622cec46aac4b9123dd0a4c5 INFO: done: 0.565 sec
+2017-07-19T23:14:54.206Z 3920 TID-gq488xeds NotificationWorker JID-f5b496dc6184837b8f35e1c3 INFO: done: 0.58 sec
+2017-07-19T23:14:55.650Z 3920 TID-gq488xfak NotificationWorker JID-3eb2434aee82bcb0fd6d064e INFO: start
+2017-07-19T23:14:55.663Z 3920 TID-gq488xeds NotificationWorker JID-ed436635982eab9fd9ed8c61 INFO: start
+2017-07-19T23:14:56.623Z 3920 TID-gq488xfak NotificationWorker JID-3eb2434aee82bcb0fd6d064e INFO: done: 0.973 sec
+2017-07-19T23:14:56.886Z 3920 TID-gq488xeds NotificationWorker JID-ed436635982eab9fd9ed8c61 INFO: done: 1.222 sec
+2017-07-19T23:20:39.694Z 3920 TID-gq488xfic NotificationWorker JID-fbda8e5eaadab7bd5afd873a INFO: start
+2017-07-19T23:20:47.219Z 3920 TID-gq488xfic NotificationWorker JID-fbda8e5eaadab7bd5afd873a INFO: done: 7.526 sec
+2017-07-19T23:20:51.011Z 3920 TID-gq488xfic NotificationWorker JID-1a096731282b92801d1364c1 INFO: start
+2017-07-19T23:20:51.022Z 3920 TID-gq488xfak NotificationWorker JID-fd82712f8c516f0b4184fc46 INFO: start
+2017-07-19T23:20:51.854Z 3920 TID-gq488xfic NotificationWorker JID-1a096731282b92801d1364c1 INFO: done: 0.843 sec
+2017-07-19T23:20:51.908Z 3920 TID-gq488xfak NotificationWorker JID-fd82712f8c516f0b4184fc46 INFO: done: 0.887 sec
+2017-07-19T23:20:53.134Z 3920 TID-gq488xfic NotificationWorker JID-e3a3a471e6f723e528ba5d83 INFO: start
+2017-07-19T23:20:53.156Z 3920 TID-gq488xfak NotificationWorker JID-b7474dc9ed66c0f7e9236f5b INFO: start
+2017-07-19T23:20:53.444Z 3920 TID-gq488xfic NotificationWorker JID-e3a3a471e6f723e528ba5d83 INFO: done: 0.31 sec
+2017-07-19T23:20:53.494Z 3920 TID-gq488xfak NotificationWorker JID-b7474dc9ed66c0f7e9236f5b INFO: done: 0.338 sec
+2017-07-19T23:20:57.070Z 3920 TID-gq488xfak NotificationWorker JID-57ba45811e8fe84fb0233dc4 INFO: start
+2017-07-19T23:20:57.081Z 3920 TID-gq488xfic NotificationWorker JID-75a00e2c7ab1fa6bf2605266 INFO: start
+2017-07-19T23:20:57.419Z 3920 TID-gq488xfak NotificationWorker JID-57ba45811e8fe84fb0233dc4 INFO: done: 0.349 sec
+2017-07-19T23:20:58.445Z 3920 TID-gq488xfic NotificationWorker JID-75a00e2c7ab1fa6bf2605266 INFO: done: 1.364 sec
+2017-07-19T23:20:59.928Z 3920 TID-gq488xeds NotificationWorker JID-94810811092d0e6b0183f6ba INFO: start
+2017-07-19T23:20:59.941Z 3920 TID-gq488xf2s NotificationWorker JID-1e9042c292e469b09e22e1c9 INFO: start
+2017-07-19T23:21:00.426Z 3920 TID-gq488xf2s NotificationWorker JID-1e9042c292e469b09e22e1c9 INFO: done: 0.485 sec
+2017-07-19T23:21:01.431Z 3920 TID-gq488xeds NotificationWorker JID-94810811092d0e6b0183f6ba INFO: done: 1.503 sec
+2017-07-19T23:23:16.315Z 3920 TID-gq488xf2s NotificationWorker JID-f8c18c9b5a2284356ca49101 INFO: start
+2017-07-19T23:23:25.703Z 3920 TID-gq488xeds NotificationWorker JID-2112c047dfffe1ab14277b8b INFO: start
+2017-07-19T23:23:25.714Z 3920 TID-gq488xfak NotificationWorker JID-376d7bc70767c27eb6753cb7 INFO: start
+2017-07-19T23:23:25.726Z 3920 TID-gq488xfic NotificationWorker JID-554bafe9f88abf0a2d9bfb32 INFO: start
+2017-07-19T23:23:26.092Z 3920 TID-gq488xfic NotificationWorker JID-554bafe9f88abf0a2d9bfb32 INFO: done: 0.366 sec
+2017-07-19T23:23:26.093Z 3920 TID-gq488xfic NotificationWorker JID-5969c0aed8ea0fc305a40322 INFO: start
+2017-07-19T23:23:26.148Z 3920 TID-gq488xeds NotificationWorker JID-2112c047dfffe1ab14277b8b INFO: done: 0.445 sec
+2017-07-19T23:23:26.148Z 3920 TID-gq488xeds NotificationWorker JID-d6d6539ecf58dcd1dfb0a32b INFO: start
+2017-07-19T23:23:26.717Z 3920 TID-gq488xeds NotificationWorker JID-d6d6539ecf58dcd1dfb0a32b INFO: done: 0.568 sec
+2017-07-19T23:23:28.956Z 3920 TID-gq488xeds NotificationWorker JID-4b13d87d1d27c7f874e0fedc INFO: start
+2017-07-19T23:23:29.313Z 3920 TID-gq488xeds NotificationWorker JID-4b13d87d1d27c7f874e0fedc INFO: done: 0.357 sec
+2017-07-19T23:23:29.314Z 3920 TID-gq488xeds NotificationWorker JID-1ea39bf7eb681b142608d91a INFO: start
+2017-07-19T23:23:29.689Z 3920 TID-gq488xeds NotificationWorker JID-1ea39bf7eb681b142608d91a INFO: done: 0.374 sec
+2017-07-19T23:23:29.689Z 3920 TID-gq488xeds NotificationWorker JID-b832f4122baceee406a1fa5b INFO: start
+2017-07-19T23:23:30.040Z 3920 TID-gq488xeds NotificationWorker JID-b832f4122baceee406a1fa5b INFO: done: 0.35 sec
+2017-07-19T23:23:30.044Z 3920 TID-gq488xeds NotificationWorker JID-dde1277f35ffd6cd35ea6f4a INFO: start
+2017-07-19T23:23:30.711Z 3920 TID-gq488xeds NotificationWorker JID-dde1277f35ffd6cd35ea6f4a INFO: done: 0.666 sec
+2017-07-19T23:23:30.711Z 3920 TID-gq488xeds NotificationWorker JID-ee2e0ce3f147467af26b1eb1 INFO: start
+2017-07-19T23:23:31.057Z 3920 TID-gq488xfak NotificationWorker JID-376d7bc70767c27eb6753cb7 INFO: done: 5.343 sec
+2017-07-19T23:23:31.087Z 3920 TID-gq488xeds NotificationWorker JID-ee2e0ce3f147467af26b1eb1 INFO: done: 0.375 sec
+2017-07-19T23:23:31.405Z 3920 TID-gq488xfic NotificationWorker JID-5969c0aed8ea0fc305a40322 INFO: done: 5.312 sec
+2017-07-19T23:23:33.039Z 3920 TID-gq488xfak NotificationWorker JID-867f5e05e2fd9a2e3d0637e6 INFO: start
+2017-07-19T23:23:33.050Z 3920 TID-gq488xeds NotificationWorker JID-35fa97aa0722b5ab933bc0ef INFO: start
+2017-07-19T23:23:33.067Z 3920 TID-gq488xfic NotificationWorker JID-63ffce346e7d98ed5a17f853 INFO: start
+2017-07-19T23:23:33.413Z 3920 TID-gq488xfak NotificationWorker JID-867f5e05e2fd9a2e3d0637e6 INFO: done: 0.374 sec
+2017-07-19T23:23:33.414Z 3920 TID-gq488xfak NotificationWorker JID-3410c90f280237d5d4953840 INFO: start
+2017-07-19T23:23:33.469Z 3920 TID-gq488xfic NotificationWorker JID-63ffce346e7d98ed5a17f853 INFO: done: 0.403 sec
+2017-07-19T23:23:33.471Z 3920 TID-gq488xfic NotificationWorker JID-dc0849b6e8960b311673b07e INFO: start
+2017-07-19T23:23:33.519Z 3920 TID-gq488xeds NotificationWorker JID-35fa97aa0722b5ab933bc0ef INFO: done: 0.469 sec
+2017-07-19T23:23:33.735Z 3920 TID-gq488xfak NotificationWorker JID-3410c90f280237d5d4953840 INFO: done: 0.321 sec
+2017-07-19T23:23:36.556Z 3920 TID-gq488xf2s NotificationWorker JID-f8c18c9b5a2284356ca49101 INFO: done: 20.24 sec
+2017-07-19T23:23:36.735Z 3920 TID-gq488xeds NotificationWorker JID-b061890e32b44e7e0a77ecc5 INFO: start
+2017-07-19T23:23:36.747Z 3920 TID-gq488xfak NotificationWorker JID-ed40e4df39f1ac253f71222e INFO: start
+2017-07-19T23:23:36.761Z 3920 TID-gq488xf2s NotificationWorker JID-95b6999c9d5047b7b923e0fc INFO: start
+2017-07-19T23:23:37.096Z 3920 TID-gq488xfak NotificationWorker JID-ed40e4df39f1ac253f71222e INFO: done: 0.349 sec
+2017-07-19T23:23:37.096Z 3920 TID-gq488xfak NotificationWorker JID-8c3dc15650f8a0c67414a5bb INFO: start
+2017-07-19T23:23:37.195Z 3920 TID-gq488xf2s NotificationWorker JID-95b6999c9d5047b7b923e0fc INFO: done: 0.433 sec
+2017-07-19T23:23:37.195Z 3920 TID-gq488xf2s NotificationWorker JID-e60b72ade650f897717e2c78 INFO: start
+2017-07-19T23:23:37.249Z 3920 TID-gq488xeds NotificationWorker JID-b061890e32b44e7e0a77ecc5 INFO: done: 0.515 sec
+2017-07-19T23:23:37.440Z 3920 TID-gq488xfak NotificationWorker JID-8c3dc15650f8a0c67414a5bb INFO: done: 0.343 sec
+2017-07-19T23:23:37.581Z 3920 TID-gq488xf2s NotificationWorker JID-e60b72ade650f897717e2c78 INFO: done: 0.386 sec
+2017-07-19T23:23:38.765Z 3920 TID-gq488xfic NotificationWorker JID-dc0849b6e8960b311673b07e INFO: done: 5.295 sec
+2017-07-19T23:23:40.188Z 3920 TID-gq488xfic NotificationWorker JID-589a007976cb6289673e5d99 INFO: start
+2017-07-19T23:23:40.202Z 3920 TID-gq488xeds NotificationWorker JID-15b489a90dd46765dd2e8309 INFO: start
+2017-07-19T23:23:40.214Z 3920 TID-gq488xfak NotificationWorker JID-6203e3b5e3a75473cc248682 INFO: start
+2017-07-19T23:23:40.226Z 3920 TID-gq488xf2s NotificationWorker JID-aa68510cb3309ed630773caf INFO: start
+2017-07-19T23:23:41.386Z 3920 TID-gq488xfic NotificationWorker JID-589a007976cb6289673e5d99 INFO: done: 1.198 sec
+2017-07-19T23:23:41.387Z 3920 TID-gq488xf2s NotificationWorker JID-aa68510cb3309ed630773caf INFO: done: 1.161 sec
+2017-07-19T23:23:41.467Z 3920 TID-gq488xeds NotificationWorker JID-15b489a90dd46765dd2e8309 INFO: done: 1.265 sec
+2017-07-19T23:23:41.604Z 3920 TID-gq488xfak NotificationWorker JID-6203e3b5e3a75473cc248682 INFO: done: 1.39 sec
+2017-07-19T23:23:44.192Z 3920 TID-gq488xfic NotificationWorker JID-b01c69c617f73e34c7c4e80c INFO: start
+2017-07-19T23:23:44.205Z 3920 TID-gq488xf2s NotificationWorker JID-5ffda7e645bc22b27cfcdf58 INFO: start
+2017-07-19T23:23:44.217Z 3920 TID-gq488xeds NotificationWorker JID-82662d87b382fe43e5818530 INFO: start
+2017-07-19T23:23:44.232Z 3920 TID-gq488xfak NotificationWorker JID-d2cdbd69e7b5d16ae6cb51c8 INFO: start
+2017-07-19T23:23:44.519Z 3920 TID-gq488xfic NotificationWorker JID-b01c69c617f73e34c7c4e80c INFO: done: 0.326 sec
+2017-07-19T23:23:44.571Z 3920 TID-gq488xf2s NotificationWorker JID-5ffda7e645bc22b27cfcdf58 INFO: done: 0.366 sec
+2017-07-19T23:23:44.684Z 3920 TID-gq488xfak NotificationWorker JID-d2cdbd69e7b5d16ae6cb51c8 INFO: done: 0.452 sec
+2017-07-19T23:23:44.714Z 3920 TID-gq488xeds NotificationWorker JID-82662d87b382fe43e5818530 INFO: done: 0.496 sec
+2017-07-19T23:23:48.205Z 3920 TID-gq488xfic NotificationWorker JID-1d610e9d3b313093016b8501 INFO: start
+2017-07-19T23:23:48.218Z 3920 TID-gq488xf2s NotificationWorker JID-176d333d84ef0a67e6fe1dc3 INFO: start
+2017-07-19T23:23:48.230Z 3920 TID-gq488xfak NotificationWorker JID-9dd70b1ca5748a5be155ed01 INFO: start
+2017-07-19T23:23:48.240Z 3920 TID-gq488xeds NotificationWorker JID-1f8d35d772b75318e3356a24 INFO: start
+2017-07-19T23:23:48.515Z 3920 TID-gq488xfic NotificationWorker JID-1d610e9d3b313093016b8501 INFO: done: 0.309 sec
+2017-07-19T23:23:48.596Z 3920 TID-gq488xf2s NotificationWorker JID-176d333d84ef0a67e6fe1dc3 INFO: done: 0.378 sec
+2017-07-19T23:23:48.651Z 3920 TID-gq488xfak NotificationWorker JID-9dd70b1ca5748a5be155ed01 INFO: done: 0.422 sec
+2017-07-19T23:23:48.762Z 3920 TID-gq488xeds NotificationWorker JID-1f8d35d772b75318e3356a24 INFO: done: 0.522 sec
+2017-07-19T23:23:51.183Z 3920 TID-gq488xf2s NotificationWorker JID-602612dec651342e02f3563c INFO: start
+2017-07-19T23:23:51.195Z 3920 TID-gq488xfic NotificationWorker JID-894adcc456aad860b9c4f895 INFO: start
+2017-07-19T23:23:51.208Z 3920 TID-gq488xfak NotificationWorker JID-55aa3d64a6770af434b28fde INFO: start
+2017-07-19T23:23:51.769Z 3920 TID-gq488xfak NotificationWorker JID-55aa3d64a6770af434b28fde INFO: done: 0.561 sec
+2017-07-19T23:23:51.876Z 3920 TID-gq488xf2s NotificationWorker JID-602612dec651342e02f3563c INFO: done: 0.693 sec
+2017-07-19T23:23:51.878Z 3920 TID-gq488xfic NotificationWorker JID-894adcc456aad860b9c4f895 INFO: done: 0.683 sec
+2017-07-19T23:23:53.193Z 3920 TID-gq488xfak NotificationWorker JID-85245cd30a3ce8f5fbfe645a INFO: start
+2017-07-19T23:23:53.206Z 3920 TID-gq488xf2s NotificationWorker JID-eb0e75d095ea6db2d40027c1 INFO: start
+2017-07-19T23:23:53.516Z 3920 TID-gq488xfak NotificationWorker JID-85245cd30a3ce8f5fbfe645a INFO: done: 0.324 sec
+2017-07-19T23:23:53.547Z 3920 TID-gq488xf2s NotificationWorker JID-eb0e75d095ea6db2d40027c1 INFO: done: 0.342 sec
+2017-07-19T23:23:55.196Z 3920 TID-gq488xfak NotificationWorker JID-e0f7d55445504a23561c667d INFO: start
+2017-07-19T23:23:55.209Z 3920 TID-gq488xf2s NotificationWorker JID-1ac647ccb3906695855448a4 INFO: start
+2017-07-19T23:23:55.500Z 3920 TID-gq488xfak NotificationWorker JID-e0f7d55445504a23561c667d INFO: done: 0.304 sec
+2017-07-19T23:23:55.530Z 3920 TID-gq488xf2s NotificationWorker JID-1ac647ccb3906695855448a4 INFO: done: 0.32 sec
+2017-07-19T23:23:57.195Z 3920 TID-gq488xfak NotificationWorker JID-a8a06fd898bb19414c9a4120 INFO: start
+2017-07-19T23:23:57.508Z 3920 TID-gq488xfak NotificationWorker JID-a8a06fd898bb19414c9a4120 INFO: done: 0.313 sec
+2017-07-19T23:35:57.427Z 3920 TID-gq488xfak NotificationWorker JID-e97bf641066809e61ade7b6a INFO: start
+2017-07-19T23:36:11.452Z 3920 TID-gq488xfak NotificationWorker JID-e97bf641066809e61ade7b6a INFO: done: 14.024 sec
+2017-07-19T23:36:15.343Z 3920 TID-gq488xf2s NotificationWorker JID-8c747d218f6c066fcf5c0815 INFO: start
+2017-07-19T23:36:15.355Z 3920 TID-gq488xfak NotificationWorker JID-4a882c495a482a2b69e6967e INFO: start
+2017-07-19T23:36:15.367Z 3920 TID-gq488xfic NotificationWorker JID-510e00b4fedd30fb948bcd74 INFO: start
+2017-07-19T23:36:15.380Z 3920 TID-gq488xeds NotificationWorker JID-953afd86a0681dc6029a6a6d INFO: start
+2017-07-19T23:36:15.683Z 3920 TID-gq488xf2s NotificationWorker JID-8c747d218f6c066fcf5c0815 INFO: done: 0.339 sec
+2017-07-19T23:36:15.684Z 3920 TID-gq488xf2s NotificationWorker JID-5bd317e90e1ef5f1f0bf3ca8 INFO: start
+2017-07-19T23:36:15.743Z 3920 TID-gq488xfak NotificationWorker JID-4a882c495a482a2b69e6967e INFO: done: 0.388 sec
+2017-07-19T23:36:15.830Z 3920 TID-gq488xfic NotificationWorker JID-510e00b4fedd30fb948bcd74 INFO: done: 0.463 sec
+2017-07-19T23:36:15.948Z 3920 TID-gq488xeds NotificationWorker JID-953afd86a0681dc6029a6a6d INFO: done: 0.568 sec
+2017-07-19T23:36:16.000Z 3920 TID-gq488xf2s NotificationWorker JID-5bd317e90e1ef5f1f0bf3ca8 INFO: done: 0.316 sec
+2017-07-19T23:36:17.978Z 3920 TID-gq488xf2s NotificationWorker JID-8a6cbb99b185afd4eec74bd4 INFO: start
+2017-07-19T23:36:17.989Z 3920 TID-gq488xfak NotificationWorker JID-ad511bec624ed090aa2dd54b INFO: start
+2017-07-19T23:36:17.999Z 3920 TID-gq488xfic NotificationWorker JID-fd4e2e13f665eab42441c713 INFO: start
+2017-07-19T23:36:18.011Z 3920 TID-gq488xeds NotificationWorker JID-0c5334d2da6098a1b5ba4387 INFO: start
+2017-07-19T23:36:18.309Z 3920 TID-gq488xf2s NotificationWorker JID-8a6cbb99b185afd4eec74bd4 INFO: done: 0.331 sec
+2017-07-19T23:36:18.310Z 3920 TID-gq488xf2s NotificationWorker JID-58c13b8173c36cd05f4cad0a INFO: start
+2017-07-19T23:36:18.368Z 3920 TID-gq488xfak NotificationWorker JID-ad511bec624ed090aa2dd54b INFO: done: 0.379 sec
+2017-07-19T23:36:18.444Z 3920 TID-gq488xfic NotificationWorker JID-fd4e2e13f665eab42441c713 INFO: done: 0.445 sec
+2017-07-19T23:36:18.566Z 3920 TID-gq488xeds NotificationWorker JID-0c5334d2da6098a1b5ba4387 INFO: done: 0.555 sec
+2017-07-19T23:36:21.334Z 3920 TID-gq488xfic NotificationWorker JID-1b489aea4950612acff3e55a INFO: start
+2017-07-19T23:36:21.347Z 3920 TID-gq488xfak NotificationWorker JID-c0d4e241a3d202d517ec8367 INFO: start
+2017-07-19T23:36:21.359Z 3920 TID-gq488xeds NotificationWorker JID-d233fefd3de985410d64893c INFO: start
+2017-07-19T23:36:21.693Z 3920 TID-gq488xfic NotificationWorker JID-1b489aea4950612acff3e55a INFO: done: 0.359 sec
+2017-07-19T23:36:21.694Z 3920 TID-gq488xfak NotificationWorker JID-c0d4e241a3d202d517ec8367 INFO: done: 0.347 sec
+2017-07-19T23:36:21.695Z 3920 TID-gq488xfic NotificationWorker JID-5bb3a842c93c042887883668 INFO: start
+2017-07-19T23:36:21.696Z 3920 TID-gq488xfak NotificationWorker JID-cf99f6e47d79702deb32203d INFO: start
+2017-07-19T23:36:22.087Z 3920 TID-gq488xeds NotificationWorker JID-d233fefd3de985410d64893c INFO: done: 0.728 sec
+2017-07-19T23:36:22.206Z 3920 TID-gq488xfak NotificationWorker JID-cf99f6e47d79702deb32203d INFO: done: 0.51 sec
+2017-07-19T23:36:22.207Z 3920 TID-gq488xfic NotificationWorker JID-5bb3a842c93c042887883668 INFO: done: 0.512 sec
+2017-07-19T23:36:23.631Z 3920 TID-gq488xf2s NotificationWorker JID-58c13b8173c36cd05f4cad0a INFO: done: 5.322 sec
+2017-07-19T23:36:25.335Z 3920 TID-gq488xf2s NotificationWorker JID-ef3dc7c63c5c796f9b0fc1b4 INFO: start
+2017-07-19T23:36:25.348Z 3920 TID-gq488xeds NotificationWorker JID-88b9cc4b07c35e92164ca2f0 INFO: start
+2017-07-19T23:36:25.361Z 3920 TID-gq488xfic NotificationWorker JID-4d7fba1998f47318445f57c4 INFO: start
+2017-07-19T23:36:25.372Z 3920 TID-gq488xfak NotificationWorker JID-6c51d0458e48fd9ab3cce8f8 INFO: start
+2017-07-19T23:36:25.644Z 3920 TID-gq488xf2s NotificationWorker JID-ef3dc7c63c5c796f9b0fc1b4 INFO: done: 0.309 sec
+2017-07-19T23:36:25.645Z 3920 TID-gq488xf2s NotificationWorker JID-2043139a94b4c038fb4631cb INFO: start
+2017-07-19T23:36:25.765Z 3920 TID-gq488xfic NotificationWorker JID-4d7fba1998f47318445f57c4 INFO: done: 0.404 sec
+2017-07-19T23:36:25.867Z 3920 TID-gq488xeds NotificationWorker JID-88b9cc4b07c35e92164ca2f0 INFO: done: 0.519 sec
+2017-07-19T23:36:26.022Z 3920 TID-gq488xfak NotificationWorker JID-6c51d0458e48fd9ab3cce8f8 INFO: done: 0.65 sec
+2017-07-19T23:36:26.186Z 3920 TID-gq488xf2s NotificationWorker JID-2043139a94b4c038fb4631cb INFO: done: 0.54 sec
+2017-07-19T23:36:26.294Z 3920 TID-gq488xfic NotificationWorker JID-2ad83bb362a81c94c1a4be38 INFO: start
+2017-07-19T23:36:26.582Z 3920 TID-gq488xfic NotificationWorker JID-2ad83bb362a81c94c1a4be38 INFO: done: 0.288 sec
+2017-07-19T23:36:28.343Z 3920 TID-gq488xfic NotificationWorker JID-d133d6659e68cb1b493f88f9 INFO: start
+2017-07-19T23:36:28.649Z 3920 TID-gq488xfic NotificationWorker JID-d133d6659e68cb1b493f88f9 INFO: done: 0.306 sec
+2017-07-19T23:36:30.342Z 3920 TID-gq488xfic NotificationWorker JID-80144749d3361d6e29a257b6 INFO: start
+2017-07-19T23:36:31.365Z 3920 TID-gq488xeds NotificationWorker JID-a95964cc5f565179be8cbb45 INFO: start
+2017-07-19T23:36:31.632Z 3920 TID-gq488xfic NotificationWorker JID-80144749d3361d6e29a257b6 INFO: done: 1.29 sec
+2017-07-19T23:36:31.741Z 3920 TID-gq488xeds NotificationWorker JID-a95964cc5f565179be8cbb45 INFO: done: 0.376 sec
+2017-07-19T23:45:50.893Z 3920 TID-gq488xeds NotificationWorker JID-dc3fcae1aa4d2f42d4bdb0e0 INFO: start
+2017-07-19T23:46:08.325Z 3920 TID-gq488xeds NotificationWorker JID-dc3fcae1aa4d2f42d4bdb0e0 INFO: done: 17.432 sec
+2017-07-19T23:46:09.837Z 3920 TID-gq488xf2s NotificationWorker JID-06385e4aa99d6b238d4b20c8 INFO: start
+2017-07-19T23:46:09.847Z 3920 TID-gq488xeds NotificationWorker JID-701732cc4223e43081171df9 INFO: start
+2017-07-19T23:46:09.858Z 3920 TID-gq488xfic NotificationWorker JID-497d8bd72e29adc0a21eb157 INFO: start
+2017-07-19T23:46:09.867Z 3920 TID-gq488xfak NotificationWorker JID-cfb92c822b9585e24f3db4dc INFO: start
+2017-07-19T23:46:10.113Z 3920 TID-gq488xf2s NotificationWorker JID-06385e4aa99d6b238d4b20c8 INFO: done: 0.276 sec
+2017-07-19T23:46:10.113Z 3920 TID-gq488xf2s NotificationWorker JID-565fdf3638e053351e04e0b0 INFO: start
+2017-07-19T23:46:10.287Z 3920 TID-gq488xfak NotificationWorker JID-cfb92c822b9585e24f3db4dc INFO: done: 0.42 sec
+2017-07-19T23:46:10.288Z 3920 TID-gq488xfak NotificationWorker JID-304eaa21be2a7a3789a4e439 INFO: start
+2017-07-19T23:46:10.342Z 3920 TID-gq488xeds NotificationWorker JID-701732cc4223e43081171df9 INFO: done: 0.495 sec
+2017-07-19T23:46:10.422Z 3920 TID-gq488xf2s NotificationWorker JID-565fdf3638e053351e04e0b0 INFO: done: 0.309 sec
+2017-07-19T23:46:10.583Z 3920 TID-gq488xfak NotificationWorker JID-304eaa21be2a7a3789a4e439 INFO: done: 0.295 sec
+2017-07-19T23:46:11.235Z 3920 TID-gq488xfic NotificationWorker JID-497d8bd72e29adc0a21eb157 INFO: done: 1.377 sec
+2017-07-19T23:46:13.812Z 3920 TID-gq488xf2s NotificationWorker JID-c6c9bd0d6384bc937cf35464 INFO: start
+2017-07-19T23:46:13.823Z 3920 TID-gq488xeds NotificationWorker JID-fab84fa7b61c7beafc4fe318 INFO: start
+2017-07-19T23:46:13.833Z 3920 TID-gq488xfak NotificationWorker JID-17f316bd8e5eee05de27f7b4 INFO: start
+2017-07-19T23:46:13.843Z 3920 TID-gq488xfic NotificationWorker JID-669d7e300f407be4992e10a8 INFO: start
+2017-07-19T23:46:14.176Z 3920 TID-gq488xf2s NotificationWorker JID-c6c9bd0d6384bc937cf35464 INFO: done: 0.364 sec
+2017-07-19T23:46:14.177Z 3920 TID-gq488xf2s NotificationWorker JID-673e9103ab52b42153d7e1dd INFO: start
+2017-07-19T23:46:14.307Z 3920 TID-gq488xfak NotificationWorker JID-17f316bd8e5eee05de27f7b4 INFO: done: 0.474 sec
+2017-07-19T23:46:14.444Z 3920 TID-gq488xfic NotificationWorker JID-669d7e300f407be4992e10a8 INFO: done: 0.602 sec
+2017-07-19T23:46:14.491Z 3920 TID-gq488xeds NotificationWorker JID-fab84fa7b61c7beafc4fe318 INFO: done: 0.668 sec
+2017-07-19T23:46:14.556Z 3920 TID-gq488xf2s NotificationWorker JID-673e9103ab52b42153d7e1dd INFO: done: 0.379 sec
+2017-07-19T23:46:16.808Z 3920 TID-gq488xfak NotificationWorker JID-055b018b6c78c76dab27e543 INFO: start
+2017-07-19T23:46:16.821Z 3920 TID-gq488xfic NotificationWorker JID-01fa876422e2e595dfb2843a INFO: start
+2017-07-19T23:46:16.831Z 3920 TID-gq488xf2s NotificationWorker JID-7a80c80f8b18ce6521ac0724 INFO: start
+2017-07-19T23:46:16.842Z 3920 TID-gq488xeds NotificationWorker JID-ba06c5e2fa7fcdd62ba793d0 INFO: start
+2017-07-19T23:46:17.979Z 3920 TID-gq488xfak NotificationWorker JID-055b018b6c78c76dab27e543 INFO: done: 1.171 sec
+2017-07-19T23:46:17.981Z 3920 TID-gq488xf2s NotificationWorker JID-7a80c80f8b18ce6521ac0724 INFO: done: 1.149 sec
+2017-07-19T23:46:17.981Z 3920 TID-gq488xfak NotificationWorker JID-3ba3dd0d60a80f308de3807f INFO: start
+2017-07-19T23:46:18.007Z 3920 TID-gq488xfic NotificationWorker JID-01fa876422e2e595dfb2843a INFO: done: 1.187 sec
+2017-07-19T23:46:18.087Z 3920 TID-gq488xeds NotificationWorker JID-ba06c5e2fa7fcdd62ba793d0 INFO: done: 1.245 sec
+2017-07-19T23:46:18.330Z 3920 TID-gq488xfak NotificationWorker JID-3ba3dd0d60a80f308de3807f INFO: done: 0.349 sec
+2017-07-19T23:46:20.809Z 3920 TID-gq488xf2s NotificationWorker JID-5e01351f9bb69403993015c5 INFO: start
+2017-07-19T23:46:20.835Z 3920 TID-gq488xfic NotificationWorker JID-75bbf251ef2b2df2eca1dbdf INFO: start
+2017-07-19T23:46:20.845Z 3920 TID-gq488xeds NotificationWorker JID-a3e7dd642fab661f01331eaa INFO: start
+2017-07-19T23:46:20.861Z 3920 TID-gq488xfak NotificationWorker JID-4a42ed4e4bb4331e5e8e5511 INFO: start
+2017-07-19T23:46:21.940Z 3920 TID-gq488xfic NotificationWorker JID-75bbf251ef2b2df2eca1dbdf INFO: done: 1.104 sec
+2017-07-19T23:46:21.940Z 3920 TID-gq488xfic NotificationWorker JID-d1e3b2919662c9325274df30 INFO: start
+2017-07-19T23:46:21.964Z 3920 TID-gq488xf2s NotificationWorker JID-5e01351f9bb69403993015c5 INFO: done: 1.155 sec
+2017-07-19T23:46:21.965Z 3920 TID-gq488xfak NotificationWorker JID-4a42ed4e4bb4331e5e8e5511 INFO: done: 1.105 sec
+2017-07-19T23:46:22.196Z 3920 TID-gq488xf2s NotificationWorker JID-144f06915aff63e54a104394 INFO: start
+2017-07-19T23:46:22.208Z 3920 TID-gq488xfak NotificationWorker JID-2eab1faa0d5bb53797eb36c7 INFO: start
+2017-07-19T23:46:22.251Z 3920 TID-gq488xfic NotificationWorker JID-d1e3b2919662c9325274df30 INFO: done: 0.31 sec
+2017-07-19T23:46:22.269Z 3920 TID-gq488xeds NotificationWorker JID-a3e7dd642fab661f01331eaa INFO: done: 1.424 sec
+2017-07-19T23:46:22.481Z 3920 TID-gq488xf2s NotificationWorker JID-144f06915aff63e54a104394 INFO: done: 0.285 sec
+2017-07-19T23:46:22.565Z 3920 TID-gq488xfak NotificationWorker JID-2eab1faa0d5bb53797eb36c7 INFO: done: 0.357 sec
+2017-07-19T23:46:23.823Z 3920 TID-gq488xfic NotificationWorker JID-dd0b9f944021922cdecc5a73 INFO: start
+2017-07-19T23:46:24.107Z 3920 TID-gq488xfic NotificationWorker JID-dd0b9f944021922cdecc5a73 INFO: done: 0.284 sec
+2017-07-19T23:48:28.918Z 3920 TID-gq488xfak NotificationWorker JID-ceac7879e66c76f2db290b43 INFO: start
+2017-07-19T23:48:33.513Z 3920 TID-gq488xfak NotificationWorker JID-ceac7879e66c76f2db290b43 INFO: done: 4.596 sec
+2017-07-19T23:50:24.925Z 3920 TID-gq488xeds NotificationWorker JID-529b7f50f2448258b90678c8 INFO: start
+2017-07-19T23:50:24.934Z 3920 TID-gq488xf2s NotificationWorker JID-4b2de6b48295ac0b0607dbcf INFO: start
+2017-07-19T23:50:24.944Z 3920 TID-gq488xfak NotificationWorker JID-6fdac842664de290cf27a897 INFO: start
+2017-07-19T23:50:25.251Z 3920 TID-gq488xf2s NotificationWorker JID-4b2de6b48295ac0b0607dbcf INFO: done: 0.316 sec
+2017-07-19T23:50:25.310Z 3920 TID-gq488xfak NotificationWorker JID-6fdac842664de290cf27a897 INFO: done: 0.366 sec
+2017-07-19T23:50:25.331Z 3920 TID-gq488xeds NotificationWorker JID-529b7f50f2448258b90678c8 INFO: done: 0.406 sec
+2017-07-19T23:50:27.807Z 3920 TID-gq488xfic NotificationWorker JID-813ea3a6f37569362eb23bec INFO: start
+2017-07-19T23:50:27.821Z 3920 TID-gq488xeds NotificationWorker JID-09982d054dbd7cf1f4fc7b20 INFO: start
+2017-07-19T23:50:27.833Z 3920 TID-gq488xfak NotificationWorker JID-6c9c902bdd977bd061e2c31a INFO: start
+2017-07-19T23:50:28.145Z 3920 TID-gq488xfic NotificationWorker JID-813ea3a6f37569362eb23bec INFO: done: 0.338 sec
+2017-07-19T23:50:28.279Z 3920 TID-gq488xfak NotificationWorker JID-6c9c902bdd977bd061e2c31a INFO: done: 0.446 sec
+2017-07-19T23:50:28.308Z 3920 TID-gq488xeds NotificationWorker JID-09982d054dbd7cf1f4fc7b20 INFO: done: 0.487 sec
+2017-07-19T23:50:29.823Z 3920 TID-gq488xfic NotificationWorker JID-4a046fcae8bb7cb748deb8e3 INFO: start
+2017-07-19T23:50:29.836Z 3920 TID-gq488xfak NotificationWorker JID-c402a6df88e1db4531aaf6eb INFO: start
+2017-07-19T23:50:29.847Z 3920 TID-gq488xeds NotificationWorker JID-8afd7ca8a222201721cd2b52 INFO: start
+2017-07-19T23:50:30.098Z 3920 TID-gq488xfic NotificationWorker JID-4a046fcae8bb7cb748deb8e3 INFO: done: 0.275 sec
+2017-07-19T23:50:30.188Z 3920 TID-gq488xfak NotificationWorker JID-c402a6df88e1db4531aaf6eb INFO: done: 0.352 sec
+2017-07-19T23:50:30.561Z 3920 TID-gq488xeds NotificationWorker JID-8afd7ca8a222201721cd2b52 INFO: done: 0.714 sec
+2017-07-19T23:50:31.826Z 3920 TID-gq488xfic NotificationWorker JID-60ebad960489463915a009b2 INFO: start
+2017-07-19T23:50:31.839Z 3920 TID-gq488xfak NotificationWorker JID-a020dfffbb0921993d6f3ec5 INFO: start
+2017-07-19T23:50:31.849Z 3920 TID-gq488xeds NotificationWorker JID-c8bb570689a6fff8c5585eb9 INFO: start
+2017-07-19T23:50:32.100Z 3920 TID-gq488xfic NotificationWorker JID-60ebad960489463915a009b2 INFO: done: 0.274 sec
+2017-07-19T23:50:32.153Z 3920 TID-gq488xfak NotificationWorker JID-a020dfffbb0921993d6f3ec5 INFO: done: 0.314 sec
+2017-07-19T23:50:32.272Z 3920 TID-gq488xeds NotificationWorker JID-c8bb570689a6fff8c5585eb9 INFO: done: 0.423 sec
+2017-07-20T00:06:07.711Z 3920 TID-gq488xf2s NotificationWorker JID-b1d1a6baf9a6e0d05b771b84 INFO: start
+2017-07-20T00:06:16.425Z 3920 TID-gq488xf2s NotificationWorker JID-b1d1a6baf9a6e0d05b771b84 INFO: done: 8.715 sec
+2017-07-20T00:06:21.665Z 3920 TID-gq488xf2s NotificationWorker JID-80868e2217d23a33b7c97123 INFO: start
+2017-07-20T00:06:21.671Z 3920 TID-gq488xfak NotificationWorker JID-a9e7ea056bcadaae191cea30 INFO: start
+2017-07-20T00:06:21.683Z 3920 TID-gq488xfic NotificationWorker JID-708a140e5c302658e892db9a INFO: start
+2017-07-20T00:06:21.690Z 3920 TID-gq488xeds NotificationWorker JID-a44db5b3c77643e8ed5ffbe0 INFO: start
+2017-07-20T00:06:21.999Z 3920 TID-gq488xf2s NotificationWorker JID-80868e2217d23a33b7c97123 INFO: done: 0.334 sec
+2017-07-20T00:06:22.072Z 3920 TID-gq488xfak NotificationWorker JID-a9e7ea056bcadaae191cea30 INFO: done: 0.401 sec
+2017-07-20T00:06:22.126Z 3920 TID-gq488xfic NotificationWorker JID-708a140e5c302658e892db9a INFO: done: 0.443 sec
+2017-07-20T00:06:22.230Z 3920 TID-gq488xeds NotificationWorker JID-a44db5b3c77643e8ed5ffbe0 INFO: done: 0.54 sec
+2017-07-20T00:06:24.680Z 3920 TID-gq488xf2s NotificationWorker JID-704a20be3aab62aee519e97c INFO: start
+2017-07-20T00:06:24.696Z 3920 TID-gq488xfak NotificationWorker JID-2ab6bfec32d8f00243c1cf2d INFO: start
+2017-07-20T00:06:24.707Z 3920 TID-gq488xeds NotificationWorker JID-779687d1136228c4ec287b87 INFO: start
+2017-07-20T00:06:24.718Z 3920 TID-gq488xfic NotificationWorker JID-3d0b1dea4274e52b57ddfa71 INFO: start
+2017-07-20T00:06:25.024Z 3920 TID-gq488xf2s NotificationWorker JID-704a20be3aab62aee519e97c INFO: done: 0.343 sec
+2017-07-20T00:06:25.077Z 3920 TID-gq488xfak NotificationWorker JID-2ab6bfec32d8f00243c1cf2d INFO: done: 0.382 sec
+2017-07-20T00:06:25.132Z 3920 TID-gq488xfic NotificationWorker JID-3d0b1dea4274e52b57ddfa71 INFO: done: 0.414 sec
+2017-07-20T00:06:27.673Z 3920 TID-gq488xf2s NotificationWorker JID-2f83c0d7ac7e0be6ff6fa9f0 INFO: start
+2017-07-20T00:06:27.684Z 3920 TID-gq488xfak NotificationWorker JID-03a44e12d1ddce63599ab690 INFO: start
+2017-07-20T00:06:27.697Z 3920 TID-gq488xfic NotificationWorker JID-d382aea5a07bd06a8a4a0856 INFO: start
+2017-07-20T00:06:27.963Z 3920 TID-gq488xf2s NotificationWorker JID-2f83c0d7ac7e0be6ff6fa9f0 INFO: done: 0.291 sec
+2017-07-20T00:06:27.965Z 3920 TID-gq488xf2s NotificationWorker JID-f3f0b7747891b1857d75fff7 INFO: start
+2017-07-20T00:06:28.063Z 3920 TID-gq488xfak NotificationWorker JID-03a44e12d1ddce63599ab690 INFO: done: 0.38 sec
+2017-07-20T00:06:28.118Z 3920 TID-gq488xfic NotificationWorker JID-d382aea5a07bd06a8a4a0856 INFO: done: 0.42 sec
+2017-07-20T00:06:28.276Z 3920 TID-gq488xf2s NotificationWorker JID-f3f0b7747891b1857d75fff7 INFO: done: 0.311 sec
+2017-07-20T00:06:30.027Z 3920 TID-gq488xeds NotificationWorker JID-779687d1136228c4ec287b87 INFO: done: 5.32 sec
+2017-07-20T00:06:39.689Z 3920 TID-gq488xeds NotificationWorker JID-eca1869eb3bad5db543a2e77 INFO: start
+2017-07-20T00:06:39.702Z 3920 TID-gq488xfak NotificationWorker JID-14be662da5874d4c7f6d8693 INFO: start
+2017-07-20T00:06:39.715Z 3920 TID-gq488xfic NotificationWorker JID-6e6275241faed2b527b22895 INFO: start
+2017-07-20T00:06:39.727Z 3920 TID-gq488xf2s NotificationWorker JID-f2a99df726b520a59d6cd90e INFO: start
+2017-07-20T00:06:40.041Z 3920 TID-gq488xfak NotificationWorker JID-14be662da5874d4c7f6d8693 INFO: done: 0.339 sec
+2017-07-20T00:06:40.099Z 3920 TID-gq488xfic NotificationWorker JID-6e6275241faed2b527b22895 INFO: done: 0.384 sec
+2017-07-20T00:06:40.175Z 3920 TID-gq488xeds NotificationWorker JID-eca1869eb3bad5db543a2e77 INFO: done: 0.485 sec
+2017-07-20T00:06:40.371Z 3920 TID-gq488xf2s NotificationWorker JID-f2a99df726b520a59d6cd90e INFO: done: 0.644 sec
+2017-07-20T00:07:31.094Z 3920 TID-gq488xfak NotificationWorker JID-079f9172df3770c7c48a3cf5 INFO: start
+2017-07-20T00:07:43.084Z 3920 TID-gq488xfic NotificationWorker JID-deb80cf5603c5266e3ab3fab INFO: start
+2017-07-20T00:07:43.380Z 3920 TID-gq488xfic NotificationWorker JID-deb80cf5603c5266e3ab3fab INFO: done: 0.296 sec
+2017-07-20T00:07:45.674Z 3920 TID-gq488xeds NotificationWorker JID-338ef79a4b425c1387d382a9 INFO: start
+2017-07-20T00:07:45.687Z 3920 TID-gq488xf2s NotificationWorker JID-897e714d3953f46015827491 INFO: start
+2017-07-20T00:07:46.012Z 3920 TID-gq488xf2s NotificationWorker JID-897e714d3953f46015827491 INFO: done: 0.326 sec
+2017-07-20T00:07:46.014Z 3920 TID-gq488xeds NotificationWorker JID-338ef79a4b425c1387d382a9 INFO: done: 0.34 sec
+2017-07-20T00:07:47.678Z 3920 TID-gq488xf2s NotificationWorker JID-fc1cf0f50c7a96ff45817702 INFO: start
+2017-07-20T00:07:47.689Z 3920 TID-gq488xeds NotificationWorker JID-74ae96f2c1505e0eba18f438 INFO: start
+2017-07-20T00:07:47.985Z 3920 TID-gq488xf2s NotificationWorker JID-fc1cf0f50c7a96ff45817702 INFO: done: 0.307 sec
+2017-07-20T00:07:48.092Z 3920 TID-gq488xeds NotificationWorker JID-74ae96f2c1505e0eba18f438 INFO: done: 0.403 sec
+2017-07-20T00:07:49.674Z 3920 TID-gq488xf2s NotificationWorker JID-c8401e1a0011de3af976f401 INFO: start
+2017-07-20T00:07:49.689Z 3920 TID-gq488xeds NotificationWorker JID-7d4721f9e41064f8faa82b59 INFO: start
+2017-07-20T00:07:49.991Z 3920 TID-gq488xf2s NotificationWorker JID-c8401e1a0011de3af976f401 INFO: done: 0.316 sec
+2017-07-20T00:07:50.124Z 3920 TID-gq488xeds NotificationWorker JID-7d4721f9e41064f8faa82b59 INFO: done: 0.436 sec
+2017-07-20T00:07:52.701Z 3920 TID-gq488xfic NotificationWorker JID-e458f7f26e86daa58b1c2575 INFO: start
+2017-07-20T00:07:52.707Z 3920 TID-gq488xf2s NotificationWorker JID-74e1360c4d552a7968cad09c INFO: start
+2017-07-20T00:07:53.019Z 3920 TID-gq488xf2s NotificationWorker JID-74e1360c4d552a7968cad09c INFO: done: 0.312 sec
+2017-07-20T00:07:54.700Z 3920 TID-gq488xf2s NotificationWorker JID-cf04a0f6e1da7b9e6fb15947 INFO: start
+2017-07-20T00:07:55.053Z 3920 TID-gq488xf2s NotificationWorker JID-cf04a0f6e1da7b9e6fb15947 INFO: done: 0.353 sec
+2017-07-20T00:07:56.469Z 3920 TID-gq488xf2s NotificationWorker JID-c0cc83935e0f94ebf869f571 INFO: start
+2017-07-20T00:07:57.699Z 3920 TID-gq488xfak NotificationWorker JID-079f9172df3770c7c48a3cf5 INFO: done: 26.605 sec
+2017-07-20T00:07:57.739Z 3920 TID-gq488xf2s NotificationWorker JID-c0cc83935e0f94ebf869f571 INFO: done: 1.27 sec
+2017-07-20T00:07:57.976Z 3920 TID-gq488xfic NotificationWorker JID-e458f7f26e86daa58b1c2575 INFO: done: 5.275 sec
+2017-07-20T00:07:59.677Z 3920 TID-gq488xfak NotificationWorker JID-d6204bacd23082e038c5007b INFO: start
+2017-07-20T00:07:59.691Z 3920 TID-gq488xf2s NotificationWorker JID-29ac3a1184c2fa8aeb54889f INFO: start
+2017-07-20T00:08:00.010Z 3920 TID-gq488xf2s NotificationWorker JID-29ac3a1184c2fa8aeb54889f INFO: done: 0.319 sec
+2017-07-20T00:08:00.039Z 3920 TID-gq488xfak NotificationWorker JID-d6204bacd23082e038c5007b INFO: done: 0.362 sec
+2017-07-20T00:08:01.701Z 3920 TID-gq488xf2s NotificationWorker JID-8cadf81b0b1c1614ff535102 INFO: start
+2017-07-20T00:08:02.876Z 3920 TID-gq488xfic NotificationWorker JID-077ad7f24da4e712250280a6 INFO: start
+2017-07-20T00:08:03.039Z 3920 TID-gq488xf2s NotificationWorker JID-8cadf81b0b1c1614ff535102 INFO: done: 1.338 sec
+2017-07-20T00:08:03.175Z 3920 TID-gq488xfic NotificationWorker JID-077ad7f24da4e712250280a6 INFO: done: 0.299 sec
+2017-07-20T00:08:04.384Z 3920 TID-gq488xf2s NotificationWorker JID-9516c3f2914da2be33b7f6c0 INFO: start
+2017-07-20T00:08:04.688Z 3920 TID-gq488xf2s NotificationWorker JID-9516c3f2914da2be33b7f6c0 INFO: done: 0.303 sec
+2017-07-20T00:10:18.830Z 3920 TID-gq488xf2s NotificationWorker JID-70c3fe2150673c2d0aa78a1f INFO: start
+2017-07-20T00:10:44.360Z 3920 TID-gq488xfak NotificationWorker JID-2df17fa6ec4fa609de854b22 INFO: start
+2017-07-20T00:10:44.374Z 3920 TID-gq488xeds NotificationWorker JID-5e5bd860619e5a441310f25e INFO: start
+2017-07-20T00:10:44.384Z 3920 TID-gq488xfic NotificationWorker JID-862944a1f9b04e4ea468954a INFO: start
+2017-07-20T00:10:44.784Z 3920 TID-gq488xfic NotificationWorker JID-862944a1f9b04e4ea468954a INFO: done: 0.399 sec
+2017-07-20T00:10:44.785Z 3920 TID-gq488xfic NotificationWorker JID-4603ead5360e8b7ec506d2d3 INFO: start
+2017-07-20T00:10:44.827Z 3920 TID-gq488xfak NotificationWorker JID-2df17fa6ec4fa609de854b22 INFO: done: 0.466 sec
+2017-07-20T00:10:44.827Z 3920 TID-gq488xfak NotificationWorker JID-ee2f8cb456de597363649c42 INFO: start
+2017-07-20T00:10:44.858Z 3920 TID-gq488xeds NotificationWorker JID-5e5bd860619e5a441310f25e INFO: done: 0.484 sec
+2017-07-20T00:10:44.858Z 3920 TID-gq488xeds NotificationWorker JID-a3d5f3ab1542b39a291aff16 INFO: start
+2017-07-20T00:10:45.161Z 3920 TID-gq488xfic NotificationWorker JID-4603ead5360e8b7ec506d2d3 INFO: done: 0.376 sec
+2017-07-20T00:10:45.162Z 3920 TID-gq488xfic NotificationWorker JID-ebbfd5cbcbfab2bc69f4763e INFO: start
+2017-07-20T00:10:45.316Z 3920 TID-gq488xfak NotificationWorker JID-ee2f8cb456de597363649c42 INFO: done: 0.489 sec
+2017-07-20T00:10:45.317Z 3920 TID-gq488xfak NotificationWorker JID-9f8e6bb440069fcbb30452e9 INFO: start
+2017-07-20T00:10:46.267Z 3920 TID-gq488xeds NotificationWorker JID-a3d5f3ab1542b39a291aff16 INFO: done: 1.408 sec
+2017-07-20T00:10:46.268Z 3920 TID-gq488xeds NotificationWorker JID-09b43d69652a48844a2b5aa5 INFO: start
+2017-07-20T00:10:46.635Z 3920 TID-gq488xeds NotificationWorker JID-09b43d69652a48844a2b5aa5 INFO: done: 0.367 sec
+2017-07-20T00:10:46.636Z 3920 TID-gq488xeds NotificationWorker JID-4f20f2b138e3a525adeba4b2 INFO: start
+2017-07-20T00:10:46.953Z 3920 TID-gq488xeds NotificationWorker JID-4f20f2b138e3a525adeba4b2 INFO: done: 0.317 sec
+2017-07-20T00:10:47.126Z 3920 TID-gq488xeds NotificationWorker JID-0fee4f8310638852aebe0d2a INFO: start
+2017-07-20T00:10:47.555Z 3920 TID-gq488xeds NotificationWorker JID-0fee4f8310638852aebe0d2a INFO: done: 0.429 sec
+2017-07-20T00:10:47.556Z 3920 TID-gq488xeds NotificationWorker JID-0ec326b370210aa01a7c9e42 INFO: start
+2017-07-20T00:10:47.882Z 3920 TID-gq488xeds NotificationWorker JID-0ec326b370210aa01a7c9e42 INFO: done: 0.326 sec
+2017-07-20T00:10:47.882Z 3920 TID-gq488xeds NotificationWorker JID-f63cf0d25d85aee8f31e0681 INFO: start
+2017-07-20T00:10:48.248Z 3920 TID-gq488xeds NotificationWorker JID-f63cf0d25d85aee8f31e0681 INFO: done: 0.365 sec
+2017-07-20T00:10:48.248Z 3920 TID-gq488xeds NotificationWorker JID-c74630690b8373585a737696 INFO: start
+2017-07-20T00:10:48.851Z 3920 TID-gq488xeds NotificationWorker JID-c74630690b8373585a737696 INFO: done: 0.602 sec
+2017-07-20T00:10:48.851Z 3920 TID-gq488xeds NotificationWorker JID-ee42f59676320f611622bd74 INFO: start
+2017-07-20T00:10:49.957Z 3920 TID-gq488xeds NotificationWorker JID-ee42f59676320f611622bd74 INFO: done: 1.106 sec
+2017-07-20T00:10:50.452Z 3920 TID-gq488xfic NotificationWorker JID-ebbfd5cbcbfab2bc69f4763e INFO: done: 5.29 sec
+2017-07-20T00:10:50.493Z 3920 TID-gq488xeds NotificationWorker JID-654ecef61de1c9cf2c362c49 INFO: start
+2017-07-20T00:10:50.504Z 3920 TID-gq488xfic NotificationWorker JID-0d1ea9ec436a86a3fb44ab4c INFO: start
+2017-07-20T00:10:50.541Z 3920 TID-gq488xfak NotificationWorker JID-9f8e6bb440069fcbb30452e9 INFO: done: 5.224 sec
+2017-07-20T00:10:50.542Z 3920 TID-gq488xfak NotificationWorker JID-3ad78697c1f53cb577bf6dcb INFO: start
+2017-07-20T00:10:50.940Z 3920 TID-gq488xeds NotificationWorker JID-654ecef61de1c9cf2c362c49 INFO: done: 0.447 sec
+2017-07-20T00:10:50.940Z 3920 TID-gq488xeds NotificationWorker JID-dd992eb247ddffd2f02253dd INFO: start
+2017-07-20T00:10:51.094Z 3920 TID-gq488xfic NotificationWorker JID-0d1ea9ec436a86a3fb44ab4c INFO: done: 0.59 sec
+2017-07-20T00:10:51.095Z 3920 TID-gq488xfic NotificationWorker JID-cf6db97b3cd63247df89947b INFO: start
+2017-07-20T00:10:51.311Z 3920 TID-gq488xeds NotificationWorker JID-dd992eb247ddffd2f02253dd INFO: done: 0.371 sec
+2017-07-20T00:10:51.365Z 3920 TID-gq488xfic NotificationWorker JID-cf6db97b3cd63247df89947b INFO: done: 0.27 sec
+2017-07-20T00:10:53.755Z 3920 TID-gq488xeds NotificationWorker JID-22b493acc269d28a25887297 INFO: start
+2017-07-20T00:10:53.772Z 3920 TID-gq488xfic NotificationWorker JID-ab7a29121c681064b1005489 INFO: start
+2017-07-20T00:10:54.381Z 3920 TID-gq488xfic NotificationWorker JID-ab7a29121c681064b1005489 INFO: done: 0.609 sec
+2017-07-20T00:10:54.382Z 3920 TID-gq488xfic NotificationWorker JID-fedc0fc626117cfc0066d9dd INFO: start
+2017-07-20T00:10:54.421Z 3920 TID-gq488xeds NotificationWorker JID-22b493acc269d28a25887297 INFO: done: 0.665 sec
+2017-07-20T00:10:54.421Z 3920 TID-gq488xeds NotificationWorker JID-8d90f382c144baf61a2952cd INFO: start
+2017-07-20T00:10:55.156Z 3920 TID-gq488xeds NotificationWorker JID-8d90f382c144baf61a2952cd INFO: done: 0.734 sec
+2017-07-20T00:10:55.157Z 3920 TID-gq488xfic NotificationWorker JID-fedc0fc626117cfc0066d9dd INFO: done: 0.775 sec
+2017-07-20T00:10:56.341Z 3920 TID-gq488xfak NotificationWorker JID-3ad78697c1f53cb577bf6dcb INFO: done: 5.799 sec
+2017-07-20T00:10:56.996Z 3920 TID-gq488xeds NotificationWorker JID-cfa56b74c83e476955ba6130 INFO: start
+2017-07-20T00:10:57.018Z 3920 TID-gq488xfic NotificationWorker JID-4b40bacacb152045fedfff1a INFO: start
+2017-07-20T00:10:57.034Z 3920 TID-gq488xfak NotificationWorker JID-0a36460ae13ef78eeea2b8e7 INFO: start
+2017-07-20T00:10:57.360Z 3920 TID-gq488xfic NotificationWorker JID-4b40bacacb152045fedfff1a INFO: done: 0.342 sec
+2017-07-20T00:10:57.361Z 3920 TID-gq488xfic NotificationWorker JID-17fd9ee0ca704f3eb5c969bd INFO: start
+2017-07-20T00:10:57.438Z 3920 TID-gq488xeds NotificationWorker JID-cfa56b74c83e476955ba6130 INFO: done: 0.442 sec
+2017-07-20T00:10:57.492Z 3920 TID-gq488xfak NotificationWorker JID-0a36460ae13ef78eeea2b8e7 INFO: done: 0.458 sec
+2017-07-20T00:10:57.712Z 3920 TID-gq488xfic NotificationWorker JID-17fd9ee0ca704f3eb5c969bd INFO: done: 0.351 sec
+2017-07-20T00:10:58.539Z 3920 TID-gq488xf2s NotificationWorker JID-70c3fe2150673c2d0aa78a1f INFO: done: 39.708 sec
+2017-07-20T00:11:01.696Z 3920 TID-gq488xfic NotificationWorker JID-e93a5c59f7598c930c7bd58e INFO: start
+2017-07-20T00:11:01.709Z 3920 TID-gq488xf2s NotificationWorker JID-2efb9355748bd6aca8974734 INFO: start
+2017-07-20T00:11:01.722Z 3920 TID-gq488xeds NotificationWorker JID-9f0bec349ae9a723958fb413 INFO: start
+2017-07-20T00:11:01.730Z 3920 TID-gq488xfak NotificationWorker JID-af15907b8a7de00407b09f12 INFO: start
+2017-07-20T00:11:02.003Z 3920 TID-gq488xfic NotificationWorker JID-e93a5c59f7598c930c7bd58e INFO: done: 0.307 sec
+2017-07-20T00:11:02.005Z 3920 TID-gq488xfic NotificationWorker JID-76b8e25ccb741a079ddc5f7c INFO: start
+2017-07-20T00:11:02.134Z 3920 TID-gq488xf2s NotificationWorker JID-2efb9355748bd6aca8974734 INFO: done: 0.425 sec
+2017-07-20T00:11:02.136Z 3920 TID-gq488xeds NotificationWorker JID-9f0bec349ae9a723958fb413 INFO: done: 0.415 sec
+2017-07-20T00:11:02.183Z 3920 TID-gq488xfak NotificationWorker JID-af15907b8a7de00407b09f12 INFO: done: 0.452 sec
+2017-07-20T00:11:02.296Z 3920 TID-gq488xfic NotificationWorker JID-76b8e25ccb741a079ddc5f7c INFO: done: 0.291 sec
+2017-07-20T00:11:04.683Z 3920 TID-gq488xeds NotificationWorker JID-fc340bb012107ce176162ec6 INFO: start
+2017-07-20T00:11:04.689Z 3920 TID-gq488xfak NotificationWorker JID-84843198c3d5be8cfb46949c INFO: start
+2017-07-20T00:11:04.699Z 3920 TID-gq488xf2s NotificationWorker JID-c87f6dd40d738aa4154d4863 INFO: start
+2017-07-20T00:11:04.705Z 3920 TID-gq488xfic NotificationWorker JID-aa8944021c3437757870dd72 INFO: start
+2017-07-20T00:11:05.071Z 3920 TID-gq488xfic NotificationWorker JID-aa8944021c3437757870dd72 INFO: done: 0.366 sec
+2017-07-20T00:11:05.145Z 3920 TID-gq488xeds NotificationWorker JID-fc340bb012107ce176162ec6 INFO: done: 0.462 sec
+2017-07-20T00:11:05.146Z 3920 TID-gq488xfak NotificationWorker JID-84843198c3d5be8cfb46949c INFO: done: 0.457 sec
+2017-07-20T00:11:05.198Z 3920 TID-gq488xf2s NotificationWorker JID-c87f6dd40d738aa4154d4863 INFO: done: 0.499 sec
+2017-07-20T00:11:07.689Z 3920 TID-gq488xfic NotificationWorker JID-2217ad3d260d618f67abad34 INFO: start
+2017-07-20T00:11:07.704Z 3920 TID-gq488xf2s NotificationWorker JID-df0753b233cd0860b1c5e661 INFO: start
+2017-07-20T00:11:07.716Z 3920 TID-gq488xfak NotificationWorker JID-9d95b6151e904dc89ce9bbad INFO: start
+2017-07-20T00:11:08.898Z 3920 TID-gq488xfic NotificationWorker JID-2217ad3d260d618f67abad34 INFO: done: 1.209 sec
+2017-07-20T00:11:09.088Z 3920 TID-gq488xfak NotificationWorker JID-9d95b6151e904dc89ce9bbad INFO: done: 1.372 sec
+2017-07-20T00:11:09.217Z 3920 TID-gq488xf2s NotificationWorker JID-df0753b233cd0860b1c5e661 INFO: done: 1.513 sec
+2017-07-20T00:11:10.690Z 3920 TID-gq488xfic NotificationWorker JID-b26d17b2cde3814b355702d5 INFO: start
+2017-07-20T00:11:10.702Z 3920 TID-gq488xfak NotificationWorker JID-4250bfc81bcf77eedd2fd5a5 INFO: start
+2017-07-20T00:11:10.715Z 3920 TID-gq488xeds NotificationWorker JID-9e593e936f79ec3abfdb13bb INFO: start
+2017-07-20T00:11:10.724Z 3920 TID-gq488xf2s NotificationWorker JID-0e267845577732f1ffb4cda8 INFO: start
+2017-07-20T00:11:11.018Z 3920 TID-gq488xfic NotificationWorker JID-b26d17b2cde3814b355702d5 INFO: done: 0.328 sec
+2017-07-20T00:11:11.148Z 3920 TID-gq488xfak NotificationWorker JID-4250bfc81bcf77eedd2fd5a5 INFO: done: 0.446 sec
+2017-07-20T00:11:11.228Z 3920 TID-gq488xeds NotificationWorker JID-9e593e936f79ec3abfdb13bb INFO: done: 0.514 sec
+2017-07-20T00:11:11.281Z 3920 TID-gq488xf2s NotificationWorker JID-0e267845577732f1ffb4cda8 INFO: done: 0.556 sec
+2017-07-20T00:11:12.725Z 3920 TID-gq488xfic NotificationWorker JID-c77fc2cd91303527efc7c3d6 INFO: start
+2017-07-20T00:11:12.739Z 3920 TID-gq488xfak NotificationWorker JID-524a61e9558c8d51c905ff17 INFO: start
+2017-07-20T00:11:12.750Z 3920 TID-gq488xeds NotificationWorker JID-caafb4373a21f6f8544ba65a INFO: start
+2017-07-20T00:11:13.024Z 3920 TID-gq488xfic NotificationWorker JID-c77fc2cd91303527efc7c3d6 INFO: done: 0.299 sec
+2017-07-20T00:11:13.157Z 3920 TID-gq488xfak NotificationWorker JID-524a61e9558c8d51c905ff17 INFO: done: 0.418 sec
+2017-07-20T00:11:13.184Z 3920 TID-gq488xeds NotificationWorker JID-caafb4373a21f6f8544ba65a INFO: done: 0.434 sec
+2017-07-20T00:11:16.674Z 3920 TID-gq488xfic NotificationWorker JID-89926cab28c05d0911f96eb3 INFO: start
+2017-07-20T00:11:16.690Z 3920 TID-gq488xfak NotificationWorker JID-a6ac82d5618de13cc006f8ee INFO: start
+2017-07-20T00:11:16.702Z 3920 TID-gq488xeds NotificationWorker JID-1941a8361b33e64978d84d1d INFO: start
+2017-07-20T00:11:17.833Z 3920 TID-gq488xfic NotificationWorker JID-89926cab28c05d0911f96eb3 INFO: done: 1.159 sec
+2017-07-20T00:11:17.941Z 3920 TID-gq488xeds NotificationWorker JID-1941a8361b33e64978d84d1d INFO: done: 1.24 sec
+2017-07-20T00:11:17.942Z 3920 TID-gq488xfak NotificationWorker JID-a6ac82d5618de13cc006f8ee INFO: done: 1.252 sec
+2017-07-20T00:11:19.701Z 3920 TID-gq488xfic NotificationWorker JID-4210ef28a6591833f039aee5 INFO: start
+2017-07-20T00:11:19.715Z 3920 TID-gq488xeds NotificationWorker JID-cdc61bf306461b9c07d0f0ca INFO: start
+2017-07-20T00:11:19.728Z 3920 TID-gq488xfak NotificationWorker JID-0d170f40f35bf376c37cbc46 INFO: start
+2017-07-20T00:11:19.739Z 3920 TID-gq488xf2s NotificationWorker JID-2b3a389ad9686ebdae051183 INFO: start
+2017-07-20T00:11:20.024Z 3920 TID-gq488xfic NotificationWorker JID-4210ef28a6591833f039aee5 INFO: done: 0.323 sec
+2017-07-20T00:11:20.025Z 3920 TID-gq488xfic NotificationWorker JID-e2a5810a2addc77607895687 INFO: start
+2017-07-20T00:11:20.107Z 3920 TID-gq488xeds NotificationWorker JID-cdc61bf306461b9c07d0f0ca INFO: done: 0.391 sec
+2017-07-20T00:11:20.159Z 3920 TID-gq488xfak NotificationWorker JID-0d170f40f35bf376c37cbc46 INFO: done: 0.431 sec
+2017-07-20T00:11:20.160Z 3920 TID-gq488xf2s NotificationWorker JID-2b3a389ad9686ebdae051183 INFO: done: 0.421 sec
+2017-07-20T00:11:20.346Z 3920 TID-gq488xfic NotificationWorker JID-e2a5810a2addc77607895687 INFO: done: 0.321 sec
+2017-07-20T00:11:22.725Z 3920 TID-gq488xeds NotificationWorker JID-0edfd2dbc8fabf1976421a0d INFO: start
+2017-07-20T00:11:22.739Z 3920 TID-gq488xfak NotificationWorker JID-95fd34be63250dda41800958 INFO: start
+2017-07-20T00:11:22.752Z 3920 TID-gq488xf2s NotificationWorker JID-d014033c2d863f1a92365406 INFO: start
+2017-07-20T00:11:22.764Z 3920 TID-gq488xfic NotificationWorker JID-966f8550b7e3e15aa15578b0 INFO: start
+2017-07-20T00:11:23.096Z 3920 TID-gq488xfic NotificationWorker JID-966f8550b7e3e15aa15578b0 INFO: done: 0.332 sec
+2017-07-20T00:11:23.097Z 3920 TID-gq488xfic NotificationWorker JID-b60e7304f8b01a4e1cec8e25 INFO: start
+2017-07-20T00:11:23.150Z 3920 TID-gq488xeds NotificationWorker JID-0edfd2dbc8fabf1976421a0d INFO: done: 0.425 sec
+2017-07-20T00:11:23.180Z 3920 TID-gq488xf2s NotificationWorker JID-d014033c2d863f1a92365406 INFO: done: 0.428 sec
+2017-07-20T00:11:23.181Z 3920 TID-gq488xfak NotificationWorker JID-95fd34be63250dda41800958 INFO: done: 0.442 sec
+2017-07-20T00:11:23.400Z 3920 TID-gq488xfic NotificationWorker JID-b60e7304f8b01a4e1cec8e25 INFO: done: 0.303 sec
+2017-07-20T00:11:25.692Z 3920 TID-gq488xfak NotificationWorker JID-fb5d82f0adb375e291446b61 INFO: start
+2017-07-20T00:11:25.702Z 3920 TID-gq488xf2s NotificationWorker JID-68fbfefdb0e0b4d028555df2 INFO: start
+2017-07-20T00:11:25.714Z 3920 TID-gq488xeds NotificationWorker JID-0f7cede01e871b258bb62748 INFO: start
+2017-07-20T00:11:26.054Z 3920 TID-gq488xfak NotificationWorker JID-fb5d82f0adb375e291446b61 INFO: done: 0.362 sec
+2017-07-20T00:11:26.180Z 3920 TID-gq488xeds NotificationWorker JID-0f7cede01e871b258bb62748 INFO: done: 0.466 sec
+2017-07-20T00:11:27.682Z 3920 TID-gq488xf2s NotificationWorker JID-68fbfefdb0e0b4d028555df2 INFO: done: 1.979 sec
+2017-07-20T00:11:29.678Z 3920 TID-gq488xf2s NotificationWorker JID-32865658046466263e80f7c2 INFO: start
+2017-07-20T00:11:29.690Z 3920 TID-gq488xfak NotificationWorker JID-5eb1281d33c16ee06fa2fc48 INFO: start
+2017-07-20T00:11:29.703Z 3920 TID-gq488xeds NotificationWorker JID-fe382bda60b1330048b460eb INFO: start
+2017-07-20T00:11:30.020Z 3920 TID-gq488xf2s NotificationWorker JID-32865658046466263e80f7c2 INFO: done: 0.343 sec
+2017-07-20T00:11:30.044Z 3920 TID-gq488xfak NotificationWorker JID-5eb1281d33c16ee06fa2fc48 INFO: done: 0.354 sec
+2017-07-20T00:11:30.097Z 3920 TID-gq488xeds NotificationWorker JID-fe382bda60b1330048b460eb INFO: done: 0.393 sec
+2017-07-20T00:11:31.679Z 3920 TID-gq488xf2s NotificationWorker JID-aee51ee1aa2337bf28c5f901 INFO: start
+2017-07-20T00:11:33.700Z 3920 TID-gq488xfak NotificationWorker JID-0160d9a476f3170c2ba9f64c INFO: start
+2017-07-20T00:11:34.031Z 3920 TID-gq488xfak NotificationWorker JID-0160d9a476f3170c2ba9f64c INFO: done: 0.332 sec
+2017-07-20T00:11:37.032Z 3920 TID-gq488xf2s NotificationWorker JID-aee51ee1aa2337bf28c5f901 INFO: done: 5.353 sec
+2017-07-20T00:13:39.354Z 3920 TID-gq47tblr4 INFO: Shutting down
+2017-07-20T00:13:39.354Z 3920 TID-gq47tblr4 INFO: Terminating quiet workers
+2017-07-20T00:13:39.354Z 3920 TID-gq488xfsw INFO: Scheduler exiting...
+2017-07-20T00:13:39.455Z 3920 TID-gq47tblr4 INFO: Pausing to allow workers to finish...
+2017-07-20T00:13:41.359Z 3920 TID-gq47tblr4 INFO: Bye!
+2017-07-20T06:11:36.988Z 4308 TID-gnsjzlhow INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-4308", :url=>nil}
+2017-07-20T06:11:37.499Z 4308 TID-gnsjzlhow INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-07-20T06:11:37.500Z 4308 TID-gnsjzlhow INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-07-20T06:11:37.500Z 4308 TID-gnsjzlhow INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-07-20T06:11:37.501Z 4308 TID-gnsjzlhow INFO: Starting processing, hit Ctrl-C to stop
+2017-07-20T06:31:55.229Z 4308 TID-gnskcrpuo NotificationWorker JID-9ebde7561c821043c56ffab4 INFO: start
+2017-07-20T06:31:58.374Z 4308 TID-gnskcrpuo NotificationWorker JID-9ebde7561c821043c56ffab4 INFO: done: 3.145 sec
+2017-07-20T06:35:52.905Z 4308 TID-gnskcrpgs NotificationWorker JID-51b3024ae3f9bed7d1f45447 INFO: start
+2017-07-20T06:35:54.391Z 4308 TID-gnskcrpgs NotificationWorker JID-51b3024ae3f9bed7d1f45447 INFO: done: 1.485 sec
+2017-07-20T06:37:55.127Z 4308 TID-gnskcrpuo NotificationWorker JID-b2270e8f089aced3e1925ff7 INFO: start
+2017-07-20T06:37:56.028Z 4308 TID-gnskcrpuo NotificationWorker JID-b2270e8f089aced3e1925ff7 INFO: done: 0.902 sec
+2017-07-20T06:54:45.306Z 4308 TID-gnskcrpgs NotificationWorker JID-948001e60d2a61cf26080c00 INFO: start
+2017-07-20T06:54:45.313Z 4308 TID-gnskcroqo NotificationWorker JID-7b7cef59e8c31a28b37fcf1a INFO: start
+2017-07-20T06:54:47.089Z 4308 TID-gnskcrp2c NotificationWorker JID-473ac7ddc5936f748263764a INFO: start
+2017-07-20T06:54:47.102Z 4308 TID-gnskcrpuo NotificationWorker JID-8eb166974c20d46d86e28876 INFO: start
+2017-07-20T06:54:56.179Z 4308 TID-gnskcrpgs NotificationWorker JID-948001e60d2a61cf26080c00 INFO: done: 10.872 sec
+2017-07-20T06:54:56.802Z 4308 TID-gnskcrp2c NotificationWorker JID-473ac7ddc5936f748263764a INFO: done: 9.713 sec
+2017-07-20T06:54:56.856Z 4308 TID-gnskcroqo NotificationWorker JID-7b7cef59e8c31a28b37fcf1a INFO: done: 11.542 sec
+2017-07-20T06:54:56.883Z 4308 TID-gnskcrpuo NotificationWorker JID-8eb166974c20d46d86e28876 INFO: done: 9.781 sec
+2017-07-20T07:00:43.108Z 4308 TID-gnskcrp2c NotificationWorker JID-5860a467e34c75dbb9d3bef7 INFO: start
+2017-07-20T07:00:45.880Z 4308 TID-gnskcrp2c NotificationWorker JID-5860a467e34c75dbb9d3bef7 INFO: done: 2.772 sec
+2017-07-20T07:01:31.109Z 4308 TID-gnskcrpgs NotificationWorker JID-c9758c87e5e6d3a079a3ac07 INFO: start
+2017-07-20T07:01:31.120Z 4308 TID-gnskcrpuo NotificationWorker JID-c2c3f9b1f375c9c6a0e804bd INFO: start
+2017-07-20T07:01:31.749Z 4308 TID-gnskcrpgs NotificationWorker JID-c9758c87e5e6d3a079a3ac07 INFO: done: 0.64 sec
+2017-07-20T07:01:31.803Z 4308 TID-gnskcrpuo NotificationWorker JID-c2c3f9b1f375c9c6a0e804bd INFO: done: 0.683 sec
+2017-07-20T07:01:33.115Z 4308 TID-gnskcrpgs NotificationWorker JID-2642317eae2865bb187889ad INFO: start
+2017-07-20T07:01:33.125Z 4308 TID-gnskcrpuo NotificationWorker JID-d5579ff0abddbb15b4919101 INFO: start
+2017-07-20T07:01:36.084Z 4308 TID-gnskcrpuo NotificationWorker JID-d5579ff0abddbb15b4919101 INFO: done: 2.959 sec
+2017-07-20T07:01:36.086Z 4308 TID-gnskcrpgs NotificationWorker JID-2642317eae2865bb187889ad INFO: done: 2.971 sec
+2017-07-20T07:01:41.904Z 4308 TID-gnskcrp2c NotificationWorker JID-e26a80aafc57735d77c28b5a INFO: start
+2017-07-20T07:01:42.392Z 4308 TID-gnskcrp2c NotificationWorker JID-e26a80aafc57735d77c28b5a INFO: done: 0.488 sec
+2017-07-20T07:01:44.096Z 4308 TID-gnskcrpuo NotificationWorker JID-9d1547e3b7c170a82d76d869 INFO: start
+2017-07-20T07:01:45.545Z 4308 TID-gnskcrpuo NotificationWorker JID-9d1547e3b7c170a82d76d869 INFO: done: 1.45 sec
+2017-07-20T07:01:48.733Z 4308 TID-gnskcrpuo NotificationWorker JID-35715ac3b52a358871e4c95b INFO: start
+2017-07-20T07:01:49.965Z 4308 TID-gnskcrpuo NotificationWorker JID-35715ac3b52a358871e4c95b INFO: done: 1.231 sec
+2017-07-20T07:07:00.933Z 4308 TID-gnsjzlhow INFO: Shutting down
+2017-07-20T07:07:00.933Z 4308 TID-gnsjzlhow INFO: Terminating quiet workers
+2017-07-20T07:07:00.933Z 4308 TID-gnskcrqik INFO: Scheduler exiting...
+2017-07-20T07:07:01.033Z 4308 TID-gnsjzlhow INFO: Pausing to allow workers to finish...
+2017-07-20T07:07:02.937Z 4308 TID-gnsjzlhow INFO: Bye!
+2017-07-21T15:53:09.855Z 10006 TID-gpgpnu7dk INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-10006", :url=>nil}
+2017-07-21T15:53:10.768Z 10006 TID-gpgpnu7dk INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-07-21T15:53:10.768Z 10006 TID-gpgpnu7dk INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-07-21T15:53:10.768Z 10006 TID-gpgpnu7dk INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-07-21T15:53:10.777Z 10006 TID-gpgpnu7dk INFO: Starting processing, hit Ctrl-C to stop
+2017-07-21T16:02:16.449Z 10006 TID-gpgqbvwjo NotificationWorker JID-9dc68d5ed4ecd93bc1fddff2 INFO: start
+2017-07-21T16:02:18.752Z 10006 TID-gpgqbvwjo NotificationWorker JID-9dc68d5ed4ecd93bc1fddff2 INFO: done: 2.303 sec
+2017-07-21T16:03:26.308Z 10006 TID-gpgqbvwjo NotificationWorker JID-b3f7d309431475d12b5d53b6 INFO: start
+2017-07-21T16:03:26.322Z 10006 TID-gpgqbvw3k NotificationWorker JID-b31705ed4bd6bdbdc0768054 INFO: start
+2017-07-21T16:03:26.333Z 10006 TID-gpgqbvvxg NotificationWorker JID-46fa4a314ee8747320704b25 INFO: start
+2017-07-21T16:03:26.352Z 10006 TID-gpgqbvwa8 NotificationWorker JID-30b19d8b37a465dc03e22b6c INFO: start
+2017-07-21T16:03:26.724Z 10006 TID-gpgqbvw3k NotificationWorker JID-b31705ed4bd6bdbdc0768054 INFO: done: 0.401 sec
+2017-07-21T16:03:26.770Z 10006 TID-gpgqbvwjo NotificationWorker JID-b3f7d309431475d12b5d53b6 INFO: done: 0.463 sec
+2017-07-21T16:03:26.821Z 10006 TID-gpgqbvwa8 NotificationWorker JID-30b19d8b37a465dc03e22b6c INFO: done: 0.469 sec
+2017-07-21T16:03:28.458Z 10006 TID-gpgqbvw3k NotificationWorker JID-1f37a86f2b6f1507bf553cf0 INFO: start
+2017-07-21T16:03:28.815Z 10006 TID-gpgqbvw3k NotificationWorker JID-1f37a86f2b6f1507bf553cf0 INFO: done: 0.357 sec
+2017-07-21T16:03:29.779Z 10006 TID-gpgqbvvxg NotificationWorker JID-46fa4a314ee8747320704b25 INFO: done: 3.446 sec
+2017-07-21T16:19:14.245Z 10006 TID-gpgqbvvxg NotificationWorker JID-919a63eb0751d33f1684469e INFO: start
+2017-07-21T16:19:27.850Z 10006 TID-gpgqbvvxg NotificationWorker JID-919a63eb0751d33f1684469e INFO: done: 13.605 sec
+2017-07-21T16:19:35.217Z 10006 TID-gpgqbvwjo NotificationWorker JID-6b0027da3f49ead90552b0e7 INFO: start
+2017-07-21T16:19:35.232Z 10006 TID-gpgqbvwa8 NotificationWorker JID-04babbd15d6aff001120058a INFO: start
+2017-07-21T16:19:35.238Z 10006 TID-gpgqbvvxg NotificationWorker JID-983ac1c59638eedde8fc111d INFO: start
+2017-07-21T16:19:35.246Z 10006 TID-gpgqbvw3k NotificationWorker JID-20266e2f8456ea043c114039 INFO: start
+2017-07-21T16:19:36.091Z 10006 TID-gpgqbvvxg NotificationWorker JID-983ac1c59638eedde8fc111d INFO: done: 0.852 sec
+2017-07-21T16:19:36.091Z 10006 TID-gpgqbvvxg NotificationWorker JID-dbe3217b7186711301f33677 INFO: start
+2017-07-21T16:19:36.093Z 10006 TID-gpgqbvw3k NotificationWorker JID-20266e2f8456ea043c114039 INFO: done: 0.847 sec
+2017-07-21T16:19:36.093Z 10006 TID-gpgqbvwa8 NotificationWorker JID-04babbd15d6aff001120058a INFO: done: 0.862 sec
+2017-07-21T16:19:40.474Z 10006 TID-gpgqbvwa8 NotificationWorker JID-8c87f154649f64dd3d20bbae INFO: start
+2017-07-21T16:19:40.481Z 10006 TID-gpgqbvw3k NotificationWorker JID-2314bd18b30458b6ff10a98c INFO: start
+2017-07-21T16:19:40.483Z 10006 TID-gpgqbvwjo NotificationWorker JID-6b0027da3f49ead90552b0e7 INFO: done: 5.266 sec
+2017-07-21T16:19:40.490Z 10006 TID-gpgqbvwjo NotificationWorker JID-977665923e554b646bf4f571 INFO: start
+2017-07-21T16:19:42.406Z 10006 TID-gpgqbvwjo NotificationWorker JID-977665923e554b646bf4f571 INFO: done: 1.916 sec
+2017-07-21T16:19:42.406Z 10006 TID-gpgqbvwa8 NotificationWorker JID-8c87f154649f64dd3d20bbae INFO: done: 1.932 sec
+2017-07-21T16:19:42.407Z 10006 TID-gpgqbvwjo NotificationWorker JID-5a6f0b62046c85c5f970bbdd INFO: start
+2017-07-21T16:19:42.408Z 10006 TID-gpgqbvwa8 NotificationWorker JID-886edad61b6cb5f0a1e6a963 INFO: start
+2017-07-21T16:19:42.445Z 10006 TID-gpgqbvw3k NotificationWorker JID-2314bd18b30458b6ff10a98c INFO: done: 1.964 sec
+2017-07-21T16:19:42.445Z 10006 TID-gpgqbvw3k NotificationWorker JID-6e33d5074d8bc066bfb065c6 INFO: start
+2017-07-21T16:19:42.758Z 10006 TID-gpgqbvwjo NotificationWorker JID-5a6f0b62046c85c5f970bbdd INFO: done: 0.351 sec
+2017-07-21T16:19:42.759Z 10006 TID-gpgqbvwa8 NotificationWorker JID-886edad61b6cb5f0a1e6a963 INFO: done: 0.351 sec
+2017-07-21T16:19:42.820Z 10006 TID-gpgqbvw3k NotificationWorker JID-6e33d5074d8bc066bfb065c6 INFO: done: 0.375 sec
+2017-07-21T16:19:43.856Z 10006 TID-gpgqbvwjo NotificationWorker JID-d742f9ae4ac9203a7c655c01 INFO: start
+2017-07-21T16:19:44.133Z 10006 TID-gpgqbvwjo NotificationWorker JID-d742f9ae4ac9203a7c655c01 INFO: done: 0.277 sec
+2017-07-21T16:19:46.665Z 10006 TID-gpgqbvvxg NotificationWorker JID-dbe3217b7186711301f33677 INFO: done: 10.574 sec
+2017-07-21T16:23:00.943Z 10006 TID-gpgqbvvxg NotificationWorker JID-6b7a698d8e9c9dd0c0e32a1b INFO: start
+2017-07-21T16:23:06.944Z 10006 TID-gpgqbvwa8 NotificationWorker JID-f76b953beed70240c820299b INFO: start
+2017-07-21T16:23:08.463Z 10006 TID-gpgqbvwjo NotificationWorker JID-8cb5e925ea96201394e2ad3f INFO: start
+2017-07-21T16:23:08.797Z 10006 TID-gpgqbvwjo NotificationWorker JID-8cb5e925ea96201394e2ad3f INFO: done: 0.334 sec
+2017-07-21T16:23:09.497Z 10006 TID-gpgqbvwa8 NotificationWorker JID-f76b953beed70240c820299b INFO: done: 2.553 sec
+2017-07-21T16:23:10.850Z 10006 TID-gpgqbvw3k NotificationWorker JID-59841d8b3e6affe15eecf604 INFO: start
+2017-07-21T16:23:11.388Z 10006 TID-gpgqbvw3k NotificationWorker JID-59841d8b3e6affe15eecf604 INFO: done: 0.537 sec
+2017-07-21T16:23:18.800Z 10006 TID-gpgqbvvxg NotificationWorker JID-6b7a698d8e9c9dd0c0e32a1b INFO: done: 17.856 sec
+2017-07-21T16:23:46.249Z 10006 TID-gpgqbvvxg NotificationWorker JID-7bee3cec256a6749fb2395d5 INFO: start
+2017-07-21T16:23:46.309Z 10006 TID-gpgqbvwjo NotificationWorker JID-5eaf219216efb99008c78d27 INFO: start
+2017-07-21T16:23:46.696Z 10006 TID-gpgqbvvxg NotificationWorker JID-7bee3cec256a6749fb2395d5 INFO: done: 0.447 sec
+2017-07-21T16:23:57.104Z 10006 TID-gpgqbvwjo NotificationWorker JID-5eaf219216efb99008c78d27 INFO: done: 10.795 sec
+2017-07-21T16:30:30.011Z 10006 TID-gpgqbvvxg NotificationWorker JID-330be1b8c2f2ad00a7f025db INFO: start
+2017-07-21T16:30:41.695Z 10006 TID-gpgqbvvxg NotificationWorker JID-330be1b8c2f2ad00a7f025db INFO: done: 11.684 sec
+2017-07-21T16:30:50.679Z 10006 TID-gpgqbvwa8 NotificationWorker JID-5d26107f63383db4ea0c5fcc INFO: start
+2017-07-21T16:30:50.686Z 10006 TID-gpgqbvvxg NotificationWorker JID-eef4eefa58e6b67b41b80e56 INFO: start
+2017-07-21T16:30:50.694Z 10006 TID-gpgqbvwjo NotificationWorker JID-61fa1d4a0544a46edbea4f59 INFO: start
+2017-07-21T16:30:50.702Z 10006 TID-gpgqbvw3k NotificationWorker JID-e012c78b23cc9ac16e4d2808 INFO: start
+2017-07-21T16:30:51.303Z 10006 TID-gpgqbvwa8 NotificationWorker JID-5d26107f63383db4ea0c5fcc INFO: done: 0.624 sec
+2017-07-21T16:30:51.382Z 10006 TID-gpgqbvwjo NotificationWorker JID-61fa1d4a0544a46edbea4f59 INFO: done: 0.687 sec
+2017-07-21T16:30:52.283Z 10006 TID-gpgqbvw3k NotificationWorker JID-e012c78b23cc9ac16e4d2808 INFO: done: 1.581 sec
+2017-07-21T16:30:52.285Z 10006 TID-gpgqbvvxg NotificationWorker JID-eef4eefa58e6b67b41b80e56 INFO: done: 1.598 sec
+2017-07-21T16:30:55.854Z 10006 TID-gpgqbvvxg NotificationWorker JID-dcaa9b67407b0f31c55139b6 INFO: start
+2017-07-21T16:30:55.861Z 10006 TID-gpgqbvw3k NotificationWorker JID-25404e615dfde13a8964a310 INFO: start
+2017-07-21T16:30:56.507Z 10006 TID-gpgqbvvxg NotificationWorker JID-dcaa9b67407b0f31c55139b6 INFO: done: 0.653 sec
+2017-07-21T16:30:56.681Z 10006 TID-gpgqbvw3k NotificationWorker JID-25404e615dfde13a8964a310 INFO: done: 0.819 sec
+2017-07-21T16:30:58.874Z 10006 TID-gpgqbvwjo NotificationWorker JID-54395d55c94ababf6c19ce5a INFO: start
+2017-07-21T16:30:58.883Z 10006 TID-gpgqbvwa8 NotificationWorker JID-42e84e693fa7b1e6a15a33ae INFO: start
+2017-07-21T16:30:58.893Z 10006 TID-gpgqbvvxg NotificationWorker JID-2a07e22054bea0ca72be6edf INFO: start
+2017-07-21T16:30:58.903Z 10006 TID-gpgqbvw3k NotificationWorker JID-a8acfa4f3f760a57391e5691 INFO: start
+2017-07-21T16:30:59.511Z 10006 TID-gpgqbvw3k NotificationWorker JID-a8acfa4f3f760a57391e5691 INFO: done: 0.608 sec
+2017-07-21T16:31:01.852Z 10006 TID-gpgqbvw3k NotificationWorker JID-08b9dc702ff41c949b57cd24 INFO: start
+2017-07-21T16:31:02.409Z 10006 TID-gpgqbvw3k NotificationWorker JID-08b9dc702ff41c949b57cd24 INFO: done: 0.557 sec
+2017-07-21T16:31:02.409Z 10006 TID-gpgqbvw3k NotificationWorker JID-43d7b4b4cd5396d5bf9806f1 INFO: start
+2017-07-21T16:31:02.810Z 10006 TID-gpgqbvw3k NotificationWorker JID-43d7b4b4cd5396d5bf9806f1 INFO: done: 0.401 sec
+2017-07-21T16:31:02.811Z 10006 TID-gpgqbvw3k NotificationWorker JID-e347402469a680885e9e3d15 INFO: start
+2017-07-21T16:31:03.156Z 10006 TID-gpgqbvw3k NotificationWorker JID-e347402469a680885e9e3d15 INFO: done: 0.345 sec
+2017-07-21T16:31:03.156Z 10006 TID-gpgqbvw3k NotificationWorker JID-a78d31377cf4a03e26fcc576 INFO: start
+2017-07-21T16:31:03.727Z 10006 TID-gpgqbvw3k NotificationWorker JID-a78d31377cf4a03e26fcc576 INFO: done: 0.571 sec
+2017-07-21T16:31:03.728Z 10006 TID-gpgqbvw3k NotificationWorker JID-fa534c9b2105bdaaecc571be INFO: start
+2017-07-21T16:31:04.107Z 10006 TID-gpgqbvvxg NotificationWorker JID-2a07e22054bea0ca72be6edf INFO: done: 5.214 sec
+2017-07-21T16:31:04.904Z 10006 TID-gpgqbvwa8 NotificationWorker JID-42e84e693fa7b1e6a15a33ae INFO: done: 6.021 sec
+2017-07-21T16:31:04.998Z 10006 TID-gpgqbvw3k NotificationWorker JID-fa534c9b2105bdaaecc571be INFO: done: 1.27 sec
+2017-07-21T16:31:05.011Z 10006 TID-gpgqbvwjo NotificationWorker JID-54395d55c94ababf6c19ce5a INFO: done: 6.136 sec
+2017-07-21T16:47:25.110Z 10006 TID-gpgpnu7dk INFO: Shutting down
+2017-07-21T16:47:25.111Z 10006 TID-gpgpnu7dk INFO: Terminating quiet workers
+2017-07-21T16:47:25.111Z 10006 TID-gpgqbvws0 INFO: Scheduler exiting...
+2017-07-21T16:47:25.211Z 10006 TID-gpgpnu7dk INFO: Pausing to allow workers to finish...
+2017-07-21T16:47:27.115Z 10006 TID-gpgpnu7dk INFO: Bye!
+2017-07-21T17:04:48.453Z 3777 TID-gourutlfs INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-3777", :url=>nil}
+2017-07-21T17:04:49.405Z 3777 TID-gourutlfs INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-07-21T17:04:49.405Z 3777 TID-gourutlfs INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-07-21T17:04:49.405Z 3777 TID-gourutlfs INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-07-21T17:04:49.408Z 3777 TID-gourutlfs INFO: Starting processing, hit Ctrl-C to stop
+2017-07-21T17:06:52.227Z 3777 TID-gousiv5a8 NotificationWorker JID-fd248d337c25e6ccbcfda064 INFO: start
+2017-07-21T17:07:07.596Z 3777 TID-gousiv5a8 NotificationWorker JID-fd248d337c25e6ccbcfda064 INFO: done: 15.37 sec
+2017-07-21T17:07:13.798Z 3777 TID-gousiv5t4 NotificationWorker JID-4890c90cdcd4f81ad29c2406 INFO: start
+2017-07-21T17:07:13.815Z 3777 TID-gousiv5mg NotificationWorker JID-e242f6779e95c2bc592889e5 INFO: start
+2017-07-21T17:07:13.826Z 3777 TID-gousiv5gc NotificationWorker JID-95547200d1915b9b5b8fec50 INFO: start
+2017-07-21T17:07:13.836Z 3777 TID-gousiv5a8 NotificationWorker JID-1958f75c67a29597ad2b8f9e INFO: start
+2017-07-21T17:07:14.159Z 3777 TID-gousiv5t4 NotificationWorker JID-4890c90cdcd4f81ad29c2406 INFO: done: 0.36 sec
+2017-07-21T17:07:14.340Z 3777 TID-gousiv5mg NotificationWorker JID-e242f6779e95c2bc592889e5 INFO: done: 0.526 sec
+2017-07-21T17:07:14.560Z 3777 TID-gousiv5a8 NotificationWorker JID-1958f75c67a29597ad2b8f9e INFO: done: 0.724 sec
+2017-07-21T17:07:14.697Z 3777 TID-gousiv5gc NotificationWorker JID-95547200d1915b9b5b8fec50 INFO: done: 0.871 sec
+2017-07-21T17:07:15.905Z 3777 TID-gousiv5t4 NotificationWorker JID-da841e705b6a3f03362f6225 INFO: start
+2017-07-21T17:07:15.919Z 3777 TID-gousiv5mg NotificationWorker JID-37b8c7191e475a3c9fddc9f4 INFO: start
+2017-07-21T17:07:15.925Z 3777 TID-gousiv5a8 NotificationWorker JID-79701ba27053957ce04347d3 INFO: start
+2017-07-21T17:07:16.200Z 3777 TID-gousiv5t4 NotificationWorker JID-da841e705b6a3f03362f6225 INFO: done: 0.294 sec
+2017-07-21T17:07:16.665Z 3777 TID-gousiv5mg NotificationWorker JID-37b8c7191e475a3c9fddc9f4 INFO: done: 0.746 sec
+2017-07-21T17:07:17.240Z 3777 TID-gousiv5t4 NotificationWorker JID-94935c40194501b7efb0056f INFO: start
+2017-07-21T17:07:17.250Z 3777 TID-gousiv5mg NotificationWorker JID-0a2b48cdd8c363d15a7abda5 INFO: start
+2017-07-21T17:07:17.334Z 3777 TID-gousiv5a8 NotificationWorker JID-79701ba27053957ce04347d3 INFO: done: 1.409 sec
+2017-07-21T17:07:17.652Z 3777 TID-gousiv5t4 NotificationWorker JID-94935c40194501b7efb0056f INFO: done: 0.412 sec
+2017-07-21T17:07:17.706Z 3777 TID-gousiv5mg NotificationWorker JID-0a2b48cdd8c363d15a7abda5 INFO: done: 0.455 sec
+2017-07-21T17:08:17.651Z 3777 TID-gousiv5mg NotificationWorker JID-65a93078da10ccbb31be278a INFO: start
+2017-07-21T17:08:37.503Z 3777 TID-gousiv5mg NotificationWorker JID-65a93078da10ccbb31be278a INFO: done: 19.852 sec
+2017-07-21T17:09:25.533Z 3777 TID-gousiv5mg NotificationWorker JID-e1615d9a5668e29cc4a06a8c INFO: start
+2017-07-21T17:09:25.541Z 3777 TID-gousiv5a8 NotificationWorker JID-c9df2ff74ebbfb3aeb3c19f0 INFO: start
+2017-07-21T17:09:25.552Z 3777 TID-gousiv5t4 NotificationWorker JID-1437289c68f50de7fffe3a77 INFO: start
+2017-07-21T17:09:26.184Z 3777 TID-gousiv5t4 NotificationWorker JID-1437289c68f50de7fffe3a77 INFO: done: 0.631 sec
+2017-07-21T17:09:26.211Z 3777 TID-gousiv5mg NotificationWorker JID-e1615d9a5668e29cc4a06a8c INFO: done: 0.678 sec
+2017-07-21T17:09:26.267Z 3777 TID-gousiv5a8 NotificationWorker JID-c9df2ff74ebbfb3aeb3c19f0 INFO: done: 0.725 sec
+2017-07-21T17:09:27.444Z 3777 TID-gousiv5t4 NotificationWorker JID-de2109b3299a666e0f64778d INFO: start
+2017-07-21T17:09:27.459Z 3777 TID-gousiv5mg NotificationWorker JID-0aea806faf7e2a49977eea7f INFO: start
+2017-07-21T17:09:27.472Z 3777 TID-gousiv5a8 NotificationWorker JID-af3b4aed02680db555ed347b INFO: start
+2017-07-21T17:09:28.093Z 3777 TID-gousiv5a8 NotificationWorker JID-af3b4aed02680db555ed347b INFO: done: 0.621 sec
+2017-07-21T17:09:28.204Z 3777 TID-gousiv5t4 NotificationWorker JID-de2109b3299a666e0f64778d INFO: done: 0.76 sec
+2017-07-21T17:09:29.435Z 3777 TID-gousiv5a8 NotificationWorker JID-7bbb95aec0015e690c70a11a INFO: start
+2017-07-21T17:09:32.308Z 3777 TID-gousiv5a8 NotificationWorker JID-7bbb95aec0015e690c70a11a INFO: done: 2.873 sec
+2017-07-21T17:09:33.353Z 3777 TID-gousiv5mg NotificationWorker JID-0aea806faf7e2a49977eea7f INFO: done: 5.895 sec
+2017-07-21T17:11:17.049Z 3777 TID-gousiv5gc NotificationWorker JID-91c25ab618501be0e71f849b INFO: start
+2017-07-21T17:11:37.692Z 3777 TID-gousiv5gc NotificationWorker JID-91c25ab618501be0e71f849b INFO: done: 20.642 sec
+2017-07-21T17:11:54.012Z 3777 TID-gousiv5t4 NotificationWorker JID-90a366050984339b7f564eb0 INFO: start
+2017-07-21T17:11:54.022Z 3777 TID-gousiv5a8 NotificationWorker JID-f1d0fe6a20d88c884579b47e INFO: start
+2017-07-21T17:11:54.035Z 3777 TID-gousiv5gc NotificationWorker JID-67a13c4e64b4c48c4a113f2c INFO: start
+2017-07-21T17:11:54.043Z 3777 TID-gousiv5mg NotificationWorker JID-ed68225386d6ef369bab70dc INFO: start
+2017-07-21T17:11:54.361Z 3777 TID-gousiv5t4 NotificationWorker JID-90a366050984339b7f564eb0 INFO: done: 0.349 sec
+2017-07-21T17:11:54.412Z 3777 TID-gousiv5mg NotificationWorker JID-ed68225386d6ef369bab70dc INFO: done: 0.369 sec
+2017-07-21T17:11:56.048Z 3777 TID-gousiv5gc NotificationWorker JID-67a13c4e64b4c48c4a113f2c INFO: done: 2.013 sec
+2017-07-21T17:12:04.602Z 3777 TID-gousiv5a8 NotificationWorker JID-f1d0fe6a20d88c884579b47e INFO: done: 10.58 sec
+2017-07-21T17:12:37.351Z 3777 TID-gousiv5gc NotificationWorker JID-7a10b5e5079cb71f1e34bd7b INFO: start
+2017-07-21T17:12:44.651Z 3777 TID-gousiv5gc NotificationWorker JID-7a10b5e5079cb71f1e34bd7b INFO: done: 7.3 sec
+2017-07-21T17:12:48.140Z 3777 TID-gousiv5t4 NotificationWorker JID-e56e70c25936cd8812e05e83 INFO: start
+2017-07-21T17:12:48.149Z 3777 TID-gousiv5mg NotificationWorker JID-61deba3acac2b7a1c4178954 INFO: start
+2017-07-21T17:12:48.160Z 3777 TID-gousiv5gc NotificationWorker JID-a99fa895f448eab4d4819c04 INFO: start
+2017-07-21T17:12:48.170Z 3777 TID-gousiv5a8 NotificationWorker JID-bba7cded457ba4e68c65fd28 INFO: start
+2017-07-21T17:12:48.538Z 3777 TID-gousiv5gc NotificationWorker JID-a99fa895f448eab4d4819c04 INFO: done: 0.378 sec
+2017-07-21T17:12:48.564Z 3777 TID-gousiv5a8 NotificationWorker JID-bba7cded457ba4e68c65fd28 INFO: done: 0.394 sec
+2017-07-21T17:12:49.233Z 3777 TID-gousiv5t4 NotificationWorker JID-e56e70c25936cd8812e05e83 INFO: done: 1.094 sec
+2017-07-21T17:12:58.524Z 3777 TID-gousiv5mg NotificationWorker JID-61deba3acac2b7a1c4178954 INFO: done: 10.374 sec
+2017-07-21T17:24:29.964Z 3777 TID-gousiv5a8 NotificationWorker JID-aab7f084297b7fa738a944c1 INFO: start
+2017-07-21T17:24:31.651Z 3777 TID-gousiv5a8 NotificationWorker JID-aab7f084297b7fa738a944c1 INFO: done: 1.686 sec
+2017-07-21T17:24:35.729Z 3777 TID-gousiv5a8 NotificationWorker JID-af4b12b409ef2fcf35441525 INFO: start
+2017-07-21T17:24:35.737Z 3777 TID-gousiv5gc NotificationWorker JID-3596e0e674ae0b51f16dd048 INFO: start
+2017-07-21T17:24:35.746Z 3777 TID-gousiv5mg NotificationWorker JID-4c9dfdde2405e7e311b33520 INFO: start
+2017-07-21T17:24:35.756Z 3777 TID-gousiv5t4 NotificationWorker JID-120b3858e8f4a6c3cd827650 INFO: start
+2017-07-21T17:24:36.155Z 3777 TID-gousiv5mg NotificationWorker JID-4c9dfdde2405e7e311b33520 INFO: done: 0.408 sec
+2017-07-21T17:24:36.209Z 3777 TID-gousiv5t4 NotificationWorker JID-120b3858e8f4a6c3cd827650 INFO: done: 0.453 sec
+2017-07-21T17:24:36.240Z 3777 TID-gousiv5gc NotificationWorker JID-3596e0e674ae0b51f16dd048 INFO: done: 0.503 sec
+2017-07-21T17:24:37.361Z 3777 TID-gousiv5a8 NotificationWorker JID-af4b12b409ef2fcf35441525 INFO: done: 1.632 sec
+2017-07-21T17:30:23.502Z 3777 TID-gousiv5a8 NotificationWorker JID-e428f560ce888cdcbd2bbd44 INFO: start
+2017-07-21T17:31:57.614Z 3777 TID-gousiv5mg NotificationWorker JID-a70fc8ded2f33cc5ec30449b INFO: start
+2017-07-21T17:31:57.629Z 3777 TID-gousiv5gc NotificationWorker JID-77e8772bc3e4bf1955fbe33e INFO: start
+2017-07-21T17:31:57.637Z 3777 TID-gousiv5t4 NotificationWorker JID-edb99922676a7cbdd5b62089 INFO: start
+2017-07-21T17:31:58.143Z 3777 TID-gousiv5t4 NotificationWorker JID-edb99922676a7cbdd5b62089 INFO: done: 0.506 sec
+2017-07-21T17:31:58.260Z 3777 TID-gousiv5mg NotificationWorker JID-a70fc8ded2f33cc5ec30449b INFO: done: 0.646 sec
+2017-07-21T17:31:59.424Z 3777 TID-gousiv5gc NotificationWorker JID-77e8772bc3e4bf1955fbe33e INFO: done: 1.794 sec
+2017-07-21T17:32:00.573Z 3777 TID-gousiv5gc NotificationWorker JID-5d1330c29d0283cd82baf3cf INFO: start
+2017-07-21T17:32:00.583Z 3777 TID-gousiv5t4 NotificationWorker JID-ccf1ab3e622be4d9fb4d1312 INFO: start
+2017-07-21T17:32:00.596Z 3777 TID-gousiv5mg NotificationWorker JID-69d656b1bebc0f8dad66b3b6 INFO: start
+2017-07-21T17:32:01.269Z 3777 TID-gousiv5gc NotificationWorker JID-5d1330c29d0283cd82baf3cf INFO: done: 0.696 sec
+2017-07-21T17:32:02.273Z 3777 TID-gousiv5t4 NotificationWorker JID-ccf1ab3e622be4d9fb4d1312 INFO: done: 1.691 sec
+2017-07-21T17:32:02.295Z 3777 TID-gousiv5gc NotificationWorker JID-7c604fd1b0bb71fe352f68f3 INFO: start
+2017-07-21T17:32:02.311Z 3777 TID-gousiv5t4 NotificationWorker JID-90996d79d4d7bb45a11f7896 INFO: start
+2017-07-21T17:32:02.381Z 3777 TID-gousiv5mg NotificationWorker JID-69d656b1bebc0f8dad66b3b6 INFO: done: 1.785 sec
+2017-07-21T17:32:03.576Z 3777 TID-gousiv5mg NotificationWorker JID-7e57ef7c6b77320c3defb5fd INFO: start
+2017-07-21T17:32:04.115Z 3777 TID-gousiv5mg NotificationWorker JID-7e57ef7c6b77320c3defb5fd INFO: done: 0.539 sec
+2017-07-21T17:32:05.288Z 3777 TID-gousiv5mg NotificationWorker JID-19dc93cd3fd3efb3662a7e02 INFO: start
+2017-07-21T17:32:06.295Z 3777 TID-gousiv5t4 NotificationWorker JID-90996d79d4d7bb45a11f7896 INFO: done: 3.984 sec
+2017-07-21T17:32:06.296Z 3777 TID-gousiv5t4 NotificationWorker JID-f1691db362b89ee25ad4af3a INFO: start
+2017-07-21T17:32:08.456Z 3777 TID-gousiv5t4 NotificationWorker JID-f1691db362b89ee25ad4af3a INFO: done: 2.16 sec
+2017-07-21T17:32:08.457Z 3777 TID-gousiv5t4 NotificationWorker JID-9f5199a12742082c25a5cbf7 INFO: start
+2017-07-21T17:32:08.832Z 3777 TID-gousiv5gc NotificationWorker JID-7c604fd1b0bb71fe352f68f3 INFO: done: 6.537 sec
+2017-07-21T17:32:09.725Z 3777 TID-gousiv5t4 NotificationWorker JID-9f5199a12742082c25a5cbf7 INFO: done: 1.268 sec
+2017-07-21T17:32:10.705Z 3777 TID-gousiv5mg NotificationWorker JID-19dc93cd3fd3efb3662a7e02 INFO: done: 5.417 sec
+2017-07-21T17:32:27.619Z 3777 TID-gousiv5a8 NotificationWorker JID-e428f560ce888cdcbd2bbd44 INFO: done: 124.117 sec
+2017-07-21T17:33:20.787Z 3777 TID-gousiv5mg NotificationWorker JID-3ebf24d0d6864cbf5ec57f75 INFO: start
+2017-07-21T17:33:20.795Z 3777 TID-gousiv5gc NotificationWorker JID-03b3c57876061d0db150044e INFO: start
+2017-07-21T17:33:21.667Z 3777 TID-gousiv5mg NotificationWorker JID-3ebf24d0d6864cbf5ec57f75 INFO: done: 0.88 sec
+2017-07-21T17:33:22.062Z 3777 TID-gousiv5mg NotificationWorker JID-e27aa0eb543a36b00d08eecf INFO: start
+2017-07-21T17:33:22.072Z 3777 TID-gousiv5a8 NotificationWorker JID-9a80ed6d932fcb21e1a0a2b7 INFO: start
+2017-07-21T17:33:25.584Z 3777 TID-gousiv5t4 NotificationWorker JID-ee6adc3ad48b44360401d8bd INFO: start
+2017-07-21T17:33:26.312Z 3777 TID-gousiv5t4 NotificationWorker JID-ee6adc3ad48b44360401d8bd INFO: done: 0.728 sec
+2017-07-21T17:33:26.312Z 3777 TID-gousiv5t4 NotificationWorker JID-3e350844949cfb7e47ed3323 INFO: start
+2017-07-21T17:33:27.469Z 3777 TID-gousiv5gc NotificationWorker JID-03b3c57876061d0db150044e INFO: done: 6.673 sec
+2017-07-21T17:33:28.134Z 3777 TID-gousiv5mg NotificationWorker JID-e27aa0eb543a36b00d08eecf INFO: done: 6.072 sec
+2017-07-21T17:33:28.134Z 3777 TID-gousiv5t4 NotificationWorker JID-3e350844949cfb7e47ed3323 INFO: done: 1.822 sec
+2017-07-21T17:33:28.587Z 3777 TID-gousiv5a8 NotificationWorker JID-9a80ed6d932fcb21e1a0a2b7 INFO: done: 6.516 sec
+2017-07-21T17:35:28.118Z 3777 TID-gousiv5mg NotificationWorker JID-baedd64d83dd99df1fcc549e INFO: start
+2017-07-21T17:35:50.334Z 3777 TID-gousiv5mg NotificationWorker JID-baedd64d83dd99df1fcc549e INFO: done: 22.216 sec
+2017-07-21T17:36:08.526Z 3777 TID-gousiv5mg NotificationWorker JID-f2267830b9ad0e51e37d3756 INFO: start
+2017-07-21T17:36:17.503Z 3777 TID-gousiv5gc NotificationWorker JID-783ee60cd5c93b35b1736095 INFO: start
+2017-07-21T17:36:17.512Z 3777 TID-gousiv5t4 NotificationWorker JID-033084b3a77a1dac513e5920 INFO: start
+2017-07-21T17:36:17.523Z 3777 TID-gousiv5a8 NotificationWorker JID-aac136d1dd1b8d42dfa53920 INFO: start
+2017-07-21T17:36:17.538Z 3777 TID-gousiv5mg NotificationWorker JID-f2267830b9ad0e51e37d3756 INFO: done: 9.012 sec
+2017-07-21T17:36:17.538Z 3777 TID-gousiv5mg NotificationWorker JID-6ab4601c3977a885d37bf63f INFO: start
+2017-07-21T17:36:18.349Z 3777 TID-gousiv5t4 NotificationWorker JID-033084b3a77a1dac513e5920 INFO: done: 0.837 sec
+2017-07-21T17:36:18.376Z 3777 TID-gousiv5gc NotificationWorker JID-783ee60cd5c93b35b1736095 INFO: done: 0.873 sec
+2017-07-21T17:36:18.461Z 3777 TID-gousiv5a8 NotificationWorker JID-aac136d1dd1b8d42dfa53920 INFO: done: 0.938 sec
+2017-07-21T17:36:19.684Z 3777 TID-gousiv5t4 NotificationWorker JID-0aa18368d9cd478b4d34c780 INFO: start
+2017-07-21T17:36:19.694Z 3777 TID-gousiv5gc NotificationWorker JID-6d68d1818da588e3379315eb INFO: start
+2017-07-21T17:36:19.704Z 3777 TID-gousiv5a8 NotificationWorker JID-1858a4f268de3e071aff0642 INFO: start
+2017-07-21T17:36:20.057Z 3777 TID-gousiv5gc NotificationWorker JID-6d68d1818da588e3379315eb INFO: done: 0.363 sec
+2017-07-21T17:36:20.058Z 3777 TID-gousiv5gc NotificationWorker JID-c15b9c59826c8c75b091fd80 INFO: start
+2017-07-21T17:36:20.112Z 3777 TID-gousiv5a8 NotificationWorker JID-1858a4f268de3e071aff0642 INFO: done: 0.409 sec
+2017-07-21T17:36:20.437Z 3777 TID-gousiv5gc NotificationWorker JID-c15b9c59826c8c75b091fd80 INFO: done: 0.379 sec
+2017-07-21T17:36:21.546Z 3777 TID-gousiv5a8 NotificationWorker JID-2fd64dfea6e40cfe10ffd4f1 INFO: start
+2017-07-21T17:36:21.559Z 3777 TID-gousiv5gc NotificationWorker JID-484a5703deed0ac54ceaaa83 INFO: start
+2017-07-21T17:36:21.930Z 3777 TID-gousiv5gc NotificationWorker JID-484a5703deed0ac54ceaaa83 INFO: done: 0.371 sec
+2017-07-21T17:36:21.931Z 3777 TID-gousiv5gc NotificationWorker JID-3c35e2578a4f53ac5319a97d INFO: start
+2017-07-21T17:36:21.932Z 3777 TID-gousiv5a8 NotificationWorker JID-2fd64dfea6e40cfe10ffd4f1 INFO: done: 0.386 sec
+2017-07-21T17:36:21.936Z 3777 TID-gousiv5a8 NotificationWorker JID-07b81a2cb7be4db54fe6d460 INFO: start
+2017-07-21T17:36:22.632Z 3777 TID-gousiv5a8 NotificationWorker JID-07b81a2cb7be4db54fe6d460 INFO: done: 0.696 sec
+2017-07-21T17:36:23.156Z 3777 TID-gousiv5mg NotificationWorker JID-6ab4601c3977a885d37bf63f INFO: done: 5.618 sec
+2017-07-21T17:36:23.262Z 3777 TID-gousiv5a8 NotificationWorker JID-5289722cdff922b47d6ecf8f INFO: start
+2017-07-21T17:36:23.275Z 3777 TID-gousiv5mg NotificationWorker JID-c842eebab0682da77296638c INFO: start
+2017-07-21T17:36:23.634Z 3777 TID-gousiv5a8 NotificationWorker JID-5289722cdff922b47d6ecf8f INFO: done: 0.371 sec
+2017-07-21T17:36:23.634Z 3777 TID-gousiv5a8 NotificationWorker JID-4c89ffeaca221a567b79f2a9 INFO: start
+2017-07-21T17:36:23.674Z 3777 TID-gousiv5mg NotificationWorker JID-c842eebab0682da77296638c INFO: done: 0.399 sec
+2017-07-21T17:36:24.133Z 3777 TID-gousiv5a8 NotificationWorker JID-4c89ffeaca221a567b79f2a9 INFO: done: 0.499 sec
+2017-07-21T17:36:25.320Z 3777 TID-gousiv5t4 NotificationWorker JID-0aa18368d9cd478b4d34c780 INFO: done: 5.636 sec
+2017-07-21T17:36:27.876Z 3777 TID-gousiv5gc NotificationWorker JID-3c35e2578a4f53ac5319a97d INFO: done: 5.945 sec
+2017-07-21T17:37:53.149Z 3777 TID-gourutlfs INFO: Shutting down
+2017-07-21T17:37:53.149Z 3777 TID-gourutlfs INFO: Terminating quiet workers
+2017-07-21T17:37:53.151Z 3777 TID-gousiv61g INFO: Scheduler exiting...
+2017-07-21T17:37:53.251Z 3777 TID-gourutlfs INFO: Pausing to allow workers to finish...
+2017-07-21T17:37:54.554Z 3777 TID-gourutlfs INFO: Bye!

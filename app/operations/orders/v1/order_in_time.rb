@@ -30,8 +30,10 @@ module Orders
                 get_order.each do |order|
                     total += order.total
                     order.order_details.each do |od|
-                        dish = Dish.find(od.dish_id)
-                        rs << order_detail_construct.new(dish.id, dish.dish_name, od.quantity, od.price, DateUtils.format_date(od.created_at))
+                        unless od.cooking_status == -1
+                            dish = Dish.find(od.dish_id)
+                            rs << order_detail_construct.new(dish.id, dish.dish_name, od.quantity, od.price, DateUtils.format_date(od.created_at))
+                        end
                     end
                 end
                 result_construct.new(total, rs)
