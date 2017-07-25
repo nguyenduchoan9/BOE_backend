@@ -17,23 +17,13 @@
       <% end %>
     </div>
   </div>
-  <!--<div class="col s5 right">-->
-  <!--<div class="input-field" style="margin-top: 0">-->
-  <!--<input style="width: 80%" type="date" class="datepicker" placeholder="Search" id="date_search">-->
-
-  <!--<button type="submit" class="btn-floating waves-effect waves-light" onclick="update_notification()" id="search_btn">-->
-  <!--<i class="material-icons">search</i>-->
-  <!--</button>-->
-  <!--</div>-->
-  <!--</div>-->
 </div>
 <div style="padding: 0% 5%">
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">Rejected Order</span>
-      <% if @order_details.nil? || @order_details.size == 0 %>
-          <h5 id="available" style="text-align: center;">Not Available</h5>
-      <% else %>
+
+      <% if !@order_details.nil? && @order_details.size > 0 %>
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Rejected Order</span>
           <table id="table" class="bordered striped">
             <thead>
             <th style="text-align: center; width: 15%">Table Number</th>
@@ -60,9 +50,13 @@
             <% end %>
             </tbody>
           </table>
+        </div>
+      </div>
+      <% elsif !params[:term].nil? %>
+          <h5 id="available" style="text-align: center;">Not Available</h5>
+
       <% end %>
-    </div>
-  </div>
+
 </div>
 <script>
     //    function update_notification() {
