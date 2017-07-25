@@ -50,7 +50,7 @@
                   <td style="text-align: center"><%= order_detail.dish.dish_name %></td>
                   <td style="text-align: center"><%= order_detail.price %></td>
                   <td style="text-align: center"><%= order_detail.quantity_not_serve %></td>
-                  <td style="text-align: center"><%= order_detail.quantity_not_serve * order_detail.dish.price_change_histories.last.price %></td>
+                  <td style="text-align: center"><%= order_detail.quantity_not_serve * order_detail.price %></td>
                   <td style="text-align: center">
                     <a href="refund?order_detail_id=<%= order_detail.id %>">
                       <button class="btn red">Refund</button>
