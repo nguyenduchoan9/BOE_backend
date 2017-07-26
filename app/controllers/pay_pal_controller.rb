@@ -7,7 +7,7 @@ class PayPalController < ApplicationController
   #             :sender_batch_id => SecureRandom.hex(8),
   #             :email_subject => 'You have a Payout!',
   #         },
-  #         :items => [
+  #         :items =>
   #             {
   #                 :recipient_type => 'EMAIL',
   #                 :amount => {
@@ -44,7 +44,7 @@ class PayPalController < ApplicationController
     order = Order.find order_id
     total = 0
     order.order_details.where(cooking_status: 3).each do |order_detail|
-      total += (order_detail.price * order_detail.quantity_not_serve)
+      total += (order_detail.price.to_f * order_detail.quantity_not_serve.to_f)
     end
     payment_id = order.payment_id
     payment = PayPal::SDK::REST::DataTypes::Payment.find payment_id
