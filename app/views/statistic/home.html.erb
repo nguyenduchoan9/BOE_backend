@@ -19,30 +19,31 @@
   </div>
 </div>
 <div style="padding: 0% 5%">
-
-      <% if !@order_details.nil? && @order_details.size > 0 %>
+  <% if !@orders.nil? && @orders.size > 0 %>
       <div class="card">
         <div class="card-content">
           <span class="card-title">Rejected Order</span>
           <table id="table" class="bordered striped">
             <thead>
             <th style="text-align: center; width: 15%">Table Number</th>
-            <th style="text-align: center">Dish Name</th>
-            <th style="text-align: center">Price</th>
-            <th style="text-align: center">Quantity</th>
+            <th style="text-align: center; width: 55%">Dish Name</th>
             <th style="text-align: center">Total</th>
             <th></th>
             </thead>
             <tbody id="tbody">
-            <% @order_details.each do |order_detail| %>
+            <% @orders.each do |order| %>
+                <% dish_name = Array.new %>
+                <% total = 0 %>
+                <% order.order_details.each do |o| %>
+                    <% dish_name.push("#{o.dish.dish_name} x #{o.quantity_not_serve}") %>
+                    <% total += (o.price * o.quantity_not_serve) %>
+                <% end %>
                 <tr>
-                  <td style="text-align: center"><%= order_detail.order.table_number %></td>
-                  <td style="text-align: center"><%= order_detail.dish.dish_name %></td>
-                  <td style="text-align: center"><%= number_to_currency(order_detail.price, unit: '', precision: 0) %></td>
-                  <td style="text-align: center"><%= order_detail.quantity_not_serve %></td>
-                  <td style="text-align: center"><%= number_to_currency(order_detail.quantity_not_serve * order_detail.price, unit: '', precision: 0) %></td>
-                  <td style="text-align: center">
-                    <a href="refund?order_detail_id=<%= order_detail.id %>">
+                  <td style="text-align: center"><%= order.table_number %></td>
+                  <td><%= dish_name.join(", ") %></td>
+                  <td style="text-align: center"><%= number_to_currency(total, unit: '', precision: 0) %></td>
+                  <td>
+                    <a href="refund?order_id=<%= order.id %>">
                       <button class="btn red">Refund</button>
                     </a>
                   </td>
@@ -52,11 +53,9 @@
           </table>
         </div>
       </div>
-      <% elsif !params[:term].nil? %>
-          <h5 id="available" style="text-align: center;">Not Available</h5>
-
-      <% end %>
-
+  <% elsif !params[:term].nil? %>
+      <h5 id="available" style="text-align: center;">Not Available</h5>
+  <% end %>
 </div>
 <script>
     //    function update_notification() {

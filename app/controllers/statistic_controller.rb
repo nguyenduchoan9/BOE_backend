@@ -8,7 +8,9 @@ class StatisticController < WebApplcationController
       redirect_to users_path
     else
       if !params[:term].nil?
-        @order_details = OrderDetail.where('cooking_status = 3 AND  DATE(created_at) = ?', "#{params[:term]}")
+        order_id = OrderDetail.select(:order_id).where('cooking_status = 3 AND  DATE(created_at) = ?', "#{params[:term]}").group(:order_id).map(&:order_id)
+        @orders = Order.find order_id
+        # @order_details = OrderDetail.where('cooking_status = 3 AND  DATE(created_at) = ?', "#{params[:term]}")
       end
     end
   end
