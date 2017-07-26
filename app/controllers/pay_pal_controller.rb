@@ -1,4 +1,5 @@
 class PayPalController < ApplicationController
+  # json["payer"]["payer_info"]["email"]
 
   # @payout = PayPal::SDK::REST::DataTypes::Payout.new(
   #     {
