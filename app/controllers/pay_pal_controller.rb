@@ -24,7 +24,7 @@ class PayPalController < ApplicationController
                         :value => "#{'%.02f' % usdTotal}",
                         :currency => 'USD'
                     },
-                    :note => "#{params[:note]}",
+                    :note => "#{params[:note].to_s.squish!}",
                     :receiver => "#{params[:receiverEmail]}",
                     :sender_item_id => "2014031400023",
                 }
