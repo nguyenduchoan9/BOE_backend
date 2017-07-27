@@ -1,4 +1,6 @@
 $(document).on "turbolinks:load", ->
+  $('.modal').modal();
+  $('#textarea1').trigger('autoresize');
   Materialize.updateTextFields();
   $('select').material_select();
   $("#slide_nav").sideNav();

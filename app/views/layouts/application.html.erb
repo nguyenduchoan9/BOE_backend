@@ -95,6 +95,16 @@
             </li>
             <li class="no-padding" style="height: 5%;"><a href="#">MANAGE</a></li>
             <li class="no-padding">
+              <%= link_to rejected_order_path, data: {turbolinks: false} do %>
+                  <i class="material-icons" style="margin-right: 10px">content_paste</i><span>Rejected Orders</span>
+              <% end %>
+            </li>
+            <li class="no-padding">
+              <%= link_to send_money_path, data: {turbolinks: false} do %>
+                  <i class="material-icons" style="margin-right: 10px">local_post_office</i><span>Send Money</span>
+              <% end %>
+            </li>
+            <li class="no-padding">
               <%= link_to dashboard_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">dashboard</i><span>Dashboard</span>
               <% end %>
