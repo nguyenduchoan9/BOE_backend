@@ -16,7 +16,7 @@ Category.all.each do |i|
     bun_name = ['Bún Bò', 'Bún Bò Huế', 'Bún Cá Lóc', 'Hủ tiếu cà lóc', 'Hủ tiếu mì du ký', 'Hủ tiếu nam vang', 'Miến xào tôm',
                 'Mì kishimen Nhật Bản', 'Mì lạnh somen Nhật Bản', 'Mì ramen Nhật Bản', 'Mì soba Nhật Bản', 'Mì trộn Tây Ban Nha',
                 'Mì Udon Nhật Bản', 'Phở']
-    bun_mate = [1, 1, 2, 2, 6, 6, 4, 3, 3, 3, 3, 3, 3, 5]
+    bun_mate = [1, 1, 6, 2, 6, 6, 4, 3, 3, 3, 3, 3, 3, 5]
 
     ca_image =['ca-hap-gung-kieu-trung.jpg', 'ca_hoi_nuong_ngu_vi.jpg', 'ca-nuong-bulgari.jpg', 'chao-ca-singapore.JPG',
              'cua_xao.jpg', 'sushi-ca-hoi.jpg']
