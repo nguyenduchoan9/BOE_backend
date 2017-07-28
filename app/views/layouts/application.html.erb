@@ -38,12 +38,11 @@
     <header>
       <nav class="top-nav">
         <div class="nav-wrapper" style="background-color: #26a69a">
-          <a href="#" class="brand-logo">LOGO</a>
           <% if session[:user_id].nil? %>
           <% else %>
               <ul class="left">
                 <li>
-                  <a href="#" data-activates="slide-out" id="slide_nav" class="button-collapse"><i class="material-icons">menu</i></a>
+                  <a href="#">LOGO</a>
                 </li>
               </ul>
               <ul class="right">
@@ -68,7 +67,7 @@
         </div>
       </nav>
 
-      <ul class="side-nav fixed" id="slide-out" style="width: 250px; background-color: white; -webkit-box-shadow: 4px 0 5px -2px #888; box-shadow: 4px 0 5px -2px #888;">
+      <ul class="side-nav fixed" style="width: 250px; background-color: white; -webkit-box-shadow: 4px 0 5px -2px #888; box-shadow: 4px 0 5px -2px #888;">
         <li>
           <div class="userView">
             <div class="background">
@@ -95,6 +94,16 @@
               <div class="divider"></div>
             </li>
             <li class="no-padding" style="height: 5%;"><a href="#">MANAGE</a></li>
+            <li class="no-padding">
+              <%= link_to rejected_order_path, data: {turbolinks: false} do %>
+                  <i class="material-icons" style="margin-right: 10px">content_paste</i><span>Rejected Orders</span>
+              <% end %>
+            </li>
+            <li class="no-padding">
+              <%= link_to send_money_path, data: {turbolinks: false} do %>
+                  <i class="material-icons" style="margin-right: 10px">local_post_office</i><span>Send Money</span>
+              <% end %>
+            </li>
             <li class="no-padding">
               <%= link_to dashboard_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">dashboard</i><span>Dashboard</span>

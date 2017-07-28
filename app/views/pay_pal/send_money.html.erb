@@ -1,0 +1,97 @@
+<style>
+  label {
+    font-weight: bold;
+  }
+</style>
+<div id="modal1" class="modal">
+  <form action="executeSendMoney" method="post">
+    <div class="modal-content">
+      <h4 class="center">Send Money</h4>
+      <div class="input-field" style="width: 50%">
+        <label for="receiverEmail">Receiver Email</label>
+        <input type="text" id="receiverEmail" name="receiverEmail" placeholder="Email" readonly>
+      </div>
+      <div class="input-field">
+        <label for="receiverEmail">Amount</label>
+        <input type="number" name="amount" placeholder="Amount" style="width: 50%" min="0" max="10000000">VND
+      </div>
+      <div class="input-field">
+        <textarea id="textarea1" class="materialize-textarea" name="note" placeholder="Note"></textarea>
+        <label for="textarea1">Note</label>
+      </div>
+      <input type="submit" value="Send" class="btn red">
+    </div>
+
+  </form>
+</div>
+<div class="row">
+  <div class="left" style="margin-left: 1%; font-size: 18px;">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+  <div class="col s5 right">
+    <div class="input-field" style="margin-top: 0">
+      <%= form_tag(send_money_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 80%;', placeholder: 'Search', class: 'datepicker', id: "date_search" %>
+          <button type="submit" class="btn-floating waves-effect waves-light" onclick="update_notification()">
+            <i class="material-icons">search</i>
+          </button>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div style="padding: 0% 5%">
+  <% if !@orders.nil? && @orders.size > 0 %>
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">All Orders</span>
+          <table id="table" class="bordered striped">
+            <thead>
+            <th style="text-align: center; width: 15%">Table Number</th>
+            <th style="text-align: center; width: 55%">Order Detail</th>
+            <th style="text-align: center">Total</th>
+            <th></th>
+            </thead>
+            <tbody id="tbody">
+            <% @orders.each do |order| %>
+                <% dish_name = Array.new %>
+                <% total = 0 %>
+                <% order.order_details.each do |o| %>
+                    <% dish_name.push("#{o.dish.dish_name} x #{o.quantity_not_serve}") %>
+                <% end %>
+                <tr>
+                  <td style="text-align: center"><%= order.table_number %></td>
+                  <td><%= dish_name.join(", ") %></td>
+                  <td style="text-align: center"><%= "#{number_to_currency(order.total, unit: '', precision: 0)} VND" %></td>
+                  <td>
+                    <button class="btn red" onclick="getEmail(<%= order.id%>)">Send</button>
+                  </td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  <% elsif !params[:term].nil? %>
+      <h5 id="available" style="text-align: center;">Not Available</h5>
+  <% end %>
+</div>
+<script>
+    var $input = $('.datepicker').pickadate({
+        format: 'dd/mm/yyyy',
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+    function getEmail(order_id) {
+        $.ajax({
+            url: 'getEmail',
+            dataType: 'json',
+            data: {
+                order_id: order_id
+            },
+            success: function (data) {
+                $('#receiverEmail').val(data.email);
+                $('#modal1').modal('open');
+            }
+        })
+    }
+</script>
