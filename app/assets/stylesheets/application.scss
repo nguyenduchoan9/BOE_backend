@@ -37,11 +37,21 @@ header, main {
   padding-left: 250px;
 }
 
+input[type=text]:not(.browser-default):disabled {
+  color: black;
+}
+
 @media only screen and (max-width: 992px) {
-  header, main {
-    padding-left: 0;
+  .side-nav.fixed {
+    transform: translateX(0%);
   }
 }
+
+//@media only screen and (max-width: 992px) {
+//  header, main {
+//    padding-left: 0;
+//  }
+//}
 
 .input-field label {
   color: black;
