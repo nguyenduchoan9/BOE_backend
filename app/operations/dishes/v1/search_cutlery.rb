@@ -3,7 +3,9 @@ module Dishes
         class SearchCutlery < Operation
 
             def process
-                result
+                @is_have_result = false
+                rs = result
+                json_result.new(@is_have_result, rs)
             end
 
             private
@@ -54,6 +56,7 @@ module Dishes
 
             def group_dish_by_category
                 dish_result = dish_by_key_search
+                @is_have_result = true if dish_result.count > 0
                 dish_by_cate = []
                 if dish_result
                     if dish_result.count > 0
@@ -88,6 +91,9 @@ module Dishes
                 menu
             end
 
+            def json_result
+                Struct.new(:is_no_result, :result)
+            end
         end
     end
 end

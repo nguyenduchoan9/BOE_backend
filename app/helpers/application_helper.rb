@@ -60,6 +60,7 @@ module ApplicationHelper
             :registration_ids => [reg_tokens],
             :data => {
                 :to => "diner",
+                :term => term,
                 :body => body
             }
         }

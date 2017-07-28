@@ -3,7 +3,7 @@ class NotificationWorker
     include ApplicationHelper
     sidekiq_options :queue => :notification, :retry => false
 
-    def perform(role, id, user_id, ver = 0)
+    def perform(role, id, user_id, ver = 0, total_refund)
         @role = role
         @id = id
         @user_id = user_id
@@ -33,14 +33,18 @@ class NotificationWorker
                 }
             end
         elsif Constant::DINER ==role
-            body = list_dish_notify
-            send_message_to_diner body, diner_reg_tokens
-            # if ver == 0
-            #     body = { :message => 'Your order has been rejected'}.as_json.to_s
-            #     send_message_to_diner body, diner_reg_tokens,
-            # elsif ver == 1
-            #     , 'reject'
-            # end
+            if ver == 0
+                body = list_dish_notify
+                send_message_to_diner body, diner_reg_tokens, "notification"
+            elsif ver == 1
+                # list order_detail
+                od_id_list = id.split('-')
+                od = OrderDetail.find od_id_list.first
+                items = list_item_after_refund
+                body = after_refund_struct(total_refund, items, order.order, od.order.id)
+                send_message_to_diner body, diner_reg_tokens, "afterRefund"
+            end
+
         end
     end
 
@@ -69,6 +73,29 @@ class NotificationWorker
 
     def waiter_notify
         Struct.new(:dish_id, :dish_name)
+    end
+
+    def list_item_after_refund order_detail_id_list
+        rs = []
+        if order_detail_id_list
+            if order_detail_id_list.count > 0
+                order_detail_id_list.each do |id|
+                    od = OrderDetail.find id
+                    quantity = od.quantity_not_serve
+                    item = after_refund_item_refund.new(od.dish.dish_name, od.price, quantity)
+                    rs << item
+                end
+            end
+        end
+        rs
+    end
+
+    def after_refund_struct
+        Struct.new(:total, :dishes, :order_id)
+    end
+
+    def after_refund_item_refund
+        Struct.new(:dish_name, :price, :quantity)
     end
     # END REGION WAITER
 
@@ -117,13 +144,23 @@ class NotificationWorker
         rs = []
         dish_list = []
         dish_list_id = []
+        minus_total = 0
         @id.each do |od_id|
             od = OrderDetail.find od_id
+            minus_total += (od.quantity_not_serve * od.price)
             dish = Dish.find od.dish.id
             unless dish_list_id.index dish.id
                 dish_list_id << dish.id
                 rs << Dishes::Serializer.new(dish)
             end
+        end
+        begin
+            ActiveRecord::Base.transaction do
+                order = OrderDetail.find(@id.first).order
+                order.update(total: order.total - minus_total)
+            end
+        rescue StandardError => error
+            puts "Error - list_dish_notify"
         end
         rs
     end
