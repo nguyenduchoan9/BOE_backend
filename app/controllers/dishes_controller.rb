@@ -8,14 +8,18 @@ class DishesController < ApplicationController
         @dish.is_available = true
         @dish.save
         if params["isSocial"] == "on"
-            me = FbGraph::User.me('EAACEdEose0cBADYbNe7ne4nXaEzZAEE2LW30RrRT3k4qJ7bCqVgYfp8kainASLXA8VPv5bS7h7BZCnkVUrZAt2VF20XNeCfTcOtuYIjGKemcEGbfnwlpOfGK0r6PZCGpTsNegeEwhIyAP0mzIho76NprjjYLhGj3IgHuOmhuJQ95WZBN92bZAgswhkI7GZCZCgikv7ZClKOCS9AZDZD')
-            me.feed!(
-                :message => "#{@dish.description}",
-                :picture => 'https://graph.facebook.com/matake/picture',
-                :link => 'https://github.com/nov/fb_graph',
-                :name => "#{@dish.dish_name}",
-                :description => "#{@dish.category.category_name}"
+            me = FbGraph::User.me('EAACEdEose0cBAFOzH62V058gbJKX6LZB7VSWzCu5ijclr3ZBUBiaBcCCIvF6gZA4xKVw85eyazpo0jE8JXiuGhZCJqSRE4xKDCLb8oEo2MtstXMB6G8csZAmsfeTOZASC4pHKKPifiKR8rf5vxAgF3O17VZBX4qA2bhobV0K6ujQtyaAhBSQFx7u3F1TRoEZC7ZCxd3uFZBxVkxQZDZD')
+            me.photo!(
+                :source => File.new("#{@dish.image.file.file}", 'rb'), # 'rb' is needed only on windows
+                :message => "#{@dish.description}"
             )
+            # me.feed!(
+            #     :message => "#{@dish.description}",
+            #     :picture => 'https://graph.facebook.com/matake/picture',
+            #     :link => 'https://github.com/nov/fb_graph',
+            #     :name => "#{@dish.dish_name}",
+            #     :description => "#{@dish.category.category_name}"
+            # )
         end
         @price = PriceChangeHistory.new
         @price.dish_id = @dish.id
