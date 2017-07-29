@@ -1,12 +1,11 @@
 # 'Bún', 'Cá', 'Soup', 'Nướng', 'Nước'
-# [ 0        1      2      3     4       5         6     7            8         9       10       11       12         13    14   ]
+# [ 1        1      2      3     4       5         6     7            8         9       10       11       12         13    14   ]
 ['Thịt Bò', 'Cá', 'Mỳ', 'Tôm', 'Phở', 'Hủ tiếu', 'Cua', 'Con Trai', 'Mực', 'Kimchi', 'Ngô', 'Thịt Heo', 'Thịt Cừu', 'Gà', 'Hầu',
 
 'Bạc Hà', 'Rượu', 'Mật Ong', 'Chanh Dây', 'Táo'].each do |name|
     # [15   16        17         18        19]
     Material.find_or_create_by!(name: name)
 end
-
 
 Category.all.each do |i|
     bun_image = ['bun-bo.jpg', 'bun-bo-hue.jpg', 'bun_ca_loc.jpg', 'hu-tieu-ca-loc-kieu-trung.jpg' , 'hu-tieu-mi-du-ky.jpg',

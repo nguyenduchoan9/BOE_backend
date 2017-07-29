@@ -31,7 +31,7 @@ module Orders
                             order_detail_var.update(quantity_not_serve: quantity_not_serve - 1)
                         end
 
-                        NotificationWorker.perform_async(Constant::WAITER, order_detail_var.id, user.id)
+                        NotificationWorker.perform_async(Constant::WAITER, order_detail_var.id, user.id, 0)
                     end
                 }
             end

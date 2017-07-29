@@ -76,7 +76,7 @@ module Orders
             end
 
             def notify_to_user user_id, order_details_ids
-                NotificationWorker.perform_async(Constant::DINER, order_details_ids, user_id)
+                NotificationWorker.perform_async(Constant::DINER, order_details_ids, user_id, 0)
             end
 
             def notify_contruct

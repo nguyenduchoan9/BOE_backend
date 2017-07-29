@@ -7,7 +7,7 @@ module Orders
                 do_transaction!
                 s = check_dish_cart_avilable.size
                 if s == 0
-                    NotificationWorker.perform_async(Constant::CHEF, order.id, user.id, 1)
+                    NotificationWorker.perform_async(Constant::CHEF, order.id, user.id, 1, 0)
                 else
                 end
                 result.new(order.id, list_dish_reject)

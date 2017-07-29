@@ -18,6 +18,7 @@ class NotificationWorker
         elsif Constant::CHEF == role
             if ver == 0
                 body = { :order_id => @id, :order_detail => serial_order_detail}.as_json.to_s
+
                 send_message_to_chef body, chef_reg_tokens, 'order'
             else
                 # notify dish in orderDetail to Chef
@@ -38,9 +39,9 @@ class NotificationWorker
                 send_message_to_diner body, diner_reg_tokens, "notification"
             elsif ver == 1
                 # list order_detail
-                od_id_list = id.split('-')
-                od = OrderDetail.find od_id_list.first
-                items = list_item_after_refund
+                # od_id_list = id.split('-')
+                od = OrderDetail.find id.first
+                items = list_item_after_refund id
                 body = after_refund_struct(total_refund, items, order.order, od.order.id)
                 send_message_to_diner body, diner_reg_tokens, "afterRefund"
             end
@@ -154,14 +155,14 @@ class NotificationWorker
                 rs << Dishes::Serializer.new(dish)
             end
         end
-        begin
-            ActiveRecord::Base.transaction do
-                order = OrderDetail.find(@id.first).order
-                order.update(total: order.total - minus_total)
-            end
-        rescue StandardError => error
-            puts "Error - list_dish_notify"
-        end
+        # begin
+        #     ActiveRecord::Base.transaction do
+        #         order = OrderDetail.find(@id.first).order
+        #         order.update(total: order.total - minus_total)
+        #     end
+        # rescue StandardError => error
+        #     puts "Error - list_dish_notify"
+        # end
         rs
     end
 
