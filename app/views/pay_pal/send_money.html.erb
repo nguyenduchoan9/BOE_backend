@@ -56,7 +56,7 @@
                 <% dish_name = Array.new %>
                 <% total = 0 %>
                 <% order.order_details.each do |o| %>
-                    <% dish_name.push("#{o.dish.dish_name} x #{o.quantity_not_serve}") %>
+                    <% dish_name.push("#{o.dish.dish_name} x #{o.quantity}") %>
                 <% end %>
                 <tr>
                   <td style="text-align: center"><%= order.table_number %></td>
