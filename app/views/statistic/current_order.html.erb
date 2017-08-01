@@ -10,15 +10,15 @@
   <div class="col s6 right">
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(current_order_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 60%;', placeholder: 'Search' %>
+          <%= text_field_tag :term, params[:term], style: 'width: 60%;', placeholder: 'Search', data: { autocomplete_source: Dish.order(:dish_name).map(&:dish_name)} %>
           <div class="col s3">
-            <select name="type">
-              <option value="table">Table</option>
+            <select name="type" onchange="onSelectType()" id="type">
               <% if params[:type] == "dish" %>
                   <option value="dish" selected>Dish</option>
               <% else %>
                   <option value="dish">Dish</option>
               <% end %>
+              <option value="table">Table</option>
             </select>
           </div>
           <button type="submit" class="btn-floating waves-effect waves-light">
@@ -47,10 +47,12 @@
                             <% dish_name.push("#{o.dish.dish_name} x #{o.quantity}") %>
                         <% end %>
                     <% end %>
-                    <tr>
-                      <td style="text-align: center"><%= order.user.username %></td>
-                      <td><%= dish_name.join(", ") %></td>
-                    </tr>
+                    <% if dish_name.size > 0 %>
+                        <tr>
+                          <td style="text-align: center"><%= order.user.username %></td>
+                          <td><%= dish_name.join(", ") %></td>
+                        </tr>
+                    <% end %>
                 <% end %>
                 </tbody>
               </table>
@@ -61,7 +63,7 @@
                 <th style="text-align: center; width: 55%">Order Detail</th>
                 </thead>
                 <tbody id="tbody">
-                <% @orders.each do |order| %>
+                <% @orders.each_with_index do |order, index| %>
                     <% dish_name = Array.new %>
                     <% order.order_details.each do |o| %>
                         <% if o.cooking_status == 0 || o.cooking_status == 1 %>
@@ -82,3 +84,16 @@
       <h5 id="available" style="text-align: center;">Not Available</h5>
   <% end %>
 </div>
+<script>
+    $('#term').autocomplete({
+        source: $('#term').data('autocomplete-source')
+    });
+    function onSelectType() {
+        var selected = $('#type').find(":selected").text();
+        if (selected == "Dish") {
+            $('#term').autocomplete("enable");
+        } else {
+            $('#term').autocomplete("disable");
+        }
+    }
+</script>

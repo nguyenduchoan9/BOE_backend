@@ -1,5 +1,6 @@
 $(document).on "turbolinks:load", ->
-  $('.modal').modal();
+  $('.modal:not(#unclose_modal)').modal();
+  $('#unclose_modal').modal({dismissible: false});
   $('#textarea1').trigger('autoresize');
   Materialize.updateTextFields();
   $('select').material_select();
@@ -17,7 +18,7 @@ $(document).on "turbolinks:load", ->
         update['/number'] = realNumber;
         firebase.database().ref().update(update);
         update_status = {}
-        update_status['/rejectedOrder/'+snapshot.key+'/status'] = 'old'
+        update_status['/rejectedOrder/' + snapshot.key + '/status'] = 'old'
         firebase.database().ref().update(update_status);
     if i < 5
       appendNotification snapshot.child('dishName').val();
