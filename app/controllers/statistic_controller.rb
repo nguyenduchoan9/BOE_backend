@@ -10,8 +10,11 @@ class StatisticController < WebApplcationController
         order_id = OrderDetail.select(:order_id).where('cooking_status = 0 OR  cooking_status = 1').group(:order_id).map(&:order_id)
         @orders = Order.where(id: order_id).where(table_number: params[:term])
       else
-        order_id = Dish.find_by_dish_name(params[:term]).order_details.where('cooking_status = 0 OR cooking_status = 1').map(&:order_id)
-        @orders = Order.order(:table_number).find order_id
+        dish = Dish.find_by_dish_name(params[:term])
+        if dish
+          order_id = dish.order_details.where('cooking_status = 0 OR cooking_status = 1').map(&:order_id)
+          @orders = Order.order(:table_number).find order_id
+        end
       end
     end
   end

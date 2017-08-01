@@ -10,15 +10,20 @@
   <div class="col s6 right">
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(current_order_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 60%;', placeholder: 'Search', data: { autocomplete_source: Dish.order(:dish_name).map(&:dish_name)} %>
+          <%= text_field_tag :term, params[:term], style: 'width: 60%;', placeholder: 'Search', data: {autocomplete_source: Dish.order(:dish_name).map(&:dish_name)} %>
           <div class="col s3">
             <select name="type" onchange="onSelectType()" id="type">
+
               <% if params[:type] == "dish" %>
                   <option value="dish" selected>Dish</option>
               <% else %>
                   <option value="dish">Dish</option>
               <% end %>
-              <option value="table">Table</option>
+              <% if params[:type] == "table" %>
+                  <option value="table" selected>Table</option>
+              <% else %>
+                  <option value="table">Table</option>
+              <% end %>
             </select>
           </div>
           <button type="submit" class="btn-floating waves-effect waves-light">
