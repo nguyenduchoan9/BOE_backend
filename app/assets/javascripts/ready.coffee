@@ -1,6 +1,6 @@
 $(document).on "turbolinks:load", ->
   $('.modal:not(#unclose_modal)').modal();
-  $('#unclose_modal').modal({dismissible: false});
+  $('#unclose_modal').modal({dismissible: false, startingTop: '40%'});
   $('#textarea1').trigger('autoresize');
   Materialize.updateTextFields();
   $('select').material_select();
