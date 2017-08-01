@@ -1,0 +1,51 @@
+<style>
+  label {
+    font-weight: bold;
+  }
+</style>
+<div class="row">
+  <div class="left" style="margin-left: 1%; font-size: 18px;">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+  <div class="col s5 right">
+    <div class="input-field" style="margin-top: 0">
+      <%= form_tag(current_order_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 80%;', placeholder: 'Table Number' %>
+          <button type="submit" class="btn-floating waves-effect waves-light">
+            <i class="material-icons">search</i>
+          </button>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div style="padding: 0% 5%">
+  <% if !@orders.nil? && @orders.size > 0 %>
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Current Order</span>
+          <table id="table" class="bordered striped">
+            <thead>
+            <th style="text-align: center; width: 15%">User</th>
+            <th style="text-align: center; width: 55%">Order Detail</th>
+            </thead>
+            <tbody id="tbody">
+            <% @orders.each do |order| %>
+                <% dish_name = Array.new %>
+                <% order.order_details.each do |o| %>
+                    <% if o.cooking_status == 0 || o.cooking_status == 1 %>
+                        <% dish_name.push("#{o.dish.dish_name} x #{o.quantity}") %>
+                    <% end %>
+                <% end %>
+                <tr>
+                  <td style="text-align: center"><%= order.user.username %></td>
+                  <td><%= dish_name.join(", ") %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  <% elsif !params[:term].nil? %>
+      <h5 id="available" style="text-align: center;">Not Available</h5>
+  <% end %>
+</div>

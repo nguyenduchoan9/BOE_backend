@@ -3,6 +3,13 @@ class StatisticController < WebApplcationController
   add_breadcrumb "Home", :root_path
   include ConfigBoeHelper
 
+  def current_order
+    add_breadcrumb "Current Orders"
+    if !params[:term].nil?
+      @orders = Order.where(table_number: params[:term])
+    end
+  end
+
   def home
     if session[:role] == 'admin'
       redirect_to users_path

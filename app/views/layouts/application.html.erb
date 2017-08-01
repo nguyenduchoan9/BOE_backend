@@ -100,6 +100,11 @@
               <% end %>
             </li>
             <li class="no-padding">
+              <%= link_to current_order_path, data: {turbolinks: false} do %>
+                  <i class="material-icons" style="margin-right: 10px">list</i><span>Current Orders</span>
+              <% end %>
+            </li>
+            <li class="no-padding">
               <%= link_to send_money_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">local_post_office</i><span>Send Money</span>
               <% end %>
@@ -170,7 +175,7 @@
 </html>
 <script>
     function appendNotification(text) {
-        $('#notification_dropdown').prepend('<li><a href="<%= home_path %>">' + text + ' was rejected</a></li>')
+        $('#notification_dropdown').prepend('<li><a href="<%= rejected_order_path %>">' + text + ' was rejected</a></li>')
     }
     var config = {
         apiKey: "AIzaSyB9OrnpLwPlNy3ldhwfb5BMS2PRAV1o9j4",

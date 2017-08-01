@@ -13,7 +13,6 @@ $(document).on "turbolinks:load", ->
     if snapshot.child('status').val() == 'new'
       number.once('value').then (snapshotnumber) ->
         realNumber = snapshotnumber.val() + 1;
-        console.log(realNumber);
         update = {}
         update['/number'] = realNumber;
         firebase.database().ref().update(update);
@@ -25,7 +24,7 @@ $(document).on "turbolinks:load", ->
       i++;
     else if i == 5
       appendNotification snapshot.child('dishName').val();
-      $('#notification_dropdown').append('<li style="text-align: center;"><a href="http://localhost:3000/home" style="color: blue;">More...</a></li>');
+      $('#notification_dropdown').append('<li style="text-align: center;"><a href="/rejected_order" style="color: blue;">More...</a></li>');
       $('#notification_dropdown li').eq(5).remove();
       i++
     else
