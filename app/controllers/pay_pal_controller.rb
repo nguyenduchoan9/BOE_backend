@@ -89,8 +89,6 @@ class PayPalController < ApplicationController
       order_detail.cooking_status = 4
       order_detail.save!
     end
-    order.total -= total
-    order.save!
     notify_to_user order.user_id, ods, total
     redirect_to rejected_order_path(term: order.created_at.strftime('%d/%m/%Y'))
   end
