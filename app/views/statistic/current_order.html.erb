@@ -96,9 +96,12 @@
     function onSelectType() {
         var selected = $('#type').find(":selected").text();
         if (selected == "Dish") {
-            $('#term').autocomplete("enable");
+            $('#term').autocomplete({
+                source: $('#term').data('autocomplete-source')
+            });
         } else {
-            $('#term').autocomplete("disable");
+            console.log("destroy");
+            $('#term').autocomplete({ disabled: true });
         }
     }
 </script>
