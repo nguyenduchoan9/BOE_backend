@@ -1,9 +1,9 @@
 # 'Bún', 'Cá', 'Soup', 'Nướng', 'Nước'
-# [ 1        1      2      3     4       5         6     7            8         9       10       11       12         13    14   ]
-['Thịt Bò', 'Cá Lóc', 'Mỳ', 'Tôm', 'Phở', 'Hủ tiếu', 'Cua', 'Con Trai', 'Mực', 'Kimchi', 'Ngô', 'Thịt Heo', 'Thịt Cừu', 'Gà', 'Hầu',
+# [ 1           2      3     4       5         6       7        8         9       10       11       12         13        14     15]
+['Thịt Bò', 'Cá Lóc', 'Mì', 'Tôm', 'Phở', 'Hủ tiếu', 'Cua', 'Con Trai', 'Mực', 'Kimchi', 'Ngô', 'Thịt Heo', 'Thịt Cừu', 'Gà', 'Hầu',
 
- 'Bạc Hà', 'Rượu', 'Mật Ong', 'Chanh Dây', 'Táo', 'Cá Hồi'].each do |name|
-  # [15   16        17         18        19]
+ 'Bạc Hà', 'Rượu', 'Mật Ong', 'Chanh Dây', 'Táo', 'Cá Hồi', 'Cá'].each do |name|
+  # [16      17        18         19        20       21      22]
   Material.find_or_create_by!(name: name)
 end
 
@@ -12,7 +12,7 @@ Category.all.each do |i|
                'hu-tiu-nam-vang.jpg',
                'mien-xao-tom-kieu-trung-quoc.jpg', 'mi-kishimen-nhat-ban.jpg', 'mi_lanh_somen_nhat ban.jpg', 'mi_ramen_nhat ban.jpg',
                'mi_soba_nhat ban.jpg', 'mi-tron-tay-ban-nha.jpg', 'mi_udon_nhat_ban.jpg', 'pho.jpg']
-  bun_name = ['Bún Bò', 'Bún Bò Huế', 'Bún Cá Lóc', 'Hủ tiếu cà lóc', 'Hủ tiếu mì du ký', 'Hủ tiếu nam vang', 'Miến xào tôm',
+  bun_name = ['Bún Bò', 'Bún Bò Huế', 'Bún Cá Lóc', 'Hủ tiếu cá lóc', 'Hủ tiếu mì du ký', 'Hủ tiếu nam vang', 'Miến xào tôm',
               'Mì kishimen Nhật Bản', 'Mì lạnh somen Nhật Bản', 'Mì ramen Nhật Bản', 'Mì soba Nhật Bản', 'Mì trộn Tây Ban Nha',
               'Mì Udon Nhật Bản', 'Phở']
   bun_mate = [1, 1, 2, 2, 6, 6, 4, 3, 3, 3, 3, 3, 3, 5]
@@ -21,16 +21,16 @@ Category.all.each do |i|
              'cua_xao.jpg', 'sushi-ca-hoi.jpg']
   ca_name=['Cá hấp gừng kiểu Trung', 'Cá hồi nướng ngủ vị', 'Cá nướng Bulgari', 'Cháo cá Singapore', 'Cua xào',
            'Shushi cá hồi']
-  ca_mate = [21, 21, 21, 2, 7, 21]
+  ca_mate = [22, 21, 22, 22, 7, 21]
 
   sup_image = ['Sup-Trai.jpg', 'sup-tom-thai.jpg', 'sup-muc-tuoi.jpg', 'sup-kimchi-dau-phu.jpg', 'sup-ngo.jpg']
-  sup_name = ['Súp trai','Súp tôm thái', 'Súp mực tươi', 'Súp kimchi đậu phụ', 'Súp ngô']
+  sup_name = ['Soup trai','Soup tôm thái', 'Soup mực tươi', 'Soup kimchi đậu phụ', 'Soup ngô']
   sup_mate = [8, 4, 9, 10, 11]
 
   nuong_image = ['tom-uop-sua-chua-nuong.jpg', 'thit-nuong-texas.jpg', 'thit-nuong-indonesia.jpg', 'suon-cuu-nuong.JPG',
                  'hau-nuong-pho-mai-kieu-phap.jpg', 'ga_nuong_phomai_han_quoc.jpg', 'bo-nuong-beefstek-canada.jpg',
                  'ba-roi-xong-khoi-cuon-bo-bam.jpg']
-  nuong_name = ['Tôm ướp sữa chua nướng', 'Thịt nướng Texas', 'Thịt nướng Indonesia', 'Sường cừu nướng',
+  nuong_name = ['Tôm ướp sữa chua nướng', 'Thịt nướng Texas', 'Thịt nướng Indonesia', 'Sườn cừu nướng',
                 'Hầu nướng phô mai kiều Pháp',
                 'Gà nướng phô mai', 'Bò nướng Canada', 'Ba rọi xông khói']
   nuong_mate = [4, 12, 12, 13, 15, 14, 1, 12]
@@ -38,7 +38,7 @@ Category.all.each do |i|
   drink_image = ['bac-ha-thuong-hai.jpg', 'ruou-vang-chile.jpg', 'tra-quat-mat-ong.jpg', 'tra-buoi-mat-ong.jpg',
                  'tra-chanh-dai-tay-duong.jpg',
                  'tra-tao-do.jpg', 'tra-chanh-mat-ong-trung-dong.jpg', 'vang-barton-guestier.jpg']
-  drink_name = ['Bạc hà Thượng Hải', 'Rượu vang Chile', 'Trà quất mất ong', 'Trà bưởi mật ong', 'Trà chanh dây',
+  drink_name = ['Bạc hà Thượng Hải', 'Rượu vang Chile', 'Trà quất mật ong', 'Trà bưởi mật ong', 'Trà chanh dây',
                 'Trà táo đỏ', 'Trà mật ong Trung đông', 'Rượu vang Barton-guestier']
   drink_mate = [16, 17, 18, 18, 19, 20, 18, 17]
 

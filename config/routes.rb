@@ -60,6 +60,7 @@ Rails.application.routes.draw do
                     get :as_cart
                     get :search_cutlery
                     get :search_drinking
+                    get :search_all
                     post :register_reg_token
                     post :disable_dish
                     get :check_dish_available

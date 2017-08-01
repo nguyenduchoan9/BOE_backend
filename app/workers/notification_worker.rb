@@ -35,6 +35,7 @@ class NotificationWorker
             end
         elsif Constant::DINER ==role
             if ver == 0
+                # byebug
                 body = list_dish_notify
                 send_message_to_diner body, diner_reg_tokens, "notification"
             elsif ver == 1
@@ -42,7 +43,9 @@ class NotificationWorker
                 # od_id_list = id.split('-')
                 od = OrderDetail.find id.first
                 items = list_item_after_refund id
-                body = after_refund_struct(total_refund, items, order.order, od.order.id)
+                # byebug
+                body = after_refund_struct.new(total_refund, items, od.order.id)
+                # byebug
                 send_message_to_diner body, diner_reg_tokens, "afterRefund"
             end
 
@@ -146,6 +149,7 @@ class NotificationWorker
         dish_list = []
         dish_list_id = []
         minus_total = 0
+        # byebug
         @id.each do |od_id|
             od = OrderDetail.find od_id
             minus_total += (od.quantity_not_serve * od.price)
@@ -154,6 +158,7 @@ class NotificationWorker
                 dish_list_id << dish.id
                 rs << Dishes::Serializer.new(dish)
             end
+            # byebug
         end
         # begin
         #     ActiveRecord::Base.transaction do
@@ -163,6 +168,7 @@ class NotificationWorker
         # rescue StandardError => error
         #     puts "Error - list_dish_notify"
         # end
+        # byebug
         rs
     end
 

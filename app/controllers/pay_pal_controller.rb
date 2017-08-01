@@ -65,7 +65,7 @@ class PayPalController < ApplicationController
         total = 0
         ods = []
         order.order_details.where(cooking_status: 3).each do |order_detail|
-            ods << order_detail
+            ods << order_detail.id
             total += (order_detail.price.to_f * order_detail.quantity_not_serve.to_f)
         end
         payment_id = order.payment_id

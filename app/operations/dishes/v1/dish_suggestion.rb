@@ -8,15 +8,14 @@ module Dishes
 
             private
             def get_id_and_name_dish
-                cutlery = []
-                Dish.all.where('category_id != 5').each do |dish|
-                    cutlery << result_format.new(dish.id, dish.dish_name)
+                dish_result = []
+                Dish.all.each do |dish|
+                    if is_dish_available dish.id
+                        dish_result << result_format.new(dish.id, dish.dish_name)
+                    end
                 end
-                drinking = []
-                Dish.all.where('category_id = 5').each do |dish|
-                    drinking << result_format.new(dish.id, dish.dish_name)
-                end
-                categorize_result.new(cutlery, drinking)
+                
+                categorize_result.new(dish_result)
             end
 
             def result_format
@@ -24,7 +23,7 @@ module Dishes
             end
 
             def categorize_result
-                Struct.new(:cutlery, :drinking)
+                Struct.new(:dish)
             end
         end
     end
