@@ -6,7 +6,13 @@ class StatisticController < WebApplcationController
   def current_order
     add_breadcrumb "Current Orders"
     if !params[:term].nil?
-      @orders = Order.where(table_number: params[:term])
+      if params[:type] == "table"
+        @orders = Order.where(table_number: params[:term])
+      else
+        order_id = Dish.find_by(dish_name: "Bún Bò").order_details.where('cooking_status = 0 OR cooking_status = 1').map(&:order_id)
+        @orders = Order.find order_id
+      end
+
     end
   end
 
