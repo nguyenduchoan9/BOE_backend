@@ -2383,3 +2383,192 @@ Did you mean?  table_name_prefix
 2017-08-01T19:26:58.121Z 11561 TID-gstm4sqts INFO: Scheduler exiting...
 2017-08-01T19:26:58.221Z 11561 TID-gstlddxi4 INFO: Pausing to allow workers to finish...
 2017-08-01T19:27:00.125Z 11561 TID-gstlddxi4 INFO: Bye!
+2017-08-02T00:29:19.856Z 6560 TID-gnht7gf6g INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-6560", :url=>nil}
+2017-08-02T00:29:20.503Z 6560 TID-gnht7gf6g INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-08-02T00:29:20.504Z 6560 TID-gnht7gf6g INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-02T00:29:20.504Z 6560 TID-gnht7gf6g INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-02T00:29:20.508Z 6560 TID-gnht7gf6g INFO: Starting processing, hit Ctrl-C to stop
+2017-08-02T00:30:56.984Z 6560 TID-gnhtyu62s NotificationWorker JID-a8de08b2c11b1b464c8576eb INFO: start
+2017-08-02T00:30:59.562Z 6560 TID-gnhtyu62s NotificationWorker JID-a8de08b2c11b1b464c8576eb INFO: done: 2.578 sec
+2017-08-02T00:32:12.988Z 6560 TID-gnhtyu68w NotificationWorker JID-7c52d5938b1515c1efd63303 INFO: start
+2017-08-02T00:32:13.338Z 6560 TID-gnhtyu68w NotificationWorker JID-7c52d5938b1515c1efd63303 INFO: done: 0.35 sec
+2017-08-02T00:32:55.937Z 6560 TID-gnhtyu62s NotificationWorker JID-621a1da0005581e88596759b INFO: start
+2017-08-02T00:32:55.939Z 6560 TID-gnhtyu62s NotificationWorker JID-621a1da0005581e88596759b INFO: fail: 0.003 sec
+2017-08-02T00:32:55.940Z 6560 TID-gnhtyu62s WARN: {"context":"Job raised exception","job":{"class":"NotificationWorker","args":["DINER",["#<OrderDetail:0x007fab5705b608>","#<OrderDetail:0x007fab5705b3d8>"],4,1,200000.0],"retry":false,"queue":"notification","jid":"621a1da0005581e88596759b","created_at":1501633975.9363732,"enqueued_at":1501633975.9364312},"jobstr":"{\"class\":\"NotificationWorker\",\"args\":[\"DINER\",[\"#<OrderDetail:0x007fab5705b608>\",\"#<OrderDetail:0x007fab5705b3d8>\"],4,1,200000.0],\"retry\":false,\"queue\":\"notification\",\"jid\":\"621a1da0005581e88596759b\",\"created_at\":1501633975.9363732,\"enqueued_at\":1501633975.9364312}"}
+2017-08-02T00:32:55.940Z 6560 TID-gnhtyu62s WARN: ActiveRecord::RecordNotFound: Couldn't find OrderDetail with 'id'=#<OrderDetail:0x007fab5705b608>
+2017-08-02T00:32:55.940Z 6560 TID-gnhtyu62s WARN: /home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activerecord-5.0.4/lib/active_record/core.rb:173:in `find'
+/home/hoang/workspace/rails/BOEBackEnd/app/workers/notification_worker.rb:44:in `perform'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:199:in `execute_job'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:170:in `block (2 levels) in process'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:128:in `block in invoke'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:133:in `invoke'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:169:in `block in process'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:141:in `block (6 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:97:in `local'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:140:in `block (5 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:42:in `block in call'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:68:in `block in wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:67:in `wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:41:in `call'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:136:in `block (4 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:215:in `stats'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:131:in `block (3 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_logger.rb:7:in `call'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:130:in `block (2 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:72:in `global'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:129:in `block in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:44:in `with_context'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:38:in `with_job_hash_context'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:128:in `dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:168:in `process'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:85:in `process_one'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:73:in `run'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:16:in `watchdog'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:25:in `block in safe_thread'
+2017-08-02T00:35:09.993Z 6560 TID-gnhtx1pqk NotificationWorker JID-25e77bc6ad0165aaca084972 INFO: start
+2017-08-02T00:35:34.159Z 6560 TID-gnhtx1pqk NotificationWorker JID-25e77bc6ad0165aaca084972 INFO: done: 24.167 sec
+2017-08-02T00:35:49.326Z 6560 TID-gnhtyu7rw NotificationWorker JID-cdb8d7954b800a9ccb00df2f INFO: start
+2017-08-02T00:36:25.625Z 6560 TID-gnhtyu7rw NotificationWorker JID-cdb8d7954b800a9ccb00df2f INFO: fail: 36.299 sec
+2017-08-02T00:36:25.628Z 6560 TID-gnhtyu7rw WARN: {"context":"Job raised exception","job":{"class":"NotificationWorker","args":["DINER",["#<OrderDetail:0x007fab564036f8>"],4,1,60000.0],"retry":false,"queue":"notification","jid":"cdb8d7954b800a9ccb00df2f","created_at":1501634149.325457,"enqueued_at":1501634149.3255649},"jobstr":"{\"class\":\"NotificationWorker\",\"args\":[\"DINER\",[\"#<OrderDetail:0x007fab564036f8>\"],4,1,60000.0],\"retry\":false,\"queue\":\"notification\",\"jid\":\"cdb8d7954b800a9ccb00df2f\",\"created_at\":1501634149.325457,\"enqueued_at\":1501634149.3255649}"}
+2017-08-02T00:36:25.629Z 6560 TID-gnhtyu7rw WARN: ActiveRecord::RecordNotFound: Couldn't find OrderDetail with 'id'=#<OrderDetail:0x007fab564036f8>
+2017-08-02T00:36:25.629Z 6560 TID-gnhtyu7rw WARN: /home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activerecord-5.0.4/lib/active_record/core.rb:173:in `find'
+/home/hoang/workspace/rails/BOEBackEnd/app/workers/notification_worker.rb:46:in `perform'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:199:in `execute_job'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:170:in `block (2 levels) in process'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:128:in `block in invoke'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:133:in `invoke'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:169:in `block in process'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:141:in `block (6 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:97:in `local'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:140:in `block (5 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:42:in `block in call'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:68:in `block in wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:67:in `wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:41:in `call'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:136:in `block (4 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:215:in `stats'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:131:in `block (3 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_logger.rb:7:in `call'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:130:in `block (2 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:72:in `global'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:129:in `block in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:44:in `with_context'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:38:in `with_job_hash_context'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:128:in `dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:168:in `process'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:85:in `process_one'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:73:in `run'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:16:in `watchdog'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:25:in `block in safe_thread'
+2017-08-02T00:37:40.244Z 6560 TID-gnhtyu5vk NotificationWorker JID-0d53c950ce13a17bab949187 INFO: start
+2017-08-02T00:37:41.331Z 6560 TID-gnhtyu5vk NotificationWorker JID-0d53c950ce13a17bab949187 INFO: done: 1.087 sec
+2017-08-02T00:38:37.908Z 6560 TID-gnhtx1pqk NotificationWorker JID-a1c151b661e53948d28a0bd7 INFO: start
+2017-08-02T00:38:42.853Z 6560 TID-gnhtx1pqk NotificationWorker JID-a1c151b661e53948d28a0bd7 INFO: done: 4.945 sec
+2017-08-02T00:39:19.142Z 6560 TID-gnhtyu5vk NotificationWorker JID-e2341e87fb2ce4a047768df1 INFO: start
+2017-08-02T00:39:22.574Z 6560 TID-gnhtyu5vk NotificationWorker JID-e2341e87fb2ce4a047768df1 INFO: fail: 3.432 sec
+2017-08-02T00:39:22.576Z 6560 TID-gnhtyu5vk WARN: {"context":"Job raised exception","job":{"class":"NotificationWorker","args":["DINER",["#<OrderDetail:0x007fab575027b0>"],4,1,60000.0],"retry":false,"queue":"notification","jid":"e2341e87fb2ce4a047768df1","created_at":1501634359.141297,"enqueued_at":1501634359.1414044},"jobstr":"{\"class\":\"NotificationWorker\",\"args\":[\"DINER\",[\"#<OrderDetail:0x007fab575027b0>\"],4,1,60000.0],\"retry\":false,\"queue\":\"notification\",\"jid\":\"e2341e87fb2ce4a047768df1\",\"created_at\":1501634359.141297,\"enqueued_at\":1501634359.1414044}"}
+2017-08-02T00:39:22.578Z 6560 TID-gnhtyu5vk WARN: ActiveRecord::RecordNotFound: Couldn't find OrderDetail with 'id'=#<OrderDetail:0x007fab575027b0>
+2017-08-02T00:39:22.579Z 6560 TID-gnhtyu5vk WARN: /home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activerecord-5.0.4/lib/active_record/core.rb:173:in `find'
+/home/hoang/workspace/rails/BOEBackEnd/app/workers/notification_worker.rb:46:in `perform'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:199:in `execute_job'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:170:in `block (2 levels) in process'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:128:in `block in invoke'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:133:in `invoke'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:169:in `block in process'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:141:in `block (6 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:97:in `local'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:140:in `block (5 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:42:in `block in call'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:68:in `block in wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:67:in `wrap'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:41:in `call'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:136:in `block (4 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:215:in `stats'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:131:in `block (3 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_logger.rb:7:in `call'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:130:in `block (2 levels) in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:72:in `global'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:129:in `block in dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:44:in `with_context'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:38:in `with_job_hash_context'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:128:in `dispatch'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:168:in `process'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:85:in `process_one'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:73:in `run'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:16:in `watchdog'
+/home/hoang/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:25:in `block in safe_thread'
+2017-08-02T00:40:38.221Z 6560 TID-gnhtwofhw NotificationWorker JID-0c307ce4b531db0486a676ef INFO: start
+2017-08-02T00:40:44.017Z 6560 TID-gnhtwofhw NotificationWorker JID-0c307ce4b531db0486a676ef INFO: done: 5.796 sec
+2017-08-02T00:41:13.972Z 6560 TID-gnhtwofhw NotificationWorker JID-76750678e6a999a79a7c228b INFO: start
+2017-08-02T00:41:31.144Z 6560 TID-gnhtwofhw NotificationWorker JID-76750678e6a999a79a7c228b INFO: done: 17.172 sec
+2017-08-02T00:41:51.175Z 6560 TID-gnht7gf6g INFO: Shutting down
+2017-08-02T00:41:51.175Z 6560 TID-gnht7gf6g INFO: Terminating quiet workers
+2017-08-02T00:41:51.175Z 6560 TID-gnhtyu6h8 INFO: Scheduler exiting...
+2017-08-02T00:41:51.276Z 6560 TID-gnht7gf6g INFO: Pausing to allow workers to finish...
+2017-08-02T00:41:52.979Z 6560 TID-gnht7gf6g INFO: Bye!
+2017-08-02T02:01:05.036Z 2926 TID-gsyc3r9ho INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-2926", :url=>nil}
+2017-08-02T02:01:05.510Z 2926 TID-gsyc3r9ho INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-08-02T02:01:05.510Z 2926 TID-gsyc3r9ho INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-02T02:01:05.510Z 2926 TID-gsyc3r9ho INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-02T02:01:05.511Z 2926 TID-gsyc3r9ho INFO: Starting processing, hit Ctrl-C to stop
+2017-08-02T02:08:51.401Z 2926 TID-gsycrjzng NotificationWorker JID-d0300709992cae0aa3159ec3 INFO: start
+2017-08-02T02:08:53.528Z 2926 TID-gsycrjzhc NotificationWorker JID-3a8ecf3758a093c36bd8362d INFO: start
+2017-08-02T02:08:54.169Z 2926 TID-gsycrjzng NotificationWorker JID-d0300709992cae0aa3159ec3 INFO: done: 2.769 sec
+2017-08-02T02:08:55.639Z 2926 TID-gsycrjzhc NotificationWorker JID-3a8ecf3758a093c36bd8362d INFO: done: 2.111 sec
+2017-08-02T02:09:33.520Z 2926 TID-gsycrjzhc NotificationWorker JID-a0c562c6ac3162da909dc4e6 INFO: start
+2017-08-02T02:09:33.528Z 2926 TID-gsycrjzng NotificationWorker JID-70057afde42619d4e8dbf24c INFO: start
+2017-08-02T02:09:33.536Z 2926 TID-gsycrjz54 NotificationWorker JID-3783dabeab005db94a3009ab INFO: start
+2017-08-02T02:09:33.545Z 2926 TID-gsycrjzb8 NotificationWorker JID-e7dda195f8eafafa3f8bbbdd INFO: start
+2017-08-02T02:09:44.586Z 2926 TID-gsycrjzhc NotificationWorker JID-a0c562c6ac3162da909dc4e6 INFO: done: 11.066 sec
+2017-08-02T02:09:45.185Z 2926 TID-gsycrjzng NotificationWorker JID-70057afde42619d4e8dbf24c INFO: done: 11.656 sec
+2017-08-02T02:09:45.231Z 2926 TID-gsycrjzb8 NotificationWorker JID-e7dda195f8eafafa3f8bbbdd INFO: done: 11.687 sec
+2017-08-02T02:09:45.261Z 2926 TID-gsycrjz54 NotificationWorker JID-3783dabeab005db94a3009ab INFO: done: 11.725 sec
+2017-08-02T02:10:04.656Z 2926 TID-gsycrjzhc NotificationWorker JID-bc1f2719abaa0e18c404c925 INFO: start
+2017-08-02T02:10:04.664Z 2926 TID-gsycrjzng NotificationWorker JID-e6e553182a0a254d967c3b25 INFO: start
+2017-08-02T02:10:04.675Z 2926 TID-gsycrjz54 NotificationWorker JID-9d01f6547c1d82a603de6dd3 INFO: start
+2017-08-02T02:10:05.013Z 2926 TID-gsycrjzhc NotificationWorker JID-bc1f2719abaa0e18c404c925 INFO: done: 0.357 sec
+2017-08-02T02:10:05.021Z 2926 TID-gsycrjzng NotificationWorker JID-e6e553182a0a254d967c3b25 INFO: done: 0.357 sec
+2017-08-02T02:10:05.105Z 2926 TID-gsycrjz54 NotificationWorker JID-9d01f6547c1d82a603de6dd3 INFO: done: 0.43 sec
+2017-08-02T02:10:23.513Z 2926 TID-gsycrjzb8 NotificationWorker JID-e01be3d71032030406dc48b4 INFO: start
+2017-08-02T02:10:23.518Z 2926 TID-gsycrjzng NotificationWorker JID-25844aabc09d20d44ad4c479 INFO: start
+2017-08-02T02:10:23.883Z 2926 TID-gsycrjzb8 NotificationWorker JID-e01be3d71032030406dc48b4 INFO: done: 0.371 sec
+2017-08-02T02:10:23.929Z 2926 TID-gsycrjzng NotificationWorker JID-25844aabc09d20d44ad4c479 INFO: done: 0.411 sec
+2017-08-02T02:11:58.492Z 2926 TID-gsycrjzhc NotificationWorker JID-5b68738375bfd38cf0d5203b INFO: start
+2017-08-02T02:13:21.077Z 2926 TID-gsycrjz54 NotificationWorker JID-68f8e72fa6fd65f8bf8710ce INFO: start
+2017-08-02T02:13:27.331Z 2926 TID-gsycrjzhc NotificationWorker JID-5b68738375bfd38cf0d5203b INFO: done: 88.838 sec
+2017-08-02T02:13:27.449Z 2926 TID-gsycrjz54 NotificationWorker JID-68f8e72fa6fd65f8bf8710ce INFO: done: 6.372 sec
+2017-08-02T04:18:52.908Z 2926 TID-gsycrjzb8 NotificationWorker JID-c3b7f71e66c2290d13361423 INFO: start
+2017-08-02T04:18:57.319Z 2926 TID-gsycrjzb8 NotificationWorker JID-c3b7f71e66c2290d13361423 INFO: done: 4.411 sec
+2017-08-02T04:20:52.698Z 2926 TID-gsycrjzhc NotificationWorker JID-2d11a97c90ae098a92c0bdda INFO: start
+2017-08-02T04:20:53.137Z 2926 TID-gsycrjzhc NotificationWorker JID-2d11a97c90ae098a92c0bdda INFO: done: 0.439 sec
+2017-08-02T04:27:58.701Z 2926 TID-gsycrjz54 NotificationWorker JID-1b40136b2c8fa1b2a6e6c208 INFO: start
+2017-08-02T04:27:59.269Z 2926 TID-gsycrjz54 NotificationWorker JID-1b40136b2c8fa1b2a6e6c208 INFO: done: 0.568 sec
+2017-08-02T04:29:15.819Z 2926 TID-gsycrjzhc NotificationWorker JID-e53f78b11bb0a31013876535 INFO: start
+2017-08-02T04:29:18.483Z 2926 TID-gsycrjzhc NotificationWorker JID-e53f78b11bb0a31013876535 INFO: done: 2.664 sec
+2017-08-02T04:36:43.024Z 2926 TID-gsycrjzhc NotificationWorker JID-1ae19c2e583522fbf4f58d0e INFO: start
+2017-08-02T04:36:43.039Z 2926 TID-gsycrjzb8 NotificationWorker JID-ff63074d40c5cccadac472b2 INFO: start
+2017-08-02T04:36:43.050Z 2926 TID-gsycrjzng NotificationWorker JID-b7c3d13f5dd43702275d7c55 INFO: start
+2017-08-02T04:36:43.058Z 2926 TID-gsycrjz54 NotificationWorker JID-5e5e0bedfea65a705910bbde INFO: start
+2017-08-02T04:36:43.421Z 2926 TID-gsycrjzb8 NotificationWorker JID-ff63074d40c5cccadac472b2 INFO: done: 0.382 sec
+2017-08-02T04:36:43.425Z 2926 TID-gsycrjz54 NotificationWorker JID-5e5e0bedfea65a705910bbde INFO: done: 0.368 sec
+2017-08-02T04:36:43.456Z 2926 TID-gsycrjzhc NotificationWorker JID-1ae19c2e583522fbf4f58d0e INFO: done: 0.432 sec
+2017-08-02T04:36:43.458Z 2926 TID-gsycrjzng NotificationWorker JID-b7c3d13f5dd43702275d7c55 INFO: done: 0.407 sec
+2017-08-02T04:38:52.727Z 2926 TID-gsycrjzng NotificationWorker JID-ad71fb6bf65743c748c0be2f INFO: start
+2017-08-02T04:38:52.734Z 2926 TID-gsycrjzb8 NotificationWorker JID-c95f6b323f3e7b2181864b6d INFO: start
+2017-08-02T04:38:52.748Z 2926 TID-gsycrjzhc NotificationWorker JID-c443ea0c794a18b09060bdca INFO: start
+2017-08-02T04:38:52.756Z 2926 TID-gsycrjz54 NotificationWorker JID-db12cd32e1880aa22c12c485 INFO: start
+2017-08-02T04:38:53.294Z 2926 TID-gsycrjz54 NotificationWorker JID-db12cd32e1880aa22c12c485 INFO: done: 0.538 sec
+2017-08-02T04:38:53.303Z 2926 TID-gsycrjzng NotificationWorker JID-ad71fb6bf65743c748c0be2f INFO: done: 0.576 sec
+2017-08-02T04:38:53.305Z 2926 TID-gsycrjzb8 NotificationWorker JID-c95f6b323f3e7b2181864b6d INFO: done: 0.571 sec
+2017-08-02T04:38:53.508Z 2926 TID-gsycrjzhc NotificationWorker JID-c443ea0c794a18b09060bdca INFO: done: 0.759 sec
+2017-08-02T04:46:14.969Z 2926 TID-gsyc3r9ho INFO: Shutting down
+2017-08-02T04:46:14.969Z 2926 TID-gsyc3r9ho INFO: Terminating quiet workers
+2017-08-02T04:46:14.969Z 2926 TID-gsycrjzvs INFO: Scheduler exiting...
+2017-08-02T04:46:15.069Z 2926 TID-gsyc3r9ho INFO: Pausing to allow workers to finish...
+2017-08-02T04:46:16.472Z 2926 TID-gsyc3r9ho INFO: Bye!

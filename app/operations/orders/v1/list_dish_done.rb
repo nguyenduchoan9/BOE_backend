@@ -20,7 +20,7 @@ module Orders
             end
 
             def send_each_notification
-                byebug
+                # byebug
                 split_list_done.each {|dish_done|
                     dish_done_detail = dish_done.split("_")
                     order_detail_var = order_detail(dish_done_detail[0], dish_done_detail[1])

@@ -34,11 +34,13 @@ class NotificationWorker
                 }
             end
         elsif Constant::DINER ==role
+            # byebug
             if ver == 0
                 # byebug
                 body = list_dish_notify
                 send_message_to_diner body, diner_reg_tokens, "notification"
             elsif ver == 1
+                # byebug
                 # list order_detail
                 # od_id_list = id.split('-')
                 od = OrderDetail.find id.first

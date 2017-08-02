@@ -69,7 +69,7 @@ class PayPalController < ApplicationController
     total = 0
     ods = []
     order.order_details.where(cooking_status: 3).each do |order_detail|
-      ods << order_detail
+      ods << order_detail.id
       total += (order_detail.price.to_f * order_detail.quantity_not_serve.to_f)
     end
     payment_id = order.payment_id
@@ -89,6 +89,7 @@ class PayPalController < ApplicationController
       order_detail.cooking_status = 4
       order_detail.save!
     end
+    # byebug
     notify_to_user order.user_id, ods, total
     redirect_to rejected_order_path(term: order.created_at.strftime('%d/%m/%Y'))
   end
