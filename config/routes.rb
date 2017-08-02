@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     get 'home', to: 'statistic#home'
     get 'dashboard', to: 'statistic#index'
     get 'current_order', to: 'statistic#current_order'
-
+    get 'cancel_order', to: 'pay_pal#cancel_order'
     resources :fakes, only: [:index]
     devise_for :users
     require 'sidekiq/web'
