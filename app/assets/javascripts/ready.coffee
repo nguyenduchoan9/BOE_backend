@@ -1,5 +1,6 @@
 $(document).on "turbolinks:load", ->
-  $('.modal').modal();
+  $('.modal:not(#unclose_modal)').modal();
+  $('#unclose_modal').modal({dismissible: false, startingTop: '40%'});
   $('#textarea1').trigger('autoresize');
   Materialize.updateTextFields();
   $('select').material_select();
@@ -13,19 +14,18 @@ $(document).on "turbolinks:load", ->
     if snapshot.child('status').val() == 'new'
       number.once('value').then (snapshotnumber) ->
         realNumber = snapshotnumber.val() + 1;
-        console.log(realNumber);
         update = {}
         update['/number'] = realNumber;
         firebase.database().ref().update(update);
         update_status = {}
-        update_status['/rejectedOrder/'+snapshot.key+'/status'] = 'old'
+        update_status['/rejectedOrder/' + snapshot.key + '/status'] = 'old'
         firebase.database().ref().update(update_status);
     if i < 5
       appendNotification snapshot.child('dishName').val();
       i++;
     else if i == 5
       appendNotification snapshot.child('dishName').val();
-      $('#notification_dropdown').append('<li style="text-align: center;"><a href="http://localhost:3000/home" style="color: blue;">More...</a></li>');
+      $('#notification_dropdown').append('<li style="text-align: center;"><a href="/rejected_order" style="color: blue;">More...</a></li>');
       $('#notification_dropdown li').eq(5).remove();
       i++
     else

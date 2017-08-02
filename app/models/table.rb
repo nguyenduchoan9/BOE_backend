@@ -18,4 +18,5 @@ class Table < ApplicationRecord
       all
     end
   end
+
 end
