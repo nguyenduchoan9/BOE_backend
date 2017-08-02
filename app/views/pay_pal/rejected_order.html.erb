@@ -3,6 +3,24 @@
     font-weight: bold;
   }
 </style>
+<div id="unclose_modal" class="modal">
+  <div class="modal-content" style="text-align: center;">
+    <h5>Please Wait...</h5>
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="row">
   <div class="left" style="margin-left: 1%; font-size: 18px;">
     <%= render_breadcrumbs :separator => ' > ' %>
@@ -45,8 +63,8 @@
                   <td><%= dish_name.join(", ") %></td>
                   <td style="text-align: center"><%= "#{number_to_currency(total, unit: '', precision: 0)} VND" %></td>
                   <td>
-                    <a href="refund?order_id=<%= order.id %>">
-                      <button class="btn red">Refund</button>
+                    <a href="refund?order_id=<%= order.id %>" onclick="$('#unclose_modal').modal('open');">
+                      <button class="btn red" data-disable-with="Loading...">Refund</button>
                     </a>
                   </td>
                 </tr>
