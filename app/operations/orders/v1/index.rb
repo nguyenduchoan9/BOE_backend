@@ -25,7 +25,9 @@ module Orders
                         list_id_order = order.id.to_s if list_id_order.length == 0
                         total += order.total
                     end
-                    rs << result_construct.new(total, DateUtils.format_date(created_at), list_id_order) unless created_at == nil
+                    if total != 0
+                        rs << result_construct.new(total, DateUtils.format_date(created_at), list_id_order) unless created_at == nil
+                    end
                 end
                 rs
             end

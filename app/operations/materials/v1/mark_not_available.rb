@@ -33,14 +33,20 @@ module Materials
                     # byebug
                     get_recent_order.each do |oder_m|
                         # byebug
+                        total_minus = 0
                         oder_m.order_details.each do |od|
                             # byebug
                             if od.cooking_status == 0
                                 if is_have_material material_id_params.to_i, od.dish_id
                                     od.update!(cooking_status: 3)
+                                    total_minus += od.quantity_not_serve * od.price
                                     @rs << od.id
                                 end
                             end
+                        end
+                        # byebug
+                        if total_minus > 0
+                            oder_m.update(total: oder_m.total - total_minus)
                         end
                     end
                 end

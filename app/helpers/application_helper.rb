@@ -52,7 +52,7 @@ module ApplicationHelper
         # print response + '-------------------------'
     end
 
-    def send_message_to_diner body, reg_tokens
+    def send_message_to_diner body, reg_tokens, term
         # gcm = GCM.new("AIzaSyAhwjJ1Khh5T-uARG8WHAELj6y_xGMlpTs")
         gcm = GCM.new(Constant::SERVER_DINER_GCM_KEY)
 

@@ -31,4 +31,11 @@ ps ax|grep sidekiq
 
  sudo /etc/init.d/elasticsearch start/stop
  edit host in yml file
+
+
+ * dish name - material
+Dish.all.map do |d|
+    ' <<' + d.dish_name + '--' + d.material.name + '>> ' 
+end
+
  

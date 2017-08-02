@@ -46,6 +46,7 @@ module Orders
                                 end
                             end
                         end
+                        # byebug
                         if current_user_id && od_id_group_by_user.count > 0
                             # update_total od_id_group_by_user
                             notify_to_user current_user_id, od_id_group_by_user
@@ -76,7 +77,7 @@ module Orders
             end
 
             def notify_to_user user_id, order_details_ids
-                NotificationWorker.perform_async(Constant::DINER, order_details_ids, user_id, 0)
+                NotificationWorker.perform_async(Constant::DINER, order_details_ids, user_id, 0, 0)
             end
 
             def notify_contruct
