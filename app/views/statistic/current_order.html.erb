@@ -3,6 +3,24 @@
     font-weight: bold;
   }
 </style>
+<div id="unclose_modal" class="modal">
+  <div class="modal-content" style="text-align: center;">
+    <h5>Please Wait...</h5>
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="row">
   <div class="left" style="margin-left: 1%; font-size: 18px;">
     <%= render_breadcrumbs :separator => ' > ' %>
@@ -52,7 +70,7 @@
                       <td style="text-align: center"><%= order_detail.dish.dish_name %></td>
                       <td style="text-align: center"><%= order_detail.quantity %></td>
                       <td style="text-align: center">
-                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term]%>&type=<%= params[:type]%>">
+                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term]%>&type=<%= params[:type]%>" onclick="$('#unclose_modal').modal('open');">
                           <input type="button" value="cancel" class="btn red">
                         </a>
                       </td>
@@ -75,7 +93,7 @@
                       <td style="text-align: center"><%= order_detail.order.user.username %></td>
                       <td style="text-align: center"><%= order_detail.quantity %></td>
                       <td style="text-align: center">
-                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>">
+                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term]%>&type=<%= params[:type]%>" onclick="$('#unclose_modal').modal('open');">
                           <input type="button" value="cancel" class="btn red">
                         </a>
                       </td>
