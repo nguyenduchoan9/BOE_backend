@@ -18,7 +18,7 @@ class NotificationWorker
         elsif Constant::CHEF == role
             if ver == 0
                 body = { :order_id => @id, :order_detail => serial_order_detail}.as_json.to_s
-
+# byebug
                 send_message_to_chef body, chef_reg_tokens, 'order'
             else
                 # notify dish in orderDetail to Chef
@@ -44,7 +44,7 @@ class NotificationWorker
                 od = OrderDetail.find id.first
                 items = list_item_after_refund id
                 # byebug
-                body = after_refund_struct.new(total_refund, items, od.order.id)
+                body = after_refund_struct.new(total_refund, items, od.order.id, od.order.table_number, DateUtils.format_date(od.created_at))
                 # byebug
                 send_message_to_diner body, diner_reg_tokens, "afterRefund"
             end
@@ -95,7 +95,7 @@ class NotificationWorker
     end
 
     def after_refund_struct
-        Struct.new(:total, :dishes, :order_id)
+        Struct.new(:total, :dishes, :order_id, :table_number, :date)
     end
 
     def after_refund_item_refund
@@ -124,7 +124,7 @@ class NotificationWorker
         result = []
         order_detail_chef.each do |od|
             dish = Dish.find(od.dish_id)
-            result << chef_result.new(dish_serializer.new(dish.id, dish.dish_name), od.quantity)
+            result << chef_result.new(dish_serializer.new(dish.id, dish.dish_name, od.id), od.quantity)
         end
         result
     end
