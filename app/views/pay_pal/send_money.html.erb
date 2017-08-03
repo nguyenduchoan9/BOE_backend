@@ -3,6 +3,24 @@
     font-weight: bold;
   }
 </style>
+<div id="unclose_modal" class="modal">
+  <div class="modal-content" style="text-align: center;">
+    <h5>Please Wait...</h5>
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="modal1" class="modal">
   <form action="executeSendMoney" method="post">
     <div class="modal-content">
@@ -82,6 +100,7 @@
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
     function getEmail(order_id) {
+        $('#unclose_modal').modal('open');
         $.ajax({
             url: 'getEmail',
             dataType: 'json',
@@ -89,6 +108,7 @@
                 order_id: order_id
             },
             success: function (data) {
+                $('#unclose_modal').modal('close');
                 $('#receiverEmail').val(data.email);
                 $('#modal1').modal('open');
             }
