@@ -13,12 +13,10 @@
 #  payment_method              :integer          default(0)
 #  created_at                  :datetime         not null
 #  updated_at                  :datetime         not null
-#  allowance_id                :integer
 #
 # Indexes
 #
-#  index_orders_on_allowance_id  (allowance_id)
-#  index_orders_on_user_id       (user_id)
+#  index_orders_on_user_id  (user_id)
 #
 
 require 'rails_helper'

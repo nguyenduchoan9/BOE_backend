@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20170803055956) do
 
   create_table "allowances", force: :cascade do |t|
     t.decimal "total"
+    t.integer "order_id"
+    t.index ["order_id"], name: "index_allowances_on_order_id", using: :btree
   end
 
   create_table "categories", force: :cascade do |t|
@@ -75,8 +77,6 @@ ActiveRecord::Schema.define(version: 20170803055956) do
     t.integer  "payment_method",                                       default: 0
     t.datetime "created_at",                                                       null: false
     t.datetime "updated_at",                                                       null: false
-    t.integer  "allowance_id"
-    t.index ["allowance_id"], name: "index_orders_on_allowance_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
@@ -153,12 +153,14 @@ ActiveRecord::Schema.define(version: 20170803055956) do
 
   create_table "vouchers", force: :cascade do |t|
     t.decimal "total"
+    t.string  "code"
+    t.boolean "status", default: true
   end
 
+  add_foreign_key "allowances", "orders"
   add_foreign_key "dishes", "categories"
   add_foreign_key "dishes", "materials"
   add_foreign_key "order_details", "dishes"
-  add_foreign_key "orders", "allowances"
   add_foreign_key "orders", "users"
   add_foreign_key "price_change_histories", "dishes"
   add_foreign_key "user_vouchers", "users"
