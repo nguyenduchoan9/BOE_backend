@@ -1,6 +1,32 @@
 class PayPalController < ApplicationController
   add_breadcrumb "Home", :root_path
 
+  def cancel_order
+    order_details = OrderDetail.find params[:order_detail_id]
+    PayPal::SDK.configure(
+        :mode => "sandbox", # "sandbox" or "live"
+        :client_id => "AetzVQhJh6kV_v_GDex0IynGO_6ky0VLzvF0D3akJ7YDCVGYSrgTpIW-FAq-AdYlVW0TMJ7XdYpbCPz-",
+        :client_secret => "EP-HvkNBWll71g9q2PKfTDtWXQ0T-Nwx5_v4AXsdSeeq-Y0IChsauzdMGTriTWrD0Vi8uMclrC5shTpe",
+        :ssl_options => {})
+    payment_id = order_details.order.payment_id
+    payment = PayPal::SDK::REST::DataTypes::Payment.find payment_id
+    json = JSON.parse payment.to_json
+    @sale = PayPal::SDK::REST::DataTypes::Sale.find json["transactions"][0]["related_resources"][0]["sale"]["id"]
+    json = JSON.parse HTTParty.get("http://apilayer.net/api/live?access_key=088bcad87c3fd862b4793c2f535089ba").to_json
+    rate = json["quotes"]["USDVND"].to_f
+    total = (order_details.price * order_details.quantity_not_serve)
+    usdTotal = (total.to_f / rate).round(2)
+    @refund = @sale.refund_request({
+                                       :amount => {
+                                           :total => "#{'%.02f' % usdTotal}",
+                                           :currency => "USD"
+                                       }
+                                   })
+    order_details.cooking_status = 4
+    order_details.save!
+    redirect_to current_order_path(term: params[:term], type: params[:type])
+  end
+
   def executeSend
     PayPal::SDK.configure(
         :mode => "sandbox", # "sandbox" or "live"

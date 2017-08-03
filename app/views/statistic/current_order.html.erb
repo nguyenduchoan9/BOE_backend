@@ -3,6 +3,24 @@
     font-weight: bold;
   }
 </style>
+<div id="unclose_modal" class="modal">
+  <div class="modal-content" style="text-align: center;">
+    <h5>Please Wait...</h5>
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="row">
   <div class="left" style="margin-left: 1%; font-size: 18px;">
     <%= render_breadcrumbs :separator => ' > ' %>
@@ -13,7 +31,6 @@
           <%= text_field_tag :term, params[:term], style: 'width: 60%;', placeholder: 'Search', data: {autocomplete_source: Dish.order(:dish_name).map(&:dish_name)} %>
           <div class="col s3">
             <select name="type" onchange="onSelectType()" id="type">
-
               <% if params[:type] == "dish" %>
                   <option value="dish" selected>Dish</option>
               <% else %>
@@ -34,30 +51,30 @@
   </div>
 </div>
 <div style="padding: 0% 5%">
-  <% if !@orders.nil? && @orders.size > 0 %>
+  <% if (!@orders.nil? && @orders.size > 0) || (!@order_details.nil? && @order_details.size > 0) %>
       <div class="card">
         <div class="card-content">
           <span class="card-title">Current Order</span>
           <% if params[:type] == "table" %>
               <table id="table" class="bordered striped">
                 <thead>
-                <th style="text-align: center; width: 15%">User</th>
-                <th style="text-align: center; width: 55%">Order Detail</th>
+                <th style="text-align: center;">User</th>
+                <th style="text-align: center;">Dish</th>
+                <th style="text-align: center;">Quantity</th>
+                <th></th>
                 </thead>
                 <tbody id="tbody">
-                <% @orders.each do |order| %>
-                    <% dish_name = Array.new %>
-                    <% order.order_details.each do |o| %>
-                        <% if o.cooking_status == 0 || o.cooking_status == 1 %>
-                            <% dish_name.push("#{o.dish.dish_name} x #{o.quantity}") %>
-                        <% end %>
-                    <% end %>
-                    <% if dish_name.size > 0 %>
-                        <tr>
-                          <td style="text-align: center"><%= order.user.username %></td>
-                          <td><%= dish_name.join(", ") %></td>
-                        </tr>
-                    <% end %>
+                <% @order_details.each do |order_detail| %>
+                    <tr>
+                      <td style="text-align: center"><%= order_detail.order.user.username %></td>
+                      <td style="text-align: center"><%= order_detail.dish.dish_name %></td>
+                      <td style="text-align: center"><%= order_detail.quantity %></td>
+                      <td style="text-align: center">
+                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term]%>&type=<%= params[:type]%>" onclick="$('#unclose_modal').modal('open');">
+                          <input type="button" value="cancel" class="btn red">
+                        </a>
+                      </td>
+                    </tr>
                 <% end %>
                 </tbody>
               </table>
@@ -65,19 +82,21 @@
               <table id="table" class="bordered striped">
                 <thead>
                 <th style="text-align: center; width: 15%">Table Number</th>
-                <th style="text-align: center; width: 55%">Order Detail</th>
+                <th style="text-align: center;">User</th>
+                <th style="text-align: center;">Quantity</th>
+                <th></th>
                 </thead>
                 <tbody id="tbody">
-                <% @orders.each_with_index do |order, index| %>
-                    <% dish_name = Array.new %>
-                    <% order.order_details.each do |o| %>
-                        <% if o.cooking_status == 0 || o.cooking_status == 1 %>
-                            <% dish_name.push("#{o.dish.dish_name} x #{o.quantity}") %>
-                        <% end %>
-                    <% end %>
+                <% @order_details.each do |order_detail| %>
                     <tr>
-                      <td style="text-align: center"><%= order.table_number %></td>
-                      <td><%= dish_name.join(", ") %></td>
+                      <td style="text-align: center"><%= order_detail.order.table_number %></td>
+                      <td style="text-align: center"><%= order_detail.order.user.username %></td>
+                      <td style="text-align: center"><%= order_detail.quantity %></td>
+                      <td style="text-align: center">
+                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term]%>&type=<%= params[:type]%>" onclick="$('#unclose_modal').modal('open');">
+                          <input type="button" value="cancel" class="btn red">
+                        </a>
+                      </td>
                     </tr>
                 <% end %>
                 </tbody>
@@ -101,7 +120,7 @@
             });
         } else {
             console.log("destroy");
-            $('#term').autocomplete({ disabled: true });
+            $('#term').autocomplete({disabled: true});
         }
     }
 </script>
