@@ -2,7 +2,7 @@ class PayPalController < ApplicationController
   add_breadcrumb "Home", :root_path
 
   def cancel_order
-    order_details = OrderDetail.find params[:order_detail_id]
+    order_details = OrderDetail.find params[:order_id]
     PayPal::SDK.configure(
         :mode => "sandbox", # "sandbox" or "live"
         :client_id => "AetzVQhJh6kV_v_GDex0IynGO_6ky0VLzvF0D3akJ7YDCVGYSrgTpIW-FAq-AdYlVW0TMJ7XdYpbCPz-",
