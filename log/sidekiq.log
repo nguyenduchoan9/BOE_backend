@@ -2572,3 +2572,43 @@ Did you mean?  table_name_prefix
 2017-08-02T04:46:14.969Z 2926 TID-gsycrjzvs INFO: Scheduler exiting...
 2017-08-02T04:46:15.069Z 2926 TID-gsyc3r9ho INFO: Pausing to allow workers to finish...
 2017-08-02T04:46:16.472Z 2926 TID-gsyc3r9ho INFO: Bye!
+2017-08-02T23:46:53.555Z 3938 TID-gt8ntylsw INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-3938", :url=>nil}
+2017-08-02T23:46:54.022Z 3938 TID-gt8ntylsw INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-08-02T23:46:54.022Z 3938 TID-gt8ntylsw INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-02T23:46:54.022Z 3938 TID-gt8ntylsw INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-02T23:46:54.023Z 3938 TID-gt8ntylsw INFO: Starting processing, hit Ctrl-C to stop
+2017-08-03T00:01:38.615Z 3938 TID-gt8ojm90s NotificationWorker JID-777b9c10217f3e5e7f4219ef INFO: start
+2017-08-03T00:01:39.062Z 3938 TID-gt8ojm90s NotificationWorker JID-777b9c10217f3e5e7f4219ef INFO: done: 0.447 sec
+2017-08-03T00:01:43.684Z 3938 TID-gt8ojm96w NotificationWorker JID-a5a788132c1fb137154320d4 INFO: start
+2017-08-03T00:01:44.218Z 3938 TID-gt8ojm96w NotificationWorker JID-a5a788132c1fb137154320d4 INFO: done: 0.534 sec
+2017-08-03T00:18:59.343Z 3938 TID-gt8ojm96w NotificationWorker JID-90b9efdab5c9a3b63e8d832b INFO: start
+2017-08-03T00:19:10.891Z 3938 TID-gt8ojm96w NotificationWorker JID-90b9efdab5c9a3b63e8d832b INFO: done: 11.548 sec
+2017-08-03T00:19:19.310Z 3938 TID-gt8ojm8uo NotificationWorker JID-5521f4ba947fd519fd14de86 INFO: start
+2017-08-03T00:19:19.323Z 3938 TID-gt8ojm9d0 NotificationWorker JID-e4177b698f0c6c89e60860e6 INFO: start
+2017-08-03T00:19:19.334Z 3938 TID-gt8ojm90s NotificationWorker JID-00baecf1af30ec455574828e INFO: start
+2017-08-03T00:19:19.632Z 3938 TID-gt8ojm8uo NotificationWorker JID-5521f4ba947fd519fd14de86 INFO: done: 0.322 sec
+2017-08-03T00:19:19.740Z 3938 TID-gt8ojm9d0 NotificationWorker JID-e4177b698f0c6c89e60860e6 INFO: done: 0.417 sec
+2017-08-03T00:19:19.761Z 3938 TID-gt8ojm90s NotificationWorker JID-00baecf1af30ec455574828e INFO: done: 0.428 sec
+2017-08-03T00:19:20.796Z 3938 TID-gt8ojm96w NotificationWorker JID-9c5d56b289958fa79afd5905 INFO: start
+2017-08-03T00:19:26.170Z 3938 TID-gt8ojm96w NotificationWorker JID-9c5d56b289958fa79afd5905 INFO: done: 5.374 sec
+2017-08-03T00:19:49.346Z 3938 TID-gt8ojm8uo NotificationWorker JID-2620d045bc9d5aca146439ca INFO: start
+2017-08-03T00:19:49.655Z 3938 TID-gt8ojm8uo NotificationWorker JID-2620d045bc9d5aca146439ca INFO: done: 0.309 sec
+2017-08-03T00:23:52.721Z 3938 TID-gt8ojm96w NotificationWorker JID-b20b66e7a022396c380ec306 INFO: start
+2017-08-03T00:23:53.578Z 3938 TID-gt8ojm96w NotificationWorker JID-b20b66e7a022396c380ec306 INFO: done: 0.857 sec
+2017-08-03T00:27:11.899Z 3938 TID-gt8ojm96w NotificationWorker JID-3ad01bc7ca7df45256460bbb INFO: start
+2017-08-03T00:27:12.312Z 3938 TID-gt8ojm96w NotificationWorker JID-3ad01bc7ca7df45256460bbb INFO: done: 0.413 sec
+2017-08-03T00:27:14.394Z 3938 TID-gt8ntylsw INFO: Shutting down
+2017-08-03T00:27:14.394Z 3938 TID-gt8ntylsw INFO: Terminating quiet workers
+2017-08-03T00:27:14.394Z 3938 TID-gt8ojm9mg INFO: Scheduler exiting...
+2017-08-03T00:27:14.494Z 3938 TID-gt8ntylsw INFO: Pausing to allow workers to finish...
+2017-08-03T00:27:15.197Z 3938 TID-gt8ntylsw INFO: Bye!
+2017-08-03T01:36:49.918Z 3733 TID-gsgw81osw INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-3733", :url=>nil}
+2017-08-03T01:36:50.495Z 3733 TID-gsgw81osw INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-08-03T01:36:50.495Z 3733 TID-gsgw81osw INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-03T01:36:50.495Z 3733 TID-gsgw81osw INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-03T01:36:50.496Z 3733 TID-gsgw81osw INFO: Starting processing, hit Ctrl-C to stop
+2017-08-03T02:25:04.994Z 3733 TID-gsgw81osw INFO: Shutting down
+2017-08-03T02:25:04.994Z 3733 TID-gsgw81osw INFO: Terminating quiet workers
+2017-08-03T02:25:04.994Z 3733 TID-gsgwyv6vg INFO: Scheduler exiting...
+2017-08-03T02:25:05.095Z 3733 TID-gsgw81osw INFO: Pausing to allow workers to finish...
+2017-08-03T02:25:05.697Z 3733 TID-gsgw81osw INFO: Bye!

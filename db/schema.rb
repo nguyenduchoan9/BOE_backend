@@ -10,35 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627152610) do
+ActiveRecord::Schema.define(version: 20170803055956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "allowances", force: :cascade do |t|
+    t.decimal "total"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
     t.boolean  "status"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "discount_days", force: :cascade do |t|
-    t.date     "from_day"
-    t.date     "to_day"
-    t.text     "discount_item"
-    t.string   "name"
-    t.string   "image"
-    t.float    "discount_rate"
-    t.boolean  "status"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "dish_discounts", force: :cascade do |t|
-    t.integer "dish_id"
-    t.integer "discount_day_id"
-    t.index ["discount_day_id"], name: "index_dish_discounts_on_discount_day_id", using: :btree
-    t.index ["dish_id"], name: "index_dish_discounts_on_dish_id", using: :btree
   end
 
   create_table "dishes", force: :cascade do |t|
@@ -61,15 +46,6 @@ ActiveRecord::Schema.define(version: 20170627152610) do
     t.boolean  "available",  default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-  end
-
-  create_table "memberships", force: :cascade do |t|
-    t.float    "mark_boundary"
-    t.float    "discount_rate"
-    t.string   "level"
-    t.boolean  "status"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "order_details", force: :cascade do |t|
@@ -96,8 +72,11 @@ ActiveRecord::Schema.define(version: 20170627152610) do
     t.string   "payment_id"
     t.boolean  "status"
     t.integer  "cooking_status",                                       default: 0
+    t.integer  "payment_method",                                       default: 0
     t.datetime "created_at",                                                       null: false
     t.datetime "updated_at",                                                       null: false
+    t.integer  "allowance_id"
+    t.index ["allowance_id"], name: "index_orders_on_allowance_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
@@ -123,6 +102,13 @@ ActiveRecord::Schema.define(version: 20170627152610) do
     t.boolean  "status"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "user_vouchers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "voucher_id"
+    t.index ["user_id"], name: "index_user_vouchers_on_user_id", using: :btree
+    t.index ["voucher_id"], name: "index_user_vouchers_on_voucher_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -157,8 +143,7 @@ ActiveRecord::Schema.define(version: 20170627152610) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.integer  "role_id"
-    t.integer  "membership_id"
-    t.index ["membership_id"], name: "index_users_on_membership_id", using: :btree
+    t.decimal  "balance"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["role_id"], name: "index_users_on_role_id", using: :btree
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
@@ -166,13 +151,17 @@ ActiveRecord::Schema.define(version: 20170627152610) do
     t.index ["username"], name: "index_users_on_username", using: :btree
   end
 
-  add_foreign_key "dish_discounts", "discount_days"
-  add_foreign_key "dish_discounts", "dishes"
+  create_table "vouchers", force: :cascade do |t|
+    t.decimal "total"
+  end
+
   add_foreign_key "dishes", "categories"
   add_foreign_key "dishes", "materials"
   add_foreign_key "order_details", "dishes"
+  add_foreign_key "orders", "allowances"
   add_foreign_key "orders", "users"
   add_foreign_key "price_change_histories", "dishes"
-  add_foreign_key "users", "memberships"
+  add_foreign_key "user_vouchers", "users"
+  add_foreign_key "user_vouchers", "vouchers"
   add_foreign_key "users", "roles"
 end

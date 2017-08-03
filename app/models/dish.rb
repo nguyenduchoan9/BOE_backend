@@ -30,8 +30,8 @@ class Dish < ApplicationRecord
     belongs_to :category, optional: true
     has_many :order_details
     has_many :price_change_histories
-    has_many :dish_discounts
-    has_many :discount_days, through: :dish_discounts
+    # has_many :dish_discounts
+    # has_many :discount_days, through: :dish_discounts
     belongs_to :material, optional: true
 
     # index_name([Rails.env,base_class.to_s.pluralize.underscore].join('_'))

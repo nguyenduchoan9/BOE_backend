@@ -34,11 +34,10 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  role_id                :integer
-#  membership_id          :integer
+#  balance                :decimal(, )
 #
 # Indexes
 #
-#  index_users_on_membership_id         (membership_id)
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_role_id               (role_id)
 #  index_users_on_uid_and_provider      (uid,provider) UNIQUE
@@ -60,9 +59,10 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
 
   belongs_to :role, optional: true
-  belongs_to :membership, optional: true
+  # belongs_to :membership, optional: true
 
   has_many :orders
+  has_many :user_vouchers
   # validates :email, uniqueness: {message: 'taken'}
   # validates :first_name, presence: true
 

@@ -10,15 +10,19 @@
 #  payment_id                  :string
 #  status                      :boolean
 #  cooking_status              :integer          default(0)
+#  payment_method              :integer          default(0)
 #  created_at                  :datetime         not null
 #  updated_at                  :datetime         not null
+#  allowance_id                :integer
 #
 # Indexes
 #
-#  index_orders_on_user_id  (user_id)
+#  index_orders_on_allowance_id  (allowance_id)
+#  index_orders_on_user_id       (user_id)
 #
 
 class Order < ApplicationRecord
   belongs_to :user
   has_many :order_details
+  has_many :allowances
 end

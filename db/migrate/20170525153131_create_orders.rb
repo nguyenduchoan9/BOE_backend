@@ -8,6 +8,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
             t.string :payment_id
             t.boolean :status
             t.integer :cooking_status, default: 0
+            t.integer :payment_method, default: 0
             t.timestamps
         end
     end

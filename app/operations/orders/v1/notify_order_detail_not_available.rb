@@ -65,7 +65,7 @@ module Orders
                     od = OrderDetail.find od_id
                     minus_total += (od.quantity_not_serve * od.price)
                 end
-                byebug
+                # byebug
                 begin
                     ActiveRecord::Base.transaction do
                         order = OrderDetail.find(@id.first).order
