@@ -24,7 +24,7 @@ class PayPalController < ApplicationController
                                    })
     order_details.cooking_status = 4
     order_details.save!
-    redirect_to current_order_path(term: params[:term], type: params[:type])
+    redirect_to current_order_path(term: params[:term_id], type: params[:type_id])
   end
 
   def executeSend

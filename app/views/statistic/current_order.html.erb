@@ -2,6 +2,10 @@
   label {
     font-weight: bold;
   }
+
+  [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    margin-right: 3%;
+  }
 </style>
 <div id="refund_method" class="modal modal-fixed-footer" style="min-height: 50% !important;">
   <form action="cancel_order" method="get">
@@ -16,10 +20,12 @@
       <input class="with-gap" name="refund_method_radio" type="radio" id="test2"/><label for="test2">Balance</label>
       <input class="with-gap" name="refund_method_radio" type="radio" id="test3"/><label for="test3">Cash</label>
       <input type="hidden" id="order_id" name="order_id">
+      <input type="hidden" id="term_id" name="term_id">
+      <input type="hidden" id="type_id" name="type_id">
     </div>
     <div class="modal-footer">
       <input type="button" class="modal-action modal-close btn-flat" value="cancel">
-      <input type="submit" class="modal-action btn-flat" value="Refund" onclick="$('#unclose_modal').modal('open')">
+      <input type="submit" class="modal-action btn-flat" value="Refund" onclick="$('#refund_method').modal('close');$('#unclose_modal').modal('open')">
     </div>
   </form>
 </div>
@@ -90,7 +96,7 @@
                       <td><%= order_detail.dish.dish_name %></td>
                       <td style="text-align: center"><%= order_detail.quantity_not_serve %></td>
                       <td style="text-align: center">
-                        <button class="red btn" onclick="$('#order_id').val(<%=order_detail.id %>);$('#refund_amount').val(<%=order_detail.price * order_detail.quantity_not_serve %>);$('#refund_method').modal('open')">Cancel</button>
+                        <button class="red btn" onclick="var type = $('#type').find(':selected').val(); $('#term_id').val($('#term').val());$('#type_id').val(type);$('#order_id').val(<%=order_detail.id %>);$('#refund_amount').val(<%=order_detail.price * order_detail.quantity_not_serve %>);$('#refund_method').modal('open')">Cancel</button>
                       </td>
                     </tr>
                 <% end %>
@@ -111,7 +117,7 @@
                       <td style="text-align: center"><%= order_detail.order.user.username %></td>
                       <td style="text-align: center"><%= order_detail.quantity_not_serve %></td>
                       <td style="text-align: center">
-                        <button class="red btn" onclick="$('#order_id').val(<%=order_detail.id %>);$('#refund_amount').val(<%=order_detail.price * order_detail.quantity_not_serve %>);$('#refund_method').modal('open')">Cancel</button>
+                        <button class="red btn" onclick="var type = $('#type').find(':selected').val(); $('#term_id').val($('#term').val());$('#type_id').val(type);$('#order_id').val(<%=order_detail.id %>);$('#refund_amount').val(<%=order_detail.price * order_detail.quantity_not_serve %>);$('#refund_method').modal('open')">Cancel</button>
                       </td>
                     </tr>
                 <% end %>
