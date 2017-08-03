@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 20170803055956) do
   enable_extension "plpgsql"
 
   create_table "allowances", force: :cascade do |t|
-    t.decimal "total"
-    t.integer "order_id"
+    t.decimal  "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "order_id"
     t.index ["order_id"], name: "index_allowances_on_order_id", using: :btree
   end
 
@@ -152,9 +154,11 @@ ActiveRecord::Schema.define(version: 20170803055956) do
   end
 
   create_table "vouchers", force: :cascade do |t|
-    t.decimal "total"
-    t.string  "code"
-    t.boolean "status", default: true
+    t.decimal  "total"
+    t.string   "code"
+    t.boolean  "status",     default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_foreign_key "allowances", "orders"
