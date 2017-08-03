@@ -4,6 +4,8 @@ class CreateVoucher < ActiveRecord::Migration[5.0]
       t.decimal :total
       t.string :code
       t.boolean :status, default: true
+
+      t.timestamps
     end
   end
 end
