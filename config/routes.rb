@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     get 'rejected_order', to: 'pay_pal#rejected_order'
     get 'send_money', to: 'pay_pal#send_money'
     get 'getEmail', to: 'pay_pal#getEmail'
+    get 'balance', to: 'users#user_balance'
+    get 'withdraw', to: 'users#with_draw'
     post 'executeSendMoney', to: 'pay_pal#executeSend'
     get 'make_statistic', to: 'statistic#make_statistic'
     get 'dishes/updateStatus', to: 'dishes#update_status'
