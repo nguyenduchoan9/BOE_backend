@@ -1,0 +1,58 @@
+<style>
+  a li {
+    width: 20px;
+  }
+</style>
+<div class="row" style="text-align: right; margin-bottom: 0;">
+  <div class="left" style="margin-left: 1%; font-size: 18px">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+  <div class="col s7 right">
+    <div class="input-field" style="margin-top: 0;">
+      <%= form_tag(balance_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 70%;', placeholder: 'Search', data: {autocomplete_source: User.order(:full_name).map(&:full_name)} %>
+          <button type="submit" class="btn-floating waves-effect waves-light">
+            <i class="material-icons">search</i>
+          </button>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div style="padding: 0 1%;">
+  <% if !@users.nil? && @users.size > 0 %>
+      <table class="highlight">
+        <thead>
+        <th>Username</th>
+        <th>Fullname</th>
+        <th>Email</th>
+        <th>Balance</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+            <tr>
+              <td><%= user.username %></td>
+              <td><%= user.full_name %></td>
+              <td><%= user.email %></td>
+              <td><%= "#{number_to_currency(user.balance, unit: '', precision: 0)} VND" %></td>
+              <td style="text-align: center">
+                <a href="withdraw?user_id=<%= user.id %>">
+                  <button class="btn red">Withdraw</button>
+                </a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="center">
+        <%= will_paginate @users %>
+      </div>
+  <% elsif !params[:term].nil? %>
+      <h3 style="text-align: center">No User Found</h3>
+  <% end %>
+</div>
+<script>
+    $('#term').autocomplete({
+        source: $('#term').data('autocomplete-source')
+    });
+</script>
