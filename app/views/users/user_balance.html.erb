@@ -3,6 +3,24 @@
     width: 20px;
   }
 </style>
+<div id="unclose_modal" class="modal">
+  <div class="modal-content" style="text-align: center;">
+    <h5>Please Wait...</h5>
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="row" style="text-align: right; margin-bottom: 0;">
   <div class="left" style="margin-left: 1%; font-size: 18px">
     <%= render_breadcrumbs :separator => ' > ' %>
@@ -36,7 +54,7 @@
               <td><%= user.email %></td>
               <td><%= "#{number_to_currency(user.balance, unit: '', precision: 0)} VND" %></td>
               <td style="text-align: center">
-                <a href="withdraw?user_id=<%= user.id %>">
+                <a href="withdraw?user_id=<%= user.id %>" onclick="$('#unclose_modal').modal('open')">
                   <button class="btn red">Withdraw</button>
                 </a>
               </td>
