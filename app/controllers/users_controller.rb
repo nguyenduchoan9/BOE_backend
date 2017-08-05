@@ -3,6 +3,20 @@ class UsersController < WebApplcationController
   add_breadcrumb "Home", :root_path
   add_breadcrumb "Users", :users_path
 
+  def user_balance
+    add_breadcrumb "Balance"
+    if !params[:term].nil? && params[:term] != ''
+      @users = User.search(params[:term]).paginate(page: params[:page], per_page: 10)
+    end
+  end
+
+  def with_draw
+    user = User.find params[:user_id]
+    user.balance = 0
+    user.save!
+    redirect_to balance_path(term: user.full_name)
+  end
+
   def new
     @user = User.new
     add_breadcrumb "New User"
