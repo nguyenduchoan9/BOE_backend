@@ -21,7 +21,7 @@
     </div>
   </div>
 </div>
-<div id="modal1" class="modal">
+<div id="modal1" class="modal modal-fixed-footer">
   <form action="executeSendMoney" method="post">
     <div class="modal-content">
       <h4 class="center">Send Money</h4>
@@ -37,9 +37,11 @@
         <textarea id="textarea1" class="materialize-textarea" name="note" placeholder="Note"></textarea>
         <label for="textarea1">Note</label>
       </div>
-      <input type="submit" value="Send" class="btn red">
     </div>
-
+    <div class="modal-footer">
+      <input type="button" class="modal-action modal-close btn-flat" value="cancel">
+      <input type="submit" class="modal-action btn-flat" value="send">
+    </div>
   </form>
 </div>
 <div class="row">
