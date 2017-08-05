@@ -35,6 +35,8 @@ class HardWorker
         })
         order_detail.cooking_status = 4
         order_detail.save!
+        order_detail.order.total -= total
+        order_detail.order.save!
         allowance = Allowance.new
         allowance.order_id = order_detail.order.id
         allowance.total = total
@@ -54,6 +56,8 @@ class HardWorker
         allowance.order_id = order_detail.order.id
         allowance.total = total
         allowance.save!
+        order_detail.order.total -= total
+        order_detail.order.save!
         user_id = order_detail.order.user_id
         notify_to_user user_id, order_detail_id.to_i, total
     end

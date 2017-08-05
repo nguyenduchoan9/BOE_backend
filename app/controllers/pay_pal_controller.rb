@@ -28,19 +28,28 @@ class PayPalController < ApplicationController
       order_details.order.user.balance += total
       order_details.order.user.save!
     end
+    order_details.order.total -= total
+    order_details.order.save!
     order_details.cooking_status = 4
     order_details.save!
     allowance = Allowance.new
     allowance.order_id = order_details.order.id
-    allowance.total = params[:amount]
+    allowance.total = total
     allowance.save!
-    notify_chef_cancel_dish [params[:order_id]]
+    notify_chef_cancel_dish [params[:order_detail_id]]
+
+    user_id = order_details.order.user_id
+    notify_to_user user_id, params[:order_detail_id], total
     redirect_to current_order_path(term: params[:term_id], type: params[:type_id])
   end
 
   def notify_chef_cancel_dish od_ids
-    NotificationWorker.perform_async(Constant::CHEF, od_idssssssss, 0, 2, 0)
+    NotificationWorker.perform_async(Constant::CHEF, od_ids, 0, 2, 0)
   end
+
+  def notify_to_user user_id, order_details_ids, total_refund
+        NotificationWorker.perform_async(Constant::DINER, order_details_ids, user_id, 2, total_refund)
+    end
 
   def executeSend
     order = Order.find params[:order_id]
@@ -186,10 +195,6 @@ class PayPalController < ApplicationController
   #   notify_to_user order.user_id, ods, total
   #   redirect_to rejected_order_path(term: order.created_at.strftime('%d/%m/%Y'))
   # end
-
-  def notify_to_user user_id, order_details_ids, total
-    NotificationWorker.perform_async(Constant::DINER, order_details_ids, user_id, 1, total)
-  end
 
   def send_money
     add_breadcrumb "Send Money"
