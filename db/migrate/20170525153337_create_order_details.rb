@@ -9,6 +9,7 @@ class CreateOrderDetails < ActiveRecord::Migration[5.0]
             t.references :order
             t.boolean :status
             t.integer :cooking_status, default: 0
+            t.string :description
             t.timestamps
         end
     end

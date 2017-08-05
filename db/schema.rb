@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803055956) do
+ActiveRecord::Schema.define(version: 20170803055746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "allowances", force: :cascade do |t|
-    t.decimal  "total"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal  "total",      default: "0.0"
     t.integer  "order_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["order_id"], name: "index_allowances_on_order_id", using: :btree
   end
 
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170803055956) do
     t.integer  "order_id"
     t.boolean  "status"
     t.integer  "cooking_status",                                default: 0
+    t.string   "description"
     t.datetime "created_at",                                                null: false
     t.datetime "updated_at",                                                null: false
     t.integer  "dish_id"
@@ -69,7 +70,7 @@ ActiveRecord::Schema.define(version: 20170803055956) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.decimal  "total",                       precision: 20, scale: 2
+    t.decimal  "total",                       precision: 20, scale: 2, default: "0.0"
     t.string   "discount_date_by_membership"
     t.integer  "user_id"
     t.integer  "table_number"
@@ -77,8 +78,8 @@ ActiveRecord::Schema.define(version: 20170803055956) do
     t.boolean  "status"
     t.integer  "cooking_status",                                       default: 0
     t.integer  "payment_method",                                       default: 0
-    t.datetime "created_at",                                                       null: false
-    t.datetime "updated_at",                                                       null: false
+    t.datetime "created_at",                                                           null: false
+    t.datetime "updated_at",                                                           null: false
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
@@ -104,13 +105,6 @@ ActiveRecord::Schema.define(version: 20170803055956) do
     t.boolean  "status"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "user_vouchers", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "voucher_id"
-    t.index ["user_id"], name: "index_user_vouchers_on_user_id", using: :btree
-    t.index ["voucher_id"], name: "index_user_vouchers_on_voucher_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -154,20 +148,19 @@ ActiveRecord::Schema.define(version: 20170803055956) do
   end
 
   create_table "vouchers", force: :cascade do |t|
-    t.decimal  "total"
+    t.decimal  "total",      default: "0.0"
     t.string   "code"
     t.boolean  "status",     default: true
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["user_id"], name: "index_vouchers_on_user_id", using: :btree
   end
 
-  add_foreign_key "allowances", "orders"
   add_foreign_key "dishes", "categories"
   add_foreign_key "dishes", "materials"
   add_foreign_key "order_details", "dishes"
   add_foreign_key "orders", "users"
   add_foreign_key "price_change_histories", "dishes"
-  add_foreign_key "user_vouchers", "users"
-  add_foreign_key "user_vouchers", "vouchers"
   add_foreign_key "users", "roles"
 end

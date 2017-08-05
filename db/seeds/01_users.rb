@@ -62,7 +62,6 @@ User.create(username: 'masterchef',
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
             full_name: 'Chef')
-<<<<<<< HEAD
 User.create(username: 'mastercashier',
             password: '12345678',
             email: 'mastercashier@gmail.com',
@@ -70,8 +69,7 @@ User.create(username: 'mastercashier',
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
             full_name: 'Cashier')
-=======
->>>>>>> 4e5cc4905f1cc35deb68c2b97cc465d71ff3f620
+
 # Role.all.each { |r|
 #     membership = Membership.first if r.name.include?('diner')
 #     10.times do |i|

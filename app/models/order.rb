@@ -3,7 +3,7 @@
 # Table name: orders
 #
 #  id                          :integer          not null, primary key
-#  total                       :decimal(20, 2)
+#  total                       :decimal(20, 2)   default(0.0)
 #  discount_date_by_membership :string
 #  user_id                     :integer
 #  table_number                :integer

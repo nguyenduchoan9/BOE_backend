@@ -11,6 +11,7 @@
 #  order_id             :integer
 #  status               :boolean
 #  cooking_status       :integer          default(0)
+#  description          :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  dish_id              :integer

@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
   # belongs_to :membership, optional: true
 
   has_many :orders
-  has_many :user_vouchers
+  has_many :vouchers
   # validates :email, uniqueness: {message: 'taken'}
   # validates :first_name, presence: true
 
