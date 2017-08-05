@@ -18,9 +18,9 @@ class NotificationWorker
         elsif Constant::CHEF == role
             if ver == 0
                 body = { :order_id => @id, :order_detail => serial_order_detail}.as_json.to_s
-# byebug
+                # byebug
                 send_message_to_chef body, chef_reg_tokens, 'order'
-            else
+            elsif ver == 1
                 # notify dish in orderDetail to Chef
                 # Maybe include dish is not available because transfer to GCM
                 order_detail_chef.each { |od|
@@ -32,6 +32,11 @@ class NotificationWorker
                         end
                     end
                 }
+            elsif ver == 2
+                # role, id, user_id, ver = 0, total_refund
+                body = {:ids => id}.as_json.to_s
+
+                send_message_to_chef body, chef_reg_tokens, 'canceldish'
             end
         elsif Constant::DINER ==role
             # byebug
@@ -51,6 +56,10 @@ class NotificationWorker
                 send_message_to_diner body, diner_reg_tokens, "afterRefund"
             end
 
+        elsif Constant::CASHIER == role
+            order_body = Order.find id
+            body = format_notify_cashier.new(order_body.total, id, order_body.table_number)
+            send_message_to_cashier body, cashier_reg_tokens, "notification"
         end
     end
 
@@ -143,6 +152,10 @@ class NotificationWorker
         Struct.new(:dish, :order_id)
     end
 
+    def chef_cancel_dish
+        Struct.new(:order_detail_id)
+    end
+
     # END REGION CHEF
 
     # REGION DINER
@@ -178,4 +191,15 @@ class NotificationWorker
         Struct.new(:dish, :quantity)
     end
     # END REGION DINER
+
+
+    # START REGION CASHIER
+    def format_notify_cashier
+        Struct.new(:total, :order_id, :table_number)
+    end
+
+    def cashier_reg_tokens
+        User.find_by(:username => 'mastercashier').reg_token
+    end
+    # END REGION CASHIER
 end

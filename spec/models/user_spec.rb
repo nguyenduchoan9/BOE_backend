@@ -34,7 +34,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  role_id                :integer
-#  balance                :decimal(, )
+#  balance                :decimal(, )      default(0.0)
 #
 # Indexes
 #

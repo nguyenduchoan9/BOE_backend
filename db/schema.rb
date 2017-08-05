@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 20170803055956) do
   enable_extension "plpgsql"
 
   create_table "allowances", force: :cascade do |t|
-    t.decimal "total"
-    t.integer "order_id"
+    t.decimal  "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "order_id"
     t.index ["order_id"], name: "index_allowances_on_order_id", using: :btree
   end
 
@@ -143,7 +145,7 @@ ActiveRecord::Schema.define(version: 20170803055956) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.integer  "role_id"
-    t.decimal  "balance"
+    t.decimal  "balance",                default: "0.0"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["role_id"], name: "index_users_on_role_id", using: :btree
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
@@ -152,9 +154,11 @@ ActiveRecord::Schema.define(version: 20170803055956) do
   end
 
   create_table "vouchers", force: :cascade do |t|
-    t.decimal "total"
-    t.string  "code"
-    t.boolean "status", default: true
+    t.decimal  "total"
+    t.string   "code"
+    t.boolean  "status",     default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_foreign_key "allowances", "orders"

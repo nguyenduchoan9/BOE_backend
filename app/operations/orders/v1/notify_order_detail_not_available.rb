@@ -17,7 +17,7 @@ module Orders
 
             def notify_webapp
                 list_orderdetail_id = order_details_id_params.split('_')
-                list_orderdetail_id.each do |order_detail_id|
+                list_orderdetail_id.uniq.each do |order_detail_id|
                     orderdetail = OrderDetail.find order_detail_id
                     fire_base.push("rejectedOrder", {status: 'new',
                                                      dishName: "#{orderdetail.dish.dish_name}",

@@ -10,7 +10,7 @@
 #
 
 class Role < ApplicationRecord
-    validates :name, inclusion: { in: %w(diner manager admin chef waiter) }
+    validates :name, inclusion: { in: %w(diner manager admin chef waiter cashier) }
     validates :name, uniqueness: true
     validates :name, presence: true
 

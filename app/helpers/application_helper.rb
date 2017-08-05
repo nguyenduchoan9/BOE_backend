@@ -70,4 +70,23 @@ module ApplicationHelper
         response = gcm.send(reg_tokens, options)
 
     end
+
+    def send_message_to_cashier body, reg_tokens, term
+        # gcm = GCM.new("AIzaSyAhwjJ1Khh5T-uARG8WHAELj6y_xGMlpTs")
+        gcm = GCM.new(Constant::SERVER_CHEF_GCM_KEY)
+
+        options = {
+            :registration_ids => [reg_tokens],
+            :data => {
+                :to => "cashier",
+                :term => term,
+                :body => body
+            }
+        }
+        p '>>>>>>Cashier>>>>'
+        print options
+        p   '<<<<<<'
+        response = gcm.send(reg_tokens, options)
+
+    end
 end

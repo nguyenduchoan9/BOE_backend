@@ -78,6 +78,7 @@ module Orders
 
             def order
                 @order ||= user.orders.create!
+
             end
 
             def check_dish_cart_avilable
@@ -102,6 +103,21 @@ module Orders
         end
     end
 end
-# -1: dish is cancel
+
+# ***** ORDER ***********
+#-1: dish is cancel
 # 0 : dish is cooking
-#  1: dish is finish cooking
+# 1: cashing
+
+# ***** ORDER DETAIL***********
+#-1: reject
+# 0: cooking
+# 1: serving
+# 2: finish
+# 3: refunding
+# 4: refunded
+
+# ***** PAYMENT METHOD ******
+# 0: PAYPAL
+# 1: CASH
+# 2: VOUCHER

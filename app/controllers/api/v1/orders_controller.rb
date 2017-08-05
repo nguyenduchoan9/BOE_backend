@@ -56,6 +56,12 @@ module Api
 
             def mark_list_order_detail_served
             end
+
+            def create_by_cash
+            end
+
+            def payed_by_cash
+            end
         end
     end
 end

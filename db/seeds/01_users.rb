@@ -1,18 +1,18 @@
-%w(diner manager admin chef waiter).each do |name|
+%w(diner manager admin chef waiter cashier).each do |name|
     Role.find_or_create_by!(name: name)
 end
 
-%w(primium silver gold diamond ruby).each do |level|
-    mark_boundary, discount_rate = [5, 2] if level == 'primium'
-    mark_boundary, discount_rate = [8, 4] if level == 'silver'
-    mark_boundary, discount_rate = [10, 6] if level == 'gold'
-    mark_boundary, discount_rate = [15, 8] if level == 'diamond'
-    mark_boundary, discount_rate = [20, 10] if level == 'ruby'
+# %w(primium silver gold diamond ruby).each do |level|
+#     mark_boundary, discount_rate = [5, 2] if level == 'primium'
+#     mark_boundary, discount_rate = [8, 4] if level == 'silver'
+#     mark_boundary, discount_rate = [10, 6] if level == 'gold'
+#     mark_boundary, discount_rate = [15, 8] if level == 'diamond'
+#     mark_boundary, discount_rate = [20, 10] if level == 'ruby'
 
-    Membership.find_or_create_by!(level: level,
-                                mark_boundary: mark_boundary,
-                                discount_rate: discount_rate)
-end
+#     Membership.find_or_create_by!(level: level,
+#                                 mark_boundary: mark_boundary,
+#                                 discount_rate: discount_rate)
+# end
 
 User.create(username: 'phongluuduc1',
             password: '123123123',
@@ -20,8 +20,7 @@ User.create(username: 'phongluuduc1',
             role: Role.find_by(name: 'diner'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Luu Duc Phong',
-            membership: Membership.find_by(level: 'ruby'))
+            full_name: 'Luu Duc Phong')
 
 User.create(username: 'khanhlinh',
             password: '123123123',
@@ -29,8 +28,7 @@ User.create(username: 'khanhlinh',
             role: Role.find_by(name: 'diner'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Nguyen Khanh Linh',
-            membership: Membership.find_by(level: 'diamond'))
+            full_name: 'Nguyen Khanh Linh')
 
 User.create(username: 'namphandang',
             password: '123123123',
@@ -38,8 +36,7 @@ User.create(username: 'namphandang',
             role: Role.find_by(name: 'diner'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Phan Dang Nam',
-            membership: Membership.find_by(level: 'ruby'))
+            full_name: 'Phan Dang Nam')
 
 User.create(username: 'hoangnguyen',
             password: '12345678',
@@ -47,8 +44,7 @@ User.create(username: 'hoangnguyen',
             role: Role.find_by(name: 'diner'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Nguyen Duc Hoang',
-            membership: Membership.find_by(level: 'gold'))
+            full_name: 'Nguyen Duc Hoang')
 
 User.create(username: 'adminadmin',
             password: '123123123',
@@ -56,32 +52,35 @@ User.create(username: 'adminadmin',
             role: Role.find_by(name: 'admin'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Admin', 
-            membership: nil)
+            full_name: 'Admin')
 User.create(username: 'managermanager',
             password: '123123123',
             email: 'manager@gmail.com',
             role: Role.find_by(name: 'manager'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Manger',
-            membership: nil)
+            full_name: 'Manger')
 User.create(username: 'masterwaiter',
             password: '12345678',
             email: 'masterwaiter@gmail.com',
             role: Role.find_by(name: 'waiter'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Waiter',
-            membership: nil)
+            full_name: 'Waiter')
 User.create(username: 'masterchef',
             password: '12345678',
             email: 'masterchef@gmail.com',
             role: Role.find_by(name: 'chef'),
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
-            full_name: 'Chef',
-            membership: nil)
+            full_name: 'Chef')
+User.create(username: 'mastercashier',
+            password: '12345678',
+            email: 'mastercashier@gmail.com',
+            role: Role.find_by(name: 'cashier'),
+            avatar: '',
+            phone: Faker::PhoneNumber.phone_number,
+            full_name: 'Cashier')
 # Role.all.each { |r|
 #     membership = Membership.first if r.name.include?('diner')
 #     10.times do |i|

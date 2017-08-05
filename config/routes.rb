@@ -38,7 +38,19 @@ Rails.application.routes.draw do
     namespace :api do
         scope module: :v1, constraints: ApiConstraint.new(version: :v1) do
             get 'home', to: 'home#index'
-            resources :users, only: [:show, :create, :update]
+            resources :users, only: [:show, :create, :update] do
+                collection do
+                    get :balance
+                    post :add_voucher
+                end
+            end
+
+            resources :vouchers do
+                collection do
+                    post :check_balance_code
+                end
+
+            end
             resources :sessions, only: [:create, :destroy]
             resources :dishes, only: [:index, :show, :update, :destroy] do
                 member do
@@ -88,6 +100,8 @@ Rails.application.routes.draw do
                     post :notify_order_detail_not_available
                     post :mark_order_detail_served
                     post :mark_list_order_detail_served
+                    post :create_by_cash
+                    post :payed_by_cash
                 end
             end
 

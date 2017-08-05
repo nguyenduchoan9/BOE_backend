@@ -2,9 +2,11 @@
 #
 # Table name: allowances
 #
-#  id       :integer          not null, primary key
-#  total    :decimal(, )
-#  order_id :integer
+#  id         :integer          not null, primary key
+#  total      :decimal(, )
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  order_id   :integer
 #
 # Indexes
 #

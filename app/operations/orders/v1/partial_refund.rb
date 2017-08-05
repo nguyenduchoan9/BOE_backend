@@ -5,7 +5,7 @@ module Orders
 
             def process
                 do_transaction!
-                NotificationWorker.perform_async(Constant::CHEF, order.id, user.id, 1)
+                NotificationWorker.perform_async(Constant::CHEF, order.id, user.id, 1, 0)
                 {status: true}
             end
 
