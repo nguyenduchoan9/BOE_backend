@@ -11,6 +11,9 @@ module Api
 
       def update
       end
+
+      def check_balance_code
+      end
     end
   end
 end

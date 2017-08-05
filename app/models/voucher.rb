@@ -16,7 +16,7 @@
 #
 
 class Voucher < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
 
   def self.generate(quantity, total)
     for i in 1..quantity

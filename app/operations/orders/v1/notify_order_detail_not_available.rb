@@ -16,14 +16,26 @@ module Orders
             end
 
             def notify_webapp
-                list_orderdetail_id = order_details_id_params.split('_')
-                list_orderdetail_id.uniq.each do |order_detail_id|
-                    orderdetail = OrderDetail.find order_detail_id
-                    fire_base.push("rejectedOrder", {status: 'new',
-                                                     dishName: "#{orderdetail.dish.dish_name}",
-                                                     date: "#{orderdetail.created_at.strftime('%d/%m/%Y')}"})
+                list_orderdetail_id = order_details_id_params.split('_').uniq
+                # list_orderdetail_id.uniq.each do |order_detail_id|
+                #     orderdetail = OrderDetail.find order_detail_id
+                #     fire_base.push("rejectedOrder", {status: 'new',
+                #                                      dishName: "#{orderdetail.dish.dish_name}",
+                #                                      date: "#{orderdetail.created_at.strftime('%d/%m/%Y')}"})
+                # end
+                # handle_notify_to_user list_orderdetail_id
+                handle_refund list_orderdetail_id
+            end
+
+            def handle_refund ids
+                ids.each do |id|
+                    order_detail = OrderDetail.find id
+                    if order_detail.order.payment_method == 0
+                        HardWorker.perform_async(ids, Constant::PAYPAL_METHOD)
+                    else
+                        HardWorker.perform_async(ids, Constant::CASH_METHOD)
+                    end
                 end
-                handle_notify_to_user list_orderdetail_id
             end
 
             def handle_notify_to_user order_detail_ids
@@ -51,7 +63,7 @@ module Orders
                             # update_total od_id_group_by_user
                             notify_to_user current_user_id, od_id_group_by_user
                         end
-                        
+
                         if next_handle_ids.count > 0
                             handle_notify_to_user next_handle_ids
                         end

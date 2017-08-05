@@ -5,5 +5,5 @@ staging:
 production:
   :concurrency: 20
 :queues:
+  - [notification, 3]
   - default
-  - [notification, 2]

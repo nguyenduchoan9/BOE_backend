@@ -1,6 +1,6 @@
 module Vouchers
     module V1
-        class CheckBalaceCode < Operation
+        class CheckBalanceCode < Operation
 
             def process
                 {status: exist}
@@ -12,7 +12,7 @@ module Vouchers
             end
 
             def exist
-                Voucher.where('code LIKE ? AND status = true', "%#{voucher_code}%").count > 0
+                Voucher.where('code LIKE ? AND status = true', "#{voucher_code}").count > 0
             end
         end
     end

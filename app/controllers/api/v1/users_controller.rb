@@ -11,6 +11,12 @@ module Api
 
       def update
       end
+
+      def balance
+      end
+
+      def add_voucher
+      end
     end
   end
 end

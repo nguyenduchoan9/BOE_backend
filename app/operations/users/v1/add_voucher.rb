@@ -5,9 +5,9 @@ module Users
 
             def process
                 if exist
-                    {balance: add, status: 1}
+                    {balance: add, status: true}
                 else
-                    {balance: 0, status: 0}
+                    {balance: 0, status: false}
                 end
                 
             end
@@ -18,7 +18,7 @@ module Users
             end
 
             def exist
-                Voucher.where('code LIKE ? AND status = true', "%#{voucher_code}%").count > 0
+                Voucher.where('code LIKE ? AND status = true', "#{voucher_code}").count > 0
             end
 
             def add
@@ -27,7 +27,7 @@ module Users
                 begin
                     ActiveRecord::Base.transaction do
                         user.update(balance: update_balance)
-                        Voucher.where('code LIKE ? AND status = true', "%#{voucher_code}%").first.update(status: false)
+                        Voucher.where('code LIKE ? AND status = true', "#{voucher_code}").first.update(status: false)
                     end
 
                 rescue StandardError => error
@@ -37,7 +37,7 @@ module Users
             end
 
             def value_code
-                Voucher.where('code LIKE ? AND status = true', "%#{voucher_code}%").first.total
+                Voucher.where('code LIKE ? AND status = true', "#{voucher_code}").first.total
             end
         end
     end

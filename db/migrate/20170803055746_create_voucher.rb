@@ -4,7 +4,7 @@ class CreateVoucher < ActiveRecord::Migration[5.0]
             t.decimal :total, default: 0
             t.string :code
             t.boolean :status, default: true
-            t.references :user
+            t.references :user, foreign_key: true
 
             t.timestamps
         end

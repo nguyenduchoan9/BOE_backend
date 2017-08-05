@@ -62,6 +62,9 @@ module Api
 
             def payed_by_cash
             end
+
+            def keep_order_detail
+            end
         end
     end
 end

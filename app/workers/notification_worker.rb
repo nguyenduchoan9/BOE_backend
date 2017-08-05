@@ -54,8 +54,14 @@ class NotificationWorker
                 body = after_refund_struct.new(total_refund, items, od.order.id, od.order.table_number, DateUtils.format_date(od.created_at))
                 # byebug
                 send_message_to_diner body, diner_reg_tokens, "afterRefund"
+            elsif ver == 2
+                od = OrderDetail.find id
+                items = list_item_after_refund [id]
+                # byebug
+                body = after_refund_struct.new(total_refund, items, od.order.id, od.order.table_number, DateUtils.format_date(od.created_at))
+                # byebug
+                send_message_to_diner body, diner_reg_tokens, "afterRefund"
             end
-
         elsif Constant::CASHIER == role
             order_body = Order.find id
             body = format_notify_cashier.new(order_body.total, id, order_body.table_number)
