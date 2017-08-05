@@ -47,11 +47,20 @@ input[type=text]:not(.browser-default):disabled {
   }
 }
 
-.modal#unclose_modal{
+.modal#unclose_modal {
   width: 45%;
   min-height: 30%;
   top: 30% !important;
 }
+
+.modal#unclose_modal {
+  top: 20% !important;
+}
+
+.modal .modal-footer .btn-flat {
+  float: left;
+}
+
 //@media only screen and (max-width: 992px) {
 //  header, main {
 //    padding-left: 0;

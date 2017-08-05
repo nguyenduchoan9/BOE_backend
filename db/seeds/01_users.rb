@@ -2,18 +2,6 @@
     Role.find_or_create_by!(name: name)
 end
 
-# %w(primium silver gold diamond ruby).each do |level|
-#     mark_boundary, discount_rate = [5, 2] if level == 'primium'
-#     mark_boundary, discount_rate = [8, 4] if level == 'silver'
-#     mark_boundary, discount_rate = [10, 6] if level == 'gold'
-#     mark_boundary, discount_rate = [15, 8] if level == 'diamond'
-#     mark_boundary, discount_rate = [20, 10] if level == 'ruby'
-
-#     Membership.find_or_create_by!(level: level,
-#                                 mark_boundary: mark_boundary,
-#                                 discount_rate: discount_rate)
-# end
-
 User.create(username: 'phongluuduc1',
             password: '123123123',
             email: 'phong@gmail.com',
@@ -74,6 +62,7 @@ User.create(username: 'masterchef',
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
             full_name: 'Chef')
+<<<<<<< HEAD
 User.create(username: 'mastercashier',
             password: '12345678',
             email: 'mastercashier@gmail.com',
@@ -81,6 +70,8 @@ User.create(username: 'mastercashier',
             avatar: '',
             phone: Faker::PhoneNumber.phone_number,
             full_name: 'Cashier')
+=======
+>>>>>>> 4e5cc4905f1cc35deb68c2b97cc465d71ff3f620
 # Role.all.each { |r|
 #     membership = Membership.first if r.name.include?('diner')
 #     10.times do |i|
