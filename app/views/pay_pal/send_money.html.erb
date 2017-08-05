@@ -25,6 +25,7 @@
   <form action="executeSendMoney" method="post">
     <div class="modal-content">
       <h4 class="center">Send Money</h4>
+      <input type="hidden" name="order_id" id="order_id">
       <div class="input-field" style="width: 50%">
         <label for="receiverEmail">Receiver Email</label>
         <input type="text" id="receiverEmail" name="receiverEmail" placeholder="Email" readonly>
@@ -112,6 +113,7 @@
             success: function (data) {
                 $('#unclose_modal').modal('close');
                 $('#receiverEmail').val(data.email);
+                $('#order_id').val(data.order_id);
                 $('#modal1').modal('open');
             }
         })

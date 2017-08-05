@@ -22,7 +22,7 @@ class Voucher < ApplicationRecord
     for i in 1..quantity
       voucher = Voucher.new
       voucher.save!
-      voucher.code = "#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}#{voucher.id}#{rand(1..9)}#{rand(1..9)}"
+      voucher.code = "#{rand(0..9)}#{rand(0..9)}#{rand(0..9)}#{voucher.id}#{rand(0..9)}#{rand(0..9)}"
       voucher.total = total
       voucher.save!
     end
