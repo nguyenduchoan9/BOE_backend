@@ -1,0 +1,50 @@
+<style>
+  a li {
+    width: 20px;
+  }
+</style>
+<div class="row" style="text-align: right; margin-bottom: 0;">
+  <div class="left" style="margin-left: 1%; font-size: 18px">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+  <div class="col s5 right">
+    <div class="input-field" style="margin-top: 0">
+      <%= form_tag(allowances_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term], style: 'width: 80%;', placeholder: 'Search', class: 'datepicker', id: "date_search" %>
+          <button type="submit" class="btn-floating waves-effect waves-light">
+            <i class="material-icons">search</i>
+          </button>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div style="padding: 0 1%;">
+  <% if !@allowances.nil? && @allowances.size > 0 %>
+      <table class="bordered striped">
+        <thead>
+        <th>Receiver</th>
+        <th style="text-align: center">Total</th>
+        </thead>
+        <tbody>
+        <% @allowances.each do |al| %>
+            <tr>
+              <td><%= al.order.user.username %></td>
+              <td style="text-align: center"><%= al.total %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="center">
+        <%= will_paginate @allowances %>
+      </div>
+  <% elsif !params[:term].nil? %>
+      <h3 style="text-align: center">No Allowance Found</h3>
+  <% end %>
+</div>
+<script>
+    $('.datepicker').pickadate({
+        format: 'dd/mm/yyyy',
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+</script>

@@ -7,8 +7,14 @@
   <div class="left" style="margin-left: 1%; font-size: 18px">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <div class="col s3 right">
+  <div class="right">
     <button class="btn" onclick="$('#modal1').modal('open')">Generate</button>
+    <a href="/vouchers?type=not_used">
+      <button class="btn">Not Used Vouchers</button>
+    </a>
+    <a href="/vouchers?type=used">
+      <button class="btn">Used Vouchers</button>
+    </a>
   </div>
 </div>
 <div id="modal1" class="modal modal-fixed-footer">
@@ -32,30 +38,52 @@
 </div>
 <div style="padding: 0 1%;">
   <% if !@vouchers.nil? && @vouchers.size > 0 %>
-      <table class="bordered striped">
-        <thead>
-        <th style="text-align: center">Voucher Code</th>
-        <th style="text-align: center">Voucher Amount</th>
-        <th style="text-align: center">Voucher Status</th>
-        </thead>
-        <tbody>
-        <% @vouchers.each do |voucher| %>
-            <tr>
-              <td style="text-align: center"><%= voucher.code %></td>
-              <td style="text-align: center"><%= voucher.total %></td>
-              <% if voucher.status %>
-                  <td style="text-align: center">NEW</td>
-              <% else %>
-                  <td style="text-align: center">USED</td>
-              <% end %>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
-      <div class="center">
-        <%= will_paginate @vouchers %>
-      </div>
-  <% elsif !params[:term].nil? %>
-      <h3 style="text-align: center">No Dish Found</h3>
+      <% if params[:type] == "used" %>
+          <table class="bordered striped">
+            <thead>
+            <th style="text-align: center">Voucher Code</th>
+            <th style="text-align: center">Voucher Amount</th>
+            <th>User</th>
+            </thead>
+            <tbody>
+            <% @vouchers.each do |voucher| %>
+                <tr>
+                  <td style="text-align: center"><%= voucher.code %></td>
+                  <td style="text-align: center"><%= "#{number_to_currency(voucher.total, unit: '', precision: 0)} VND" %></td>
+                  <td><%= voucher.user.username %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+          <div class="center">
+            <%= will_paginate @vouchers %>
+          </div>
+      <% else %>
+          <table class="bordered striped">
+            <thead>
+            <th style="text-align: center">Voucher Code</th>
+            <th style="text-align: center">Voucher Amount</th>
+            <th style="text-align: center">Voucher Status</th>
+            </thead>
+            <tbody>
+            <% @vouchers.each do |voucher| %>
+                <tr>
+                  <td style="text-align: center"><%= voucher.code %></td>
+                  <td style="text-align: center"><%= "#{number_to_currency(voucher.total, unit: '', precision: 0)} VND" %></td>
+                  <% if voucher.status %>
+                      <td style="text-align: center">Not used</td>
+                  <% else %>
+                      <td style="text-align: center">Used</td>
+                  <% end %>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+          <div class="center">
+            <%= will_paginate @vouchers %>
+          </div>
+      <% end %>
+  <% elsif !params[:type].nil? %>
+      <h4 style="text-align: center">No Voucher Found</h4>
   <% end %>
 </div>

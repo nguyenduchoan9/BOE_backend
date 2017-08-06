@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     get 'login', to: 'session#new'
     post 'login', to: 'session#create'
     delete 'logout', to: 'session#destroy'
-    resource 'vouchers'
+    resource 'allowances', only: [:show]
+    resource 'vouchers', only: [:show, :create]
     resource 'users'
     resource 'dishes'
     resource 'tables'
