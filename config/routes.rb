@@ -102,6 +102,7 @@ Rails.application.routes.draw do
                     post :mark_order_detail_served
                     post :mark_list_order_detail_served
                     post :create_by_cash
+                    post :create_by_voucher
                     post :payed_by_cash
                     post :keep_order_detail
                 end
