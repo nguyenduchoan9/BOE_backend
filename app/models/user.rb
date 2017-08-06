@@ -63,6 +63,7 @@ class User < ActiveRecord::Base
 
   has_many :orders
   has_many :vouchers
+  has_many :feedbacks
   # validates :email, uniqueness: {message: 'taken'}
   # validates :first_name, presence: true
 

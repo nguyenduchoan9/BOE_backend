@@ -23,7 +23,7 @@ module Orders
                 #                                      dishName: "#{orderdetail.dish.dish_name}",
                 #                                      date: "#{orderdetail.created_at.strftime('%d/%m/%Y')}"})
                 # end
-                # handle_notify_to_user list_orderdetail_id
+                handle_notify_to_user list_orderdetail_id
                 handle_refund list_orderdetail_id
             end
 

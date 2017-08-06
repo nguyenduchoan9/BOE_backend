@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     get 'login', to: 'session#new'
     post 'login', to: 'session#create'
     delete 'logout', to: 'session#destroy'
-    resource 'vouchers'
+    resource 'allowances', only: [:show]
+    resource 'vouchers', only: [:show, :create]
     resource 'users'
     resource 'dishes'
     resource 'tables'
@@ -102,6 +103,7 @@ Rails.application.routes.draw do
                     post :mark_order_detail_served
                     post :mark_list_order_detail_served
                     post :create_by_cash
+                    post :create_by_voucher
                     post :payed_by_cash
                     post :keep_order_detail
                 end

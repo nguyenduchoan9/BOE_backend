@@ -65,6 +65,9 @@ module Api
 
             def keep_order_detail
             end
+
+            def create_by_voucher
+            end
         end
     end
 end
