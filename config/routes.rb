@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resource 'categories'
     resource 'price_change_histories'
     resource 'materials'
+    resource 'feed_backs', only: [:show]
     post 'notify_webapp', to: 'pay_pal#notify_webapp'
     get 'refund', to: 'pay_pal#refund'
     get 'rejected_order', to: 'pay_pal#rejected_order'

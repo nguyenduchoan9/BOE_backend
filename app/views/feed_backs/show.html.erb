@@ -1,0 +1,44 @@
+<style>
+  a li {
+    width: 20px;
+  }
+</style>
+<div class="row" style="text-align: right; margin-bottom: 0;">
+  <div class="left" style="margin-left: 1%; font-size: 18px">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+  <!--<div class="col s7 right">-->
+  <!--<div class="input-field" style="margin-top: 0">-->
+  <!--<%= form_tag(dishes_path, method: :get) do %>-->
+      <!--<%= text_field_tag :term, params[:term], style: 'width: 70%;', placeholder: 'Search' %>-->
+      <!--<button type="submit" class="btn-floating waves-effect waves-light">-->
+      <!--<i class="material-icons">search</i>-->
+      <!--</button>-->
+      <!--
+  <% end %>-->
+  <!--</div>-->
+  <!--</div>-->
+</div>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title" style="font-weight: bold">Restaurant Rating: <span style="color: red;"><%= '%.01f' % @rating %>
+      /5.0</span></span>
+    <table id="table" class="bordered striped">
+      <thead>
+      <th style="text-align: center; width: 15%">User</th>
+      <th style="text-align: center; width: 55%">Rating</th>
+      <th style="text-align: center">Comment</th>
+      <th></th>
+      </thead>
+      <tbody id="tbody">
+      <% @feed_backs.each do |fb| %>
+          <tr>
+            <td><%= fb.user.username %></td>
+            <td style="text-align: center"><%= "#{fb.rating}/5" %></td>
+            <td><%= fb.desciption %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
