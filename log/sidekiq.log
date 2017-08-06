@@ -3346,3 +3346,16 @@ Did you mean?  table_name_prefix
 2017-08-05T06:32:36.945Z 19831 TID-gpp9wyr1g INFO: Scheduler exiting...
 2017-08-05T06:32:37.046Z 19831 TID-gpp9465zk INFO: Pausing to allow workers to finish...
 2017-08-05T06:32:38.448Z 19831 TID-gpp9465zk INFO: Bye!
+2017-08-06T02:36:26.963Z 6246 TID-gqu3efmxg INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-6246", :url=>nil}
+2017-08-06T02:36:27.459Z 6246 TID-gqu3efmxg INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-08-06T02:36:27.459Z 6246 TID-gqu3efmxg INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-06T02:36:27.459Z 6246 TID-gqu3efmxg INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-06T02:36:27.460Z 6246 TID-gqu3efmxg INFO: Starting processing, hit Ctrl-C to stop
+2017-08-06T02:37:13.552Z 6246 TID-gqu45e5yg NotificationWorker JID-cca506975ee219f3f679c301 INFO: start
+2017-08-06T02:37:15.117Z 6246 TID-gqu45e5yg NotificationWorker JID-cca506975ee219f3f679c301 INFO: done: 1.566 sec
+2017-08-06T02:37:54.772Z 6246 TID-gqu45e5yg NotificationWorker JID-aba9294fd372e4b3a47a97ef INFO: start
+2017-08-06T02:38:19.775Z 6246 TID-gqu45e5yg NotificationWorker JID-aba9294fd372e4b3a47a97ef INFO: done: 25.003 sec
+2017-08-06T02:41:13.659Z 6246 TID-gqu45e668 NotificationWorker JID-47b8fd0d0fc05cee6242a221 INFO: start
+2017-08-06T02:41:15.280Z 6246 TID-gqu45e668 NotificationWorker JID-47b8fd0d0fc05cee6242a221 INFO: done: 1.622 sec
+2017-08-06T02:41:37.671Z 6246 TID-gqu45e5yg NotificationWorker JID-2b50af338cc130928e006e64 INFO: start
+2017-08-06T02:41:43.265Z 6246 TID-gqu45e5yg NotificationWorker JID-2b50af338cc130928e006e64 INFO: done: 5.594 sec
