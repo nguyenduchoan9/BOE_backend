@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(version: 20170806021840) do
   add_foreign_key "dishes", "materials"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "order_details", "dishes"
+  add_foreign_key "order_details", "orders"
   add_foreign_key "orders", "users"
   add_foreign_key "price_change_histories", "dishes"
   add_foreign_key "users", "roles"
