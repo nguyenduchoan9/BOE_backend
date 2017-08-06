@@ -115,6 +115,11 @@
               <% end %>
             </li>
             <li class="no-padding">
+              <%= link_to allowances_path, data: {turbolinks: false} do %>
+                  <i class="material-icons" style="margin-right: 10px">local_atm</i><span>Allowances</span>
+              <% end %>
+            </li>
+            <li class="no-padding">
               <%= link_to dashboard_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">dashboard</i><span>Dashboard</span>
               <% end %>

@@ -40,7 +40,7 @@ class PayPalController < ApplicationController
 
     user_id = order_details.order.user_id
     notify_to_user user_id, params[:order_detail_id], total
-    redirect_to current_order_path(term: params[:term_id], type: params[:type_id])
+    redirect_to current_order_path(term: params[:term], type: params[:type])
   end
 
   def notify_chef_cancel_dish od_ids
