@@ -6,7 +6,7 @@ class CreateOrderDetails < ActiveRecord::Migration[5.0]
             t.integer :quantity
             t.integer :quantity_not_serve
             t.integer :quantity_not_served
-            t.references :order
+            t.references :order, foreign_key: true
             t.boolean :status
             t.integer :cooking_status, default: 0
             t.string :description

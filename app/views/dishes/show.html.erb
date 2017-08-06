@@ -28,7 +28,6 @@
         <th style="text-align: center">Dish Name</th>
         <th style="text-align: center">Description</th>
         <th style="text-align: center">Category</th>
-        <th style="text-align: center">Available</th>
         <th></th>
         </thead>
         <tbody>
@@ -37,13 +36,6 @@
               <td><%= dish.dish_name %></td>
               <td><%= dish.description %></td>
               <td><%= dish.category.category_name %></td>
-              <td style="text-align: center">
-                <p>
-                  <%= check_box_tag dish.id, dish.is_available, dish.is_available, onclick: "changeStatus(#{dish.id})" %>
-                  <label for="<%= dish.id %>" id="label<%= dish.id %>">
-                  </label>
-                </p>
-              </td>
               <td>
                 <a href="dishes/edit?id=<%= dish.id %>" data-turbolinks="false">
                   <i class="material-icons">mode_edit</i>
@@ -62,15 +54,6 @@
 </div>
 
 <script>
-    function changeStatus(dish_id) {
-        $.ajax({
-            url: 'dishes/updateStatus.json',
-            dataType: 'json',
-            data: {
-                id: dish_id
-            }
-        })
-    }
     $('#term').autocomplete({
         source: $('#term').data('autocomplete-source')
     });

@@ -44,19 +44,6 @@ class DishesController < ApplicationController
         add_breadcrumb "New Dish"
     end
 
-    def update_status
-        respond_to do |format|
-            format.json {
-                @dish = Dish.find params[:id]
-                if @dish.is_available.nil?
-                    @dish.update is_available: false
-                end
-                @dish.update is_available: !@dish.is_available
-                render nothing: ''
-            }
-        end
-    end
-
     def edit
         @dish = Dish.find params[:id]
         add_breadcrumb @dish.dish_name

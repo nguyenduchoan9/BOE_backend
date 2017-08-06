@@ -51,19 +51,6 @@ class TablesController < ApplicationController
     redirect_to action: 'show'
   end
 
-  def update_status
-    respond_to do |format|
-      format.json {
-        @table = Table.find params[:id]
-        if @table.status.nil?
-          @table.update status: false
-        end
-        @table.update status: !@table.status
-        render nothing: ''
-      }
-    end
-  end
-
   private
   def table_params
     params.require(:table).permit :id, :table_number

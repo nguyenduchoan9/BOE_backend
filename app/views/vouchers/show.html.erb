@@ -32,11 +32,11 @@
       </div>
       <div class="modal-footer">
         <input type="button" class="modal-action modal-close btn-flat" value="cancel">
-        <input type="submit" class="modal-action btn-flat" value="generate">
+        <input type="submit" class="modal-action btn-flat" value="generate" onclick="$('#unclose_modal').modal('open')">
       </div>
   <% end %>
 </div>
-<div style="padding: 0 1%;">
+<div style="padding: 0 5%;">
   <% if !@vouchers.nil? && @vouchers.size > 0 %>
       <% if params[:type] == "used" %>
           <table class="bordered striped">

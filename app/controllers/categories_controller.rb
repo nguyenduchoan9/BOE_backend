@@ -25,19 +25,6 @@ class CategoriesController < ApplicationController
     add_breadcrumb "New Category"
   end
 
-  def update_status
-    respond_to do |format|
-      format.json {
-        @category = Category.find params[:id]
-        if @category.status.nil?
-          @category.update status: false
-        end
-        @category.update status: !@category.status
-        render nothing: ''
-      }
-    end
-  end
-
   def edit
     @category = Category.find params[:id]
     add_breadcrumb "Category "+ params[:id]
