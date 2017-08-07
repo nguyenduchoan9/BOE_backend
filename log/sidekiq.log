@@ -3359,3 +3359,104 @@ Did you mean?  table_name_prefix
 2017-08-06T02:41:15.280Z 6246 TID-gqu45e668 NotificationWorker JID-47b8fd0d0fc05cee6242a221 INFO: done: 1.622 sec
 2017-08-06T02:41:37.671Z 6246 TID-gqu45e5yg NotificationWorker JID-2b50af338cc130928e006e64 INFO: start
 2017-08-06T02:41:43.265Z 6246 TID-gqu45e5yg NotificationWorker JID-2b50af338cc130928e006e64 INFO: done: 5.594 sec
+2017-08-06T06:53:09.130Z 6246 TID-gqu45e6j0 NotificationWorker JID-b302e25894cdce3d0d0946e2 INFO: start
+2017-08-06T06:53:20.327Z 6246 TID-gqu45e6j0 NotificationWorker JID-b302e25894cdce3d0d0946e2 INFO: done: 11.197 sec
+2017-08-06T06:54:47.177Z 6246 TID-gqu45e6j0 NotificationWorker JID-a9ec68b38a2e208d30ae336e INFO: start
+2017-08-06T06:54:47.186Z 6246 TID-gqu45e6cc NotificationWorker JID-a9c19a2ae87be03559fdc5b8 INFO: start
+2017-08-06T06:54:47.219Z 6246 TID-gqu45e668 NotificationWorker JID-41c687b386994fd84c57b7b8 INFO: start
+2017-08-06T06:54:47.517Z 6246 TID-gqu45e6j0 NotificationWorker JID-a9ec68b38a2e208d30ae336e INFO: done: 0.34 sec
+2017-08-06T06:54:47.925Z 6246 TID-gqu45e668 NotificationWorker JID-41c687b386994fd84c57b7b8 INFO: done: 0.707 sec
+2017-08-06T06:54:47.953Z 6246 TID-gqu45e6cc NotificationWorker JID-a9c19a2ae87be03559fdc5b8 INFO: done: 0.768 sec
+2017-08-06T06:54:51.130Z 6246 TID-gqu45e5yg NotificationWorker JID-466c1a62b3dfd2139516b76e INFO: start
+2017-08-06T06:54:53.044Z 6246 TID-gqu45e5yg NotificationWorker JID-466c1a62b3dfd2139516b76e INFO: done: 1.915 sec
+2017-08-06T06:55:37.434Z 6246 TID-gqu3efmxg INFO: Shutting down
+2017-08-06T06:55:37.434Z 6246 TID-gqu3efmxg INFO: Terminating quiet workers
+2017-08-06T06:55:37.434Z 6246 TID-gqu45e6rc INFO: Scheduler exiting...
+2017-08-06T06:55:37.534Z 6246 TID-gqu3efmxg INFO: Pausing to allow workers to finish...
+2017-08-06T06:55:39.337Z 6246 TID-gqu3efmxg INFO: Bye!
+2017-08-06T15:20:36.761Z 27692 TID-gr20syxuk INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-27692", :url=>nil}
+2017-08-06T15:20:37.278Z 27692 TID-gr20syxuk INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-08-06T15:20:37.278Z 27692 TID-gr20syxuk INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-06T15:20:37.278Z 27692 TID-gr20syxuk INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-06T15:20:37.283Z 27692 TID-gr20syxuk INFO: Starting processing, hit Ctrl-C to stop
+2017-08-06T15:20:37.301Z 27692 TID-gr20xjdpk NotificationWorker JID-d89644b22fb916dc2d41f730 INFO: start
+2017-08-06T15:20:37.303Z 27692 TID-gr20xjaqw NotificationWorker JID-5e64391baec21d614f8fd64b INFO: start
+2017-08-06T15:20:37.317Z 27692 TID-gr20wyasg NotificationWorker JID-aa5dafcda437cccd4a5a6285 INFO: start
+2017-08-06T15:20:37.319Z 27692 TID-gr20xj7ug NotificationWorker JID-5b068f4228e6b176001625c8 INFO: start
+2017-08-06T15:20:38.543Z 27692 TID-gr20xjdpk NotificationWorker JID-d89644b22fb916dc2d41f730 INFO: done: 1.242 sec
+2017-08-06T15:20:38.544Z 27692 TID-gr20wyasg NotificationWorker JID-aa5dafcda437cccd4a5a6285 INFO: done: 1.227 sec
+2017-08-06T15:20:38.545Z 27692 TID-gr20xjdpk NotificationWorker JID-5035eb96af73c65c0d1f36fe INFO: start
+2017-08-06T15:20:38.545Z 27692 TID-gr20wyasg NotificationWorker JID-99ea9d73697d6c74c6ba991f INFO: start
+2017-08-06T15:20:38.547Z 27692 TID-gr20xjaqw NotificationWorker JID-5e64391baec21d614f8fd64b INFO: done: 1.244 sec
+2017-08-06T15:20:38.549Z 27692 TID-gr20xjaqw NotificationWorker JID-03410637e1ec33fc44d68138 INFO: start
+2017-08-06T15:20:38.577Z 27692 TID-gr20xj7ug NotificationWorker JID-5b068f4228e6b176001625c8 INFO: done: 1.258 sec
+2017-08-06T15:20:39.168Z 27692 TID-gr20xjdpk NotificationWorker JID-5035eb96af73c65c0d1f36fe INFO: done: 0.623 sec
+2017-08-06T15:20:40.747Z 27692 TID-gr20wyasg NotificationWorker JID-99ea9d73697d6c74c6ba991f INFO: done: 2.202 sec
+2017-08-06T15:20:40.770Z 27692 TID-gr20xjaqw NotificationWorker JID-03410637e1ec33fc44d68138 INFO: done: 2.221 sec
+2017-08-06T15:21:40.757Z 27692 TID-gr20xjaqw NotificationWorker JID-0e6da80f8025b9cc70de048e INFO: start
+2017-08-06T15:21:46.542Z 27692 TID-gr20xjaqw NotificationWorker JID-0e6da80f8025b9cc70de048e INFO: done: 5.784 sec
+2017-08-06T15:21:52.223Z 27692 TID-gr20xjaqw NotificationWorker JID-03a80e5a97e52d63bc5c1f5b INFO: start
+2017-08-06T15:22:09.255Z 27692 TID-gr20xjaqw NotificationWorker JID-03a80e5a97e52d63bc5c1f5b INFO: done: 17.033 sec
+2017-08-06T15:24:02.418Z 27692 TID-gr20xj7ug NotificationWorker JID-aee15d6bf3337d4c82fed6d6 INFO: start
+2017-08-06T15:24:02.777Z 27692 TID-gr20xj7ug NotificationWorker JID-aee15d6bf3337d4c82fed6d6 INFO: done: 0.359 sec
+2017-08-06T15:24:07.492Z 27692 TID-gr20xjdpk NotificationWorker JID-7bb412da447b21cce5c8c59b INFO: start
+2017-08-06T15:24:19.549Z 27692 TID-gr20xjdpk NotificationWorker JID-7bb412da447b21cce5c8c59b INFO: done: 12.057 sec
+2017-08-06T15:25:23.272Z 27692 TID-gr20wyasg NotificationWorker JID-baf2758a009d119f25f8f6b7 INFO: start
+2017-08-06T15:25:23.618Z 27692 TID-gr20wyasg NotificationWorker JID-baf2758a009d119f25f8f6b7 INFO: done: 0.345 sec
+2017-08-06T15:25:28.187Z 27692 TID-gr20xj7ug NotificationWorker JID-baeabaddb3606fe3a0a2e7e3 INFO: start
+2017-08-06T15:25:28.504Z 27692 TID-gr20xj7ug NotificationWorker JID-baeabaddb3606fe3a0a2e7e3 INFO: done: 0.317 sec
+2017-08-06T15:25:30.374Z 27692 TID-gr20xj7ug NotificationWorker JID-aeb66881a543c6e8c75ac1f4 INFO: start
+2017-08-06T15:25:30.661Z 27692 TID-gr20xj7ug NotificationWorker JID-aeb66881a543c6e8c75ac1f4 INFO: done: 0.286 sec
+2017-08-06T15:26:24.517Z 27692 TID-gr20xj7ug NotificationWorker JID-425fab5ce1432672980c70ea INFO: start
+2017-08-06T15:26:36.327Z 27692 TID-gr20xj7ug NotificationWorker JID-425fab5ce1432672980c70ea INFO: done: 11.81 sec
+2017-08-06T15:27:01.424Z 27692 TID-gr20wyasg NotificationWorker JID-794ca44e159d9d91f3aa75a9 INFO: start
+2017-08-06T15:27:01.776Z 27692 TID-gr20wyasg NotificationWorker JID-794ca44e159d9d91f3aa75a9 INFO: done: 0.352 sec
+2017-08-06T15:27:05.404Z 27692 TID-gr20wyasg NotificationWorker JID-84ad05e7fa7f032fd30ce130 INFO: start
+2017-08-06T15:27:06.665Z 27692 TID-gr20wyasg NotificationWorker JID-84ad05e7fa7f032fd30ce130 INFO: done: 1.262 sec
+2017-08-06T15:27:36.163Z 27692 TID-gr20xj7ug NotificationWorker JID-c94d8661ab8826b08b23e774 INFO: start
+2017-08-06T15:27:36.491Z 27692 TID-gr20xj7ug NotificationWorker JID-c94d8661ab8826b08b23e774 INFO: done: 0.328 sec
+2017-08-06T15:27:41.431Z 27692 TID-gr20xjdpk NotificationWorker JID-5710c2399006c155744c4caa INFO: start
+2017-08-06T15:27:44.185Z 27692 TID-gr20xj7ug NotificationWorker JID-4035e2d1cf56a66b64426035 INFO: start
+2017-08-06T15:27:45.347Z 27692 TID-gr20xj7ug NotificationWorker JID-4035e2d1cf56a66b64426035 INFO: done: 1.161 sec
+2017-08-06T15:27:47.075Z 27692 TID-gr20xjdpk NotificationWorker JID-5710c2399006c155744c4caa INFO: done: 5.644 sec
+2017-08-06T15:27:49.495Z 27692 TID-gr20xjaqw NotificationWorker JID-e5f8bded2ea33c58440e88f4 INFO: start
+2017-08-06T15:28:00.641Z 27692 TID-gr20xjaqw NotificationWorker JID-e5f8bded2ea33c58440e88f4 INFO: done: 11.146 sec
+2017-08-06T15:29:28.182Z 27692 TID-gr20xjaqw NotificationWorker JID-e2b1bc6a3f3559ca3c441712 INFO: start
+2017-08-06T15:29:35.375Z 27692 TID-gr20xjaqw NotificationWorker JID-e2b1bc6a3f3559ca3c441712 INFO: done: 7.193 sec
+2017-08-06T15:29:42.162Z 27692 TID-gr20wyasg NotificationWorker JID-1162e9e116a45b337f1afd3d INFO: start
+2017-08-06T15:29:42.490Z 27692 TID-gr20wyasg NotificationWorker JID-1162e9e116a45b337f1afd3d INFO: done: 0.328 sec
+2017-08-06T15:30:15.494Z 27692 TID-gr20xjaqw NotificationWorker JID-d88078980be6a7b0d986826f INFO: start
+2017-08-06T15:30:16.896Z 27692 TID-gr20xjdpk NotificationWorker JID-a26d59b2a85fc0e110bfe969 INFO: start
+2017-08-06T15:30:17.381Z 27692 TID-gr20xjdpk NotificationWorker JID-a26d59b2a85fc0e110bfe969 INFO: done: 0.486 sec
+2017-08-06T15:30:20.149Z 27692 TID-gr20wyasg NotificationWorker JID-97713bb01ece173c5bd01fc0 INFO: start
+2017-08-06T15:30:20.842Z 27692 TID-gr20wyasg NotificationWorker JID-97713bb01ece173c5bd01fc0 INFO: done: 0.693 sec
+2017-08-06T15:30:21.444Z 27692 TID-gr20xjaqw NotificationWorker JID-d88078980be6a7b0d986826f INFO: done: 5.949 sec
+2017-08-06T15:32:18.261Z 27692 TID-gr20wyasg NotificationWorker JID-e9e5c192a5f96f367a9c6a8e INFO: start
+2017-08-06T15:32:26.757Z 27692 TID-gr20wyasg NotificationWorker JID-e9e5c192a5f96f367a9c6a8e INFO: done: 8.497 sec
+2017-08-06T15:32:29.360Z 27692 TID-gr20xjaqw NotificationWorker JID-48683a9bbd47bff3031f903b INFO: start
+2017-08-06T15:32:30.581Z 27692 TID-gr20xjaqw NotificationWorker JID-48683a9bbd47bff3031f903b INFO: done: 1.221 sec
+2017-08-06T15:39:16.742Z 27692 TID-gr20syxuk INFO: Shutting down
+2017-08-06T15:39:16.743Z 27692 TID-gr20syxuk INFO: Terminating quiet workers
+2017-08-06T15:39:16.743Z 27692 TID-gr20xjfu8 INFO: Scheduler exiting...
+2017-08-06T15:39:16.843Z 27692 TID-gr20syxuk INFO: Pausing to allow workers to finish...
+2017-08-06T15:39:18.747Z 27692 TID-gr20syxuk INFO: Bye!
+2017-08-06T15:42:41.947Z 3445 TID-gphoh0o98 INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-3445", :url=>nil}
+2017-08-06T15:42:43.453Z 3445 TID-gphoh0o98 INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+2017-08-06T15:42:43.453Z 3445 TID-gphoh0o98 INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-06T15:42:43.453Z 3445 TID-gphoh0o98 INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-06T15:42:43.455Z 3445 TID-gphoh0o98 INFO: Starting processing, hit Ctrl-C to stop
+2017-08-06T15:48:41.958Z 3445 TID-gphp7bcw0 NotificationWorker JID-7eabe25f58f29a29d8fcf989 INFO: start
+2017-08-06T15:48:45.025Z 3445 TID-gphp7bcw0 NotificationWorker JID-7eabe25f58f29a29d8fcf989 INFO: done: 3.067 sec
+2017-08-06T15:48:47.181Z 3445 TID-gphp7bcpw NotificationWorker JID-523744303a3dc3ec223814ce INFO: start
+2017-08-06T15:48:48.675Z 3445 TID-gphp7bcj8 NotificationWorker JID-7d61c822e316e8a3b3ffae63 INFO: start
+2017-08-06T15:48:49.317Z 3445 TID-gphp7bcj8 NotificationWorker JID-7d61c822e316e8a3b3ffae63 INFO: done: 0.642 sec
+2017-08-06T15:48:50.129Z 3445 TID-gphp7bcd4 NotificationWorker JID-21fb6e10799a667f03fe6d68 INFO: start
+2017-08-06T15:48:50.443Z 3445 TID-gphp7bcd4 NotificationWorker JID-21fb6e10799a667f03fe6d68 INFO: done: 0.314 sec
+2017-08-06T15:48:52.141Z 3445 TID-gphp7bcd4 NotificationWorker JID-b726f0dc37e56805bafd8fd7 INFO: start
+2017-08-06T15:48:52.542Z 3445 TID-gphp7bcd4 NotificationWorker JID-b726f0dc37e56805bafd8fd7 INFO: done: 0.402 sec
+2017-08-06T15:48:52.672Z 3445 TID-gphp7bcpw NotificationWorker JID-523744303a3dc3ec223814ce INFO: done: 5.492 sec
+2017-08-06T18:56:58.233Z 3445 TID-gphoh0o98 INFO: Shutting down
+2017-08-06T18:56:58.235Z 3445 TID-gphoh0o98 INFO: Terminating quiet workers
+2017-08-06T18:56:58.236Z 3445 TID-gphp7bd4c INFO: Scheduler exiting...
+2017-08-06T18:56:58.336Z 3445 TID-gphoh0o98 INFO: Pausing to allow workers to finish...
+2017-08-06T18:56:59.838Z 3445 TID-gphoh0o98 INFO: Bye!

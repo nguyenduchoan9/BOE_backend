@@ -25,9 +25,11 @@ class NotificationWorker
                 # Maybe include dish is not available because transfer to GCM
                 order_detail_chef.each { |od|
                     dish_local = Dish.find(od.dish_id)
-                    od.quantity.times do
+                    des_arr = od.description.split(Constant::SEPARATE_CHARATER_DES)
+                    od.quantity.times do |index|
+                        des_item = des_arr[index] == Constant::BLANK_CHARATER ? "" : des_arr[index]
                         if dish_local.is_available
-                            body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name, od.id), @id).as_json.to_s
+                            body = chef_dish_notify.new(dish_serializer.new(dish_local.id, dish_local.dish_name, od.id), @id, des_item).as_json.to_s
                             send_message_to_chef body, chef_reg_tokens, 'dish'
                         end
                     end
@@ -155,7 +157,7 @@ class NotificationWorker
     end
 
     def chef_dish_notify
-        Struct.new(:dish, :order_id)
+        Struct.new(:dish, :order_id, :description)
     end
 
     def chef_cancel_dish

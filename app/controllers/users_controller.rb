@@ -30,6 +30,9 @@ class UsersController < WebApplcationController
   end
 
   def show
+    if session[:role] == "manager"
+      redirect_to balance_path
+    end
     if !params[:term].nil? && params[:term] != ''
       @users = User.search(params[:term]).paginate(page: params[:page], per_page: 10)
     end

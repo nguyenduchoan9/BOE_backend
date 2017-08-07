@@ -24,11 +24,24 @@ module Orders
                 params[:table_number]
             end
 
+             def description_params
+                @description_params ||= params[:list]
+            end
+
+            def find_description_by_dish_id dish_id
+                description_params.each do |item|
+                    return item if item[:dishId] == dish_id.to_i
+                end
+                nil
+            end
+
             def do_transaction!
                 begin
                     ActiveRecord::Base.transaction do
                         OrderDetail.import(build_order_details)
                         order.update!(total: total, table_number: table_number, cooking_status: 0, payment_method: 2)
+                        user.balance -= total
+                        user.save
                     end
                 rescue StandardError => error
                     raise ValidateError.new(error)
@@ -38,15 +51,31 @@ module Orders
             def list_cart_object
                 cart_list = []
                 dish = ''
+                des = nil
                 order_params.split('_').each_with_index do |item, index|
                     if index.even?
                         dish = Dish.find(item)
+                        des = find_description_by_dish_id item
                     elsif index.odd?
-                        cart_item = cart_object.new(dish, item)
+                        cart_item = cart_object.new(dish, item, format_des(des))
                         cart_list << cart_item
                     end
                 end
                 cart_list
+            end
+
+            def format_des des
+                rs = ''
+                if des
+                    des.fetch(:description).each do |s|
+                        if s.length == 0
+                            rs = rs + Constant::BLANK_CHARATER + Constant::SEPARATE_CHARATER_DES
+                        else
+                            rs = rs + s + Constant::SEPARATE_CHARATER_DES
+                        end
+                    end
+                end
+                rs.first(-3)
             end
 
             def build_order_details
@@ -57,13 +86,14 @@ module Orders
                         quantity: cart[:quantity],
                         dish_id: cart[:dish].id,
                         quantity_not_serve: cart[:quantity],
-                        quantity_not_served: cart[:quantity]
+                        quantity_not_served: cart[:quantity],
+                        description: cart[:des]
                     )
                 end
             end
 
             def cart_object
-                Struct.new(:dish, :quantity)
+                Struct.new(:dish, :quantity, :des)
             end
 
             def total

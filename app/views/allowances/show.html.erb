@@ -24,11 +24,13 @@
         <thead>
         <th>Receiver</th>
         <th style="text-align: center">Total</th>
+        <th style="text-align: center">Note</th>
         </thead>
         <tbody>
         <% @allowances.each do |al| %>
             <tr>
               <td><%= al.order.user.username %></td>
+              <td><%= al.note %></td>
               <td style="text-align: center"><%= al.total %></td>
             </tr>
         <% end %>

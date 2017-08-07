@@ -120,6 +120,11 @@
               <% end %>
             </li>
             <li class="no-padding">
+              <%= link_to feed_backs_path, data: {turbolinks: false} do %>
+                  <i class="material-icons" style="margin-right: 10px">feedback</i><span>FeedBack</span>
+              <% end %>
+            </li>
+            <li class="no-padding">
               <%= link_to dashboard_path, data: {turbolinks: false} do %>
                   <i class="material-icons" style="margin-right: 10px">dashboard</i><span>Dashboard</span>
               <% end %>

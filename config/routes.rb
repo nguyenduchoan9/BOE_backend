@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resource 'categories'
     resource 'price_change_histories'
     resource 'materials'
+    resource 'feed_backs', only: [:show]
     post 'notify_webapp', to: 'pay_pal#notify_webapp'
     get 'refund', to: 'pay_pal#refund'
     get 'rejected_order', to: 'pay_pal#rejected_order'
@@ -23,9 +24,6 @@ Rails.application.routes.draw do
     get 'withdraw', to: 'users#with_draw'
     post 'executeSendMoney', to: 'pay_pal#executeSend'
     get 'make_statistic', to: 'statistic#make_statistic'
-    get 'dishes/updateStatus', to: 'dishes#update_status'
-    get 'tables/updateStatus', to: 'tables#update_status'
-    get 'categories/updateStatus', to: 'categories#update_status'
     get 'setScheduler', to: 'statistic#setScheduler'
     get 'scheduler', to: 'statistic#scheduler'
     get 'home', to: 'statistic#home'
@@ -52,6 +50,10 @@ Rails.application.routes.draw do
                     post :check_balance_code
                 end
 
+            end
+
+            resources :feedbacks, only: [:create] do
+                
             end
             resources :sessions, only: [:create, :destroy]
             resources :dishes, only: [:index, :show, :update, :destroy] do
