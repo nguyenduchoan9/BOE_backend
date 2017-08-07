@@ -33,9 +33,9 @@ td a {
   color: black;
 }
 
-header, main {
-  padding-left: 250px;
-}
+//header, main, footer {
+//  padding-left: 250px;
+//}
 
 input[type=text]:not(.browser-default):disabled {
   color: black;
@@ -66,6 +66,16 @@ input[type=text]:not(.browser-default):disabled {
 //    padding-left: 0;
 //  }
 //}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
 
 .input-field label {
   color: black;

@@ -68,7 +68,7 @@
                     <tr>
                       <td style="text-align: center"><%= order_detail.order.user.username %></td>
                       <td style="text-align: center"><%= order_detail.dish.dish_name %></td>
-                      <td style="text-align: center"><%= order_detail.quantity %></td>
+                      <td style="text-align: center"><%= order_detail.quantity_not_serve %></td>
                       <td style="text-align: center">
                         <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term]%>&type=<%= params[:type]%>" onclick="$('#unclose_modal').modal('open');">
                           <input type="button" value="cancel" class="btn red">
@@ -91,7 +91,7 @@
                     <tr>
                       <td style="text-align: center"><%= order_detail.order.table_number %></td>
                       <td style="text-align: center"><%= order_detail.order.user.username %></td>
-                      <td style="text-align: center"><%= order_detail.quantity %></td>
+                      <td style="text-align: center"><%= order_detail.quantity_not_serve %></td>
                       <td style="text-align: center">
                         <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term]%>&type=<%= params[:type]%>" onclick="$('#unclose_modal').modal('open');">
                           <input type="button" value="cancel" class="btn red">

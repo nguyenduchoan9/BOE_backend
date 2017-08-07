@@ -91,6 +91,7 @@ class PayPalController < ApplicationController
     allowance = Allowance.new
     allowance.order_id = order.id
     allowance.total = params[:amount]
+    allowance.note = params[:note].to_s.squish!
     allowance.save!
     redirect_to send_money_path
   end
