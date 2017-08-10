@@ -45,9 +45,9 @@ module Materials
                             end
                         end
                         # byebug
-                        if total_minus > 0
-                            oder_m.update(total: oder_m.total - total_minus)
-                        end
+                        # if total_minus > 0
+                        #     oder_m.update(total: oder_m.total - total_minus)
+                        # end
                     end
                 end
                 # byebug

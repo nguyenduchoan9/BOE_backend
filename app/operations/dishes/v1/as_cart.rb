@@ -14,6 +14,7 @@ module Dishes
             def list_cart_object
                 cart_list = []
                 dish = ''
+                # even: dishId, odd quantity
                 cart_params.split('_').each_with_index do |item, index|
                     if index.even?
                         dish = Dishes::Serializer.new(dish_by_id(item.to_i))
