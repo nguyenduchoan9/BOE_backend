@@ -50,6 +50,6 @@ class UsersController < WebApplcationController
   end
 
   def user_params
-    params.require(:user).permit :id, :username, :full_name, :role_id, :membership_id, :email, :phone, :birthdate, :avatar, :term, :password, :password_confirmation
+    params.require(:user).permit :id, :username, :full_name, :role_id, :email, :phone, :birthdate, :avatar, :term, :password, :password_confirmation
   end
 end

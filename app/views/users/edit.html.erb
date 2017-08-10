@@ -44,10 +44,6 @@
                 <%= collection_select :user, :role_id, Role.all, :id, :name, prompt: true %>
                 <label>User Role</label>
               </div>
-              <div class="input-field col s6">
-                <%= collection_select :user, :membership_id, Membership.all, :id, :level, prompt: true %>
-                <label>User Membership</label>
-              </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
