@@ -5,11 +5,12 @@ module Orders
 
             def process
                 do_transaction!
-                # s = check_dish_cart_avilable.size
-                # if s == 0
-                NotificationWorker.perform_async(Constant::CHEF, order.id, user.id, 1, 0)
-                # else
-                # end
+                s = check_dish_cart_avilable.size
+                if s == 0
+                    NotificationWorker.perform_async(Constant::CHEF, order.id, user.id, 1, 0)
+                else
+                    NotificationWorker.perform_async(Constant::DINER, s, user_id_diner(s.first), 1, 0)
+                end
                 # result.new(order.id, list_dish_reject)
                 {status: true}
             end
@@ -30,6 +31,10 @@ module Orders
                 rescue StandardError => error
                     raise ValidateError.new(error)
                 end
+            end
+
+            def user_id_diner od_id
+                OrderDetail.find(od_id).order.user_id
             end
 
             def cart_object

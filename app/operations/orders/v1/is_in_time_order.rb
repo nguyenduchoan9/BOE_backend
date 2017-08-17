@@ -29,10 +29,11 @@ module Orders
             end
 
             def minute_now
-                @minute_now ||= minute_now.min
+                @minute_now ||= time_now.min
             end
 
             def is_available
+                # byebug
                 if hour_now < hour_close
                     return result_struct.new(true)
                 elsif  hour_now == hour_close && minute_now < minute_close

@@ -34,7 +34,7 @@ module Orders
                         update_order_total
                         od_not_available = check_and_get_not_available_od
                         if od_not_available && od_not_available.count > 0
-                            byebug
+                            # byebug
                             notify_to_user user.id, od_not_available
                         end
                     end
@@ -64,14 +64,14 @@ module Orders
 
             def check_and_get_not_available_od
                 rs = []
-                byebug
+                # byebug
                 order.order_details.where('cooking_status = 0').each do |od|
                     unless is_dish_available od.dish.id
                         rs << od.id
                         od.update(cooking_status: 3)
                     end
                 end
-                byebug
+                # byebug
                 rs
             end
 
