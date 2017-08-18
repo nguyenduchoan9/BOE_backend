@@ -13,6 +13,12 @@ rails s -b [your-host]
 * Sidekiq *
 bundle exec sidekiq -d -L log/sidekiq.log -C config/sidekiq.yml -e production
 bundle exec sidekiq -L log/sidekiq.log -C config/sidekiq.yml
+
+* start redis
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+brew services start/stop redis
+https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298
+
 * PORT * 
 https://askubuntu.com/questions/538208/how-to-check-opened-closed-port-on-my-computer
 https://stackoverflow.com/questions/9346211/how-to-kill-a-process-on-a-port-on-ubuntu

@@ -3856,3 +3856,99 @@ Did you mean?  table_name_prefix
 2017-08-16T15:28:22.071Z 6110 TID-govab1n54 INFO: Scheduler exiting...
 2017-08-16T15:28:22.171Z 6110 TID-gov9kxakw INFO: Pausing to allow workers to finish...
 2017-08-16T15:28:23.774Z 6110 TID-gov9kxakw INFO: Bye!
+2017-08-17T03:28:34.443Z 4473 TID-oxswrwvxk INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-4473", :url=>nil}
+2017-08-17T03:28:34.899Z 4473 TID-oxswrwvxk INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]
+2017-08-17T03:28:34.899Z 4473 TID-oxswrwvxk INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-17T03:28:34.899Z 4473 TID-oxswrwvxk INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-17T03:31:56.385Z 5708 TID-oxt6516lk INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-5708", :url=>nil}
+2017-08-17T03:31:56.840Z 5708 TID-oxt6516lk INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]
+2017-08-17T03:31:56.840Z 5708 TID-oxt6516lk INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-17T03:31:56.840Z 5708 TID-oxt6516lk INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-17T03:31:56.843Z 5708 TID-oxt6516lk INFO: Starting processing, hit Ctrl-C to stop
+2017-08-17T03:41:29.618Z 5708 TID-oxt6516lk INFO: Shutting down
+2017-08-17T03:41:29.618Z 5708 TID-oxt6516lk INFO: Terminating quiet workers
+2017-08-17T03:41:29.618Z 5708 TID-oxt750w14 INFO: Scheduler exiting...
+2017-08-17T03:41:29.721Z 5708 TID-oxt6516lk INFO: Pausing to allow workers to finish...
+2017-08-17T03:41:30.138Z 5708 TID-oxt6516lk INFO: Bye!
+2017-08-17T03:42:20.506Z 7147 TID-owovyzbtk INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-7147", :url=>nil}
+2017-08-17T03:42:20.962Z 7147 TID-owovyzbtk INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]
+2017-08-17T03:42:20.963Z 7147 TID-owovyzbtk INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-17T03:42:20.963Z 7147 TID-owovyzbtk INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-17T03:42:20.965Z 7147 TID-owovyzbtk INFO: Starting processing, hit Ctrl-C to stop
+2017-08-17T03:45:01.407Z 7147 TID-owowmbl40 NotificationWorker JID-5cd968fdb0a6ae0925a8d56b INFO: start
+2017-08-17T03:45:04.071Z 7147 TID-owowmbl40 NotificationWorker JID-5cd968fdb0a6ae0925a8d56b INFO: done: 2.664 sec
+2017-08-17T03:46:08.007Z 7147 TID-owowmblao NotificationWorker JID-9f89bef035a2aba22ea8bd57 INFO: start
+2017-08-17T03:46:08.009Z 7147 TID-owowmblp4 HardWorker JID-5f7c1189a8c332461d7280ab INFO: start
+2017-08-17T03:46:08.833Z 7147 TID-owowmbl40 NotificationWorker JID-192713eddcf205cdb379f4f6 INFO: start
+2017-08-17T03:46:08.834Z 7147 TID-owowmblj0 HardWorker JID-f1ccc3acb497fcc8d5d5b72a INFO: start
+2017-08-17T03:46:25.578Z 7147 TID-owowmblp4 HardWorker JID-5f7c1189a8c332461d7280ab INFO: done: 17.569 sec
+2017-08-17T03:46:25.579Z 7147 TID-owowmblp4 NotificationWorker JID-42ebdde832b8aa74fdab5e35 INFO: start
+2017-08-17T03:46:25.779Z 7147 TID-owowmbl40 NotificationWorker JID-192713eddcf205cdb379f4f6 INFO: done: 16.946 sec
+2017-08-17T03:46:25.780Z 7147 TID-owowmblao NotificationWorker JID-9f89bef035a2aba22ea8bd57 INFO: done: 17.773 sec
+2017-08-17T03:46:35.257Z 7147 TID-owowmblao NotificationWorker JID-435ce0987578464aaa0838d3 INFO: start
+2017-08-17T03:46:35.257Z 7147 TID-owowmblj0 HardWorker JID-f1ccc3acb497fcc8d5d5b72a INFO: done: 26.423 sec
+2017-08-17T03:46:35.479Z 7147 TID-owowmblao NotificationWorker JID-435ce0987578464aaa0838d3 INFO: done: 0.222 sec
+2017-08-17T03:46:35.480Z 7147 TID-owowmblp4 NotificationWorker JID-42ebdde832b8aa74fdab5e35 INFO: done: 9.901 sec
+2017-08-17T03:53:10.291Z 7147 TID-owovyzbtk INFO: Shutting down
+2017-08-17T03:53:10.292Z 7147 TID-owovyzbtk INFO: Terminating quiet workers
+2017-08-17T03:53:10.292Z 7147 TID-owowmblxg INFO: Scheduler exiting...
+2017-08-17T03:53:10.392Z 7147 TID-owovyzbtk INFO: Pausing to allow workers to finish...
+2017-08-17T03:53:11.743Z 7147 TID-owovyzbtk INFO: Bye!
+2017-08-17T05:55:48.152Z 763 TID-ovv5kzpmw INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-763", :url=>nil}
+2017-08-17T05:55:48.596Z 763 TID-ovv5kzpmw INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]
+2017-08-17T05:55:48.596Z 763 TID-ovv5kzpmw INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-17T05:55:48.596Z 763 TID-ovv5kzpmw INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-17T05:55:48.599Z 763 TID-ovv5kzpmw INFO: Starting processing, hit Ctrl-C to stop
+2017-08-17T06:04:18.526Z 763 TID-ovv5ya2lc NotificationWorker JID-e47b5ed8283e803d40a37d0a INFO: start
+2017-08-17T06:04:19.108Z 763 TID-ovv5ya2lc NotificationWorker JID-e47b5ed8283e803d40a37d0a INFO: done: 0.582 sec
+2017-08-17T06:04:27.858Z 763 TID-ovv5ya2as NotificationWorker JID-028014895d39eddfefcb144a INFO: start
+2017-08-17T06:04:27.863Z 763 TID-ovv5ya1ww NotificationWorker JID-5ae1712a7f6c12ef046265cb INFO: start
+2017-08-17T06:04:28.072Z 763 TID-ovv5ya2as NotificationWorker JID-028014895d39eddfefcb144a INFO: done: 0.214 sec
+2017-08-17T06:04:28.098Z 763 TID-ovv5ya1ww NotificationWorker JID-5ae1712a7f6c12ef046265cb INFO: done: 0.235 sec
+2017-08-17T06:50:31.665Z 763 TID-ovv5ya2lc NotificationWorker JID-78f3717096fdbdfe1004f3f4 INFO: start
+2017-08-17T06:50:32.329Z 763 TID-ovv5ya1ww NotificationWorker JID-98af3f7a05182d1fbed03be8 INFO: start
+2017-08-17T06:50:33.743Z 763 TID-ovv5ya1ww NotificationWorker JID-98af3f7a05182d1fbed03be8 INFO: done: 1.415 sec
+2017-08-17T06:50:33.829Z 763 TID-ovv5ya2lc NotificationWorker JID-78f3717096fdbdfe1004f3f4 INFO: done: 2.165 sec
+2017-08-17T06:57:58.653Z 763 TID-ovv5ya1ww NotificationWorker JID-560d20cf6130c075176a4f42 INFO: start
+2017-08-17T06:57:58.970Z 763 TID-ovv5ya1ww NotificationWorker JID-560d20cf6130c075176a4f42 INFO: done: 0.317 sec
+2017-08-17T06:58:27.799Z 763 TID-ovv5ya1ww NotificationWorker JID-eb2b1dd2a837e79242f85475 INFO: start
+2017-08-17T06:58:27.861Z 763 TID-ovv5ya2lc NotificationWorker JID-6b137adf6e60678c432bb318 INFO: start
+2017-08-17T06:58:28.896Z 763 TID-ovv5ya1ww NotificationWorker JID-eb2b1dd2a837e79242f85475 INFO: done: 1.097 sec
+2017-08-17T06:58:28.972Z 763 TID-ovv5ya2lc NotificationWorker JID-6b137adf6e60678c432bb318 INFO: done: 1.111 sec
+2017-08-17T06:59:04.404Z 763 TID-ovv5ya2as NotificationWorker JID-44db7079d5b76619630c321a INFO: start
+2017-08-17T06:59:04.469Z 763 TID-ovv5ya230 NotificationWorker JID-2a7f652c79c3db874ce8244a INFO: start
+2017-08-17T06:59:04.472Z 763 TID-ovv5ya2lc NotificationWorker JID-a8706e51d8df44ae0e860be7 INFO: start
+2017-08-17T06:59:04.484Z 763 TID-ovv5ya1ww NotificationWorker JID-0a77d8e9594082431b602c96 INFO: start
+2017-08-17T06:59:04.743Z 763 TID-ovv5ya2as NotificationWorker JID-44db7079d5b76619630c321a INFO: done: 0.339 sec
+2017-08-17T06:59:04.778Z 763 TID-ovv5ya230 NotificationWorker JID-2a7f652c79c3db874ce8244a INFO: done: 0.309 sec
+2017-08-17T06:59:04.940Z 763 TID-ovv5ya2lc NotificationWorker JID-a8706e51d8df44ae0e860be7 INFO: done: 0.468 sec
+2017-08-17T06:59:04.968Z 763 TID-ovv5ya1ww NotificationWorker JID-0a77d8e9594082431b602c96 INFO: done: 0.484 sec
+2017-08-17T07:03:13.267Z 763 TID-ovv5ya230 NotificationWorker JID-92d14f12e275ff691fa480fc INFO: start
+2017-08-17T07:03:13.290Z 763 TID-ovv5ya2as HardWorker JID-c5d3f09f816535620f898511 INFO: start
+2017-08-17T07:03:41.268Z 763 TID-ovv5ya2as HardWorker JID-c5d3f09f816535620f898511 INFO: done: 27.977 sec
+2017-08-17T07:03:41.269Z 763 TID-ovv5ya1ww NotificationWorker JID-867499fb4b7210364916e861 INFO: start
+2017-08-17T07:03:41.442Z 763 TID-ovv5ya230 NotificationWorker JID-92d14f12e275ff691fa480fc INFO: done: 28.174 sec
+2017-08-17T07:03:41.757Z 763 TID-ovv5ya1ww NotificationWorker JID-867499fb4b7210364916e861 INFO: done: 0.488 sec
+2017-08-17T07:05:49.578Z 763 TID-ovv5ya2lc NotificationWorker JID-061fae932e098b4fb16d6469 INFO: start
+2017-08-17T07:05:50.658Z 763 TID-ovv5ya2lc NotificationWorker JID-061fae932e098b4fb16d6469 INFO: done: 1.08 sec
+2017-08-17T07:05:50.827Z 763 TID-ovv5ya2as NotificationWorker JID-805230fd59f32a5aca21e211 INFO: start
+2017-08-17T07:05:51.949Z 763 TID-ovv5ya2as NotificationWorker JID-805230fd59f32a5aca21e211 INFO: done: 1.122 sec
+2017-08-17T07:09:24.721Z 763 TID-ovv5ya1ww NotificationWorker JID-8798ad53a77e706f2c8e504f INFO: start
+2017-08-17T07:09:24.788Z 763 TID-ovv5ya2lc NotificationWorker JID-fe60460a5102adb983b85c96 INFO: start
+2017-08-17T07:09:24.790Z 763 TID-ovv5ya230 NotificationWorker JID-c99dd3572356ef3807478e69 INFO: start
+2017-08-17T07:09:25.360Z 763 TID-ovv5ya2lc NotificationWorker JID-fe60460a5102adb983b85c96 INFO: done: 0.572 sec
+2017-08-17T07:09:25.495Z 763 TID-ovv5ya230 NotificationWorker JID-c99dd3572356ef3807478e69 INFO: done: 0.705 sec
+2017-08-17T07:09:25.496Z 763 TID-ovv5ya1ww NotificationWorker JID-8798ad53a77e706f2c8e504f INFO: done: 0.776 sec
+2017-08-17T07:09:41.155Z 763 TID-ovv5ya2as NotificationWorker JID-d569ddd1071b534dfaff164e INFO: start
+2017-08-17T07:09:41.220Z 763 TID-ovv5ya1ww NotificationWorker JID-a6a6c9d244345033bc583358 INFO: start
+2017-08-17T07:09:41.656Z 763 TID-ovv5ya2as NotificationWorker JID-d569ddd1071b534dfaff164e INFO: done: 0.501 sec
+2017-08-17T07:09:41.765Z 763 TID-ovv5ya1ww NotificationWorker JID-a6a6c9d244345033bc583358 INFO: done: 0.545 sec
+2017-08-17T07:13:37.207Z 763 TID-ovv5ya1ww NotificationWorker JID-2dfae3d33cb0987b10266de2 INFO: start
+2017-08-17T07:13:37.210Z 763 TID-ovv5ya2lc NotificationWorker JID-e23449d4f72e92ddc09e7996 INFO: start
+2017-08-17T07:13:37.608Z 763 TID-ovv5ya1ww NotificationWorker JID-2dfae3d33cb0987b10266de2 INFO: done: 0.401 sec
+2017-08-17T07:13:37.630Z 763 TID-ovv5ya2lc NotificationWorker JID-e23449d4f72e92ddc09e7996 INFO: done: 0.42 sec
+2017-08-17T07:18:02.449Z 763 TID-ovv5kzpmw INFO: Shutting down
+2017-08-17T07:18:02.451Z 763 TID-ovv5kzpmw INFO: Terminating quiet workers
+2017-08-17T07:18:02.451Z 763 TID-ovv5ya30w INFO: Scheduler exiting...
+2017-08-17T07:18:02.551Z 763 TID-ovv5kzpmw INFO: Pausing to allow workers to finish...
+2017-08-17T07:18:04.528Z 763 TID-ovv5kzpmw INFO: Bye!

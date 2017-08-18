@@ -23,8 +23,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # username: postgres
-  # password: 123456
+  username: Hoang
+  password: ''
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 40
