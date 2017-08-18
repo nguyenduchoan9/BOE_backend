@@ -108,6 +108,8 @@ Rails.application.routes.draw do
                     post :create_by_voucher
                     post :payed_by_cash
                     post :keep_order_detail
+                    post :cash_full_refund
+                    post :cash_partial_refund
                 end
             end
 

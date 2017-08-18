@@ -47,7 +47,7 @@ module Orders
             def change_order_detail_cancel
                 order.order_details.each do |od|
                     if dish_list_id.include? od.dish_id.to_s
-                        od.update!(cooking_status: -1)
+                        od.update!(cooking_status: 4)
                     end
                 end
             end

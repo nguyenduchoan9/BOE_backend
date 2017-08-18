@@ -68,6 +68,12 @@ module Api
 
             def create_by_voucher
             end
+
+            def cash_full_refund
+            end
+
+            def cash_partial_refund
+            end
         end
     end
 end
