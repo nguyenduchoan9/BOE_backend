@@ -199,12 +199,12 @@ class PayPalController < ApplicationController
 
   def send_money
     add_breadcrumb "Send Money"
-    if params[:username].nil? || params[:username] == ""
+    if (params[:username].nil? || params[:username] == "") && !params[:term].nil?
       @orders = Order.where("DATE(created_at) = ?", "#{params[:term]}")
-    elsif params[:term].nil? || params[:term] == ""
+    elsif (params[:term].nil? || params[:term] == "") && !params[:username].nil?
       puts params[:username]
       @orders = User.find_by(username: params[:username]).orders
-    else
+    elsif !params[:term].nil? && !params[:username].nil?
       @orders = User.find_by(username: params[:username]).orders.where("DATE(created_at) = ?", "#{params[:term]}")
     end
 
