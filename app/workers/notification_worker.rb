@@ -63,6 +63,13 @@ class NotificationWorker
                 body = after_refund_struct.new(total_refund, items, od.order.id, od.order.table_number, DateUtils.format_date(od.created_at))
                 # byebug
                 send_message_to_diner body, diner_reg_tokens, "afterRefund"
+            elsif ver == 3
+                # byebug
+                order_id = OrderDetail.find(id.first).order_id
+                
+
+                body = notify_after_payed_by_cash.new(order_id, convert_od_id_to_dish_list(id))
+                send_message_to_diner body, diner_reg_tokens, "cashPending"
             end
         elsif Constant::CASHIER == role
             order_body = Order.find id
@@ -208,6 +215,19 @@ class NotificationWorker
 
     def cashier_reg_tokens
         User.find_by(:username => 'mastercashier').reg_token
+    end
+
+    def convert_od_id_to_dish_list od_id
+        rs = []
+        od_id.each do |id|
+            od = OrderDetail.find id
+            rs << Dishes::Serializer.new(Dish.find(od.dish))
+        end
+        rs
+    end
+
+    def notify_after_payed_by_cash
+        Struct.new(:order_id, :dish)
     end
     # END REGION CASHIER
 end

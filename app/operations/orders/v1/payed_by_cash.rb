@@ -1,15 +1,16 @@
 module Orders
     module V1
         class PayedByCash < Operation
-            require_authen!
+            # require_authen!
 
             def process
                 do_transaction!
-                s = check_dish_cart_avilable.size
-                if s == 0
+                s = check_dish_cart_avilable
+                if s.size == 0
                     NotificationWorker.perform_async(Constant::CHEF, order.id, user.id, 1, 0)
                 else
-                    NotificationWorker.perform_async(Constant::DINER, s, user_id_diner(s.first), 1, 0)
+                    # byebug
+                    NotificationWorker.perform_async(Constant::DINER, s, order.user_id, 3, 0)
                 end
                 # result.new(order.id, list_dish_reject)
                 {status: true}
@@ -47,8 +48,8 @@ module Orders
 
             def check_dish_cart_avilable
                 reject_dish = []
-                list_cart_object.each do |cart|
-                    reject_dish <<  cart[:dish].id unless is_dish_available cart[:dish].id
+                order.order_details.each do |od|
+                    reject_dish << od.id unless is_dish_available od.dish_id
                 end
                 reject_dish
             end

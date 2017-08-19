@@ -48,8 +48,8 @@ class PayPalController < ApplicationController
   end
 
   def notify_to_user user_id, order_details_ids, total_refund
-        NotificationWorker.perform_async(Constant::DINER, order_details_ids, user_id, 2, total_refund)
-    end
+    NotificationWorker.perform_async(Constant::DINER, order_details_ids, user_id, 2, total_refund)
+  end
 
   def executeSend
     order = Order.find params[:order_id]
@@ -135,11 +135,11 @@ class PayPalController < ApplicationController
     rate = json["quotes"]["USDVND"].to_f
     usdTotal = (total.to_f / rate).round(2)
     refund = sale.refund_request({
-                                       :amount => {
-                                           :total => "#{'%.02f' % usdTotal}",
-                                           :currency => "USD"
-                                       }
-                                   })
+                                     :amount => {
+                                         :total => "#{'%.02f' % usdTotal}",
+                                         :currency => "USD"
+                                     }
+                                 })
     order_detail.cooking_status = 4
     order_detail.save!
     allowance = Allowance.new
@@ -199,9 +199,16 @@ class PayPalController < ApplicationController
 
   def send_money
     add_breadcrumb "Send Money"
-    if !params[:term].nil?
+    if params[:username].nil? || params[:username] == ""
       @orders = Order.where("DATE(created_at) = ?", "#{params[:term]}")
+    elsif params[:term].nil? || params[:term] == ""
+      puts params[:username]
+      @orders = User.find_by(username: params[:username]).orders
+    else
+      @orders = User.find_by(username: params[:username]).orders.where("DATE(created_at) = ?", "#{params[:term]}")
     end
+
+
   end
 
   def getEmail

@@ -49,10 +49,11 @@
   <div class="left" style="margin-left: 1%; font-size: 18px;">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <div class="col s5 right">
+  <div class="col s8 right">
     <div class="input-field" style="margin-top: 0">
       <%= form_tag(send_money_path, method: :get) do %>
-          <%= text_field_tag :term, params[:term], style: 'width: 80%;', placeholder: 'Search', class: 'datepicker', id: "date_search" %>
+          <%= text_field_tag :term, params[:term], style: 'width: 45%;', placeholder: 'Date', class: 'datepicker', id: "date_search" %>
+          <%= text_field_tag :username, params[:username], style: 'width: 45%;', placeholder: 'Username' %>
           <button type="submit" class="btn-floating waves-effect waves-light" onclick="update_notification()">
             <i class="material-icons">search</i>
           </button>
@@ -102,6 +103,7 @@
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
+
     function getEmail(order_id) {
         $('#unclose_modal').modal('open');
         $.ajax({
