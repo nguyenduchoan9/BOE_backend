@@ -70,6 +70,12 @@ class NotificationWorker
 
                 body = notify_after_payed_by_cash.new(order_id, convert_od_id_to_dish_list(id))
                 send_message_to_diner body, diner_reg_tokens, "cashPending"
+            elsif ver == 4
+                # id: allowances id
+                a = Allowance.find id
+                body = struct_compensation.new(a.total.to_f, a.note, DateUtils.format_date(a.created_at))
+
+                send_message_to_diner body, diner_reg_tokens, "allowance"
             end
         elsif Constant::CASHIER == role
             order_body = Order.find id
@@ -228,6 +234,10 @@ class NotificationWorker
 
     def notify_after_payed_by_cash
         Struct.new(:order_id, :dish)
+    end
+
+    def struct_compensation
+        Struct.new(:amount, :description, :date)
     end
     # END REGION CASHIER
 end

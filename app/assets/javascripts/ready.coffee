@@ -1,4 +1,8 @@
-$(document).on "turbolinks:load", ->
+$(document).on "turbolinks:load", -> 
+  $('.datepicker').pickadate
+    format: 'mm/dd/yyyy'
+    selectMonths: true
+    selectYears: 15
   $('.modal:not(#unclose_modal)').modal();
   $('#unclose_modal').modal({dismissible: false, startingTop: '40%'});
   $('#textarea1').trigger('autoresize');

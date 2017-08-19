@@ -93,6 +93,7 @@ class PayPalController < ApplicationController
     allowance.total = params[:amount]
     allowance.note = params[:note].to_s.squish!
     allowance.save!
+    NotificationWorker.perform_async(Constant::DINER, allowance.id, order.user_id, 4, 0)
     redirect_to send_money_path
   end
 
@@ -199,12 +200,12 @@ class PayPalController < ApplicationController
 
   def send_money
     add_breadcrumb "Send Money"
-    if params[:username].nil? || params[:username] == ""
+    if (params[:username].nil? || params[:username] == "") && !params[:term].nil?
       @orders = Order.where("DATE(created_at) = ?", "#{params[:term]}")
-    elsif params[:term].nil? || params[:term] == ""
+    elsif (params[:term].nil? || params[:term] == "") && !params[:username].nil?
       puts params[:username]
       @orders = User.find_by(username: params[:username]).orders
-    else
+    elsif !params[:term].nil? && !params[:username].nil?
       @orders = User.find_by(username: params[:username]).orders.where("DATE(created_at) = ?", "#{params[:term]}")
     end
 

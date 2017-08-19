@@ -1,0 +1,156 @@
+2017-08-19T07:33:40.898Z 2052 TID-oxgf56v7s INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-2052", :url=>nil}
+2017-08-19T07:33:41.359Z 2052 TID-oxgf56v7s INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]
+2017-08-19T07:33:41.360Z 2052 TID-oxgf56v7s INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-19T07:33:41.360Z 2052 TID-oxgf56v7s INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-19T07:33:41.382Z 2052 TID-oxgf56v7s INFO: Starting processing, hit Ctrl-C to stop
+2017-08-19T07:34:52.300Z 2052 TID-oxgfg4zj8 NotificationWorker JID-bc4f1fc6b761d0dba1efdcb3 INFO: start
+2017-08-19T07:34:53.189Z 2052 TID-oxgfg4zj8 NotificationWorker JID-bc4f1fc6b761d0dba1efdcb3 INFO: done: 0.889 sec
+2017-08-19T08:04:56.949Z 2052 TID-oxgfg4zj8 NotificationWorker JID-494168b24d2c7a9b715e7423 INFO: start
+2017-08-19T08:05:07.799Z 2052 TID-oxgfg4zj8 NotificationWorker JID-494168b24d2c7a9b715e7423 INFO: done: 10.851 sec
+2017-08-19T08:05:54.994Z 2052 TID-oxgf56v7s INFO: Shutting down
+2017-08-19T08:05:54.994Z 2052 TID-oxgf56v7s INFO: Terminating quiet workers
+2017-08-19T08:05:54.994Z 2052 TID-oxgfg5jx4 INFO: Scheduler exiting...
+2017-08-19T08:05:55.099Z 2052 TID-oxgf56v7s INFO: Pausing to allow workers to finish...
+2017-08-19T08:05:56.858Z 2052 TID-oxgf56v7s INFO: Bye!
+2017-08-19T08:07:16.379Z 2613 TID-ouy5os1vs INFO: Booting Sidekiq 5.0.3 with redis options {:db=>1, :id=>"Sidekiq-server-PID-2613", :url=>nil}
+2017-08-19T08:07:16.830Z 2613 TID-ouy5os1vs INFO: Running in ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]
+2017-08-19T08:07:16.832Z 2613 TID-ouy5os1vs INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-08-19T08:07:16.832Z 2613 TID-ouy5os1vs INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+2017-08-19T08:07:16.834Z 2613 TID-ouy5os1vs INFO: Starting processing, hit Ctrl-C to stop
+2017-08-19T08:08:21.503Z 2613 TID-ouy6bq83s NotificationWorker JID-54bc4a5981062284c73ec70e INFO: start
+2017-08-19T08:08:21.996Z 2613 TID-ouy6bq83s NotificationWorker JID-54bc4a5981062284c73ec70e INFO: fail: 0.493 sec
+2017-08-19T08:08:21.996Z 2613 TID-ouy6bq83s WARN: {"context":"Job raised exception","job":{"class":"NotificationWorker","args":["CHEF",1,4,1,0],"retry":false,"queue":"notification","jid":"54bc4a5981062284c73ec70e","created_at":1503130101.5023518,"enqueued_at":1503130101.502496},"jobstr":"{\"class\":\"NotificationWorker\",\"args\":[\"CHEF\",1,4,1,0],\"retry\":false,\"queue\":\"notification\",\"jid\":\"54bc4a5981062284c73ec70e\",\"created_at\":1503130101.5023518,\"enqueued_at\":1503130101.502496}"}
+2017-08-19T08:08:21.998Z 2613 TID-ouy6bq83s WARN: NoMethodError: undefined method `empty?' for nil:NilClass
+2017-08-19T08:08:21.998Z 2613 TID-ouy6bq83s WARN: /Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/gcm-0.1.1/lib/gcm.rb:134:in `build_response'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/gcm-0.1.1/lib/gcm.rb:41:in `send_notification'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/helpers/application_helper.rb:51:in `send_message_to_chef'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:33:in `block (2 levels) in perform'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:29:in `times'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:29:in `block in perform'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activerecord-5.0.4/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activerecord-5.0.4/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:26:in `perform'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:199:in `execute_job'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:170:in `block (2 levels) in process'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:128:in `block in invoke'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:133:in `invoke'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:169:in `block in process'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:141:in `block (6 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:97:in `local'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:140:in `block (5 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:42:in `block in call'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:68:in `block in wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:67:in `wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:41:in `call'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:136:in `block (4 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:215:in `stats'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:131:in `block (3 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_logger.rb:7:in `call'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:130:in `block (2 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:72:in `global'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:129:in `block in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:44:in `with_context'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:38:in `with_job_hash_context'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:128:in `dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:168:in `process'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:85:in `process_one'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:73:in `run'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:16:in `watchdog'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:25:in `block in safe_thread'
+2017-08-19T08:14:09.160Z 2613 TID-ouy6bq7es NotificationWorker JID-d0d3f8b6c57f19ba3c301d5e INFO: start
+2017-08-19T08:14:09.452Z 2613 TID-ouy6bq7es NotificationWorker JID-d0d3f8b6c57f19ba3c301d5e INFO: fail: 0.292 sec
+2017-08-19T08:14:09.452Z 2613 TID-ouy6bq7es WARN: {"context":"Job raised exception","job":{"class":"NotificationWorker","args":["CHEF",2,4,1,0],"retry":false,"queue":"notification","jid":"d0d3f8b6c57f19ba3c301d5e","created_at":1503130449.1600761,"enqueued_at":1503130449.160128},"jobstr":"{\"class\":\"NotificationWorker\",\"args\":[\"CHEF\",2,4,1,0],\"retry\":false,\"queue\":\"notification\",\"jid\":\"d0d3f8b6c57f19ba3c301d5e\",\"created_at\":1503130449.1600761,\"enqueued_at\":1503130449.160128}"}
+2017-08-19T08:14:09.453Z 2613 TID-ouy6bq7es WARN: NoMethodError: undefined method `empty?' for nil:NilClass
+2017-08-19T08:14:09.453Z 2613 TID-ouy6bq7es WARN: /Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/gcm-0.1.1/lib/gcm.rb:134:in `build_response'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/gcm-0.1.1/lib/gcm.rb:41:in `send_notification'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/helpers/application_helper.rb:51:in `send_message_to_chef'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:33:in `block (2 levels) in perform'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:29:in `times'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:29:in `block in perform'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activerecord-5.0.4/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activerecord-5.0.4/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:26:in `perform'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:199:in `execute_job'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:170:in `block (2 levels) in process'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:128:in `block in invoke'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:133:in `invoke'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:169:in `block in process'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:141:in `block (6 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:97:in `local'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:140:in `block (5 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:42:in `block in call'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:68:in `block in wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:67:in `wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:41:in `call'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:136:in `block (4 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:215:in `stats'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:131:in `block (3 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_logger.rb:7:in `call'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:130:in `block (2 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:72:in `global'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:129:in `block in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:44:in `with_context'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:38:in `with_job_hash_context'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:128:in `dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:168:in `process'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:85:in `process_one'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:73:in `run'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:16:in `watchdog'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:25:in `block in safe_thread'
+2017-08-19T08:31:00.444Z 2613 TID-ouy6bq7wk NotificationWorker JID-ddb42a3be1ae9955f7fd6c40 INFO: start
+2017-08-19T08:31:00.758Z 2613 TID-ouy6bq7wk NotificationWorker JID-ddb42a3be1ae9955f7fd6c40 INFO: done: 0.314 sec
+2017-08-19T08:36:32.477Z 2613 TID-ouy5zrys8 NotificationWorker JID-db2d503dd7319298b80bed9a INFO: start
+2017-08-19T08:36:32.814Z 2613 TID-ouy5zrys8 NotificationWorker JID-db2d503dd7319298b80bed9a INFO: done: 0.336 sec
+2017-08-19T08:40:52.949Z 2613 TID-ouy6gqkv8 NotificationWorker JID-00e6aa695901c37b668500aa INFO: start
+2017-08-19T08:40:53.230Z 2613 TID-ouy6gqkv8 NotificationWorker JID-00e6aa695901c37b668500aa INFO: fail: 0.28 sec
+2017-08-19T08:40:53.230Z 2613 TID-ouy6gqkv8 WARN: {"context":"Job raised exception","job":{"class":"NotificationWorker","args":["CHEF",3,4,1,0],"retry":false,"queue":"notification","jid":"00e6aa695901c37b668500aa","created_at":1503132052.949474,"enqueued_at":1503132052.949516},"jobstr":"{\"class\":\"NotificationWorker\",\"args\":[\"CHEF\",3,4,1,0],\"retry\":false,\"queue\":\"notification\",\"jid\":\"00e6aa695901c37b668500aa\",\"created_at\":1503132052.949474,\"enqueued_at\":1503132052.949516}"}
+2017-08-19T08:40:53.231Z 2613 TID-ouy6gqkv8 WARN: NoMethodError: undefined method `empty?' for nil:NilClass
+2017-08-19T08:40:53.231Z 2613 TID-ouy6gqkv8 WARN: /Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/gcm-0.1.1/lib/gcm.rb:134:in `build_response'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/gcm-0.1.1/lib/gcm.rb:41:in `send_notification'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/helpers/application_helper.rb:51:in `send_message_to_chef'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:33:in `block (2 levels) in perform'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:29:in `times'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:29:in `block in perform'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activerecord-5.0.4/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activerecord-5.0.4/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/mymac/WorkSpace/RailsMyself/BOE_backend/app/workers/notification_worker.rb:26:in `perform'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:199:in `execute_job'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:170:in `block (2 levels) in process'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:128:in `block in invoke'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/middleware/chain.rb:133:in `invoke'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:169:in `block in process'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:141:in `block (6 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:97:in `local'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:140:in `block (5 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:42:in `block in call'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:68:in `block in wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/execution_wrapper.rb:85:in `wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activesupport-5.0.4/lib/active_support/reloader.rb:67:in `wrap'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/rails.rb:41:in `call'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:136:in `block (4 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:215:in `stats'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:131:in `block (3 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_logger.rb:7:in `call'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:130:in `block (2 levels) in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/job_retry.rb:72:in `global'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:129:in `block in dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:44:in `with_context'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/logging.rb:38:in `with_job_hash_context'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:128:in `dispatch'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:168:in `process'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:85:in `process_one'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/processor.rb:73:in `run'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:16:in `watchdog'
+/Users/mymac/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/sidekiq-5.0.3/lib/sidekiq/util.rb:25:in `block in safe_thread'
+2017-08-19T08:43:18.595Z 2613 TID-ouy6bq7n4 NotificationWorker JID-45562652c90bba8612a8c031 INFO: start
+2017-08-19T08:43:19.367Z 2613 TID-ouy6bq7n4 NotificationWorker JID-45562652c90bba8612a8c031 INFO: done: 0.772 sec
+2017-08-19T08:44:29.718Z 2613 TID-ouy5os1vs INFO: Shutting down
+2017-08-19T08:44:29.718Z 2613 TID-ouy5os1vs INFO: Terminating quiet workers
+2017-08-19T08:44:29.718Z 2613 TID-ouy6bq8i8 INFO: Scheduler exiting...
+2017-08-19T08:44:29.822Z 2613 TID-ouy5os1vs INFO: Pausing to allow workers to finish...
+2017-08-19T08:44:31.587Z 2613 TID-ouy5os1vs INFO: Bye!

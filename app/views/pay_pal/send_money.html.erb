@@ -27,7 +27,7 @@
       <h4 class="center">Send Money</h4>
       <input type="hidden" name="order_id" id="order_id">
       <div class="input-field" style="width: 50%">
-        <label for="receiverEmail">Receiver Email</label>
+        <label for="receiverEmail">Receiver</label>
         <input type="text" id="receiverEmail" name="receiverEmail" placeholder="Email" readonly>
       </div>
       <div class="input-field">
@@ -68,8 +68,9 @@
           <span class="card-title">All Orders</span>
           <table id="table" class="bordered striped">
             <thead>
-            <th style="text-align: center; width: 15%">Table Number</th>
-            <th style="text-align: center; width: 55%">Order Detail</th>
+            <th style="text-align: center; width: 10%">Table Number</th>
+            <th style="text-align: center; width: 15%">Order Date</th>
+            <th style="text-align: center; width: 50%">Order Detail</th>
             <th style="text-align: center">Total</th>
             <th></th>
             </thead>
@@ -82,6 +83,7 @@
                 <% end %>
                 <tr>
                   <td style="text-align: center"><%= order.table_number %></td>
+                  <td style="text-align: center"><%= order.created_at.strftime('%d/%m/%Y') %></td>
                   <td><%= dish_name.join(", ") %></td>
                   <td style="text-align: center"><%= "#{number_to_currency(order.total, unit: '', precision: 0)} VND" %></td>
                   <td>
@@ -98,11 +100,6 @@
   <% end %>
 </div>
 <script>
-    var $input = $('.datepicker').pickadate({
-        format: 'dd/mm/yyyy',
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
-    });
 
     function getEmail(order_id) {
         $('#unclose_modal').modal('open');
