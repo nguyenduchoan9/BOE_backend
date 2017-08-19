@@ -32,9 +32,9 @@
           <div class="col s3">
             <select name="type" onchange="onSelectType()" id="type">
               <% if params[:type] == "dish" %>
-                  <option value="dish" selected>Dish</option>
+                  <option value="dish" selected>Username</option>
               <% else %>
-                  <option value="dish">Dish</option>
+                  <option value="dish">Username</option>
               <% end %>
               <% if params[:type] == "table" %>
                   <option value="table" selected>Table</option>
@@ -70,7 +70,7 @@
                       <td style="text-align: center"><%= order_detail.dish.dish_name %></td>
                       <td style="text-align: center"><%= order_detail.quantity_not_serve %></td>
                       <td style="text-align: center">
-                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term]%>&type=<%= params[:type]%>" onclick="$('#unclose_modal').modal('open');">
+                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term] %>&type=<%= params[:type] %>" onclick="$('#unclose_modal').modal('open');">
                           <input type="button" value="cancel" class="btn red">
                         </a>
                       </td>
@@ -82,7 +82,7 @@
               <table id="table" class="bordered striped">
                 <thead>
                 <th style="text-align: center; width: 15%">Table Number</th>
-                <th style="text-align: center;">User</th>
+                <th style="text-align: center;">Dish</th>
                 <th style="text-align: center;">Quantity</th>
                 <th></th>
                 </thead>
@@ -90,10 +90,10 @@
                 <% @order_details.each do |order_detail| %>
                     <tr>
                       <td style="text-align: center"><%= order_detail.order.table_number %></td>
-                      <td style="text-align: center"><%= order_detail.order.user.username %></td>
+                      <td style="text-align: center"><%= order_detail.dish.dish_name %></td>
                       <td style="text-align: center"><%= order_detail.quantity_not_serve %></td>
                       <td style="text-align: center">
-                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term]%>&type=<%= params[:type]%>" onclick="$('#unclose_modal').modal('open');">
+                        <a href="cancel_order?order_detail_id=<%= order_detail.id %>&term=<%= params[:term] %>&type=<%= params[:type] %>" onclick="$('#unclose_modal').modal('open');">
                           <input type="button" value="cancel" class="btn red">
                         </a>
                       </td>
@@ -112,6 +112,7 @@
     $('#term').autocomplete({
         source: $('#term').data('autocomplete-source')
     });
+
     function onSelectType() {
         var selected = $('#type').find(":selected").text();
         if (selected == "Dish") {
