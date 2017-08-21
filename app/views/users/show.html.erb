@@ -14,6 +14,9 @@
           <button type="submit" class="btn-floating waves-effect waves-light">
             <i class="material-icons">search</i>
           </button>
+          <%= link_to new_users_path, data: {turbolinks: false} do %>
+              <input type="button" class="btn" value="Add">
+          <% end %>
       <% end %>
     </div>
   </div>

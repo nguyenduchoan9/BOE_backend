@@ -45,14 +45,12 @@
                 <label>User Role</label>
               </div>
               <div class="input-field col s6">
-                <%= collection_select :user, :membership_id, Membership.all, :id, :level, prompt: true %>
-                <label>User Membership</label>
+                <%= f.label :phone, "Phone" %>
+                <%= f.phone_field :phone, value: @user.phone %>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s6">
-                <%= f.label :phone, "Phone" %>
-                <%= f.phone_field :phone, value: @user.phone %>
+              <div class="col s12">
                 <%= link_to 'Back', users_path, class: "btn", data: {turbolinks: false} %>
                 <%= f.submit value: 'update', class: 'btn' %>
               </div>
@@ -64,7 +62,6 @@
 </div>
 <script>
     $('.datepicker').pickadate({
-        format: 'mm/dd/yy',
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
