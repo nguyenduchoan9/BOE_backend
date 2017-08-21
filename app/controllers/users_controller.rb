@@ -24,7 +24,7 @@ class UsersController < WebApplcationController
 
   def create
     @user = User.new user_params
-
+    @user.password = "123123123"
     @user.save
     redirect_to users_path
   end
